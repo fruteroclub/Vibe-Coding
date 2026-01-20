@@ -24,45 +24,45 @@ const FAQ = () => {
   ];
 
   return (
-    <section id="faq" className="py-24 relative">
+    <section id="faq" className="py-12 relative">
       <div className="container mx-auto px-6">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
+        <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">
           Preguntas frecuentes
         </h2>
 
-        <div className="max-w-2xl mx-auto space-y-4">
+        <div className="max-w-2xl mx-auto space-y-3">
           {faqs.map((faq, index) => (
             <div 
               key={index}
               className="glass-card overflow-hidden"
             >
               <button
-                className="w-full p-6 flex items-center justify-between text-left"
+                className="w-full p-4 flex items-center justify-between text-left"
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
               >
-                <h3 className="text-lg font-medium text-foreground pr-4">{faq.question}</h3>
+                <h3 className="font-medium text-foreground pr-4 text-sm">{faq.question}</h3>
                 <ChevronDown 
-                  className={`w-5 h-5 text-muted-foreground flex-shrink-0 transition-transform ${
+                  className={`w-4 h-4 text-muted-foreground flex-shrink-0 transition-transform ${
                     openIndex === index ? 'rotate-180' : ''
                   }`}
                 />
               </button>
               {openIndex === index && (
-                <div className="px-6 pb-6">
-                  <p className="text-muted-foreground">{faq.answer}</p>
+                <div className="px-4 pb-4">
+                  <p className="text-sm text-muted-foreground">{faq.answer}</p>
                 </div>
               )}
             </div>
           ))}
         </div>
 
-        <div className="text-center mt-12">
-          <p className="text-muted-foreground mb-4">¿Respondimos tus dudas?</p>
-          <a href="#pricing" className="btn-primary-gradient inline-block">
+        <div className="text-center mt-8">
+          <p className="text-muted-foreground mb-3 text-sm">¿Respondimos tus dudas?</p>
+          <a href="#pricing" className="btn-primary-gradient inline-block text-sm px-6 py-3">
             Sí, quiero unirme
           </a>
-          <p className="mt-4">
-            <a href="mailto:hola@frutero.club" className="text-primary hover:underline">
+          <p className="mt-3">
+            <a href="mailto:hola@frutero.club" className="text-primary hover:underline text-sm">
               ¿Otra pregunta? → hola@frutero.club
             </a>
           </p>

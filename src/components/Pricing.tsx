@@ -20,63 +20,63 @@ const Pricing = () => {
   ];
 
   return (
-    <section id="pricing" className="py-24 relative section-glow">
+    <section id="pricing" className="py-16 relative">
       <div className="container mx-auto px-6 relative z-10">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
+        <h2 className="text-2xl md:text-3xl font-bold text-center mb-10">
           <span className="text-foreground">Invierte en tu futuro </span>
           <span className="gradient-text">como creador</span>
         </h2>
 
         <div className="max-w-lg mx-auto">
-          <div className="glass-card p-8 relative overflow-hidden">
+          <div className="glass-card p-6 relative overflow-hidden">
             {/* Badge */}
-            <div className="absolute top-4 right-4">
-              <span className="px-3 py-1 rounded-full bg-primary/20 text-primary text-sm font-medium">
+            <div className="absolute top-3 right-3">
+              <span className="px-2 py-1 rounded-full bg-primary/20 text-primary text-xs font-medium">
                 🔥 Primeros 20 lugares
               </span>
             </div>
 
             {/* Price */}
-            <div className="mb-8 pt-6">
-              <div className="flex items-baseline gap-3 mb-2">
-                <span className="text-4xl font-bold text-foreground">$0 USD</span>
-                <span className="text-xl text-muted-foreground line-through">$150 USD</span>
+            <div className="mb-6 pt-4">
+              <div className="flex items-baseline gap-3 mb-1">
+                <span className="text-3xl font-bold text-foreground">$0 USD</span>
+                <span className="text-lg text-muted-foreground line-through">$150 USD</span>
               </div>
-              <p className="text-primary font-medium">100% descuento por tiempo limitado</p>
+              <p className="text-primary font-medium text-sm">100% descuento por tiempo limitado</p>
             </div>
 
             {/* Features */}
-            <ul className="space-y-3 mb-8">
+            <ul className="grid grid-cols-2 gap-2 mb-6">
               {features.map((feature, index) => (
-                <li key={index} className="flex items-center gap-3">
-                  <Check className="w-5 h-5 text-primary flex-shrink-0" />
-                  <span className="text-muted-foreground">{feature}</span>
+                <li key={index} className="flex items-center gap-2">
+                  <Check className="w-4 h-4 text-primary flex-shrink-0" />
+                  <span className="text-muted-foreground text-xs">{feature}</span>
                 </li>
               ))}
             </ul>
 
             {/* Details */}
-            <div className="border-t border-border pt-6 mb-8 space-y-3">
+            <div className="border-t border-border pt-4 mb-6 grid grid-cols-2 gap-2">
               {details.map((detail, index) => (
-                <div key={index} className="flex items-center gap-3 text-sm text-muted-foreground">
-                  <detail.icon className="w-4 h-4 text-primary" />
+                <div key={index} className="flex items-center gap-2 text-xs text-muted-foreground">
+                  <detail.icon className="w-3 h-3 text-primary" />
                   <span>{detail.text}</span>
                 </div>
               ))}
             </div>
 
             {/* CTA */}
-            <div className="space-y-4">
+            <div className="space-y-3">
               <a href="#" className="btn-primary-gradient w-full block text-center">
                 Asegurar mi lugar - GRATIS
               </a>
-              <a href="#faq" className="btn-outline-glow w-full block text-center">
+              <a href="#faq" className="btn-outline-glow w-full block text-center text-sm py-3">
                 ¿Dudas? → Ver FAQ
               </a>
             </div>
 
             {/* Footer note */}
-            <p className="text-sm text-muted-foreground text-center mt-6">
+            <p className="text-xs text-muted-foreground text-center mt-4">
               Early Bird termina en 20 lugares. Después: $99 USD
             </p>
           </div>

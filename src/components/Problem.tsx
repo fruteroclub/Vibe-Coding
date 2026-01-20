@@ -6,27 +6,27 @@ const Problem = () => {
   ];
 
   return (
-    <section className="py-24 relative section-glow">
+    <section className="py-12 relative">
       <div className="container mx-auto px-6 relative z-10">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
+        <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">
           <span className="text-foreground">Los bootcamps tradicionales están </span>
           <span className="gradient-text">hackeados para el pasado</span>
         </h2>
 
-        <div className="flex flex-wrap justify-center gap-6 mb-12">
+        <div className="flex flex-wrap justify-center gap-4 mb-8">
           {problems.map((problem, index) => (
             <div 
               key={index}
-              className="glass-card px-8 py-6 text-center"
+              className="glass-card px-6 py-4 text-center"
             >
-              <p className="text-lg text-muted-foreground line-through decoration-destructive/50">
+              <p className="text-muted-foreground line-through decoration-destructive/50">
                 {problem}
               </p>
             </div>
           ))}
         </div>
 
-        <p className="text-center text-xl text-foreground">
+        <p className="text-center text-lg text-foreground">
           → Hay una mejor forma. Se llama <span className="gradient-text font-semibold">VibeCoding.</span>
         </p>
       </div>
