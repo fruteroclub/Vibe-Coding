@@ -43,7 +43,7 @@ const Layers = () => {
   ];
 
   return (
-    <section id="programa" className="py-16 relative">
+    <section id="programa" className="py-20 relative">
       <div className="container mx-auto px-6">
         <div className="text-center mb-10">
           <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3">

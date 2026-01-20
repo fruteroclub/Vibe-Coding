@@ -1,6 +1,6 @@
 const Hero = () => {
   return (
-    <section className="relative min-h-[85vh] flex items-center justify-center pt-20 overflow-hidden">
+    <section className="relative min-h-[90vh] flex items-center justify-center pt-20 overflow-hidden">
       {/* Background Gradient Orbs */}
       <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-secondary/20 rounded-full filter blur-[100px] animate-pulse-slow" />
       <div className="absolute bottom-1/4 right-1/4 w-72 h-72 bg-primary/20 rounded-full filter blur-[100px] animate-pulse-slow" style={{ animationDelay: '2s' }} />
