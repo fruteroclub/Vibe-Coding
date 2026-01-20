@@ -29,12 +29,6 @@ const Pricing = () => {
 
         <div className="max-w-lg mx-auto">
           <div className="glass-card p-6 relative overflow-hidden">
-            {/* Badge */}
-            <div className="absolute top-3 right-3">
-              <span className="px-2 py-1 rounded-full bg-primary/20 text-primary text-xs font-medium">
-                🔥 Primeros 20 lugares
-              </span>
-            </div>
 
             {/* Price */}
             <div className="mb-6 pt-4">
@@ -67,18 +61,14 @@ const Pricing = () => {
 
             {/* CTA */}
             <div className="space-y-3">
-              <a href="#" className="btn-primary-gradient w-full block text-center">
-                Asegurar mi lugar - GRATIS
+              <a href="https://tally.so/r/gDqk1M" target="_blank" rel="noopener noreferrer" className="btn-primary-gradient w-full block text-center">
+                Asegurar mi lugar
               </a>
               <a href="#faq" className="btn-outline-glow w-full block text-center text-sm py-3">
                 ¿Dudas? → Ver FAQ
               </a>
             </div>
 
-            {/* Footer note */}
-            <p className="text-xs text-muted-foreground text-center mt-4">
-              Early Bird termina en 20 lugares. Después: $99 USD
-            </p>
           </div>
         </div>
       </div>

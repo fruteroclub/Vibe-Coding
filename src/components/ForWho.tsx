@@ -15,7 +15,7 @@ const ForWho = () => {
     {
       icon: RefreshCw,
       title: 'Cambio de carrera a tech',
-      description: 'Prueba si el desarrollo es para ti por $50 y 2 semanas. Sin riesgo.',
+      description: 'Prueba si el desarrollo es para ti en 2 semanas. Sin riesgo.',
     },
   ];
 

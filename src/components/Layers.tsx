@@ -50,7 +50,7 @@ const Layers = () => {
             No enseñamos recetas. Enseñamos ingredientes.
           </h2>
           <p className="text-muted-foreground max-w-3xl mx-auto">
-            Todas las apps—desde Netflix hasta tu banco—usan estas 5 capas. Una vez que las dominas, puedes construir LO QUE SEA.
+            Todas las apps—desde bancos hasta startups—usan estas 5 capas. Una vez que las dominas, puedes construir LO QUE SEA.
           </p>
         </div>
 
@@ -113,9 +113,6 @@ const Layers = () => {
             </p>
             <p className="text-foreground font-medium">
               Tú aprendes a DIRIGIR, no a escribir sintaxis manualmente.
-            </p>
-            <p className="text-muted-foreground mt-2 text-sm italic">
-              Es como dirigir una orquesta, no tocar cada instrumento.
             </p>
           </div>
         </div>
