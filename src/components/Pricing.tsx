@@ -20,7 +20,7 @@ const Pricing = () => {
   ];
 
   return (
-    <section id="pricing" className="py-16 relative">
+    <section id="pricing" className="py-20 relative">
       <div className="container mx-auto px-6 relative z-10">
         <h2 className="text-2xl md:text-3xl font-bold text-center mb-10">
           <span className="text-foreground">Invierte en tu futuro </span>

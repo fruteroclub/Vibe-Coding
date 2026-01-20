@@ -6,7 +6,7 @@ const Problem = () => {
   ];
 
   return (
-    <section className="py-12 relative">
+    <section className="py-16 relative">
       <div className="container mx-auto px-6 relative z-10">
         <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">
           <span className="text-foreground">Los bootcamps tradicionales están </span>

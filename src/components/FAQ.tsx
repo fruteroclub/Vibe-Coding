@@ -24,7 +24,7 @@ const FAQ = () => {
   ];
 
   return (
-    <section id="faq" className="py-12 relative">
+    <section id="faq" className="py-16 relative">
       <div className="container mx-auto px-6">
         <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">
           Preguntas frecuentes

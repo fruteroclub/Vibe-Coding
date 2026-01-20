@@ -20,7 +20,7 @@ const ForWho = () => {
   ];
 
   return (
-    <section className="py-12 relative">
+    <section className="py-16 relative">
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-3 gap-4">
           {cards.map((card, index) => (

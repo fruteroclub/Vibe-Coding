@@ -1,6 +1,6 @@
 const FinalCTA = () => {
   return (
-    <section className="py-12 relative overflow-hidden">
+    <section className="py-16 relative overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-t from-primary/10 via-transparent to-transparent" />
       

@@ -14,7 +14,7 @@ const IsForYou = () => {
   ];
 
   return (
-    <section className="py-12 relative">
+    <section className="py-16 relative">
       <div className="container mx-auto px-6">
         <h2 className="text-2xl md:text-3xl font-bold text-center mb-3">
           ¿Es VibeCoding para ti?
