@@ -13,21 +13,21 @@ const Includes = () => {
   ];
 
   return (
-    <section className="py-24 relative">
+    <section className="py-12 relative">
       <div className="container mx-auto px-6">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
+        <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">
           <span className="text-foreground">✅ Qué incluye </span>
           <span className="gradient-text">tu inversión</span>
         </h2>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 max-w-4xl mx-auto">
           {items.map((item, index) => (
             <div 
               key={index}
-              className="glass-card p-4 flex items-center gap-3 group hover:border-primary/30 transition-colors"
+              className="glass-card p-3 flex items-center gap-2 group hover:border-primary/30 transition-colors"
             >
-              <item.icon className="w-5 h-5 text-primary flex-shrink-0" />
-              <span className="text-muted-foreground group-hover:text-foreground transition-colors text-sm">
+              <item.icon className="w-4 h-4 text-primary flex-shrink-0" />
+              <span className="text-muted-foreground group-hover:text-foreground transition-colors text-xs">
                 {item.text}
               </span>
             </div>
