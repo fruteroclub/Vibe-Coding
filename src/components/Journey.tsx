@@ -88,7 +88,7 @@ const Journey = () => {
   ];
 
   return (
-    <section className="py-20 relative">
+    <section id="viaje" className="py-20 relative">
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-10">
           <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3">
@@ -97,12 +97,12 @@ const Journey = () => {
           <p className="text-muted-foreground">
             5 sesiones · 5 mini-entregas · 1 proyecto completo
           </p>
-          <p className="text-muted-foreground mt-2 max-w-2xl mx-auto text-sm">
+          <p className="text-muted-foreground mt-2 text-sm">
             Cada sesión construye sobre la anterior. Al final de cada sesión, tendrás algo nuevo funcionando. No hay teoría sin práctica.
           </p>
         </div>
 
-        <div className="max-w-3xl mx-auto space-y-3">
+        <div className="space-y-3">
           {sessions.map((session, index) => (
             <div 
               key={index}

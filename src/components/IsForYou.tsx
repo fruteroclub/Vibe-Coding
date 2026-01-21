@@ -23,7 +23,7 @@ const IsForYou = () => {
           Sé honesto contigo mismo. Esto no es para todos.
         </p>
 
-        <div className="grid md:grid-cols-2 gap-4 max-w-3xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-4">
           {/* For You */}
           <div className="glass-card p-6">
             <h3 className="text-lg font-semibold text-foreground mb-4">ES PARA TI SI...</h3>

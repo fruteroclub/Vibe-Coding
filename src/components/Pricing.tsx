@@ -64,8 +64,8 @@ const Pricing = () => {
               <a href="https://tally.so/r/gDqk1M" target="_blank" rel="noopener noreferrer" className="btn-primary-gradient w-full block text-center">
                 Asegurar mi lugar
               </a>
-              <a href="#faq" className="btn-outline-glow w-full block text-center text-sm py-3">
-                ¿Dudas? → Ver FAQ
+              <a href="https://x.com/fruteroclub" target="_blank" rel="noopener noreferrer" className="btn-outline-glow w-full block text-center text-sm py-3">
+                ¿Dudas? → Contáctanos en X
               </a>
             </div>
 

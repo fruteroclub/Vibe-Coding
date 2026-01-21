@@ -30,7 +30,7 @@ const FAQ = () => {
           Preguntas frecuentes
         </h2>
 
-        <div className="max-w-2xl mx-auto space-y-3">
+        <div className="space-y-3">
           {faqs.map((faq, index) => (
             <div 
               key={index}

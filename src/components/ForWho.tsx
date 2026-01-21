@@ -20,21 +20,21 @@ const ForWho = () => {
   ];
 
   return (
-    <section className="py-16 relative">
+    <section className="py-10 relative">
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-3 gap-4">
           {cards.map((card, index) => (
-            <div 
+            <div
               key={index}
-              className="glass-card-hover p-6 group"
+              className="glass-card-hover p-4 group"
             >
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                <card.icon className="w-6 h-6 text-primary" />
+              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                <card.icon className="w-5 h-5 text-primary" />
               </div>
-              <h3 className="text-lg font-semibold text-foreground mb-2">
+              <h3 className="text-base font-semibold text-foreground mb-1">
                 {card.title}
               </h3>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-xs text-muted-foreground leading-relaxed">
                 {card.description}
               </p>
             </div>

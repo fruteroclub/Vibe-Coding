@@ -28,10 +28,10 @@ const Hero = () => {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-3 justify-center mb-10 animate-fade-in" style={{ animationDelay: '0.4s' }}>
-          <a href="#pricing" className="btn-primary-gradient glow-effect">
-            Asegurar mi lugar 
+          <a href="https://tally.so/r/gDqk1M" target="_blank" rel="noopener noreferrer" className="btn-primary-gradient glow-effect">
+            Asegurar mi lugar
           </a>
-          <a href="#programa" className="btn-outline-glow">
+          <a href="#viaje" className="btn-outline-glow">
             Ver el programa completo ↓
           </a>
         </div>
@@ -46,11 +46,6 @@ const Hero = () => {
           <div className="flex items-center gap-2">
             <span className="text-foreground font-semibold">1,000+</span>
             <span className="text-sm">builders</span>
-          </div>
-          <div className="w-1 h-1 rounded-full bg-muted-foreground hidden sm:block self-center" />
-          <div className="flex items-center gap-2">
-            <span className="text-foreground font-semibold">bancos</span>
-            <span className="text-sm">hasta startups</span>
           </div>
         </div>
       </div>
