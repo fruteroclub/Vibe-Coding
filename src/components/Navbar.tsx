@@ -9,9 +9,9 @@ const Navbar = () => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2">
-            <div className="w-10 h-10 overflow-hidden flex items-center justify-center">
-              <img src="/logo.png" alt="VibeCoding" className="w-[200%] h-[200%] object-contain" />
+          <a href="#" className="flex items-center gap-3">
+            <div className="w-16 h-16 overflow-hidden flex items-center justify-center">
+              <img src="/logo.png" alt="VibeCoding" className="w-[250%] h-[250%] object-contain scale-110" />
             </div>
             <span className="text-2xl font-bold text-foreground">VibeCoding</span>
           </a>
