@@ -4,7 +4,7 @@ const Hero = () => {
       {/* Background Gradient Orbs */}
       <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-secondary/20 rounded-full filter blur-[100px] animate-pulse-slow" />
       <div className="absolute bottom-1/4 right-1/4 w-72 h-72 bg-primary/20 rounded-full filter blur-[100px] animate-pulse-slow" style={{ animationDelay: '2s' }} />
-      
+
       <div className="container mx-auto px-6 text-center relative z-10">
         {/* Badge */}
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-card/60 backdrop-blur-sm border border-border/50 mb-6 animate-fade-in">

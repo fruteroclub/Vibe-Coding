@@ -1,7 +1,11 @@
 {
   "permissions": {
     "allow": [
-      "Bash(bun run build)"
+      "Bash(bun run build)",
+      "Bash(git remote remove:*)",
+      "Bash(git remote add:*)",
+      "Bash(git branch:*)",
+      "Bash(git push:*)"
     ]
   }
 }

@@ -96,13 +96,11 @@
 
 @layer components {
   .gradient-text {
-    @apply bg-clip-text text-transparent;
-    background-image: var(--gradient-primary);
+    color: oklch(0.73 0.20 40);
   }
 
   .glass-card {
     @apply bg-card/60 backdrop-blur-xl border border-border/50 rounded-2xl;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
   }
 
   .glass-card-hover {
@@ -111,38 +109,20 @@
 
   .glass-card-hover:hover {
     @apply border-primary/30;
-    box-shadow: 0 8px 40px rgba(245, 158, 11, 0.15);
   }
 
   .glow-effect {
     position: relative;
   }
 
-  .glow-effect::before {
-    content: '';
-    position: absolute;
-    inset: -2px;
-    background: var(--gradient-primary);
-    border-radius: inherit;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: -1;
-    filter: blur(20px);
-  }
-
-  .glow-effect:hover::before {
-    opacity: 0.5;
-  }
-
   .btn-primary-gradient {
-    background: var(--gradient-primary);
+    background: oklch(0.73 0.20 40);
     @apply text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300;
-    box-shadow: 0 4px 20px rgba(245, 158, 11, 0.3);
   }
 
   .btn-primary-gradient:hover {
+    background: oklch(0.73 0.20 40);
     transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(245, 158, 11, 0.5);
   }
 
   .btn-outline-glow {
