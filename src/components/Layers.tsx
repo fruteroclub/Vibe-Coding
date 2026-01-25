@@ -1,44 +1,46 @@
 import { useState } from 'react';
 import { Rocket, Lock, Bot, Database, Palette, ChevronDown } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const Layers = () => {
+  const { t } = useTranslation();
   const [activeLayer, setActiveLayer] = useState<number | null>(null);
 
   const layers = [
     {
       icon: Rocket,
-      name: 'Deploy',
-      description: 'Hazlo público',
-      detail: 'Aprende a publicar tu app para que cualquier persona en el mundo pueda acceder.',
-      tools: ['Vercel', 'Netlify', 'GitHub Pages']
+      name: t('layers.items.0.name'),
+      description: t('layers.items.0.description'),
+      detail: t('layers.items.0.detail'),
+      tools: t('layers.items.0.tools', { returnObjects: true }) as string[]
     },
     {
       icon: Lock,
-      name: 'Auth',
-      description: 'Login y usuarios',
-      detail: 'Implementa sistemas de autenticación seguros. Cada usuario tiene su cuenta y datos privados.',
-      tools: ['Privy', 'NextAuth', 'Supabase Auth']
+      name: t('layers.items.1.name'),
+      description: t('layers.items.1.description'),
+      detail: t('layers.items.1.detail'),
+      tools: t('layers.items.1.tools', { returnObjects: true }) as string[]
     },
     {
       icon: Bot,
-      name: 'AI',
-      description: 'Inteligencia artificial',
-      detail: 'Integra modelos de lenguaje y visión para que tu app piense y responda inteligentemente.',
-      tools: ['Claude API', 'OpenAI', 'Replicate']
+      name: t('layers.items.2.name'),
+      description: t('layers.items.2.description'),
+      detail: t('layers.items.2.detail'),
+      tools: t('layers.items.2.tools', { returnObjects: true }) as string[]
     },
     {
       icon: Database,
-      name: 'Data',
-      description: 'Base de datos',
-      detail: 'Guarda y recupera datos. Desde localStorage hasta bases de datos en la nube.',
-      tools: ['localStorage', 'Supabase', 'Firebase']
+      name: t('layers.items.3.name'),
+      description: t('layers.items.3.description'),
+      detail: t('layers.items.3.detail'),
+      tools: t('layers.items.3.tools', { returnObjects: true }) as string[]
     },
     {
       icon: Palette,
-      name: 'UI',
-      description: 'Interfaz',
-      detail: 'Crea interfaces visuales hermosas y funcionales con diseño responsivo.',
-      tools: ['React', 'Tailwind', 'shadcn/ui']
+      name: t('layers.items.4.name'),
+      description: t('layers.items.4.description'),
+      detail: t('layers.items.4.detail'),
+      tools: t('layers.items.4.tools', { returnObjects: true }) as string[]
     },
   ];
 
@@ -47,10 +49,10 @@ const Layers = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-10">
           <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3">
-            No enseñamos recetas. Enseñamos ingredientes.
+            {t('layers.title')}
           </h2>
           <p className="text-muted-foreground">
-            Todas las apps usan estas 5 capas. Una vez que las dominas, puedes construir LO QUE SEA.
+            {t('layers.subtitle')}
           </p>
         </div>
 
@@ -59,6 +61,7 @@ const Layers = () => {
           {layers.map((layer, index) => (
             <button
               key={index}
+              type="button"
               onClick={() => setActiveLayer(activeLayer === index ? null : index)}
               className={`glass-card p-4 flex flex-col items-center gap-2 transition-all duration-300 ${
                 activeLayer === index
@@ -109,12 +112,12 @@ const Layers = () => {
         <div className="glass-card p-6 text-center mt-10 relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-secondary/5 to-primary/5" />
           <div className="relative z-10">
-            <h3 className="text-xl font-bold text-foreground mb-3">🔑 El Secreto</h3>
+            <h3 className="text-xl font-bold text-foreground mb-3">{t('layers.secret.title')}</h3>
             <p className="text-muted-foreground mb-2">
-              Usamos IA (v0, Claude, Cursor) para escribir el código por ti.
+              {t('layers.secret.line1')}
             </p>
             <p className="text-foreground font-medium">
-              Tú aprendes a DIRIGIR, no a escribir sintaxis manualmente.
+              {t('layers.secret.line2')}
             </p>
           </div>
         </div>

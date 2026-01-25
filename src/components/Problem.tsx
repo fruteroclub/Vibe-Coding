@@ -1,21 +1,19 @@
+import { useTranslation } from 'react-i18next';
+
 const Problem = () => {
-  const problems = [
-    '6 meses para Hello World',
-    '$5,000 para paradigmas de 1990',
-    '15% completado, cero garantías',
-  ];
+  const { t } = useTranslation();
 
   return (
     <section className="py-16 relative">
       <div className="container mx-auto px-6 relative z-10">
         <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">
-          <span className="text-foreground">Los bootcamps tradicionales están </span>
-          <span className="gradient-text">hackeados para el pasado</span>
+          <span className="text-foreground">{t('problem.title.normal')}</span>
+          <span className="gradient-text">{t('problem.title.gradient')}</span>
         </h2>
 
         <div className="flex flex-wrap justify-center gap-4 mb-8">
-          {problems.map((problem, index) => (
-            <div 
+          {(t('problem.items', { returnObjects: true }) as string[]).map((problem, index) => (
+            <div
               key={index}
               className="glass-card px-6 py-4 text-center"
             >
@@ -27,7 +25,7 @@ const Problem = () => {
         </div>
 
         <p className="text-center text-lg text-foreground">
-          → Hay una mejor forma. Se llama <span className="gradient-text font-semibold">VibeCoding.</span>
+          {t('problem.conclusion.prefix')}<span className="gradient-text font-semibold">{t('problem.conclusion.brand')}</span>
         </p>
       </div>
     </section>

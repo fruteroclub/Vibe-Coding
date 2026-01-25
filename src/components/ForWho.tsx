@@ -1,21 +1,24 @@
 import { Lightbulb, Rocket, RefreshCw } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const ForWho = () => {
+  const { t } = useTranslation();
+
   const cards = [
     {
       icon: Lightbulb,
-      title: 'Tienes ideas, no código',
-      description: 'Valida tu MVP en 2 semanas. No esperes 6 meses aprendiendo sintaxis.',
+      title: t('forWho.items.0.title'),
+      description: t('forWho.items.0.description'),
     },
     {
       icon: Rocket,
-      title: 'Emprendedor sin budget',
-      description: 'Construye tu v1.0 sin gastar $10K en developers. Hazlo tú mismo.',
+      title: t('forWho.items.1.title'),
+      description: t('forWho.items.1.description'),
     },
     {
       icon: RefreshCw,
-      title: 'Cambio de carrera a tech',
-      description: 'Prueba si el desarrollo es para ti en 2 semanas. Sin riesgo.',
+      title: t('forWho.items.2.title'),
+      description: t('forWho.items.2.description'),
     },
   ];
 

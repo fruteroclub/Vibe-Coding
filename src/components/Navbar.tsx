@@ -1,7 +1,10 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import LanguageSwitcher from './LanguageSwitcher';
 
 const Navbar = () => {
+  const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -16,48 +19,53 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             <a href="#programa" className="text-muted-foreground hover:text-foreground transition-colors">
-              Programa
+              {t('navbar.links.programa')}
             </a>
             <a href="#faq" className="text-muted-foreground hover:text-foreground transition-colors">
-              FAQ
+              {t('navbar.links.faq')}
             </a>
             <a href="#pricing" className="btn-primary-gradient text-sm px-6 py-2.5">
-              Únete ahora
+              {t('navbar.cta')}
             </a>
+            <LanguageSwitcher />
           </div>
 
-          {/* Mobile Menu Button */}
-          <button 
-            className="md:hidden text-foreground"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          {/* Mobile: Language Switcher + Menu Button */}
+          <div className="md:hidden flex items-center gap-3">
+            <LanguageSwitcher />
+            <button
+              type="button"
+              className="text-foreground"
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              {isOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
         {isOpen && (
           <div className="md:hidden mt-4 pb-4 flex flex-col gap-4">
-            <a 
-              href="#programa" 
+            <a
+              href="#programa"
               className="text-muted-foreground hover:text-foreground transition-colors"
               onClick={() => setIsOpen(false)}
             >
-              Programa
+              {t('navbar.links.programa')}
             </a>
-            <a 
-              href="#faq" 
+            <a
+              href="#faq"
               className="text-muted-foreground hover:text-foreground transition-colors"
               onClick={() => setIsOpen(false)}
             >
-              FAQ
+              {t('navbar.links.faq')}
             </a>
-            <a 
-              href="#pricing" 
+            <a
+              href="#pricing"
               className="btn-primary-gradient text-sm px-6 py-2.5 text-center"
               onClick={() => setIsOpen(false)}
             >
-              Únete ahora
+              {t('navbar.cta')}
             </a>
           </div>
         )}

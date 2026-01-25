@@ -5,7 +5,16 @@
       "Bash(git remote remove:*)",
       "Bash(git remote add:*)",
       "Bash(git branch:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(npx update-browserslist-db@latest:*)",
+      "Bash(npm install:*)",
+      "Bash(npx husky init)",
+      "Bash(npm run build:*)",
+      "Bash(npx jq:*)",
+      "Bash(node -e:*)",
+      "Bash(node scripts/validate-translations.cjs:*)",
+      "Bash(npm run i18n:validate:*)",
+      "Bash(bash:*)"
     ]
   }
 }

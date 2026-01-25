@@ -1,0 +1,307 @@
+{
+  "navbar": {
+    "links": {
+      "programa": "Program",
+      "paraQuien": "Who's it for?",
+      "problemas": "Problems",
+      "faq": "FAQ",
+      "precio": "Pricing"
+    },
+    "cta": "Join now"
+  },
+  "hero": {
+    "badge": "AI-Powered Development Bootcamp",
+    "title": {
+      "prefix": "VibeCoding: ",
+      "highlight": "Idea to App",
+      "suffix": " in 2 weeks with AI"
+    },
+    "subtitle": "Learn to code using Claude, Cursor, and the tools professional developers use today. No months wasted on tutorials. No boring theory. Just real code and working apps.",
+    "cta": {
+      "primary": "Start today",
+      "secondary": "View program"
+    },
+    "stats": {
+      "sessions": {
+        "value": "10",
+        "label": "Practical sessions"
+      },
+      "students": {
+        "value": "50+",
+        "label": "Active students"
+      },
+      "apps": {
+        "value": "100%",
+        "label": "With working app"
+      }
+    }
+  },
+  "forWho": {
+    "items": {
+      "0": {
+        "title": "You have ideas, not code",
+        "description": "Validate your MVP in 2 weeks. Don't wait 6 months learning syntax."
+      },
+      "1": {
+        "title": "Entrepreneur without budget",
+        "description": "Build your v1.0 without spending $10K on developers. Do it yourself."
+      },
+      "2": {
+        "title": "Career change to tech",
+        "description": "Test if development is for you in 2 weeks. No risk."
+      }
+    }
+  },
+  "problem": {
+    "title": {
+      "normal": "Traditional bootcamps are ",
+      "gradient": "hacked for the past"
+    },
+    "items": [
+      "6 months for Hello World",
+      "$5,000 for 1990s paradigms",
+      "15% completed, zero guarantees"
+    ],
+    "conclusion": {
+      "prefix": "→ There's a better way. It's called ",
+      "brand": "VibeCoding."
+    }
+  },
+  "layers": {
+    "title": "We don't teach recipes. We teach ingredients.",
+    "subtitle": "All apps use these 5 layers. Once you master them, you can build ANYTHING.",
+    "items": {
+      "0": {
+        "name": "Deploy",
+        "description": "Make it public",
+        "detail": "Learn to publish your app so anyone in the world can access it.",
+        "tools": ["Vercel", "Netlify", "GitHub Pages"]
+      },
+      "1": {
+        "name": "Auth",
+        "description": "Login and users",
+        "detail": "Implement secure authentication systems. Each user has their account and private data.",
+        "tools": ["Privy", "NextAuth", "Supabase Auth"]
+      },
+      "2": {
+        "name": "AI",
+        "description": "Artificial intelligence",
+        "detail": "Integrate language and vision models so your app thinks and responds intelligently.",
+        "tools": ["Claude API", "OpenAI", "Replicate"]
+      },
+      "3": {
+        "name": "Data",
+        "description": "Database",
+        "detail": "Save and retrieve data. From localStorage to cloud databases.",
+        "tools": ["localStorage", "Supabase", "Firebase"]
+      },
+      "4": {
+        "name": "UI",
+        "description": "Interface",
+        "detail": "Create beautiful and functional visual interfaces with responsive design.",
+        "tools": ["React", "Tailwind", "shadcn/ui"]
+      }
+    },
+    "secret": {
+      "title": "🔑 The Secret",
+      "line1": "We use AI (v0, Claude, Cursor) to write the code for you.",
+      "line2": "You learn to DIRECT, not to write syntax manually."
+    }
+  },
+  "journey": {
+    "title": "Your 2-week journey",
+    "subtitle": "5 sessions · 5 mini-deliveries · 1 complete project",
+    "description": "Each session builds on the previous one. At the end of each session, you'll have something new working. No theory without practice.",
+    "duration": "75 minutes",
+    "sessions": [
+      {
+        "emoji": "🥚",
+        "title": "Your Regenmon is Born",
+        "session": 1,
+        "aprenderas": [
+          "How prompt→code works with v0",
+          "What components are and how they're organized",
+          "Making info persist (localStorage)"
+        ],
+        "construiras": [
+          "Your Regenmon display (Tamagotchi visual)",
+          "Creation modal (name + type)",
+          "Stats system with visual bars"
+        ],
+        "resultado": "App online where you create your Regenmon and return without losing progress."
+      },
+      {
+        "emoji": "💬",
+        "title": "Your Regenmon Talks",
+        "session": 2,
+        "aprenderas": [
+          "How LLMs work (mental model)",
+          "What an API is and how to connect",
+          "Creating \"personality\" with prompts"
+        ],
+        "construiras": [
+          "Complete chat interface",
+          "Claude API integration",
+          "Stats affect response tone"
+        ],
+        "resultado": "Your Regenmon converses. If happy, it's enthusiastic. If low energy, it responds tired."
+      },
+      {
+        "emoji": "💛",
+        "title": "Your Regenmon Gets a Wallet",
+        "session": 3,
+        "aprenderas": [
+          "What a wallet is (digital identity)",
+          "Tokens as resources in apps",
+          "Reading balances and simple transactions"
+        ],
+        "construiras": [
+          "Wallet login (Privy)",
+          "$FRUTA token balance",
+          "\"Feed\" button that spends tokens"
+        ],
+        "resultado": "Your Regenmon has blockchain identity. You can feed it by spending tokens."
+      },
+      {
+        "emoji": "🌟",
+        "title": "Your Regenmon Evolves",
+        "session": 4,
+        "aprenderas": [
+          "How AI \"sees\" images",
+          "Evaluating content with multimodal APIs",
+          "Progression and reward systems"
+        ],
+        "construiras": [
+          "Image upload (drag-and-drop)",
+          "Claude Vision to evaluate photos",
+          "3 evolution stages"
+        ],
+        "resultado": "Upload photos of positive actions. AI evaluates them, gives you points. Your Regenmon evolves."
+      },
+      {
+        "emoji": "👥",
+        "title": "Your Regenmon Finds Friends",
+        "session": 5,
+        "aprenderas": [
+          "Basic relational databases",
+          "Queries to read others' data",
+          "Rendering dynamic lists"
+        ],
+        "construiras": [
+          "Public Regenmon gallery",
+          "Other users' profiles",
+          "\"Likes\" or interaction system"
+        ],
+        "resultado": "Your app is social. You see other Regenmons, interact, compete in rankings."
+      }
+    ],
+    "labels": {
+      "session": "Session",
+      "aprenderas": "You'll learn:",
+      "construiras": "You'll build:",
+      "resultado": "Result: "
+    }
+  },
+  "includes": {
+    "title": {
+      "normal": "✅ What's included in ",
+      "gradient": "your investment"
+    },
+    "items": [
+      "5 live sessions (75 min each)",
+      "Permanent recordings",
+      "Discord support <24hrs",
+      "2 office hours per week",
+      "1,000+ builders community",
+      "Verifiable certificate",
+      "Portfolio project",
+      "Code templates"
+    ]
+  },
+  "isForYou": {
+    "title": "Is VibeCoding for you?",
+    "subtitle": "Be honest with yourself. This isn't for everyone.",
+    "forYou": {
+      "title": "IT'S FOR YOU IF...",
+      "items": {
+        "0": "You have ideas but don't know how to code",
+        "1": "You're an entrepreneur without budget for developers",
+        "2": "You want to switch careers to tech"
+      }
+    },
+    "notForYou": {
+      "title": "IT'S NOT FOR YOU IF...",
+      "items": {
+        "0": "You're looking for traditional formal certification",
+        "1": "You prefer theory over practice",
+        "2": "You can't commit 1-2 hrs per session"
+      }
+    }
+  },
+  "pricing": {
+    "title": {
+      "normal": "Invest in your future ",
+      "gradient": "as a creator"
+    },
+    "price": {
+      "current": "$0 USD",
+      "original": "$150 USD",
+      "badge": "100% discount for limited time"
+    },
+    "features": [
+      "5 live sessions",
+      "Permanent recordings",
+      "Discord support <24hrs",
+      "2 office hours/week",
+      "1,000+ builders community",
+      "Verifiable certificate",
+      "Portfolio-ready project",
+      "Templates + code base"
+    ],
+    "details": [
+      { "text": "Start: February 10, 2025" },
+      { "text": "Schedule: Mon/Wed/Fri 7-8:15pm CDMX" },
+      { "text": "100% virtual, Spanish" },
+      { "text": "Maximum 30 participants" }
+    ],
+    "cta": {
+      "primary": "Secure my spot",
+      "secondary": "Questions? → Contact us on X"
+    }
+  },
+  "faq": {
+    "title": "Frequently asked questions",
+    "items": [
+      {
+        "question": "Do I need to know how to code?",
+        "answer": "No. The bootcamp is designed for people with no prior programming experience. You'll learn to use AI to write code for you."
+      },
+      {
+        "question": "What's the refund policy?",
+        "answer": "If you're not satisfied after the first session, we'll refund 100% of your investment with no questions asked."
+      },
+      {
+        "question": "How much time should I dedicate per week?",
+        "answer": "Live sessions are 75 minutes (3 times per week). We recommend dedicating 1-2 additional hours for practice."
+      },
+      {
+        "question": "Are sessions live or recorded?",
+        "answer": "Sessions are 100% live with direct interaction. All sessions are recorded so you can review them whenever you want."
+      }
+    ],
+    "cta": {
+      "answered": "Did we answer your questions?",
+      "join": "Yes, I want to join",
+      "other": "Another question? → hello@frutero.club"
+    }
+  },
+  "finalCTA": {
+    "title": "From consumer to creator in 2 weeks",
+    "description": "The difference between those who try and those who succeed isn't talent. It's execution. VibeCoding gives you the tools, community, and system to go from idea to app in 14 days. No excuses. No \"someday\". No waiting for permission.",
+    "cta": "Secure my spot now"
+  },
+  "footer": {
+    "copyright": "© 2025 VibeCoding. All rights reserved.",
+    "contact": "brian@frutero.club"
+  }
+}

@@ -1,0 +1,7 @@
+# Validar traducciones i18n
+echo "🔍 Validando traducciones i18n..."
+npm run i18n:validate || exit 1
+
+# Ejecutar tests
+echo "🧪 Ejecutando tests..."
+npm test

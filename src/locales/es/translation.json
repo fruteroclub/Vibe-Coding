@@ -1,0 +1,307 @@
+{
+  "navbar": {
+    "links": {
+      "programa": "Programa",
+      "paraQuien": "¿Para quién?",
+      "problemas": "Problemas",
+      "faq": "FAQ",
+      "precio": "Precio"
+    },
+    "cta": "Únete ahora"
+  },
+  "hero": {
+    "badge": "Bootcamp de Desarrollo con IA",
+    "title": {
+      "prefix": "VibeCoding: ",
+      "highlight": "De Idea a App",
+      "suffix": " en 2 semanas con IA"
+    },
+    "subtitle": "Aprende a programar usando Claude, Cursor y las herramientas que los devs profesionales usan hoy. Sin perder meses en tutoriales. Sin teoría aburrida. Solo código real y apps funcionando.",
+    "cta": {
+      "primary": "Empieza hoy",
+      "secondary": "Ver programa"
+    },
+    "stats": {
+      "sessions": {
+        "value": "10",
+        "label": "Sesiones prácticas"
+      },
+      "students": {
+        "value": "50+",
+        "label": "Estudiantes activos"
+      },
+      "apps": {
+        "value": "100%",
+        "label": "Con app funcional"
+      }
+    }
+  },
+  "forWho": {
+    "items": {
+      "0": {
+        "title": "Tienes ideas, no código",
+        "description": "Valida tu MVP en 2 semanas. No esperes 6 meses aprendiendo sintaxis."
+      },
+      "1": {
+        "title": "Emprendedor sin budget",
+        "description": "Construye tu v1.0 sin gastar $10K en developers. Hazlo tú mismo."
+      },
+      "2": {
+        "title": "Cambio de carrera a tech",
+        "description": "Prueba si el desarrollo es para ti en 2 semanas. Sin riesgo."
+      }
+    }
+  },
+  "problem": {
+    "title": {
+      "normal": "Los bootcamps tradicionales están ",
+      "gradient": "hackeados para el pasado"
+    },
+    "items": [
+      "6 meses para Hello World",
+      "$5,000 para paradigmas de 1990",
+      "15% completado, cero garantías"
+    ],
+    "conclusion": {
+      "prefix": "→ Hay una mejor forma. Se llama ",
+      "brand": "VibeCoding."
+    }
+  },
+  "layers": {
+    "title": "No enseñamos recetas. Enseñamos ingredientes.",
+    "subtitle": "Todas las apps usan estas 5 capas. Una vez que las dominas, puedes construir LO QUE SEA.",
+    "items": {
+      "0": {
+        "name": "Deploy",
+        "description": "Hazlo público",
+        "detail": "Aprende a publicar tu app para que cualquier persona en el mundo pueda acceder.",
+        "tools": ["Vercel", "Netlify", "GitHub Pages"]
+      },
+      "1": {
+        "name": "Auth",
+        "description": "Login y usuarios",
+        "detail": "Implementa sistemas de autenticación seguros. Cada usuario tiene su cuenta y datos privados.",
+        "tools": ["Privy", "NextAuth", "Supabase Auth"]
+      },
+      "2": {
+        "name": "AI",
+        "description": "Inteligencia artificial",
+        "detail": "Integra modelos de lenguaje y visión para que tu app piense y responda inteligentemente.",
+        "tools": ["Claude API", "OpenAI", "Replicate"]
+      },
+      "3": {
+        "name": "Data",
+        "description": "Base de datos",
+        "detail": "Guarda y recupera datos. Desde localStorage hasta bases de datos en la nube.",
+        "tools": ["localStorage", "Supabase", "Firebase"]
+      },
+      "4": {
+        "name": "UI",
+        "description": "Interfaz",
+        "detail": "Crea interfaces visuales hermosas y funcionales con diseño responsivo.",
+        "tools": ["React", "Tailwind", "shadcn/ui"]
+      }
+    },
+    "secret": {
+      "title": "🔑 El Secreto",
+      "line1": "Usamos IA (v0, Claude, Cursor) para escribir el código por ti.",
+      "line2": "Tú aprendes a DIRIGIR, no a escribir sintaxis manualmente."
+    }
+  },
+  "journey": {
+    "title": "Tu viaje en 2 semanas",
+    "subtitle": "5 sesiones · 5 mini-entregas · 1 proyecto completo",
+    "description": "Cada sesión construye sobre la anterior. Al final de cada sesión, tendrás algo nuevo funcionando. No hay teoría sin práctica.",
+    "duration": "75 minutos",
+    "sessions": [
+      {
+        "emoji": "🥚",
+        "title": "Nace tu Regenmon",
+        "session": 1,
+        "aprenderas": [
+          "Cómo funciona prompt→código con v0",
+          "Qué son componentes y cómo se organizan",
+          "Hacer que la info persista (localStorage)"
+        ],
+        "construiras": [
+          "Display de tu Regenmon (visual Tamagotchi)",
+          "Modal de creación (nombre + tipo)",
+          "Sistema de stats con barras visuales"
+        ],
+        "resultado": "App en internet donde creas tu Regenmon y regresas sin perder progreso."
+      },
+      {
+        "emoji": "💬",
+        "title": "Tu Regenmon Habla",
+        "session": 2,
+        "aprenderas": [
+          "Cómo funcionan los LLMs (mental model)",
+          "Qué es una API y cómo conectarte",
+          "Crear \"personalidad\" con prompts"
+        ],
+        "construiras": [
+          "Interfaz de chat completa",
+          "Integración con Claude API",
+          "Stats afectan tono de respuestas"
+        ],
+        "resultado": "Tu Regenmon conversa. Si está feliz, es entusiasta. Si tiene baja energía, responde cansado."
+      },
+      {
+        "emoji": "💛",
+        "title": "Tu Regenmon Tiene Wallet",
+        "session": 3,
+        "aprenderas": [
+          "Qué es una wallet (identidad digital)",
+          "Tokens como recursos en apps",
+          "Leer balances y transacciones simples"
+        ],
+        "construiras": [
+          "Login con wallet (Privy)",
+          "Balance de tokens $FRUTA",
+          "Botón \"Alimentar\" que gasta tokens"
+        ],
+        "resultado": "Tu Regenmon tiene identidad blockchain. Puedes alimentarlo gastando tokens."
+      },
+      {
+        "emoji": "🌟",
+        "title": "Tu Regenmon Evoluciona",
+        "session": 4,
+        "aprenderas": [
+          "Cómo la IA \"ve\" imágenes",
+          "Evaluar contenido con APIs multimodales",
+          "Sistemas de progresión y recompensas"
+        ],
+        "construiras": [
+          "Upload de imágenes (drag-and-drop)",
+          "Claude Vision para evaluar fotos",
+          "3 etapas de evolución"
+        ],
+        "resultado": "Subes fotos de acciones positivas. La IA las evalúa, te da puntos. Tu Regenmon evoluciona."
+      },
+      {
+        "emoji": "👥",
+        "title": "Tu Regenmon Encuentra Amigos",
+        "session": 5,
+        "aprenderas": [
+          "Bases de datos relacionales básicas",
+          "Queries para leer data de otros",
+          "Renderizar listas dinámicas"
+        ],
+        "construiras": [
+          "Galería pública de Regenmons",
+          "Perfiles de otros usuarios",
+          "Sistema de \"likes\" o interacciones"
+        ],
+        "resultado": "Tu app es social. Ves otros Regenmons, interactúas, compites en rankings."
+      }
+    ],
+    "labels": {
+      "session": "Sesión",
+      "aprenderas": "Aprenderás:",
+      "construiras": "Construirás:",
+      "resultado": "Resultado: "
+    }
+  },
+  "includes": {
+    "title": {
+      "normal": "✅ Qué incluye ",
+      "gradient": "tu inversión"
+    },
+    "items": [
+      "5 sesiones en vivo (75 min c/u)",
+      "Grabaciones permanentes",
+      "Soporte Discord <24hrs",
+      "2 office hours por semana",
+      "Comunidad 1,000+ builders",
+      "Certificado verificable",
+      "Proyecto en portfolio",
+      "Templates de código"
+    ]
+  },
+  "isForYou": {
+    "title": "¿Es VibeCoding para ti?",
+    "subtitle": "Sé honesto contigo mismo. Esto no es para todos.",
+    "forYou": {
+      "title": "ES PARA TI SI...",
+      "items": {
+        "0": "Tienes ideas pero no sabes programar",
+        "1": "Eres emprendedor sin presupuesto para devs",
+        "2": "Quieres cambiar de carrera a tech"
+      }
+    },
+    "notForYou": {
+      "title": "NO ES PARA TI SI...",
+      "items": {
+        "0": "Buscas certificación formal tradicional",
+        "1": "Prefieres teoría antes que práctica",
+        "2": "No puedes comprometer 1-2 hrs por sesión"
+      }
+    }
+  },
+  "pricing": {
+    "title": {
+      "normal": "Invierte en tu futuro ",
+      "gradient": "como creador"
+    },
+    "price": {
+      "current": "$0 USD",
+      "original": "$150 USD",
+      "badge": "100% descuento por tiempo limitado"
+    },
+    "features": [
+      "5 sesiones en vivo",
+      "Grabaciones permanentes",
+      "Soporte Discord <24hrs",
+      "2 office hours/semana",
+      "Comunidad 1,000+ builders",
+      "Certificado verificable",
+      "Proyecto portfolio-ready",
+      "Templates + código base"
+    ],
+    "details": [
+      { "text": "Inicio: Febrero 10, 2025" },
+      { "text": "Horario: Lun/Mié/Vie 7-8:15pm CDMX" },
+      { "text": "100% virtual, español" },
+      { "text": "Máximo 30 participantes" }
+    ],
+    "cta": {
+      "primary": "Asegurar mi lugar",
+      "secondary": "¿Dudas? → Contáctanos en X"
+    }
+  },
+  "faq": {
+    "title": "Preguntas frecuentes",
+    "items": [
+      {
+        "question": "¿Necesito saber programar?",
+        "answer": "No. El bootcamp está diseñado para personas sin experiencia previa en programación. Aprenderás a usar IA para escribir código por ti."
+      },
+      {
+        "question": "¿Cuál es la política de reembolso?",
+        "answer": "Si no estás satisfecho después de la primera sesión, te devolvemos el 100% de tu inversión sin preguntas."
+      },
+      {
+        "question": "¿Cuánto tiempo debo dedicar por semana?",
+        "answer": "Las sesiones en vivo son de 75 minutos (3 veces por semana). Recomendamos dedicar 1-2 horas adicionales para práctica."
+      },
+      {
+        "question": "¿Las sesiones son en vivo o grabadas?",
+        "answer": "Las sesiones son 100% en vivo con interacción directa. Todas las sesiones quedan grabadas para que puedas repasarlas cuando quieras."
+      }
+    ],
+    "cta": {
+      "answered": "¿Respondimos tus dudas?",
+      "join": "Sí, quiero unirme",
+      "other": "¿Otra pregunta? → hola@frutero.club"
+    }
+  },
+  "finalCTA": {
+    "title": "De consumidor a creador en 2 semanas",
+    "description": "La diferencia entre los que lo intentan y los que lo logran no es talento. Es ejecución. VibeCoding te da las herramientas, la comunidad y el sistema para pasar de idea a app en 14 días. Sin pretextos. Sin \"algún día\". Sin esperar permiso.",
+    "cta": "Asegurar mi lugar ahora"
+  },
+  "footer": {
+    "copyright": "© 2025 VibeCoding. Todos los derechos reservados.",
+    "contact": "brian@frutero.club"
+  }
+}
