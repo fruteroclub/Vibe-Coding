@@ -21,23 +21,23 @@
       "highlight": "Idea to App",
       "suffix": " in 2 weeks with AI"
     },
-    "subtitle": "Learn to code using Claude, Cursor, and the tools professional developers use today. No months wasted on tutorials. No boring theory. Just real code and working apps.",
+    "subtitle": "Learn to code using V0, Claude, and the tools professional developers use today. No months wasted on tutorials. No boring theory. Just real code and working apps.",
     "cta": {
       "primary": "Start today",
       "secondary": "View program"
     },
     "stats": {
       "sessions": {
-        "value": "10",
+        "value": "6",
         "label": "Practical sessions"
       },
       "students": {
-        "value": "50+",
+        "value": "30+",
         "label": "Active students"
       },
-      "apps": {
+      "deployment": {
         "value": "100%",
-        "label": "With working app"
+        "label": "Cloud deployment"
       }
     }
   },
@@ -115,7 +115,7 @@
   },
   "journey": {
     "title": "Your 2-week journey",
-    "subtitle": "5 sessions · 5 mini-deliveries · 1 complete project",
+    "subtitle": "6 sessions · 5 mini-deliveries · 1 complete project",
     "description": "Each session builds on the previous one. At the end of each session, you'll have something new working. No theory without practice.",
     "duration": "75 minutes",
     "sessions": [
@@ -146,26 +146,26 @@
         ],
         "construiras": [
           "Complete chat interface",
-          "Claude API integration",
+          "API integration",
           "Stats affect response tone"
         ],
         "resultado": "Your Regenmon converses. If happy, it's enthusiastic. If low energy, it responds tired."
       },
       {
         "emoji": "💛",
-        "title": "Your Regenmon Gets a Wallet",
+        "title": "Your Regenmon Gets Identity",
         "session": 3,
         "aprenderas": [
-          "What a wallet is (digital identity)",
-          "Tokens as resources in apps",
-          "Reading balances and simple transactions"
+          "Modern authentication systems",
+          "User and session management",
+          "Virtual coins in your app"
         ],
         "construiras": [
-          "Wallet login (Privy)",
-          "$FRUTA token balance",
-          "\"Feed\" button that spends tokens"
+          "Login with Privy",
+          "$FRUTA coin balance",
+          "\"Feed\" button that spends coins"
         ],
-        "resultado": "Your Regenmon has blockchain identity. You can feed it by spending tokens."
+        "resultado": "Your Regenmon has its own account. You can feed it by spending virtual coins."
       },
       {
         "emoji": "🌟",
@@ -213,11 +213,11 @@
       "gradient": "your investment"
     },
     "items": [
-      "5 live sessions (75 min each)",
+      "6 practical sessions",
       "Permanent recordings",
       "Discord support <24hrs",
       "2 office hours per week",
-      "1,000+ builders community",
+      "500+ builders community",
       "Verifiable certificate",
       "Portfolio project",
       "Code templates"
@@ -250,7 +250,7 @@
     },
     "price": {
       "current": "$0 USD",
-      "original": "$150 USD",
+      "original": "$30 USD",
       "badge": "100% discount for limited time"
     },
     "features": [
@@ -258,15 +258,15 @@
       "Permanent recordings",
       "Discord support <24hrs",
       "2 office hours/week",
-      "1,000+ builders community",
+      "500+ builders community",
       "Verifiable certificate",
       "Portfolio-ready project",
       "Templates + code base"
     ],
     "details": [
       { "text": "Start: February 10, 2025" },
-      { "text": "Schedule: Mon/Wed/Fri 7-8:15pm CDMX" },
-      { "text": "100% virtual, Spanish" },
+      { "text": "Days: Mon/Wed/Fri" },
+      { "text": "In-person + Virtual" },
       { "text": "Maximum 30 participants" }
     ],
     "cta": {
@@ -282,8 +282,8 @@
         "answer": "No. The bootcamp is designed for people with no prior programming experience. You'll learn to use AI to write code for you."
       },
       {
-        "question": "What's the refund policy?",
-        "answer": "If you're not satisfied after the first session, we'll refund 100% of your investment with no questions asked."
+        "question": "What if I miss a session?",
+        "answer": "All sessions are recorded and available permanently. You can watch them whenever you want and progress at your own pace."
       },
       {
         "question": "How much time should I dedicate per week?",
@@ -347,7 +347,7 @@
       },
       "auth": {
         "name": "Auth",
-        "description": "Privy Wallet Login"
+        "description": "Login with Privy"
       },
       "deploy": {
         "name": "Deploy",
@@ -368,7 +368,7 @@
       "ai": "Curriculum",
       "session1": "Session 1: Birth",
       "session2": "Session 2: Conversation",
-      "session3": "Session 3: Wallet",
+      "session3": "Session 3: Identity",
       "session4": "Session 4: Evolution",
       "session5": "Session 5: Social"
     },
@@ -553,7 +553,7 @@
         "system prompt": "Permanent instructions that define LLM behavior",
         "API route": "Endpoint in Next.js that executes server-side code",
         "asíncronas": "Operations that don't block code execution (await/async)",
-        "Privy SDK": "Development kit for wallet authentication",
+        "Privy SDK": "Development kit for user authentication",
         "PrivyProvider": "React component that provides authentication to the entire app",
         "endpoint": "Specific API URL that executes a function",
         "POST": "HTTP method to send data to server",
@@ -669,7 +669,7 @@
     },
     "quickStartPage": {
       "title": "Quick Start",
-      "subtitle": "Step-by-step guide to create your first Regenmon. In 5 sessions you'll go from zero code to a functional AI-powered app.",
+      "subtitle": "Step-by-step guide to create your first Regenmon. In 6 sessions you'll go from zero code to a functional AI-powered app.",
       "subsections": {
         "prompt": "Prompt",
         "deliverable": "Deliverable",
@@ -682,7 +682,7 @@
           "Is born and evolves based on how you care for it",
           "Converses with you using artificial intelligence",
           "Has a unique personality that changes over time",
-          "Earns tokens when you do regenerative actions",
+          "Earns coins when you do regenerative actions",
           "Interacts with your friends' pets"
         ]
       },
@@ -753,11 +753,11 @@
             "Save progress in the cloud",
             "Coins system per user"
           ],
-          "deliverable": "Authentication system with Privy integrated, where each user can access with their wallet, see their unique pet, and have persistent $FRUTA coin balance.",
+          "deliverable": "Authentication system with Privy integrated, where each user can access with their account, see their unique pet, and have persistent $FRUTA coin balance.",
           "supportMaterial": [
             "Official Privy SDK documentation",
             "Tutorial: PrivyProvider setup",
-            "Wallets guide for beginners",
+            "Authentication guide for beginners",
             "Login interface examples"
           ]
         },
@@ -768,7 +768,7 @@
           "whatYouBuild": [
             "Visual evolution stages",
             "Mission and reward system",
-            "Upload photos to earn tokens",
+            "Upload photos to earn coins",
             "AI that evaluates your actions"
           ],
           "deliverable": "Evolution system with multiple visual stages (baby, young, adult), completable missions that award $FRUTA, and image upload function that Claude Vision evaluates to give rewards.",
@@ -789,7 +789,7 @@
             "Interactions between pets",
             "Items marketplace"
           ],
-          "deliverable": "Social feed where you see other players' pets, ranking by $FRUTA tokens, interaction system (greet, gift), and marketplace to exchange items using your coins.",
+          "deliverable": "Social feed where you see other players' pets, ranking by $FRUTA coins, interaction system (greet, gift), and marketplace to exchange items using your coins.",
           "supportMaterial": [
             "Tutorial: Supabase queries for public data",
             "Guide to social components in React",
@@ -804,8 +804,8 @@
         "session1Prompt": "Create a React component called RegenmonDisplay that shows:\n\n1. A Tamagotchi-style container with rounded borders and gradient background\n2. A centered pet image (use a placeholder for now)\n3. Three progress bars below:\n   - Happiness (green color)\n   - Energy (blue color)\n   - Level (purple color)\n4. Each bar should show the percentage with a number\n5. An orange button \"Create Regenmon\" that opens a modal\n6. The modal should have:\n   - Input for name\n   - Selector for type (Fire, Water, Earth)\n   - Confirm button\n\nUse Tailwind CSS with modern glassmorphism style. Bars should be animated.",
         "session2Prompt": "Create a ChatInterface component that:\n\n1. Has a scrollable message area\n2. Shows chat bubbles:\n   - User messages aligned right (orange background)\n   - Regenmon messages aligned left (gray background)\n3. Input at the bottom with:\n   - Text field to write\n   - Send button with icon\n   - Loading spinner when processing\n4. Shows \"Writing...\" when AI is responding\n5. Uses useState to handle messages\n6. Includes a button to clear chat\n\nStyle: Modern with glassmorphism, smooth animations when messages appear.",
         "session3Prompt": "Create a simple LoginScreen component:\n\n1. Centered welcome screen\n2. Game logo or title at top\n3. Large \"Enter\" button that simulates login\n4. After login, shows username at top\n5. Small \"Logout\" button in top right corner\n6. Uses localStorage to remember if user logged in\n\nStyle: Minimalist and clean, uses orange and gray colors.",
-        "session4Prompt": "Create an EvolutionSystem component:\n\n1. Shows current Regenmon stage:\n   - Baby (level 1-5)\n   - Young (level 6-10)\n   - Adult (level 11+)\n2. Progress bar to next evolution\n3. Daily missions section:\n   - List of 3 missions\n   - Checkbox to complete\n   - Token reward\n4. \"Upload Photo\" button that opens:\n   - Drop area to drag image\n   - Image preview\n   - \"Evaluate\" button that simulates AI\n5. Shows earned tokens with animation\n\nStyle: Cards with glassmorphism, modern icons.",
-        "session5Prompt": "Create a SocialHub component:\n\n1. User pets gallery:\n   - Grid of cards with photo, name and level\n   - Clicking shows details\n2. Rankings table:\n   - Top 10 users by tokens\n   - Avatar, name, tokens, position\n3. Button to interact with another pet\n4. Marketplace section:\n   - Grid of items (food, accessories)\n   - Price in tokens\n   - Buy button\n\nStyle: Professional, use tabs to separate sections, smooth animations."
+        "session4Prompt": "Create an EvolutionSystem component:\n\n1. Shows current Regenmon stage:\n   - Baby (level 1-5)\n   - Young (level 6-10)\n   - Adult (level 11+)\n2. Progress bar to next evolution\n3. Daily missions section:\n   - List of 3 missions\n   - Checkbox to complete\n   - Coin reward\n4. \"Upload Photo\" button that opens:\n   - Drop area to drag image\n   - Image preview\n   - \"Evaluate\" button that simulates AI\n5. Shows earned coins with animation\n\nStyle: Cards with glassmorphism, modern icons.",
+        "session5Prompt": "Create a SocialHub component:\n\n1. User pets gallery:\n   - Grid of cards with photo, name and level\n   - Clicking shows details\n2. Rankings table:\n   - Top 10 users by coins\n   - Avatar, name, coins, position\n3. Button to interact with another pet\n4. Marketplace section:\n   - Grid of items (food, accessories)\n   - Price in coins\n   - Buy button\n\nStyle: Professional, use tabs to separate sections, smooth animations."
       }
     },
     "layersPage": {
@@ -921,7 +921,7 @@
       },
       "bootcampProgress": {
         "title": "Bootcamp Progression",
-        "description": "How you'll build your app layer by layer throughout the 5 sessions."
+        "description": "How you'll build your app layer by layer throughout the 6 sessions."
       },
       "whyItMatters": {
         "title": "Why This Framework Matters",

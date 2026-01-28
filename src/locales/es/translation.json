@@ -21,23 +21,23 @@
       "highlight": "De Idea a App",
       "suffix": " en 2 semanas con IA"
     },
-    "subtitle": "Aprende a programar usando Claude, Cursor y las herramientas que los devs profesionales usan hoy. Sin perder meses en tutoriales. Sin teoría aburrida. Solo código real y apps funcionando.",
+    "subtitle": "Aprende a programar usando V0, Claude y las herramientas que los devs profesionales usan hoy. Sin perder meses en tutoriales. Sin teoría aburrida. Solo código real y apps funcionando.",
     "cta": {
       "primary": "Empieza hoy",
       "secondary": "Ver programa"
     },
     "stats": {
       "sessions": {
-        "value": "10",
+        "value": "6",
         "label": "Sesiones prácticas"
       },
       "students": {
-        "value": "50+",
+        "value": "30+",
         "label": "Estudiantes activos"
       },
-      "apps": {
+      "deployment": {
         "value": "100%",
-        "label": "Con app funcional"
+        "label": "Deploy en la nube"
       }
     }
   },
@@ -115,7 +115,7 @@
   },
   "journey": {
     "title": "Tu viaje en 2 semanas",
-    "subtitle": "5 sesiones · 5 mini-entregas · 1 proyecto completo",
+    "subtitle": "6 sesiones · 5 mini-entregas · 1 proyecto completo",
     "description": "Cada sesión construye sobre la anterior. Al final de cada sesión, tendrás algo nuevo funcionando. No hay teoría sin práctica.",
     "duration": "75 minutos",
     "sessions": [
@@ -146,26 +146,26 @@
         ],
         "construiras": [
           "Interfaz de chat completa",
-          "Integración con Claude API",
+          "Integración con API",
           "Stats afectan tono de respuestas"
         ],
         "resultado": "Tu Regenmon conversa. Si está feliz, es entusiasta. Si tiene baja energía, responde cansado."
       },
       {
         "emoji": "💛",
-        "title": "Tu Regenmon Tiene Wallet",
+        "title": "Tu Regenmon Tiene Identidad",
         "session": 3,
         "aprenderas": [
-          "Qué es una wallet (identidad digital)",
-          "Tokens como recursos en apps",
-          "Leer balances y transacciones simples"
+          "Sistemas de autenticación modernos",
+          "Gestión de usuarios y sesiones",
+          "Monedas virtuales en tu app"
         ],
         "construiras": [
-          "Login con wallet (Privy)",
-          "Balance de tokens $FRUTA",
-          "Botón \"Alimentar\" que gasta tokens"
+          "Login con Privy",
+          "Balance de monedas $FRUTA",
+          "Botón \"Alimentar\" que gasta monedas"
         ],
-        "resultado": "Tu Regenmon tiene identidad blockchain. Puedes alimentarlo gastando tokens."
+        "resultado": "Tu Regenmon tiene cuenta propia. Puedes alimentarlo gastando monedas virtuales."
       },
       {
         "emoji": "🌟",
@@ -213,11 +213,11 @@
       "gradient": "tu inversión"
     },
     "items": [
-      "5 sesiones en vivo (75 min c/u)",
+      "6 sesiones prácticas",
       "Grabaciones permanentes",
       "Soporte Discord <24hrs",
       "2 office hours por semana",
-      "Comunidad 1,000+ builders",
+      "Comunidad 500+ builders",
       "Certificado verificable",
       "Proyecto en portfolio",
       "Templates de código"
@@ -250,23 +250,23 @@
     },
     "price": {
       "current": "$0 USD",
-      "original": "$150 USD",
+      "original": "$30 USD",
       "badge": "100% descuento por tiempo limitado"
     },
     "features": [
-      "5 sesiones en vivo",
+      "6 sesiones en vivo",
       "Grabaciones permanentes",
       "Soporte Discord <24hrs",
       "2 office hours/semana",
-      "Comunidad 1,000+ builders",
+      "Comunidad 500+ builders",
       "Certificado verificable",
       "Proyecto portfolio-ready",
       "Templates + código base"
     ],
     "details": [
       { "text": "Inicio: Febrero 10, 2025" },
-      { "text": "Horario: Lun/Mié/Vie 7-8:15pm CDMX" },
-      { "text": "100% virtual, español" },
+      { "text": "Días: Lun/Mié/Vie" },
+      { "text": "Presencial + Virtual" },
       { "text": "Máximo 30 participantes" }
     ],
     "cta": {
@@ -282,8 +282,8 @@
         "answer": "No. El bootcamp está diseñado para personas sin experiencia previa en programación. Aprenderás a usar IA para escribir código por ti."
       },
       {
-        "question": "¿Cuál es la política de reembolso?",
-        "answer": "Si no estás satisfecho después de la primera sesión, te devolvemos el 100% de tu inversión sin preguntas."
+        "question": "¿Qué pasa si me pierdo una sesión?",
+        "answer": "Todas las sesiones quedan grabadas y disponibles permanentemente. Puedes verlas cuando quieras y avanzar a tu ritmo."
       },
       {
         "question": "¿Cuánto tiempo debo dedicar por semana?",
@@ -347,7 +347,7 @@
       },
       "auth": {
         "name": "Auth",
-        "description": "Privy Wallet Login"
+        "description": "Login con Privy"
       },
       "deploy": {
         "name": "Deploy",
@@ -368,7 +368,7 @@
       "ai": "Temario",
       "session1": "Sesión 1: Nacimiento",
       "session2": "Sesión 2: Conversación",
-      "session3": "Sesión 3: Wallet",
+      "session3": "Sesión 3: Identidad",
       "session4": "Sesión 4: Evolución",
       "session5": "Sesión 5: Social"
     },
@@ -553,7 +553,7 @@
         "system prompt": "Instrucciones permanentes que definen el comportamiento del LLM",
         "API route": "Endpoint en Next.js que ejecuta código en servidor",
         "asíncronas": "Operaciones que no bloquean el código (await/async)",
-        "Privy SDK": "Kit de desarrollo para autenticación con wallets",
+        "Privy SDK": "Kit de desarrollo para autenticación de usuarios",
         "PrivyProvider": "Componente de React que provee autenticación a toda la app",
         "endpoint": "URL específica de una API que ejecuta una función",
         "POST": "Método HTTP para enviar datos al servidor",
@@ -669,7 +669,7 @@
     },
     "quickStartPage": {
       "title": "Inicio Rápido",
-      "subtitle": "Guía paso a paso para crear tu primer Regenmon. En 5 sesiones pasarás de cero código a una app funcional con IA.",
+      "subtitle": "Guía paso a paso para crear tu primer Regenmon. En 6 sesiones pasarás de cero código a una app funcional con IA.",
       "subsections": {
         "prompt": "Prompt",
         "deliverable": "Entregable",
@@ -682,7 +682,7 @@
           "Nace y evoluciona según cómo la cuides",
           "Conversa contigo usando inteligencia artificial",
           "Tiene personalidad única que cambia con el tiempo",
-          "Gana tokens cuando haces acciones regenerativas",
+          "Gana monedas cuando haces acciones regenerativas",
           "Interactúa con otras mascotas de tus amigos"
         ]
       },
@@ -753,11 +753,11 @@
             "Guardar progreso en la nube",
             "Sistema de monedas por usuario"
           ],
-          "deliverable": "Sistema de autenticación con Privy integrado, donde cada usuario puede acceder con su wallet, ver su mascota única, y tener balance de monedas $FRUTA persistente.",
+          "deliverable": "Sistema de autenticación con Privy integrado, donde cada usuario puede acceder con su cuenta, ver su mascota única, y tener balance de monedas $FRUTA persistente.",
           "supportMaterial": [
             "Documentación oficial de Privy SDK",
             "Tutorial: Configuración de PrivyProvider",
-            "Guía de wallets para principiantes",
+            "Guía de autenticación para principiantes",
             "Ejemplos de interfaces de login"
           ]
         },
@@ -768,7 +768,7 @@
           "whatYouBuild": [
             "Etapas de evolución visual",
             "Sistema de misiones y recompensas",
-            "Subir fotos para ganar tokens",
+            "Subir fotos para ganar monedas",
             "IA que evalúa tus acciones"
           ],
           "deliverable": "Sistema de evolución con múltiples etapas visuales (bebé, joven, adulto), misiones completables que otorgan $FRUTA, y función de subir imágenes que Claude Vision evalúa para dar recompensas.",
@@ -789,7 +789,7 @@
             "Interacciones entre mascotas",
             "Marketplace de items"
           ],
-          "deliverable": "Feed social donde ves mascotas de otros jugadores, ranking por tokens $FRUTA, sistema de interacciones (saludar, regalar), y marketplace para intercambiar items usando tus monedas.",
+          "deliverable": "Feed social donde ves mascotas de otros jugadores, ranking por monedas $FRUTA, sistema de interacciones (saludar, regalar), y marketplace para intercambiar items usando tus monedas.",
           "supportMaterial": [
             "Tutorial: Supabase queries para datos públicos",
             "Guía de componentes sociales en React",
@@ -804,8 +804,8 @@
         "session1Prompt": "Crea un componente React llamado RegenmonDisplay que muestre:\n\n1. Un contenedor estilo Tamagotchi con bordes redondeados y fondo degradado\n2. Una imagen de mascota centrada (usa un placeholder por ahora)\n3. Tres barras de progreso debajo:\n   - Felicidad (color verde)\n   - Energía (color azul)\n   - Nivel (color morado)\n4. Cada barra debe mostrar el porcentaje con un número\n5. Un botón naranja \"Crear Regenmon\" que abre un modal\n6. El modal debe tener:\n   - Input para el nombre\n   - Selector para el tipo (Fuego, Agua, Tierra)\n   - Botón de confirmar\n\nUsa Tailwind CSS con estilo moderno glassmorphism. Las barras deben ser animadas.",
         "session2Prompt": "Crea un componente ChatInterface que:\n\n1. Tenga un área de mensajes scrolleable\n2. Muestre burbujas de chat:\n   - Mensajes del usuario alineados a la derecha (fondo naranja)\n   - Mensajes del Regenmon alineados a la izquierda (fondo gris)\n3. Input en la parte inferior con:\n   - Campo de texto para escribir\n   - Botón de enviar con ícono\n   - Loading spinner cuando está procesando\n4. Muestra \"Escribiendo...\" cuando la IA está respondiendo\n5. Usa useState para manejar los mensajes\n6. Incluye un botón para limpiar el chat\n\nEstilo: Moderno con glassmorphism, animaciones suaves al aparecer mensajes.",
         "session3Prompt": "Crea un componente LoginScreen simple:\n\n1. Pantalla de bienvenida centrada\n2. Logo o título del juego arriba\n3. Botón grande \"Entrar\" que simula login\n4. Después del login, muestra el nombre de usuario arriba\n5. Botón pequeño \"Salir\" en la esquina superior derecha\n6. Usa localStorage para recordar si el usuario hizo login\n\nEstilo: Minimalista y limpio, usa colores naranja y gris.",
-        "session4Prompt": "Crea un componente EvolutionSystem:\n\n1. Muestra la etapa actual del Regenmon:\n   - Bebé (nivel 1-5)\n   - Joven (nivel 6-10)\n   - Adulto (nivel 11+)\n2. Barra de progreso hacia siguiente evolución\n3. Sección de misiones diarias:\n   - Lista de 3 misiones\n   - Checkbox para completar\n   - Recompensa en tokens\n4. Botón \"Subir Foto\" que abre:\n   - Área de drop para arrastrar imagen\n   - Preview de la imagen\n   - Botón \"Evaluar\" que simula IA\n5. Muestra tokens ganados con animación\n\nEstilo: Tarjetas con glassmorphism, iconos modernos.",
-        "session5Prompt": "Crea un componente SocialHub:\n\n1. Galería de mascotas de usuarios:\n   - Grid de cards con foto, nombre y nivel\n   - Al hacer clic muestra detalles\n2. Tabla de rankings:\n   - Top 10 usuarios por tokens\n   - Avatar, nombre, tokens, posición\n3. Botón para interactuar con otra mascota\n4. Sección de marketplace:\n   - Grid de items (comida, accesorios)\n   - Precio en tokens\n   - Botón comprar\n\nEstilo: Profesional, usa tabs para separar secciones, animaciones suaves."
+        "session4Prompt": "Crea un componente EvolutionSystem:\n\n1. Muestra la etapa actual del Regenmon:\n   - Bebé (nivel 1-5)\n   - Joven (nivel 6-10)\n   - Adulto (nivel 11+)\n2. Barra de progreso hacia siguiente evolución\n3. Sección de misiones diarias:\n   - Lista de 3 misiones\n   - Checkbox para completar\n   - Recompensa en monedas\n4. Botón \"Subir Foto\" que abre:\n   - Área de drop para arrastrar imagen\n   - Preview de la imagen\n   - Botón \"Evaluar\" que simula IA\n5. Muestra monedas ganadas con animación\n\nEstilo: Tarjetas con glassmorphism, iconos modernos.",
+        "session5Prompt": "Crea un componente SocialHub:\n\n1. Galería de mascotas de usuarios:\n   - Grid de cards con foto, nombre y nivel\n   - Al hacer clic muestra detalles\n2. Tabla de rankings:\n   - Top 10 usuarios por monedas\n   - Avatar, nombre, monedas, posición\n3. Botón para interactuar con otra mascota\n4. Sección de marketplace:\n   - Grid de items (comida, accesorios)\n   - Precio en monedas\n   - Botón comprar\n\nEstilo: Profesional, usa tabs para separar secciones, animaciones suaves."
       }
     },
     "layersPage": {
@@ -921,7 +921,7 @@
       },
       "bootcampProgress": {
         "title": "Progresión en el Bootcamp",
-        "description": "Cómo construirás tu app capa por capa a lo largo de las 5 sesiones."
+        "description": "Cómo construirás tu app capa por capa a lo largo de las 6 sesiones."
       },
       "whyItMatters": {
         "title": "Por Qué Importa Este Framework",

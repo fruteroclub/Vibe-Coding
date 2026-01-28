@@ -19,7 +19,8 @@ const Hero = () => {
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 animate-fade-in" style={{ animationDelay: '0.1s' }}>
           <span className="text-foreground">{t('hero.title.prefix')}</span>
           <span className="gradient-text">{t('hero.title.highlight')}</span>
-          <span className="text-foreground">{t('hero.title.suffix')}</span>
+          <br />
+          <span className="text-foreground text-3xl md:text-4xl lg:text-5xl">{t('hero.title.suffix')}</span>
         </h1>
 
         {/* Subheading */}
@@ -50,8 +51,8 @@ const Hero = () => {
           </div>
           <div className="w-1 h-1 rounded-full bg-muted-foreground hidden sm:block self-center" />
           <div className="flex items-center gap-2">
-            <span className="text-foreground font-semibold">{t('hero.stats.apps.value')}</span>
-            <span className="text-sm">{t('hero.stats.apps.label')}</span>
+            <span className="text-foreground font-semibold">{t('hero.stats.deployment.value')}</span>
+            <span className="text-sm">{t('hero.stats.deployment.label')}</span>
           </div>
         </div>
       </div>

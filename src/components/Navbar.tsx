@@ -52,9 +52,14 @@ const Navbar = () => {
               {t('navbar.links.faq')}
             </a>
 
-            <Link to="/#pricing" className="btn-primary-gradient text-sm px-6 py-2.5">
+            <a
+              href="https://tally.so/r/gDqk1M"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary-gradient text-sm px-6 py-2.5"
+            >
               {t('navbar.cta')}
-            </Link>
+            </a>
             <LanguageSwitcher />
           </div>
 
@@ -128,13 +133,15 @@ const Navbar = () => {
               {t('navbar.links.faq')}
             </a>
 
-            <Link
-              to="/#pricing"
+            <a
+              href="https://tally.so/r/gDqk1M"
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn-primary-gradient text-sm px-6 py-2.5 text-center"
               onClick={() => setIsOpen(false)}
             >
               {t('navbar.cta')}
-            </Link>
+            </a>
           </div>
         )}
       </div>
