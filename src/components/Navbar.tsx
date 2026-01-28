@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 import LanguageSwitcher from './LanguageSwitcher';
 
 const Navbar = () => {
@@ -12,21 +13,57 @@ const Navbar = () => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <a href="#" className="flex items-center">
+          <Link to="/" className="flex items-center">
             <img src="/frutero-logo.svg" alt="Frutero" className="h-12 w-auto object-contain" />
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
-            <a href="#programa" className="text-muted-foreground hover:text-foreground transition-colors">
+            <Link to="/#programa" className="text-muted-foreground hover:text-foreground transition-colors">
               {t('navbar.links.programa')}
-            </a>
-            <a href="#faq" className="text-muted-foreground hover:text-foreground transition-colors">
+            </Link>
+            <Link to="/#faq" className="text-muted-foreground hover:text-foreground transition-colors">
               {t('navbar.links.faq')}
+            </Link>
+
+            {/* Demo - Deshabilitado */}
+            <div className="relative group">
+              <span className="text-muted-foreground/40 cursor-not-allowed">
+                {t('navbar.links.demo')}
+              </span>
+              <span className="tooltip-coming-soon">
+                {t('navbar.comingSoon')}
+              </span>
+            </div>
+
+            {/* Doc - Activo */}
+            <Link to="/doc" className="text-muted-foreground hover:text-foreground transition-colors">
+              {t('navbar.links.doc')}
+            </Link>
+
+            {/* Sesiones - Deshabilitado */}
+            <div className="relative group">
+              <span className="text-muted-foreground/40 cursor-not-allowed">
+                {t('navbar.links.sesiones')}
+              </span>
+              <span className="tooltip-coming-soon">
+                {t('navbar.comingSoon')}
+              </span>
+            </div>
+
+            {/* Frutero - Externo */}
+            <a
+              href="https://www.frutero.club/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-primary transition-colors"
+            >
+              {t('navbar.links.frutero')} ↗
             </a>
-            <a href="#pricing" className="btn-primary-gradient text-sm px-6 py-2.5">
+
+            <Link to="/#pricing" className="btn-primary-gradient text-sm px-6 py-2.5">
               {t('navbar.cta')}
-            </a>
+            </Link>
             <LanguageSwitcher />
           </div>
 
@@ -46,27 +83,62 @@ const Navbar = () => {
         {/* Mobile Navigation */}
         {isOpen && (
           <div className="md:hidden mt-4 pb-4 flex flex-col gap-4">
-            <a
-              href="#programa"
+            <Link
+              to="/#programa"
               className="text-muted-foreground hover:text-foreground transition-colors"
               onClick={() => setIsOpen(false)}
             >
               {t('navbar.links.programa')}
-            </a>
-            <a
-              href="#faq"
+            </Link>
+            <Link
+              to="/#faq"
               className="text-muted-foreground hover:text-foreground transition-colors"
               onClick={() => setIsOpen(false)}
             >
               {t('navbar.links.faq')}
-            </a>
+            </Link>
+
+            {/* Demo - Deshabilitado */}
+            <div className="relative">
+              <span className="text-muted-foreground/40 cursor-not-allowed">
+                {t('navbar.links.demo')} ({t('navbar.comingSoon')})
+              </span>
+            </div>
+
+            {/* Doc - Activo */}
+            <Link
+              to="/doc"
+              className="text-muted-foreground hover:text-foreground transition-colors"
+              onClick={() => setIsOpen(false)}
+            >
+              {t('navbar.links.doc')}
+            </Link>
+
+            {/* Sesiones - Deshabilitado */}
+            <div className="relative">
+              <span className="text-muted-foreground/40 cursor-not-allowed">
+                {t('navbar.links.sesiones')} ({t('navbar.comingSoon')})
+              </span>
+            </div>
+
+            {/* Frutero - Externo */}
             <a
-              href="#pricing"
+              href="https://www.frutero.club/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-primary transition-colors"
+              onClick={() => setIsOpen(false)}
+            >
+              {t('navbar.links.frutero')} ↗
+            </a>
+
+            <Link
+              to="/#pricing"
               className="btn-primary-gradient text-sm px-6 py-2.5 text-center"
               onClick={() => setIsOpen(false)}
             >
               {t('navbar.cta')}
-            </a>
+            </Link>
           </div>
         )}
       </div>

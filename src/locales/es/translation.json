@@ -5,9 +5,14 @@
       "paraQuien": "¿Para quién?",
       "problemas": "Problemas",
       "faq": "FAQ",
-      "precio": "Precio"
+      "precio": "Precio",
+      "demo": "Demo",
+      "doc": "Doc",
+      "sesiones": "Sesiones",
+      "frutero": "Frutero"
     },
-    "cta": "Únete ahora"
+    "cta": "Únete ahora",
+    "comingSoon": "Próximamente"
   },
   "hero": {
     "badge": "Bootcamp de Desarrollo con IA",
@@ -303,5 +308,69 @@
   "footer": {
     "copyright": "© 2025 VibeCoding. Todos los derechos reservados.",
     "contact": "brian@frutero.club"
+  },
+  "doc": {
+    "title": "VibeCoding Documentation",
+    "subtitle": "Aprende a construir aplicaciones con IA. Documentación completa del bootcamp.",
+    "sidebar": {
+      "gettingStarted": "Primeros Pasos",
+      "coreConcepts": "Conceptos Clave",
+      "sessions": "Sesiones"
+    },
+    "introduction": {
+      "title": "Getting Started",
+      "description": "Esta documentación te guiará a través de las 5 capas fundamentales de desarrollo web moderno con IA.",
+      "whatYouLearn": {
+        "title": "🚀 ¿Qué aprenderás?",
+        "items": [
+          "Cómo usar IA (Claude, Cursor, v0) para construir apps",
+          "Las 5 capas: UI, Data, AI, Auth, Deploy",
+          "Crear tu primer proyecto en 2 semanas",
+          "De idea a app funcional sin escribir código manualmente"
+        ]
+      }
+    },
+    "layers": {
+      "title": "Las 5 Capas",
+      "description": "Todas las aplicaciones web modernas están construidas con estas 5 capas. Domínalas y podrás construir cualquier cosa.",
+      "ui": {
+        "name": "UI",
+        "description": "React + Tailwind + shadcn/ui"
+      },
+      "data": {
+        "name": "Data",
+        "description": "localStorage + Supabase"
+      },
+      "ai": {
+        "name": "AI",
+        "description": "Claude API + Vision"
+      },
+      "auth": {
+        "name": "Auth",
+        "description": "Privy Wallet Login"
+      },
+      "deploy": {
+        "name": "Deploy",
+        "description": "Vercel + GitHub"
+      }
+    },
+    "nextSteps": {
+      "title": "Next Steps",
+      "quickStart": "Quick Start Guide",
+      "understandLayers": "Entender las 5 Capas",
+      "session1": "Sesión 1: Birth"
+    },
+    "sidebarItems": {
+      "introduction": "Introducción",
+      "quickStart": "Inicio Rápido",
+      "resources": "Recursos",
+      "layers": "Las 5 Capas",
+      "ai": "Integración IA",
+      "session1": "Sesión 1: Nacimiento",
+      "session2": "Sesión 2: Conversación",
+      "session3": "Sesión 3: Wallet",
+      "session4": "Sesión 4: Evolución",
+      "session5": "Sesión 5: Social"
+    }
   }
 }

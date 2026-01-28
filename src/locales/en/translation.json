@@ -5,9 +5,14 @@
       "paraQuien": "Who's it for?",
       "problemas": "Problems",
       "faq": "FAQ",
-      "precio": "Pricing"
+      "precio": "Pricing",
+      "demo": "Demo",
+      "doc": "Docs",
+      "sesiones": "Sessions",
+      "frutero": "Frutero"
     },
-    "cta": "Join now"
+    "cta": "Join now",
+    "comingSoon": "Coming Soon"
   },
   "hero": {
     "badge": "AI-Powered Development Bootcamp",
@@ -303,5 +308,69 @@
   "footer": {
     "copyright": "© 2025 VibeCoding. All rights reserved.",
     "contact": "brian@frutero.club"
+  },
+  "doc": {
+    "title": "VibeCoding Documentation",
+    "subtitle": "Learn how to build AI-powered applications. Complete bootcamp documentation.",
+    "sidebar": {
+      "gettingStarted": "Getting Started",
+      "coreConcepts": "Core Concepts",
+      "sessions": "Sessions"
+    },
+    "introduction": {
+      "title": "Getting Started",
+      "description": "This documentation will guide you through the 5 fundamental layers of modern web development with AI.",
+      "whatYouLearn": {
+        "title": "🚀 What you'll learn",
+        "items": [
+          "How to use AI (Claude, Cursor, v0) to build apps",
+          "The 5 layers: UI, Data, AI, Auth, Deploy",
+          "Create your first project in 2 weeks",
+          "From idea to working app without writing code manually"
+        ]
+      }
+    },
+    "layers": {
+      "title": "The 5 Layers",
+      "description": "All modern web applications are built with these 5 layers. Master them and you can build anything.",
+      "ui": {
+        "name": "UI",
+        "description": "React + Tailwind + shadcn/ui"
+      },
+      "data": {
+        "name": "Data",
+        "description": "localStorage + Supabase"
+      },
+      "ai": {
+        "name": "AI",
+        "description": "Claude API + Vision"
+      },
+      "auth": {
+        "name": "Auth",
+        "description": "Privy Wallet Login"
+      },
+      "deploy": {
+        "name": "Deploy",
+        "description": "Vercel + GitHub"
+      }
+    },
+    "nextSteps": {
+      "title": "Next Steps",
+      "quickStart": "Quick Start Guide",
+      "understandLayers": "Understand the 5 Layers",
+      "session1": "Session 1: Birth"
+    },
+    "sidebarItems": {
+      "introduction": "Introduction",
+      "quickStart": "Quick Start",
+      "resources": "Resources",
+      "layers": "The 5 Layers",
+      "ai": "AI Integration",
+      "session1": "Session 1: Birth",
+      "session2": "Session 2: Conversation",
+      "session3": "Session 3: Wallet",
+      "session4": "Session 4: Evolution",
+      "session5": "Session 5: Social"
+    }
   }
 }

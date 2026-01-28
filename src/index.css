@@ -54,6 +54,10 @@
     --sidebar-accent-foreground: 0 0% 98%;
     --sidebar-border: 240 6% 20%;
     --sidebar-ring: 25 95% 53%;
+
+    /* Doc section lighter orange theme */
+    --doc-primary: 25 95% 58%;
+    --doc-primary-foreground: 0 0% 100%;
   }
 
   .dark {
@@ -111,6 +115,23 @@
     @apply border-primary/30;
   }
 
+  /* Doc section green theme utilities */
+  .doc-glass-card-hover:hover {
+    @apply border-[hsl(var(--doc-primary))]/30;
+  }
+
+  .text-doc-primary {
+    color: hsl(var(--doc-primary));
+  }
+
+  .bg-doc-primary {
+    background-color: hsl(var(--doc-primary));
+  }
+
+  .border-doc-primary {
+    border-color: hsl(var(--doc-primary));
+  }
+
   .glow-effect {
     position: relative;
   }
@@ -156,6 +177,13 @@
 @layer utilities {
   .animate-float {
     animation: float 6s ease-in-out infinite;
+  }
+
+  .tooltip-coming-soon {
+    @apply absolute -bottom-6 left-1/2 -translate-x-1/2 px-2 py-1
+           bg-card border border-border/50 rounded text-xs
+           opacity-0 group-hover:opacity-100 transition-opacity
+           whitespace-nowrap pointer-events-none;
   }
 
   .animate-pulse-slow {
