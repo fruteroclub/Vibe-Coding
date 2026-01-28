@@ -667,6 +667,147 @@
         ]
       }
     },
+    "quickStartPage": {
+      "title": "Quick Start",
+      "subtitle": "Step-by-step guide to create your first Regenmon. In 5 sessions you'll go from zero code to a functional AI-powered app.",
+      "subsections": {
+        "prompt": "Prompt",
+        "deliverable": "Deliverable",
+        "supportMaterial": "Support Material"
+      },
+      "projectOverview": {
+        "title": "🎯 The Project: Your Regenmon",
+        "description": "You'll create a regenerative Tamagotchi where you care for a virtual pet that:",
+        "features": [
+          "Is born and evolves based on how you care for it",
+          "Converses with you using artificial intelligence",
+          "Has a unique personality that changes over time",
+          "Earns tokens when you do regenerative actions",
+          "Interacts with your friends' pets"
+        ]
+      },
+      "setup": {
+        "title": "⚙️ Initial Setup",
+        "step1": {
+          "title": "1. Create your v0.dev account",
+          "description": "Go to v0.dev and sign in with GitHub. This tool will generate your code with AI.",
+          "action": "Go to v0.dev"
+        },
+        "step2": {
+          "title": "2. Create a new project",
+          "description": "In v0, click 'New Project' and select 'Next.js + Tailwind CSS'.",
+          "note": "This will create the base structure of your application"
+        },
+        "step3": {
+          "title": "3. Connect with Vercel",
+          "description": "Connect your project with Vercel to publish it on the internet automatically.",
+          "action": "Connect with Vercel"
+        }
+      },
+      "sessions": {
+        "title": "📚 Building by Sessions",
+        "description": "Each session adds a layer of functionality to your app:",
+        "session1": {
+          "title": "Session 1: Birth",
+          "duration": "90 min",
+          "description": "You create the visual interface where your pet is born. You'll learn to generate code with AI and React components.",
+          "whatYouBuild": [
+            "Main screen with your pet",
+            "Button to create your Regenmon",
+            "Statistics bars (happiness, energy)",
+            "Form to name your pet"
+          ],
+          "deliverable": "A functional React component displaying an interactive Tamagotchi with customizable name, animated statistics bars, and action buttons that update state in real-time.",
+          "supportMaterial": [
+            "Video: Introduction to React and components",
+            "Documentation on useState and props",
+            "Tailwind CSS styling guide",
+            "Examples of effective prompts for v0"
+          ]
+        },
+        "session2": {
+          "title": "Session 2: Conversation",
+          "duration": "90 min",
+          "description": "Your pet learns to talk. You connect an AI that gives it personality and allows conversations.",
+          "whatYouBuild": [
+            "Chat to talk with your pet",
+            "Connection with artificial intelligence API",
+            "Personality system based on statistics",
+            "Unique responses based on your pet's mood"
+          ],
+          "deliverable": "Functional chat interface with Claude API integrated, where your Regenmon responds with unique personality according to its current statistics. Includes loading and error handling.",
+          "supportMaterial": [
+            "Tutorial: Claude API integration",
+            "Guide to effective system prompts",
+            "AI personality examples",
+            "Documentation on handling asynchronous operations in React"
+          ]
+        },
+        "session3": {
+          "title": "Session 3: Identity",
+          "duration": "90 min",
+          "description": "Each user has their own pet. You add a login system to identify each person.",
+          "whatYouBuild": [
+            "Simple login system",
+            "Each user sees only their pet",
+            "Save progress in the cloud",
+            "Coins system per user"
+          ],
+          "deliverable": "Authentication system with Privy integrated, where each user can access with their wallet, see their unique pet, and have persistent $FRUTA coin balance.",
+          "supportMaterial": [
+            "Official Privy SDK documentation",
+            "Tutorial: PrivyProvider setup",
+            "Wallets guide for beginners",
+            "Login interface examples"
+          ]
+        },
+        "session4": {
+          "title": "Session 4: Evolution",
+          "duration": "90 min",
+          "description": "Your pet grows and evolves. You add game logic and reward system.",
+          "whatYouBuild": [
+            "Visual evolution stages",
+            "Mission and reward system",
+            "Upload photos to earn tokens",
+            "AI that evaluates your actions"
+          ],
+          "deliverable": "Evolution system with multiple visual stages (baby, young, adult), completable missions that award $FRUTA, and image upload function that Claude Vision evaluates to give rewards.",
+          "supportMaterial": [
+            "Tutorial: Claude Vision API",
+            "Guide to file uploads in React",
+            "Gamification system examples",
+            "useEffect documentation for evolution logic"
+          ]
+        },
+        "session5": {
+          "title": "Session 5: Social",
+          "duration": "90 min",
+          "description": "Connect with friends. Your pet can interact with other pets and compete.",
+          "whatYouBuild": [
+            "See other users' pets",
+            "Ranking system",
+            "Interactions between pets",
+            "Items marketplace"
+          ],
+          "deliverable": "Social feed where you see other players' pets, ranking by $FRUTA tokens, interaction system (greet, gift), and marketplace to exchange items using your coins.",
+          "supportMaterial": [
+            "Tutorial: Supabase queries for public data",
+            "Guide to social components in React",
+            "Ranking system examples",
+            "Real-time updates with Supabase documentation"
+          ]
+        }
+      },
+      "promptsSection": {
+        "title": "💬 Prompts for v0",
+        "description": "Copy these prompts and paste them into v0 to generate the code for each session:",
+        "session1Prompt": "Create a React component called RegenmonDisplay that shows:\n\n1. A Tamagotchi-style container with rounded borders and gradient background\n2. A centered pet image (use a placeholder for now)\n3. Three progress bars below:\n   - Happiness (green color)\n   - Energy (blue color)\n   - Level (purple color)\n4. Each bar should show the percentage with a number\n5. An orange button \"Create Regenmon\" that opens a modal\n6. The modal should have:\n   - Input for name\n   - Selector for type (Fire, Water, Earth)\n   - Confirm button\n\nUse Tailwind CSS with modern glassmorphism style. Bars should be animated.",
+        "session2Prompt": "Create a ChatInterface component that:\n\n1. Has a scrollable message area\n2. Shows chat bubbles:\n   - User messages aligned right (orange background)\n   - Regenmon messages aligned left (gray background)\n3. Input at the bottom with:\n   - Text field to write\n   - Send button with icon\n   - Loading spinner when processing\n4. Shows \"Writing...\" when AI is responding\n5. Uses useState to handle messages\n6. Includes a button to clear chat\n\nStyle: Modern with glassmorphism, smooth animations when messages appear.",
+        "session3Prompt": "Create a simple LoginScreen component:\n\n1. Centered welcome screen\n2. Game logo or title at top\n3. Large \"Enter\" button that simulates login\n4. After login, shows username at top\n5. Small \"Logout\" button in top right corner\n6. Uses localStorage to remember if user logged in\n\nStyle: Minimalist and clean, uses orange and gray colors.",
+        "session4Prompt": "Create an EvolutionSystem component:\n\n1. Shows current Regenmon stage:\n   - Baby (level 1-5)\n   - Young (level 6-10)\n   - Adult (level 11+)\n2. Progress bar to next evolution\n3. Daily missions section:\n   - List of 3 missions\n   - Checkbox to complete\n   - Token reward\n4. \"Upload Photo\" button that opens:\n   - Drop area to drag image\n   - Image preview\n   - \"Evaluate\" button that simulates AI\n5. Shows earned tokens with animation\n\nStyle: Cards with glassmorphism, modern icons.",
+        "session5Prompt": "Create a SocialHub component:\n\n1. User pets gallery:\n   - Grid of cards with photo, name and level\n   - Clicking shows details\n2. Rankings table:\n   - Top 10 users by tokens\n   - Avatar, name, tokens, position\n3. Button to interact with another pet\n4. Marketplace section:\n   - Grid of items (food, accessories)\n   - Price in tokens\n   - Buy button\n\nStyle: Professional, use tabs to separate sections, smooth animations."
+      }
+    },
     "layersPage": {
       "title": "The 5 Layers",
       "subtitle": "Every functional application is built on these 5 fundamental layers. You change the content, not the structure.",

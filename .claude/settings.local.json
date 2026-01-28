@@ -23,7 +23,8 @@
       "Bash(for:*)",
       "Bash(do echo \"=== Run $i ===\")",
       "Bash(done)",
-      "Bash(bun run dev)"
+      "Bash(bun run dev)",
+      "Bash(test:*)"
     ]
   }
 }

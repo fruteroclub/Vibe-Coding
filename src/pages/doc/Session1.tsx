@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { DocLayout } from '@/components/doc/DocLayout';
 import { DocContent } from '@/components/doc/DocContent';
+import { PromptBlock } from '@/components/doc/PromptBlock';
 import { Link } from 'react-router-dom';
 
 const Session1 = () => {
@@ -73,6 +74,49 @@ const Session1 = () => {
         <p className="text-foreground leading-relaxed">
           {t('doc.session1Page.finalResult.description')}
         </p>
+      </div>
+
+      {/* Sub-apartados */}
+      <div className="space-y-12 mt-16">
+        {/* Prompt */}
+        <div>
+          <h2 className="text-3xl font-bold text-orange-400 mb-6">
+            📝 {t('doc.quickStartPage.subsections.prompt')}
+          </h2>
+          <PromptBlock
+            prompt={t('doc.quickStartPage.promptsSection.session1Prompt')}
+            title="Prompt para Sesión 1: Nacimiento"
+          />
+        </div>
+
+        {/* Entregable */}
+        <div>
+          <h2 className="text-3xl font-bold text-orange-400 mb-6">
+            🎯 {t('doc.quickStartPage.subsections.deliverable')}
+          </h2>
+          <div className="p-6 border border-border/50 rounded-lg bg-muted/20">
+            <p className="text-muted-foreground text-lg">
+              {t('doc.quickStartPage.sessions.session1.deliverable')}
+            </p>
+          </div>
+        </div>
+
+        {/* Material de Apoyo */}
+        <div>
+          <h2 className="text-3xl font-bold text-orange-400 mb-6">
+            📚 {t('doc.quickStartPage.subsections.supportMaterial')}
+          </h2>
+          <div className="p-6 border border-border/50 rounded-lg bg-muted/20">
+            <ul className="space-y-3">
+              {(t('doc.quickStartPage.sessions.session1.supportMaterial', { returnObjects: true }) as string[]).map((material, i) => (
+                <li key={i} className="flex items-start gap-3">
+                  <span className="text-orange-400 mt-1">•</span>
+                  <span className="text-muted-foreground text-lg">{material}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </div>
 
       {/* Navegación entre páginas */}

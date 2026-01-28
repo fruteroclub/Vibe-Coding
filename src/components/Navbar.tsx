@@ -19,37 +19,24 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
-            <Link to="/#programa" className="text-muted-foreground hover:text-foreground transition-colors">
-              {t('navbar.links.programa')}
-            </Link>
-            <Link to="/#faq" className="text-muted-foreground hover:text-foreground transition-colors">
-              {t('navbar.links.faq')}
-            </Link>
-
-            {/* Demo - Deshabilitado */}
-            <div className="relative group">
-              <span className="text-muted-foreground/40 cursor-not-allowed">
-                {t('navbar.links.demo')}
-              </span>
-              <span className="tooltip-coming-soon">
-                {t('navbar.comingSoon')}
-              </span>
-            </div>
-
-            {/* Doc - Activo */}
+            {/* Docs - Activo */}
             <Link to="/doc" className="text-muted-foreground hover:text-foreground transition-colors">
-              {t('navbar.links.doc')}
+              Docs
             </Link>
 
-            {/* Sesiones - Deshabilitado */}
-            <div className="relative group">
-              <span className="text-muted-foreground/40 cursor-not-allowed">
-                {t('navbar.links.sesiones')}
-              </span>
-              <span className="tooltip-coming-soon">
-                {t('navbar.comingSoon')}
-              </span>
-            </div>
+            {/* Sesiones - Activo */}
+            <Link to="/doc/sessions" className="text-muted-foreground hover:text-foreground transition-colors">
+              {t('navbar.links.sesiones')}
+            </Link>
+
+            {/* Demo - Activo */}
+            <Link to="/demo" className="text-muted-foreground hover:text-foreground transition-colors">
+              {t('navbar.links.demo')}
+            </Link>
+
+            <a href="/#programa" className="text-muted-foreground hover:text-foreground transition-colors">
+              {t('navbar.links.programa')}
+            </a>
 
             {/* Frutero - Externo */}
             <a
@@ -59,6 +46,10 @@ const Navbar = () => {
               className="text-muted-foreground hover:text-primary transition-colors"
             >
               {t('navbar.links.frutero')} ↗
+            </a>
+
+            <a href="/#faq" className="text-muted-foreground hover:text-foreground transition-colors">
+              {t('navbar.links.faq')}
             </a>
 
             <Link to="/#pricing" className="btn-primary-gradient text-sm px-6 py-2.5">
@@ -83,43 +74,40 @@ const Navbar = () => {
         {/* Mobile Navigation */}
         {isOpen && (
           <div className="md:hidden mt-4 pb-4 flex flex-col gap-4">
-            <Link
-              to="/#programa"
-              className="text-muted-foreground hover:text-foreground transition-colors"
-              onClick={() => setIsOpen(false)}
-            >
-              {t('navbar.links.programa')}
-            </Link>
-            <Link
-              to="/#faq"
-              className="text-muted-foreground hover:text-foreground transition-colors"
-              onClick={() => setIsOpen(false)}
-            >
-              {t('navbar.links.faq')}
-            </Link>
-
-            {/* Demo - Deshabilitado */}
-            <div className="relative">
-              <span className="text-muted-foreground/40 cursor-not-allowed">
-                {t('navbar.links.demo')} ({t('navbar.comingSoon')})
-              </span>
-            </div>
-
-            {/* Doc - Activo */}
+            {/* Docs - Activo */}
             <Link
               to="/doc"
               className="text-muted-foreground hover:text-foreground transition-colors"
               onClick={() => setIsOpen(false)}
             >
-              {t('navbar.links.doc')}
+              Docs
             </Link>
 
-            {/* Sesiones - Deshabilitado */}
-            <div className="relative">
-              <span className="text-muted-foreground/40 cursor-not-allowed">
-                {t('navbar.links.sesiones')} ({t('navbar.comingSoon')})
-              </span>
-            </div>
+            {/* Sesiones - Activo */}
+            <Link
+              to="/doc/sessions"
+              className="text-muted-foreground hover:text-foreground transition-colors"
+              onClick={() => setIsOpen(false)}
+            >
+              {t('navbar.links.sesiones')}
+            </Link>
+
+            {/* Demo - Activo */}
+            <Link
+              to="/demo"
+              className="text-muted-foreground hover:text-foreground transition-colors"
+              onClick={() => setIsOpen(false)}
+            >
+              {t('navbar.links.demo')}
+            </Link>
+
+            <a
+              href="/#programa"
+              className="text-muted-foreground hover:text-foreground transition-colors"
+              onClick={() => setIsOpen(false)}
+            >
+              {t('navbar.links.programa')}
+            </a>
 
             {/* Frutero - Externo */}
             <a
@@ -130,6 +118,14 @@ const Navbar = () => {
               onClick={() => setIsOpen(false)}
             >
               {t('navbar.links.frutero')} ↗
+            </a>
+
+            <a
+              href="/#faq"
+              className="text-muted-foreground hover:text-foreground transition-colors"
+              onClick={() => setIsOpen(false)}
+            >
+              {t('navbar.links.faq')}
             </a>
 
             <Link
