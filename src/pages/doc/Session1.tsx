@@ -10,74 +10,68 @@ const Session1 = () => {
     <DocLayout>
       <DocContent>
       <h1 className="gradient-text text-4xl font-bold mb-6">
-        🥚 {t('doc.sidebarItems.session1')}
+        🥚 {t('doc.session1Page.title')}
       </h1>
 
       <p className="text-muted-foreground text-lg mb-8">
-        En esta sesión crearás tu primer Regenmon (Tamagotchi regenerativo). Aprenderás los fundamentos de UI, componentes React y persistencia de datos.
+        {t('doc.session1Page.subtitle')}
       </p>
 
       <h2 className="text-2xl font-bold text-doc-primary mt-12 mb-4">
-        ¿Qué vas a aprender?
+        {t('doc.session1Page.whatYouLearn.title')}
       </h2>
 
       <div className="my-8 glass-card p-6 border-l-4 border-doc-primary">
         <ul className="space-y-3 text-muted-foreground">
-          <li className="flex items-start gap-2">
-            <span className="text-doc-primary">•</span>
-            <span>Cómo funciona prompt→código con v0</span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-doc-primary">•</span>
-            <span>Qué son componentes y cómo se organizan</span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-doc-primary">•</span>
-            <span>Hacer que la info persista (localStorage)</span>
-          </li>
+          {(t('doc.session1Page.whatYouLearn.items', { returnObjects: true }) as string[]).map((item, index) => (
+            <li key={index} className="flex items-start gap-2">
+              <span className="text-doc-primary">•</span>
+              <span>{item}</span>
+            </li>
+          ))}
         </ul>
       </div>
 
       <h2 className="text-2xl font-bold mt-12 mb-4 border-b border-border/50 pb-2">
-        ¿Qué vas a construir?
+        {t('doc.session1Page.whatYouBuild.title')}
       </h2>
 
       <div className="grid grid-cols-1 gap-4 my-8">
         <div className="glass-card p-4 border-l-4 border-doc-primary/50">
           <h4 className="text-lg font-semibold text-foreground mb-2">
-            Display de tu Regenmon
+            {t('doc.session1Page.whatYouBuild.display.title')}
           </h4>
           <p className="text-sm text-muted-foreground">
-            Interfaz visual estilo Tamagotchi con animaciones y estados visuales
+            {t('doc.session1Page.whatYouBuild.display.description')}
           </p>
         </div>
 
         <div className="glass-card p-4 border-l-4 border-doc-primary/50">
           <h4 className="text-lg font-semibold text-foreground mb-2">
-            Modal de creación
+            {t('doc.session1Page.whatYouBuild.modal.title')}
           </h4>
           <p className="text-sm text-muted-foreground">
-            Formulario para nombrar tu Regenmon y elegir su tipo
+            {t('doc.session1Page.whatYouBuild.modal.description')}
           </p>
         </div>
 
         <div className="glass-card p-4 border-l-4 border-doc-primary/50">
           <h4 className="text-lg font-semibold text-foreground mb-2">
-            Sistema de stats
+            {t('doc.session1Page.whatYouBuild.stats.title')}
           </h4>
           <p className="text-sm text-muted-foreground">
-            Barras visuales para energía, felicidad y nivel
+            {t('doc.session1Page.whatYouBuild.stats.description')}
           </p>
         </div>
       </div>
 
       <h2 className="text-2xl font-bold mt-12 mb-4 border-b border-border/50 pb-2">
-        Resultado Final
+        {t('doc.session1Page.finalResult.title')}
       </h2>
 
       <div className="my-8 glass-card p-6 border-l-4 border-doc-primary bg-primary/5">
         <p className="text-foreground leading-relaxed">
-          ✅ App en internet donde creas tu Regenmon y regresas sin perder progreso.
+          {t('doc.session1Page.finalResult.description')}
         </p>
       </div>
 
@@ -89,8 +83,8 @@ const Session1 = () => {
         >
           <span>←</span>
           <div>
-            <div className="text-xs text-muted-foreground">Anterior</div>
-            <div className="font-semibold">Introducción</div>
+            <div className="text-xs text-muted-foreground">{t('doc.session1Page.navigation.previous')}</div>
+            <div className="font-semibold">{t('doc.session1Page.navigation.intro')}</div>
           </div>
         </Link>
 
@@ -99,8 +93,8 @@ const Session1 = () => {
           className="flex items-center gap-2 text-muted-foreground hover:text-doc-primary transition-colors text-right"
         >
           <div>
-            <div className="text-xs text-muted-foreground">Siguiente</div>
-            <div className="font-semibold">Sesión 2: Conversación</div>
+            <div className="text-xs text-muted-foreground">{t('doc.session1Page.navigation.next')}</div>
+            <div className="font-semibold">{t('doc.sidebarItems.session2')}</div>
           </div>
           <span>→</span>
         </Link>

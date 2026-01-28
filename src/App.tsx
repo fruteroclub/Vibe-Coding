@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -24,21 +25,23 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/doc" element={<Doc />} />
-          <Route path="/doc/quick-start" element={<QuickStart />} />
-          <Route path="/doc/resources" element={<Resources />} />
-          <Route path="/doc/layers" element={<Layers />} />
-          <Route path="/doc/ai" element={<AI />} />
-          <Route path="/doc/session-1" element={<Session1 />} />
-          <Route path="/doc/session-2" element={<Session2 />} />
-          <Route path="/doc/session-3" element={<Session3 />} />
-          <Route path="/doc/session-4" element={<Session4 />} />
-          <Route path="/doc/session-5" element={<Session5 />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <Suspense fallback={<div className="flex items-center justify-center min-h-screen">Loading...</div>}>
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/doc" element={<Doc />} />
+            <Route path="/doc/quick-start" element={<QuickStart />} />
+            <Route path="/doc/resources" element={<Resources />} />
+            <Route path="/doc/layers" element={<Layers />} />
+            <Route path="/doc/ai" element={<AI />} />
+            <Route path="/doc/session-1" element={<Session1 />} />
+            <Route path="/doc/session-2" element={<Session2 />} />
+            <Route path="/doc/session-3" element={<Session3 />} />
+            <Route path="/doc/session-4" element={<Session4 />} />
+            <Route path="/doc/session-5" element={<Session5 />} />
+            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Suspense>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

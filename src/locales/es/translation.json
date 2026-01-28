@@ -365,12 +365,438 @@
       "quickStart": "Inicio Rápido",
       "resources": "Recursos",
       "layers": "Las 5 Capas",
-      "ai": "Integración IA",
+      "ai": "Temario",
       "session1": "Sesión 1: Nacimiento",
       "session2": "Sesión 2: Conversación",
       "session3": "Sesión 3: Wallet",
       "session4": "Sesión 4: Evolución",
       "session5": "Sesión 5: Social"
+    },
+    "aiPage": {
+      "title": "Temario",
+      "subtitle": "Aprende a construir aplicaciones con inteligencia artificial integrada. Este es el temario completo del bootcamp, sesión por sesión.",
+      "programHeader": "📚 Programa Completo",
+      "tooltipHint": "Pasa el cursor sobre los términos técnicos para ver definiciones rápidas.",
+      "sessions": {
+        "1": {
+          "title": "Nace tu Regenmon",
+          "sections": {
+            "0": {
+              "title": "Introducción al AI-assisted development",
+              "items": [
+                "Cómo funciona el desarrollo con IA",
+                "Crear cuentas en v0.dev y Vercel",
+                "Tu primer prompt para generar código"
+              ]
+            },
+            "1": {
+              "title": "Componentes de React y state management",
+              "items": [
+                "Qué son los componentes y cómo se usan",
+                "Guardar información con useState",
+                "localStorage para guardar información"
+              ]
+            },
+            "2": {
+              "title": "Construcción del display principal",
+              "items": [
+                "Prompt: Contenedor estilo Tamagotchi",
+                "Crear las barras de estadísticas (felicidad, energía, hambre)",
+                "Estilizar con Tailwind CSS"
+              ]
+            }
+          }
+        },
+        "2": {
+          "title": "Tu Regenmon Habla",
+          "sections": {
+            "0": {
+              "title": "Integración con LLMs",
+              "items": [
+                "Cómo funcionan las APIs de inteligencia artificial",
+                "Cómo funcionan los Large Language Models",
+                "Crear tu primer API route en Next.js"
+              ]
+            },
+            "1": {
+              "title": "System prompts: Definiendo personalidad",
+              "items": [
+                "Anatomía de un system prompt efectivo",
+                "Workshop: Crear personalidad de tu Regenmon",
+                "Reglas de comportamiento y estilo",
+                "Sistema simple de memoria (guardar temas)"
+              ]
+            },
+            "2": {
+              "title": "Interfaz de chat y personalidad",
+              "items": [
+                "Escribir el system prompt de tu Regenmon",
+                "Hacer que la IA responda según los stats",
+                "Manejo de respuestas asíncronas",
+                "Prompt: Actualizar stats según conversaciones",
+                "Detección de palabras clave"
+              ]
+            }
+          }
+        },
+        "3": {
+          "title": "Tu Regenmon se Conecta",
+          "sections": {
+            "0": {
+              "title": "Autenticación con Privy SDK",
+              "items": [
+                "Configurar PrivyProvider",
+                "Botón de \"Conecta con tu Regenmon\"",
+                "Mostrar el perfil del usuario"
+              ]
+            },
+            "1": {
+              "title": "Sistema de monedas $FRUTA",
+              "items": [
+                "Llamar a la API para ver el balance",
+                "Botón de \"Reclamar Monedas\"",
+                "Actualizar el balance en tiempo real"
+              ]
+            },
+            "2": {
+              "title": "Mecánica de alimentar",
+              "items": [
+                "Crear endpoint POST /api/feed",
+                "Gastar monedas y reducir hambre",
+                "Feedback de transacción (toast notifications)"
+              ]
+            }
+          }
+        },
+        "4": {
+          "title": "Tu Regenmon Evoluciona",
+          "sections": {
+            "0": {
+              "title": "IA Multimodal",
+              "items": [
+                "Cómo la IA \"ve\" imágenes",
+                "Convertir imágenes a base64",
+                "Enviar imagen al API de evaluación",
+                "Evaluación de progreso a través de IA"
+              ]
+            },
+            "1": {
+              "title": "Sistema de subida de imágenes",
+              "items": [
+                "Drag-and-drop con HTML5 File API",
+                "Preview de la imagen antes de enviar",
+                "Estructura de evaluación (forma, esfuerzo, creatividad)"
+              ]
+            },
+            "2": {
+              "title": "Evaluación y scoring",
+              "items": [
+                "Crear la rúbrica de evaluación en el prompt",
+                "Recibir score y feedback de la IA",
+                "Otorgar monedas según el score"
+              ]
+            }
+          }
+        },
+        "5": {
+          "title": "Tu Regenmon Encuentra Amigos",
+          "sections": {
+            "0": {
+              "title": "Arquitectura de features sociales",
+              "items": [
+                "Diferencia entre estado público y privado",
+                "Cómo funcionan los registros de usuarios",
+                "Polling vs WebSockets para notificaciones"
+              ]
+            },
+            "1": {
+              "title": "Registro público",
+              "items": [
+                "Endpoint POST /api/social/register",
+                "Generar URL compartible",
+                "Contador de visitas"
+              ]
+            },
+            "2": {
+              "title": "Feed de descubrimiento",
+              "items": [
+                "Endpoint GET /api/social/registry",
+                "Grid de cards con otros Regenmons",
+                "Filtros y ordenamiento (más nuevos, más visitados)",
+                "Paginación básica"
+              ]
+            },
+            "3": {
+              "title": "Interacciones entre usuarios",
+              "items": [
+                "Routing dinámico (/visit/[id])",
+                "Acciones: Saludar, Regalar, Jugar",
+                "Transferir monedas entre usuarios",
+                "Sistema de notificaciones (toast + historial)"
+              ]
+            }
+          }
+        }
+      },
+      "techTerms": {
+        "componentes": "Bloques reutilizables de interfaz que encapsulan HTML, lógica y estilos",
+        "useState": "Hook de React que crea variables reactivas que actualizan la UI automáticamente",
+        "localStorage": "API del navegador que persiste datos en disco entre sesiones",
+        "API": "Interfaz que permite comunicación entre servicios (request/response)",
+        "LLMs": "Large Language Models - Modelos de IA entrenados en millones de ejemplos de código",
+        "prompt": "Instrucción en lenguaje natural que le das a la IA para generar código",
+        "React": "Librería JavaScript para construir interfaces de usuario con componentes",
+        "Tailwind CSS": "Framework CSS utility-first con clases predefinidas",
+        "v0.dev": "Herramienta de IA para generar componentes React desde prompts",
+        "Vercel": "Plataforma para desplegar aplicaciones web (hosting)",
+        "Next.js": "Framework de React con routing y API routes integrados",
+        "system prompt": "Instrucciones permanentes que definen el comportamiento del LLM",
+        "API route": "Endpoint en Next.js que ejecuta código en servidor",
+        "asíncronas": "Operaciones que no bloquean el código (await/async)",
+        "Privy SDK": "Kit de desarrollo para autenticación con wallets",
+        "PrivyProvider": "Componente de React que provee autenticación a toda la app",
+        "endpoint": "URL específica de una API que ejecuta una función",
+        "POST": "Método HTTP para enviar datos al servidor",
+        "GET": "Método HTTP para obtener datos del servidor",
+        "toast notifications": "Mensajes emergentes no-intrusivos que informan al usuario",
+        "Multimodal": "IA que procesa múltiples tipos de datos (texto + imágenes)",
+        "base64": "Formato que convierte archivos binarios (imágenes) a texto",
+        "HTML5 File API": "API nativa del navegador para manejar archivos",
+        "Drag-and-drop": "Patrón UX para subir archivos arrastrando",
+        "Polling": "Consultar API periódicamente para actualizar datos",
+        "WebSockets": "Conexión permanente para recibir actualizaciones en tiempo real",
+        "Routing dinámico": "URLs que incluyen parámetros variables",
+        "Paginación": "Cargar datos en bloques para mejorar performance",
+        "Grid": "Diseño en cuadrícula para mostrar múltiples items"
+      }
+    },
+    "session1Page": {
+      "title": "Sesión 1: Nacimiento",
+      "subtitle": "En esta sesión crearás tu primer Regenmon (Tamagotchi regenerativo). Aprenderás los fundamentos de UI, componentes React y persistencia de datos.",
+      "whatYouLearn": {
+        "title": "¿Qué vas a aprender?",
+        "items": [
+          "Cómo funciona prompt→código con v0",
+          "Qué son componentes y cómo se organizan",
+          "Hacer que la info persista (localStorage)"
+        ]
+      },
+      "whatYouBuild": {
+        "title": "¿Qué vas a construir?",
+        "display": {
+          "title": "Display de tu Regenmon",
+          "description": "Interfaz visual estilo Tamagotchi con animaciones y estados visuales"
+        },
+        "modal": {
+          "title": "Modal de creación",
+          "description": "Formulario para nombrar tu Regenmon y elegir su tipo"
+        },
+        "stats": {
+          "title": "Sistema de stats",
+          "description": "Barras visuales para energía, felicidad y nivel"
+        }
+      },
+      "finalResult": {
+        "title": "Resultado Final",
+        "description": "✅ App en internet donde creas tu Regenmon y regresas sin perder progreso."
+      },
+      "navigation": {
+        "previous": "Anterior",
+        "next": "Siguiente",
+        "intro": "Introducción"
+      }
+    },
+    "comingSoon": "Contenido próximamente...",
+    "resourcesPage": {
+      "title": "Recursos",
+      "subtitle": "Herramientas que usarás para construir tu aplicación durante el bootcamp.",
+      "whatAreResources": {
+        "title": "¿Qué son los recursos?",
+        "description": "Son las herramientas que te permiten agregar funciones especiales a tu app. Cada una tiene una clave única que usarás para conectarte."
+      },
+      "platforms": {
+        "title": "Herramientas que Usarás",
+        "vercel": {
+          "description": "Donde publicarás tu app para que cualquiera pueda verla en internet."
+        },
+        "v0": {
+          "description": "Herramienta que crea el diseño visual de tu app. Solo le describes lo que quieres y lo genera."
+        },
+        "privy": {
+          "description": "Sistema de login para tu app. Permite que los usuarios entren de forma segura."
+        },
+        "chatgpt": {
+          "description": "Asistente que te ayuda cuando tienes dudas mientras construyes tu app."
+        }
+      },
+      "apiKeys": {
+        "title": "Claves de Acceso",
+        "warning": {
+          "title": "Importante",
+          "description": "Estas claves son personales y privadas. No las compartas con nadie."
+        },
+        "yourKey": "Tu clave",
+        "copy": "Copiar clave",
+        "protectedNote": "⚠️ Clave protegida por seguridad"
+      },
+      "apis": {
+        "frutero": {
+          "description": "Acceso a funcionalidades especiales que Frutero creó para este bootcamp",
+          "button": "Solicitar Acceso"
+        },
+        "google": {
+          "description": "Servicios de Google que necesitarás para ciertas funciones de tu app",
+          "button": "Solicitar Acceso"
+        },
+        "gemini": {
+          "description": "Inteligencia artificial de Google que entiende texto e imágenes",
+          "button": "Solicitar Acceso"
+        },
+        "privy": {
+          "description": "Sistema de login seguro para que los usuarios entren a tu app",
+          "button": "Solicitar Acceso"
+        }
+      },
+      "additionalResources": {
+        "title": "Recursos Adicionales",
+        "items": [
+          "Documentación oficial de React y Next.js",
+          "Guías de Tailwind CSS y shadcn/ui",
+          "Tutoriales de integración con Claude API",
+          "Ejemplos de código del repositorio Frutero"
+        ]
+      }
+    },
+    "layersPage": {
+      "title": "Las 5 Capas",
+      "subtitle": "Toda aplicación funcional se construye sobre estas 5 capas fundamentales. Cambias el contenido, no la estructura.",
+      "mainDiagram": "Arquitectura de Capas",
+      "keyInsight": {
+        "title": "Clave",
+        "description": "Todas las apps que ocupas día con día tienen las mismas 5 capas. Cambias el contenido, no la estructura."
+      },
+      "includes": "Qué incluye",
+      "inRegenmon": "En Regenmon",
+      "simple": "En términos simples",
+      "tools": "Herramientas",
+      "layer1": {
+        "name": "UI (Interfaz)",
+        "subtitle": "Lo que ves en pantalla",
+        "description": "Todo lo visual de tu app: colores, botones, textos, imágenes. Es lo que tus usuarios ven y tocan.",
+        "includes": [
+          "Botones y menús",
+          "Diseño y colores",
+          "Animaciones",
+          "Versión móvil y computadora"
+        ],
+        "simple": "Todo lo que ves y tocas en la pantalla",
+        "inRegenmon": [
+          "La imagen de tu mascota",
+          "Las barras de felicidad y energía",
+          "Los botones para interactuar",
+          "La pantalla donde creas tu mascota"
+        ],
+        "tools": "React, Tailwind, v0"
+      },
+      "layer2": {
+        "name": "DATA (Datos)",
+        "subtitle": "La memoria de tu app",
+        "description": "Aquí se guarda toda la información: nombres, mensajes, progreso. Es como la memoria de tu app.",
+        "includes": [
+          "Información mientras usas la app",
+          "Datos guardados en tu dispositivo",
+          "Información guardada en internet",
+          "Sincronización entre tus dispositivos"
+        ],
+        "simple": "Todo lo que tu app recuerda cuando la cierras y vuelves a abrir",
+        "inRegenmon": [
+          "El nombre de tu mascota",
+          "Su nivel de felicidad y energía",
+          "Las conversaciones que tuviste",
+          "En qué etapa de evolución está"
+        ],
+        "tools": "useState, localStorage, Supabase"
+      },
+      "layer3": {
+        "name": "AI (Inteligencia)",
+        "subtitle": "El cerebro de tu app",
+        "description": "La inteligencia artificial que hace que tu app entienda, piense y responda como si fuera inteligente.",
+        "includes": [
+          "Conversaciones y chat",
+          "Entender imágenes",
+          "Crear respuestas únicas",
+          "Dar recomendaciones personalizadas"
+        ],
+        "simple": "Todo lo que hace que tu app parezca inteligente y responda como una persona",
+        "inRegenmon": [
+          "Cuando tu mascota te habla",
+          "Cuando evalúa las fotos que subes",
+          "La personalidad única de tu mascota",
+          "Las respuestas que te da según su humor"
+        ],
+        "tools": "Claude API, OpenAI, Replicate"
+      },
+      "layer4": {
+        "name": "AUTH (Login)",
+        "subtitle": "Tu identidad en la app",
+        "description": "El sistema que te permite entrar a tu cuenta y mantiene tu información separada de otros usuarios.",
+        "includes": [
+          "Crear cuenta y entrar",
+          "Mantener tu sesión abierta",
+          "Tus datos privados y separados",
+          "Lo que puedes y no puedes hacer"
+        ],
+        "simple": "Cómo la app sabe que eres tú y te deja ver solo tus cosas",
+        "inRegenmon": [
+          "Tu login personal",
+          "Tus monedas acumuladas",
+          "Tu mascota es solo tuya",
+          "Tus compras y recompensas"
+        ],
+        "tools": "Privy, Clerk, NextAuth"
+      },
+      "layer5": {
+        "name": "DEPLOY (Publicación)",
+        "subtitle": "Compartir tu app con el mundo",
+        "description": "El proceso de llevar tu app de tu computadora a internet para que cualquiera pueda usarla. Es como publicar un video en YouTube, pero con tu aplicación.",
+        "includes": [
+          "Subir tu app a internet",
+          "Conseguir un enlace para compartir",
+          "Hacer que funcione desde cualquier dispositivo",
+          "Mantenerla actualizada automáticamente"
+        ],
+        "simple": "De tu computadora a internet para que todos puedan verla",
+        "inRegenmon": [
+          "Tu app funciona 24/7 aunque cierres tu computadora",
+          "Puedes compartir un link con tus amigos",
+          "Funciona desde cualquier celular o computadora",
+          "Cada vez que mejoras algo, se actualiza automáticamente"
+        ],
+        "tools": "Vercel (donde publicamos apps web)"
+      },
+      "userFlow": {
+        "title": "Cómo Funcionan Juntas",
+        "description": "Flujo típico de una aplicación desde que el usuario abre la URL hasta que ve los cambios reflejados."
+      },
+      "bootcampProgress": {
+        "title": "Progresión en el Bootcamp",
+        "description": "Cómo construirás tu app capa por capa a lo largo de las 5 sesiones."
+      },
+      "whyItMatters": {
+        "title": "Por Qué Importa Este Framework",
+        "transferability": {
+          "title": "Transferibilidad",
+          "description": "Todas las apps que ocupas día con día tienen las mismas 5 capas. Cambias el contenido, no la estructura. Este conocimiento se transfiere a cualquier aplicación que construyas."
+        },
+        "debugging": {
+          "title": "Claridad de Debugging",
+          "description": "Problema visual → Layer 1 | Datos que no se guardan → Layer 2 | IA responde mal → Layer 3 | Issues de login → Layer 4 | App no carga → Layer 5"
+        },
+        "modularity": {
+          "title": "Modularidad",
+          "description": "Puedes cambiar una capa sin tocar las demás. Cambiar de base de datos no afecta el UI. Cambiar de framework de UI no afecta la lógica de datos."
+        }
+      }
     }
   }
 }

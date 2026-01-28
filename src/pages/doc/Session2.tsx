@@ -14,7 +14,7 @@ const Session2 = () => {
         </h1>
 
         <p className="text-muted-foreground text-lg mb-8">
-          Contenido próximamente...
+          {t('doc.comingSoon')}
         </p>
 
         {/* Navegación entre páginas */}
@@ -25,8 +25,8 @@ const Session2 = () => {
           >
             <span>←</span>
             <div>
-              <div className="text-xs text-muted-foreground">Anterior</div>
-              <div className="font-semibold">Sesión 1: Nacimiento</div>
+              <div className="text-xs text-muted-foreground">{t('doc.session1Page.navigation.previous')}</div>
+              <div className="font-semibold">{t('doc.sidebarItems.session1')}</div>
             </div>
           </Link>
 
@@ -35,8 +35,8 @@ const Session2 = () => {
             className="flex items-center gap-2 text-muted-foreground hover:text-doc-primary transition-colors text-right"
           >
             <div>
-              <div className="text-xs text-muted-foreground">Siguiente</div>
-              <div className="font-semibold">Sesión 3: Wallet</div>
+              <div className="text-xs text-muted-foreground">{t('doc.session1Page.navigation.next')}</div>
+              <div className="font-semibold">{t('doc.sidebarItems.session3')}</div>
             </div>
             <span>→</span>
           </Link>

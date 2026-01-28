@@ -14,7 +14,9 @@
       "Bash(node -e:*)",
       "Bash(node scripts/validate-translations.cjs:*)",
       "Bash(npm run i18n:validate:*)",
-      "Bash(bash:*)"
+      "Bash(bash:*)",
+      "mcp__sequential-thinking__sequentialthinking",
+      "Bash(bun run i18n:validate:*)"
     ]
   }
 }
