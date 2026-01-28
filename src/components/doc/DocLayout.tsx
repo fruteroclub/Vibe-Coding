@@ -17,6 +17,14 @@ export const DocLayout = ({ children }: DocLayoutProps) => {
 
       <div className="container mx-auto px-6 pt-24 pb-12">
         <div className="flex gap-8">
+          {/* Mobile Overlay */}
+          {sidebarOpen && (
+            <div
+              className="md:hidden fixed inset-0 bg-black/50 z-30 backdrop-blur-sm"
+              onClick={() => setSidebarOpen(false)}
+            />
+          )}
+
           {/* Sidebar */}
           <aside className={`
             fixed md:sticky top-24 left-0 z-40 w-72 h-[calc(100vh-8rem)]
@@ -31,14 +39,14 @@ export const DocLayout = ({ children }: DocLayoutProps) => {
           <button
             type="button"
             onClick={() => setSidebarOpen(!sidebarOpen)}
-            className="md:hidden fixed top-24 left-4 z-50 p-2 glass-card"
+            className="md:hidden fixed top-20 left-4 z-50 p-3 glass-card hover:bg-orange-500/10 transition-colors shadow-lg"
             aria-label="Toggle sidebar"
           >
-            <Menu size={20} />
+            <Menu size={24} className="text-orange-400" />
           </button>
 
           {/* Content */}
-          <main className="flex-1 max-w-4xl">
+          <main className="flex-1 max-w-4xl md:ml-0 ml-0">
             {children}
           </main>
         </div>

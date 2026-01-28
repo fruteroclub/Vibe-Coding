@@ -14,7 +14,7 @@ export const TechTerm = ({ term, definition, children }: TechTermProps) => {
   return (
     <Tooltip delayDuration={200}>
       <TooltipTrigger asChild>
-        <span className="underline decoration-dotted decoration-orange-500/60 cursor-help hover:decoration-orange-500 hover:text-orange-400 hover:bg-orange-500/10 transition-all duration-200 px-1 rounded">
+        <span className="text-orange-400 underline decoration-dotted decoration-orange-500/60 cursor-help hover:decoration-orange-500 hover:text-orange-300 hover:bg-orange-500/10 transition-all duration-200 px-1 rounded font-medium">
           {children || term}
         </span>
       </TooltipTrigger>

@@ -49,7 +49,7 @@ const Resources = () => {
       id: 'privy',
       name: 'Privy',
       description: t('doc.resourcesPage.platforms.privy.description'),
-      logo: 'https://public.rootdata.com/images/b55/1742392119426.jpg',
+      logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzj-eBN5t8yQJCe-dER41ijvEGAvKgu8_tIQ&s',
       link: 'https://privy.io',
     },
     {
@@ -102,7 +102,7 @@ const Resources = () => {
       id: 'privy-api',
       name: 'Privy API',
       description: t('doc.resourcesPage.apis.privy.description'),
-      logo: 'https://public.rootdata.com/images/b55/1742392119426.jpg',
+      logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzj-eBN5t8yQJCe-dER41ijvEGAvKgu8_tIQ&s',
       buttonText: t('doc.resourcesPage.apis.privy.button'),
       apiKey: 'priv_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx', // Placeholder
       link: 'https://dashboard.privy.io',
@@ -270,7 +270,7 @@ const Resources = () => {
                   href="https://react.dev"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-orange-400/80 hover:text-orange-400 underline decoration-dotted transition-colors"
+                  className="text-orange-400 hover:text-orange-300 underline decoration-dotted transition-colors font-medium"
                 >
                   React
                 </a>{' '}
@@ -279,7 +279,7 @@ const Resources = () => {
                   href="https://nextjs.org"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-orange-400/80 hover:text-orange-400 underline decoration-dotted transition-colors"
+                  className="text-orange-400 hover:text-orange-300 underline decoration-dotted transition-colors font-medium"
                 >
                   Next.js
                 </a>
@@ -293,7 +293,7 @@ const Resources = () => {
                   href="https://tailwindcss.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-orange-400/80 hover:text-orange-400 underline decoration-dotted transition-colors"
+                  className="text-orange-400 hover:text-orange-300 underline decoration-dotted transition-colors font-medium"
                 >
                   Tailwind CSS
                 </a>{' '}
@@ -302,7 +302,7 @@ const Resources = () => {
                   href="https://ui.shadcn.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-orange-400/80 hover:text-orange-400 underline decoration-dotted transition-colors"
+                  className="text-orange-400 hover:text-orange-300 underline decoration-dotted transition-colors font-medium"
                 >
                   shadcn/ui
                 </a>
@@ -316,7 +316,7 @@ const Resources = () => {
                   href="https://docs.anthropic.com/en/api/getting-started"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-orange-400/80 hover:text-orange-400 underline decoration-dotted transition-colors"
+                  className="text-orange-400 hover:text-orange-300 underline decoration-dotted transition-colors font-medium"
                 >
                   Claude API
                 </a>
