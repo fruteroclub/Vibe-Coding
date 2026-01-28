@@ -14,20 +14,22 @@ import Footer from '@/components/Footer';
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+    <div className="min-h-screen bg-background text-foreground overflow-x-hidden" itemScope itemType="https://schema.org/WebPage">
       <ParticlesBackground />
       <Navbar />
-      <main className="relative z-10">
-        <Hero />
-        <ForWho />
-        <Problem />
-        <Layers />
-        <Journey />
-        <Includes />
-        <IsForYou />
-        <Pricing />
-        <FAQ />
-        <FinalCTA />
+      <main className="relative z-10" role="main">
+        <article itemScope itemType="https://schema.org/Course">
+          <Hero />
+          <ForWho />
+          <Problem />
+          <Layers />
+          <Journey />
+          <Includes />
+          <IsForYou />
+          <Pricing />
+          <FAQ />
+          <FinalCTA />
+        </article>
       </main>
       <Footer />
     </div>
