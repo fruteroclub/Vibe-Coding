@@ -16,7 +16,14 @@
       "Bash(npm run i18n:validate:*)",
       "Bash(bash:*)",
       "mcp__sequential-thinking__sequentialthinking",
-      "Bash(bun run i18n:validate:*)"
+      "Bash(bun run i18n:validate:*)",
+      "Bash(bun test:*)",
+      "Bash(tee:*)",
+      "Bash(bunx vitest run:*)",
+      "Bash(for:*)",
+      "Bash(do echo \"=== Run $i ===\")",
+      "Bash(done)",
+      "Bash(bun run dev)"
     ]
   }
 }
