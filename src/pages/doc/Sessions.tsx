@@ -13,7 +13,7 @@ const Sessions = () => {
           <Construction size={120} className="text-orange-400 mb-8 animate-pulse" />
 
           <h1 className="gradient-text text-5xl font-bold mb-6">
-            🚧 En Construcción
+            En Construcción
           </h1>
 
           <p className="text-muted-foreground text-xl mb-8 max-w-2xl">
@@ -22,7 +22,7 @@ const Sessions = () => {
 
           <div className="p-6 border border-orange-500/30 rounded-lg bg-orange-500/5 max-w-2xl">
             <h3 className="text-lg font-semibold text-orange-400 mb-3">
-              💡 Mientras tanto...
+              Mientras tanto...
             </h3>
             <p className="text-muted-foreground leading-relaxed">
               Puedes explorar las sesiones individuales desde la barra lateral. Cada sesión contiene el prompt, entregable y material de apoyo que necesitas para completarla.

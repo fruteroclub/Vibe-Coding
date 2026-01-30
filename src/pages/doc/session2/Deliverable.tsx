@@ -11,7 +11,7 @@ const Session2Deliverable = () => {
     <DocLayout>
       <DocContent>
         <h1 className="gradient-text text-4xl font-bold mb-6">
-          🎯 {t('doc.quickStartPage.subsections.deliverable')}
+          {t('doc.quickStartPage.subsections.deliverable')}
         </h1>
 
         <p className="text-muted-foreground text-lg mb-8">
@@ -25,7 +25,7 @@ const Session2Deliverable = () => {
         </div>
 
         <h2 className="text-2xl font-bold text-orange-400 mb-6">
-          ✅ Criterios de Completitud
+          Criterios de Completitud
         </h2>
 
         <div className="space-y-4 mb-12">

@@ -24,7 +24,10 @@
       "Bash(do echo \"=== Run $i ===\")",
       "Bash(done)",
       "Bash(bun run dev)",
-      "Bash(test:*)"
+      "Bash(test:*)",
+      "Bash(grep:*)",
+      "WebFetch(domain:fruteroclub.notion.site)",
+      "Bash(git checkout:*)"
     ]
   }
 }

@@ -25,7 +25,7 @@ const Session3Deliverable = () => {
         </div>
 
         <h2 className="text-2xl font-bold text-orange-400 mb-6">
-          ✅ Criterios de Completitud
+          Criterios de Completitud
         </h2>
 
         <div className="space-y-4 mb-12">

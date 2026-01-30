@@ -1,0 +1,65 @@
+import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { DocLayout } from '@/components/doc/DocLayout';
+import { DocContent } from '@/components/doc/DocContent';
+import { Link } from 'react-router-dom';
+import {
+  Users,
+  Lock,
+  Key,
+  Shield,
+  Database,
+  Settings,
+  X,
+  ChevronRight,
+  CheckCircle2
+} from 'lucide-react';
+
+interface ResourceSection {
+  id: string;
+  title: string;
+  icon: React.ReactNode;
+  description: string;
+  color: string;
+  sections: {
+    title: string;
+    items: string[];
+  }[];
+}
+
+const Session3Support = () => {
+  const { t } = useTranslation();
+  const [selectedResource, setSelectedResource] = useState<ResourceSection | null>(null);
+
+  const resources: ResourceSection[] = [
+    {
+      id: 'authentication',
+      title: 'Autenticación Básica',
+      icon: <Lock size={20} />,
+      description: 'Sistema de login y registro de usuarios',
+      color: 'orange',
+      sections: [
+        {
+          title: 'Conceptos Clave',
+          items: [
+            'Autenticación verifica QUIÉN eres',
+            'Autorización verifica QUÉ puedes hacer',
+            'Login con email/contraseña o OAuth (Google, GitHub)',
+            'Tokens JWT para mantener sesión activa'
+          ]
+        }
+      ]
+    }
+  ];
+
+  return (
+    <DocLayout>
+      <DocContent>
+        <h1 className="gradient-text text-4xl font-bold mb-4">Material de Apoyo</h1>
+        <p className="text-muted-foreground text-lg mb-8">Contenido pendiente para Sesión 3</p>
+      </DocContent>
+    </DocLayout>
+  );
+};
+
+export default Session3Support;

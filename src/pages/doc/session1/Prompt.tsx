@@ -11,7 +11,7 @@ const Session1Prompt = () => {
     <DocLayout>
       <DocContent>
         <h1 className="gradient-text text-4xl font-bold mb-6">
-          📝 {t('doc.quickStartPage.subsections.prompt')}
+          {t('doc.quickStartPage.subsections.prompt')}
         </h1>
 
         <p className="text-muted-foreground text-lg mb-8">

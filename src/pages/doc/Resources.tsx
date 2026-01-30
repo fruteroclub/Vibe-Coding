@@ -16,12 +16,11 @@ const Resources = () => {
     return `${'•'.repeat(Math.max(key.length - 4, 12))}${visible}`;
   };
 
-  // Función para copiar con protección adicional
+  // Función para copiar la API key completa
   const handleCopy = async (apiName: string, apiKey: string) => {
     try {
-      // Copiar al portapapeles pero con texto ofuscado
-      const obfuscated = obfuscateKey(apiKey);
-      await navigator.clipboard.writeText(obfuscated);
+      // Copiar la API key real completa al portapapeles
+      await navigator.clipboard.writeText(apiKey);
 
       setCopiedKey(apiName);
       setTimeout(() => setCopiedKey(null), 2000);
@@ -80,7 +79,7 @@ const Resources = () => {
       description: t('doc.resourcesPage.apis.google.description'),
       logo: 'https://www.gstatic.com/images/branding/product/1x/googleg_64dp.png',
       buttonText: t('doc.resourcesPage.apis.google.button'),
-      apiKey: 'AIzaSyxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx', // Placeholder
+      apiKey: 'AIzaSyASevdpuvGgeGXY8-uiHcjoJITBObSmfP4',
       link: 'https://console.cloud.google.com/apis/credentials',
       bgColor: 'bg-blue-500/10',
       borderColor: 'border-blue-500',
@@ -92,7 +91,7 @@ const Resources = () => {
       description: t('doc.resourcesPage.apis.gemini.description'),
       logo: 'https://www.gstatic.com/lamda/images/gemini_sparkle_v002_d4735304ff6292a690345.svg',
       buttonText: t('doc.resourcesPage.apis.gemini.button'),
-      apiKey: 'AIzaSyxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx', // Placeholder
+      apiKey: 'AIzaSyBLaB4uLxYGHZorCIVk6CAQ5V4ugMkMqLc',
       link: 'https://makersuite.google.com/app/apikey',
       bgColor: 'bg-purple-500/10',
       borderColor: 'border-purple-500',
@@ -104,7 +103,7 @@ const Resources = () => {
       description: t('doc.resourcesPage.apis.privy.description'),
       logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzj-eBN5t8yQJCe-dER41ijvEGAvKgu8_tIQ&s',
       buttonText: t('doc.resourcesPage.apis.privy.button'),
-      apiKey: 'priv_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx', // Placeholder
+      apiKey: 'privy_app_secret_ib7n7vFiFE4YKV7PGyCFxj9rAXDSXXWP69JRVZ13o2YniZ5XJAPMP7bNoMSNmjjwRMHyxpF3FDcQsotnB8M9vi2',
       link: 'https://dashboard.privy.io',
       bgColor: 'bg-indigo-500/10',
       borderColor: 'border-indigo-500',
@@ -130,7 +129,7 @@ const Resources = () => {
         {/* Web Platforms Section */}
         <div className="my-12">
           <h2 className="text-2xl font-bold text-foreground mb-6">
-            🌐 {t('doc.resourcesPage.platforms.title')}
+            {t('doc.resourcesPage.platforms.title')}
           </h2>
 
           <div className="space-y-6">
@@ -175,12 +174,12 @@ const Resources = () => {
         {/* API Resources Section */}
         <div className="my-12">
           <h2 className="text-2xl font-bold text-foreground mb-6">
-            🔑 {t('doc.resourcesPage.apiKeys.title')}
+            {t('doc.resourcesPage.apiKeys.title')}
           </h2>
 
           <div className="mb-6 glass-card p-4 border-l-4 border-yellow-500 bg-yellow-500/5">
             <p className="text-sm text-foreground">
-              <span className="font-bold text-yellow-400">⚠️ {t('doc.resourcesPage.apiKeys.warning.title')}: </span>
+              <span className="font-bold text-yellow-400">{t('doc.resourcesPage.apiKeys.warning.title')}: </span>
               {t('doc.resourcesPage.apiKeys.warning.description')}
             </p>
           </div>
@@ -259,7 +258,7 @@ const Resources = () => {
         {/* Sección de recursos adicionales */}
         <div className="my-12 glass-card p-6 border-l-4 border-green-500">
           <h2 className="text-2xl font-bold text-green-400 mb-6">
-            📖 {t('doc.resourcesPage.additionalResources.title')}
+            {t('doc.resourcesPage.additionalResources.title')}
           </h2>
           <div className="space-y-3">
             <div className="flex items-start gap-3">

@@ -2,6 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { DocLayout } from '@/components/doc/DocLayout';
 import { DocContent } from '@/components/doc/DocContent';
 import { Link } from 'react-router-dom';
+import { Palette, Database, Brain, Lock, Rocket } from 'lucide-react';
 
 const Layers = () => {
   const { t } = useTranslation();
@@ -9,7 +10,7 @@ const Layers = () => {
   const layers = [
     {
       number: 1,
-      icon: '🎨',
+      icon: <Palette size={24} />,
       name: t('doc.layersPage.layer1.name'),
       subtitle: t('doc.layersPage.layer1.subtitle'),
       description: t('doc.layersPage.layer1.description'),
@@ -21,7 +22,7 @@ const Layers = () => {
     },
     {
       number: 2,
-      icon: '💾',
+      icon: <Database size={24} />,
       name: t('doc.layersPage.layer2.name'),
       subtitle: t('doc.layersPage.layer2.subtitle'),
       description: t('doc.layersPage.layer2.description'),
@@ -33,7 +34,7 @@ const Layers = () => {
     },
     {
       number: 3,
-      icon: '🧠',
+      icon: <Brain size={24} />,
       name: t('doc.layersPage.layer3.name'),
       subtitle: t('doc.layersPage.layer3.subtitle'),
       description: t('doc.layersPage.layer3.description'),
@@ -45,7 +46,7 @@ const Layers = () => {
     },
     {
       number: 4,
-      icon: '🔐',
+      icon: <Lock size={24} />,
       name: t('doc.layersPage.layer4.name'),
       subtitle: t('doc.layersPage.layer4.subtitle'),
       description: t('doc.layersPage.layer4.description'),
@@ -57,7 +58,7 @@ const Layers = () => {
     },
     {
       number: 5,
-      icon: '🚀',
+      icon: <Rocket size={24} />,
       name: t('doc.layersPage.layer5.name'),
       subtitle: t('doc.layersPage.layer5.subtitle'),
       description: t('doc.layersPage.layer5.description'),

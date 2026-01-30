@@ -11,7 +11,7 @@ const Session2Prompt = () => {
     <DocLayout>
       <DocContent>
         <h1 className="gradient-text text-4xl font-bold mb-6">
-          📝 {t('doc.quickStartPage.subsections.prompt')}
+          {t('doc.quickStartPage.subsections.prompt')}
         </h1>
 
         <p className="text-muted-foreground text-lg mb-8">
@@ -25,7 +25,7 @@ const Session2Prompt = () => {
 
         <div className="mt-12 p-6 border border-orange-500/30 rounded-lg bg-orange-500/5">
           <h3 className="text-lg font-semibold text-orange-400 mb-3">
-            💡 Nota Importante sobre APIs
+            Nota Importante sobre APIs
           </h3>
           <p className="text-muted-foreground leading-relaxed mb-3">
             Para esta sesión necesitarás obtener una API key de Claude. Asegúrate de:

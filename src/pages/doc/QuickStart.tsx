@@ -65,7 +65,7 @@ const QuickStart = () => {
         {/* Descripción del Proyecto */}
         <div className="mb-16">
           <h2 className="text-3xl font-bold text-orange-400 mb-4">
-            🎯 {t('doc.quickStartPage.projectOverview.title').replace('🎯 ', '')}
+            {t('doc.quickStartPage.projectOverview.title').replace('🎯 ', '')}
           </h2>
           <p className="text-muted-foreground mb-6 text-lg">
             {t('doc.quickStartPage.projectOverview.description')}
@@ -82,12 +82,12 @@ const QuickStart = () => {
 
         {/* Primeros Pasos */}
         <h2 className="text-3xl font-bold mb-8 mt-16">
-          🚀 Primeros Pasos
+          Primeros Pasos
         </h2>
 
         <div className="mb-8 p-6 border-l-4 border-orange-400 bg-orange-500/5 rounded-r-lg">
           <p className="text-muted-foreground text-base leading-relaxed">
-            <span className="text-orange-400 font-semibold">⚠️ Importante:</span> Estos pasos de configuración son necesarios ANTES de usar los prompts de cada sesión. Asegúrate de completar esta configuración inicial para poder seguir el bootcamp sin problemas.
+            <span className="text-orange-400 font-semibold">Importante:</span> Estos pasos de configuración son necesarios ANTES de usar los prompts de cada sesión. Asegúrate de completar esta configuración inicial para poder seguir el bootcamp sin problemas.
           </p>
         </div>
 
@@ -120,7 +120,7 @@ const QuickStart = () => {
               {t('doc.quickStartPage.setup.step2.description')}
             </p>
             <p className="text-sm text-muted-foreground/70 italic">
-              💡 {t('doc.quickStartPage.setup.step2.note')}
+              {t('doc.quickStartPage.setup.step2.note')}
             </p>
           </div>
 
@@ -172,7 +172,7 @@ const QuickStart = () => {
               {/* Lo que construirás */}
               <div className="mt-5 ml-4">
                 <p className="text-sm text-muted-foreground/70 mb-2">
-                  ✨ Lo que construirás:
+                  Lo que construirás:
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                   {session.whatYouBuild.map((item, i) => (
