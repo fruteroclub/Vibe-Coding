@@ -2,11 +2,13 @@ import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { ChevronRight, ChevronDown } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import { GlossaryModal, GlossaryButton } from './GlossaryModal';
 
 export const DocSidebar = () => {
   const location = useLocation();
   const { t } = useTranslation();
   const [expandedSessions, setExpandedSessions] = useState<string[]>([]);
+  const [isGlossaryOpen, setIsGlossaryOpen] = useState(false);
 
   const toggleSession = (sessionId: string) => {
     setExpandedSessions(prev =>
@@ -104,8 +106,16 @@ export const DocSidebar = () => {
   ];
 
   return (
-    <nav className="space-y-6">
-      {sections.map((section) => (
+    <>
+      <GlossaryModal isOpen={isGlossaryOpen} onClose={() => setIsGlossaryOpen(false)} />
+
+      <nav className="space-y-6">
+        {/* Glosario Rápido Button */}
+        <div className="mb-4">
+          <GlossaryButton onClick={() => setIsGlossaryOpen(true)} />
+        </div>
+
+        {sections.map((section) => (
         <div key={section.title}>
           <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3">
             {section.title}
@@ -210,6 +220,7 @@ export const DocSidebar = () => {
           })}
         </ul>
       </div>
-    </nav>
+      </nav>
+    </>
   );
 };
