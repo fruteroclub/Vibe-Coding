@@ -27,7 +27,8 @@
       "Bash(test:*)",
       "Bash(grep:*)",
       "WebFetch(domain:fruteroclub.notion.site)",
-      "Bash(git checkout:*)"
+      "Bash(git checkout:*)",
+      "Bash(git commit:*)"
     ]
   }
 }
