@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
 import { DocLayout } from '@/components/doc/DocLayout';
 import { DocContent } from '@/components/doc/DocContent';
 import { Link } from 'react-router-dom';
@@ -12,156 +11,123 @@ interface ChecklistItem {
 }
 
 const Session2Deliverable = () => {
-  const { t } = useTranslation();
-
   const checklistData: ChecklistItem[] = [
     {
-      id: 'A',
-      text: 'A. Pre-requisitos (De Sesión 1)',
-      subItems: [
-        { id: 'A1', text: 'Todo lo de Sesión 1 funciona' },
-        { id: 'A2', text: 'Regenmon creado y visible' }
-      ]
-    },
-    {
-      id: 'B',
-      text: 'B. Interfaz de Chat',
+      id: 'nivel1',
+      text: '🟢 NIVEL 1 — CORE (Mínimo Aceptable)',
       subItems: [
         {
-          id: 'B1',
-          text: 'Contenedor de Chat:',
+          id: 'A',
+          text: 'A. Interacción Básica',
           subItems: [
-            { id: 'B1a', text: 'Visible debajo del display del Regenmon' },
-            { id: 'B1b', text: 'Estilo coherente (pixel/retro)' }
-          ]
-        },
-        { id: 'B2', text: 'Área de Mensajes:' },
-        { id: 'B3', text: 'Mensajes del Usuario:' },
-        { id: 'B4', text: 'Mensajes del Regenmon:' },
-        { id: 'B5', text: 'Indicador "Escribiendo...":' },
-        { id: 'B6', text: 'Input de Mensaje:' }
-      ]
-    },
-    {
-      id: 'C',
-      text: 'C. Funcionamiento del Chat',
-      subItems: [
-        {
-          id: 'C1',
-          text: 'Envío de mensajes:',
-          subItems: [
-            { id: 'C1a', text: 'Usuario escribe y envía' },
-            { id: 'C1b', text: 'Mensaje aparece en burbuja azul' },
-            { id: 'C1c', text: 'Aparece indicador "..."' },
-            { id: 'C1d', text: 'Regenmon responde en burbuja verde' },
-            { id: 'C1e', text: 'Respuestas en español' },
-            { id: 'C1f', text: 'Respuestas cortas (<50 palabras)' }
+            { id: 'A1', text: 'Existe un área de chat visible en la app' },
+            { id: 'A2', text: 'El usuario puede escribir un mensaje' },
+            { id: 'A3', text: 'El mensaje del usuario aparece en pantalla' },
+            { id: 'A4', text: 'El Regenmon responde con texto' },
+            { id: 'A5', text: 'La respuesta está en español' }
           ]
         },
         {
-          id: 'C2',
-          text: 'Persistencia:',
+          id: 'B',
+          text: 'B. Flujo Conversacional',
           subItems: [
-            { id: 'C2a', text: 'Mensajes se guardan en localStorage' },
-            { id: 'C2b', text: 'Al recargar, los mensajes siguen ahí' }
+            { id: 'B1', text: 'El chat permite enviar más de un mensaje' },
+            { id: 'B2', text: 'Usuario y Regenmon se distinguen visualmente (posición o color)' },
+            { id: 'B3', text: 'La conversación se siente continua' }
           ]
         }
       ]
     },
     {
-      id: 'E',
-      text: 'E. Sistema de Efectos en Stats',
+      id: 'nivel2',
+      text: '🟡 NIVEL 2 — COMPLETO (Esperado)',
       subItems: [
         {
-          id: 'E1',
-          text: 'Interacciones Positivas (+5 Felicidad):',
+          id: 'C',
+          text: 'C. Experiencia de Chat Clara',
           subItems: [
-            { id: 'E1a', text: 'Detecta: "te quiero", "gracias", "eres genial", ❤️, 😊' },
-            { id: 'E1b', text: 'Sube Felicidad +5' },
-            { id: 'E1c', text: 'Muestra "+5 💚" flotando' }
+            { id: 'C1', text: 'El chat está integrado visualmente al Regenmon' },
+            { id: 'C2', text: 'Los mensajes del usuario se muestran en burbujas' },
+            { id: 'C3', text: 'Los mensajes del Regenmon se muestran en burbujas distintas' },
+            { id: 'C4', text: 'Existe un input claro para escribir mensajes' },
+            { id: 'C5', text: 'El input se limpia después de enviar' }
           ]
         },
         {
-          id: 'E2',
-          text: 'Interacciones de Juego (+3 Felicidad, -2 Energía):',
+          id: 'D',
+          text: 'D. Respuestas del Regenmon',
           subItems: [
-            { id: 'E2a', text: 'Detecta: "jugar", "juguemos", "vamos"' },
-            { id: 'E2b', text: 'Sube Felicidad +3, baja Energía -2' },
-            { id: 'E2c', text: 'Muestra "+3 💚" y "-2 ⚡"' }
+            { id: 'D1', text: 'El Regenmon responde automáticamente' },
+            { id: 'D2', text: 'Las respuestas son cortas (≈ menos de 50 palabras)' },
+            { id: 'D3', text: 'El tono es consistente (amigable, neutral o definido)' }
           ]
         },
         {
-          id: 'E3',
-          text: 'Conversaciones Largas (-3 Energía cada 5 mensajes):',
+          id: 'E',
+          text: 'E. Persistencia Básica',
           subItems: [
-            { id: 'E3a', text: 'Cuenta mensajes intercambiados' },
-            { id: 'E3b', text: 'Cada 5 mensajes: -3 Energía' },
-            { id: 'E3c', text: 'Regenmon menciona estar cansado' }
-          ]
-        },
-        {
-          id: 'E4',
-          text: 'Menciones de Comida (+5 Hambre):',
-          subItems: [
-            { id: 'E4a', text: 'Detecta: "comida", "comer", "pizza", "hambre"' },
-            { id: 'E4b', text: 'Sube Hambre +5' },
-            { id: 'E4c', text: 'Regenmon menciona tener hambre' }
-          ]
-        },
-        {
-          id: 'E5',
-          text: 'Feedback Visual:',
-          subItems: [
-            { id: 'E5a', text: 'Aparece texto flotante cuando cambia stat' },
-            { id: 'E5b', text: 'Ejemplo: "+5 💚" sobre la barra' },
-            { id: 'E5c', text: 'Se desvanece después de 1-2 segundos' }
-          ]
-        },
-        {
-          id: 'E6',
-          text: 'Comportamiento según Stats:',
-          subItems: [
-            { id: 'E6a', text: 'Si Energía < 30: Regenmon menciona sueño' },
-            { id: 'E6b', text: 'Si Felicidad > 70: Regenmon es extra entusiasta' },
-            { id: 'E6c', text: 'Si Hambre > 70: Regenmon menciona hambre' }
+            { id: 'E1', text: 'Los mensajes se guardan en localStorage' },
+            { id: 'E2', text: 'Al recargar: La conversación no se pierde' },
+            { id: 'E3', text: 'Al recargar: Se muestran mensajes previos' }
           ]
         }
       ]
     },
     {
-      id: 'F',
-      text: 'F. Sistema de Memoria (BONUS - Opcional)',
+      id: 'nivel3',
+      text: '🔵 NIVEL 3 — EXCELENTE (Alta Calidad)',
       subItems: [
         {
-          id: 'F1',
-          text: 'Detecta información personal:',
+          id: 'F',
+          text: 'F. Feedback de Conversación',
           subItems: [
-            { id: 'F1a', text: '"Me llamo [nombre]"' },
-            { id: 'F1b', text: '"Trabajo en [lugar]"' },
-            { id: 'F1c', text: '"Me gusta [cosa]"' },
-            { id: 'F1d', text: '"Tengo un/una [mascota/cosa]"' }
+            { id: 'F1', text: 'Aparece un indicador de "Escribiendo…" antes de la respuesta' },
+            { id: 'F2', text: 'El indicador desaparece al responder' },
+            { id: 'F3', text: 'El flujo no se siente inmediato ni cortado' }
           ]
         },
         {
-          id: 'F2',
-          text: 'Guarda memorias:',
+          id: 'G',
+          text: 'G. Sistema de Efectos en Stats',
           subItems: [
-            { id: 'F2a', text: 'Se guardan en localStorage' }
+            { id: 'G1', text: 'Las conversaciones afectan los stats del Regenmon' },
+            { id: 'G2', text: 'Regla: Interacción positiva → sube Felicidad' },
+            { id: 'G3', text: 'Regla: Conversación larga → baja Energía' },
+            { id: 'G4', text: 'El cambio de stats es visible' }
           ]
         },
         {
-          id: 'F3',
-          text: 'Usa memorias en conversación:',
+          id: 'H',
+          text: 'H. Comportamiento Según Estado',
           subItems: [
-            { id: 'F3a', text: 'Regenmon menciona cosas que recordó' },
-            { id: 'F3b', text: 'Hace preguntas de seguimiento' }
+            { id: 'H1', text: 'El Regenmon cambia su forma de responder según stats' },
+            { id: 'H2', text: 'Bajo Energía → menciona cansancio' },
+            { id: 'H3', text: 'Alta Felicidad → se muestra más entusiasta' }
+          ]
+        }
+      ]
+    },
+    {
+      id: 'nivel4',
+      text: '🟣 NIVEL 4 — BONUS / EXTRA (No Obligatorio)',
+      subItems: [
+        {
+          id: 'I',
+          text: 'I. Memoria Conversacional',
+          subItems: [
+            { id: 'I1', text: 'El Regenmon detecta información personal (nombre, gustos, etc.)' },
+            { id: 'I2', text: 'Guarda memorias en localStorage' },
+            { id: 'I3', text: 'Usa memorias en respuestas futuras' },
+            { id: 'I4', text: 'Muestra indicador de memorias (ej: 🧠 3)' }
           ]
         },
         {
-          id: 'F4',
-          text: 'Indicador visible:',
+          id: 'J',
+          text: 'J. Feedback Visual Avanzado',
           subItems: [
-            { id: 'F4a', text: 'Muestra "🧠 X memorias"' }
+            { id: 'J1', text: 'Texto flotante al cambiar stats' },
+            { id: 'J2', text: 'Animaciones suaves en el chat' },
+            { id: 'J3', text: 'Micro-reacciones visuales' }
           ]
         }
       ]
@@ -169,12 +135,12 @@ const Session2Deliverable = () => {
   ];
 
   const [checkedItems, setCheckedItems] = useState<Set<string>>(() => {
-    const saved = localStorage.getItem('session2-checklist');
+    const saved = localStorage.getItem('session2-checklist-v2');
     return saved ? new Set(JSON.parse(saved)) : new Set();
   });
 
   useEffect(() => {
-    localStorage.setItem('session2-checklist', JSON.stringify(Array.from(checkedItems)));
+    localStorage.setItem('session2-checklist-v2', JSON.stringify(Array.from(checkedItems)));
   }, [checkedItems]);
 
   const getAllChildIds = (item: ChecklistItem): string[] => {
@@ -192,14 +158,11 @@ const Session2Deliverable = () => {
       const newSet = new Set(prev);
       const isCurrentlyChecked = newSet.has(id);
 
-      // Obtener todos los IDs del item y sus hijos
       const allIds = getAllChildIds(item);
 
       if (isCurrentlyChecked) {
-        // Si está marcado, desmarcar el item y todos sus hijos
         allIds.forEach(childId => newSet.delete(childId));
       } else {
-        // Si no está marcado, marcar el item y todos sus hijos
         allIds.forEach(childId => newSet.add(childId));
       }
 
@@ -263,12 +226,30 @@ const Session2Deliverable = () => {
     <DocLayout>
       <DocContent>
         <h1 className="gradient-text text-4xl font-bold mb-4">
-          Entregable 2: "Regenmon Conversacional"
+          💬 SESIÓN 2 — Tu Regenmon Habla
         </h1>
 
-        <p className="text-muted-foreground text-lg mb-8">
-          {t('doc.quickStartPage.sessions.session2.title')}
-        </p>
+        <h2 className="text-2xl font-bold text-orange-400 mb-6">
+          Entregable 2: "Regenmon Conversacional"
+        </h2>
+
+        <div className="mb-8 p-6 border border-border/50 rounded-lg bg-muted/20">
+          <h3 className="text-xl font-bold text-foreground mb-4">
+            📊 Evaluación por Niveles (Estandarizada)
+          </h3>
+          <p className="text-sm text-muted-foreground mb-2">
+            🔑 <strong>NIVEL 1 — CORE:</strong> El Regenmon puede conversar
+          </p>
+          <p className="text-sm text-muted-foreground mb-2">
+            🎯 <strong>NIVEL 2 — COMPLETO:</strong> Buen entendimiento del flujo y experiencia de chat
+          </p>
+          <p className="text-sm text-muted-foreground mb-2">
+            ✨ <strong>NIVEL 3 — EXCELENTE:</strong> Cuidado por experiencia, reglas y coherencia
+          </p>
+          <p className="text-sm text-muted-foreground">
+            🚀 <strong>NIVEL 4 — BONUS:</strong> Memoria conversacional y feedback avanzado
+          </p>
+        </div>
 
         {/* Progress Bar */}
         <div className="mb-8 p-6 border border-border/50 rounded-lg bg-muted/20">
@@ -289,10 +270,6 @@ const Session2Deliverable = () => {
           </p>
         </div>
 
-        <h2 className="text-2xl font-bold text-orange-400 mb-6">
-          Checklist Técnico Completo
-        </h2>
-
         <div className="mb-8 p-4 border border-blue-500/30 rounded-lg bg-blue-500/5">
           <p className="text-sm text-muted-foreground">
             <strong className="text-foreground">Instrucciones:</strong> Haz clic en cada elemento para marcarlo como completado.
@@ -304,35 +281,6 @@ const Session2Deliverable = () => {
           {checklistData.map(item => renderChecklistItem(item))}
         </div>
 
-        {/* Troubleshooting Section */}
-        <div className="mb-12 p-6 border border-yellow-500/30 rounded-lg bg-yellow-500/5">
-          <h3 className="text-xl font-bold text-yellow-400 mb-4">
-            Troubleshooting Común
-          </h3>
-          <div className="space-y-3 text-sm">
-            <div>
-              <p className="font-semibold text-foreground">Problema 1: El chat no aparece o no responde</p>
-              <p className="text-muted-foreground">Verifica que el contenedor de chat esté correctamente renderizado y que el input esté funcional</p>
-            </div>
-            <div>
-              <p className="font-semibold text-foreground">Problema 2: La API no responde</p>
-              <p className="text-muted-foreground">Revisa que tu API key esté correctamente configurada y que la llamada a la API funcione</p>
-            </div>
-            <div>
-              <p className="font-semibold text-foreground">Problema 3: Los stats no se actualizan</p>
-              <p className="text-muted-foreground">Verifica la detección de palabras clave y que el sistema de efectos esté implementado correctamente</p>
-            </div>
-            <div>
-              <p className="font-semibold text-foreground">Problema 4: Los mensajes no persisten</p>
-              <p className="text-muted-foreground">Asegúrate de guardar el historial en localStorage después de cada mensaje</p>
-            </div>
-            <div>
-              <p className="font-semibold text-foreground">Problema 5: El scroll no funciona</p>
-              <p className="text-muted-foreground">Implementa scroll automático al último mensaje con scrollIntoView() o similar</p>
-            </div>
-          </div>
-        </div>
-
         {/* Submit Button */}
         <a
           href="https://www.frutero.club/"
@@ -341,7 +289,7 @@ const Session2Deliverable = () => {
           className="block w-full py-4 px-6 bg-gradient-to-r from-orange-500 to-orange-400 hover:from-orange-600 hover:to-orange-500 text-white font-bold text-center rounded-xl transition-all duration-300 transform hover:scale-[1.02] shadow-lg hover:shadow-xl mb-12"
         >
           <span className="flex items-center justify-center gap-2">
-            Entregar
+            Entregar Sesión 2
             <ExternalLink size={20} />
           </span>
         </a>
@@ -349,13 +297,13 @@ const Session2Deliverable = () => {
         {/* Navegación */}
         <div className="mt-16 flex items-center justify-between border-t border-border/50 pt-8">
           <Link
-            to="/doc/session-2/prompt"
+            to="/doc/session-2/support"
             className="flex items-center gap-2 text-muted-foreground hover:text-doc-primary transition-colors"
           >
             <span>←</span>
             <div>
               <div className="text-xs text-muted-foreground">Anterior</div>
-              <div className="font-semibold">{t('doc.quickStartPage.subsections.prompt')}</div>
+              <div className="font-semibold">Material de Apoyo</div>
             </div>
           </Link>
 
@@ -365,7 +313,7 @@ const Session2Deliverable = () => {
           >
             <div>
               <div className="text-xs text-muted-foreground">Siguiente</div>
-              <div className="font-semibold">{t('doc.quickStartPage.subsections.supportMaterial')}</div>
+              <div className="font-semibold">Prompt</div>
             </div>
             <span>→</span>
           </Link>

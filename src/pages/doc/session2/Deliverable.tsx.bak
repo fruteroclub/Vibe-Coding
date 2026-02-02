@@ -10,7 +10,7 @@ interface ChecklistItem {
   subItems?: ChecklistItem[];
 }
 
-const Session3Deliverable = () => {
+const Session2Deliverable = () => {
   const checklistData: ChecklistItem[] = [
     {
       id: 'nivel1',
@@ -18,22 +18,22 @@ const Session3Deliverable = () => {
       subItems: [
         {
           id: 'A',
-          text: 'A. Identidad del Usuario',
+          text: 'A. Interacción Básica',
           subItems: [
-            { id: 'A1', text: 'Existe un botón para Iniciar Sesión' },
-            { id: 'A2', text: 'El usuario puede iniciar sesión (email o Google)' },
-            { id: 'A3', text: 'Después de iniciar sesión: Se muestra su nombre o email' },
-            { id: 'A4', text: 'La sesión se mantiene al recargar la página' }
+            { id: 'A1', text: 'Existe un área de chat visible en la app' },
+            { id: 'A2', text: 'El usuario puede escribir un mensaje' },
+            { id: 'A3', text: 'El mensaje del usuario aparece en pantalla' },
+            { id: 'A4', text: 'El Regenmon responde con texto' },
+            { id: 'A5', text: 'La respuesta está en español' }
           ]
         },
         {
           id: 'B',
-          text: 'B. Economía Básica',
+          text: 'B. Flujo Conversacional',
           subItems: [
-            { id: 'B1', text: 'Existe un contador de monedas $FRUTA' },
-            { id: 'B2', text: 'No logueado → "🍊 --- $FRUTA"' },
-            { id: 'B3', text: 'Logueado → muestra un número' },
-            { id: 'B4', text: 'El valor de monedas se guarda (no se pierde al recargar)' }
+            { id: 'B1', text: 'El chat permite enviar más de un mensaje' },
+            { id: 'B2', text: 'Usuario y Regenmon se distinguen visualmente (posición o color)' },
+            { id: 'B3', text: 'La conversación se siente continua' }
           ]
         }
       ]
@@ -44,31 +44,31 @@ const Session3Deliverable = () => {
       subItems: [
         {
           id: 'C',
-          text: 'C. Obtener Monedas',
+          text: 'C. Experiencia de Chat Clara',
           subItems: [
-            { id: 'C1', text: 'Existe un botón para Conseguir monedas' },
-            { id: 'C2', text: 'El botón solo aparece si tienes 0 monedas' },
-            { id: 'C3', text: 'Al usarlo: Las monedas aumentan' },
-            { id: 'C4', text: 'Al usarlo: El botón desaparece' },
-            { id: 'C5', text: 'No puedes obtener monedas infinitamente' }
+            { id: 'C1', text: 'El chat está integrado visualmente al Regenmon' },
+            { id: 'C2', text: 'Los mensajes del usuario se muestran en burbujas' },
+            { id: 'C3', text: 'Los mensajes del Regenmon se muestran en burbujas distintas' },
+            { id: 'C4', text: 'Existe un input claro para escribir mensajes' },
+            { id: 'C5', text: 'El input se limpia después de enviar' }
           ]
         },
         {
           id: 'D',
-          text: 'D. Alimentar al Regenmon',
+          text: 'D. Respuestas del Regenmon',
           subItems: [
-            { id: 'D1', text: 'Existe un botón "Alimentar"' },
-            { id: 'D2', text: 'Al alimentar: Las monedas disminuyen' },
-            { id: 'D3', text: 'Al alimentar: El stat de Hambre baja' },
-            { id: 'D4', text: 'El Regenmon reacciona con un mensaje' }
+            { id: 'D1', text: 'El Regenmon responde automáticamente' },
+            { id: 'D2', text: 'Las respuestas son cortas (≈ menos de 50 palabras)' },
+            { id: 'D3', text: 'El tono es consistente (amigable, neutral o definido)' }
           ]
         },
         {
           id: 'E',
-          text: 'E. Persistencia de Acciones',
+          text: 'E. Persistencia Básica',
           subItems: [
-            { id: 'E1', text: 'Las monedas y stats se mantienen al recargar' },
-            { id: 'E2', text: 'El estado del Regenmon refleja las acciones previas' }
+            { id: 'E1', text: 'Los mensajes se guardan en localStorage' },
+            { id: 'E2', text: 'Al recargar: La conversación no se pierde' },
+            { id: 'E3', text: 'Al recargar: Se muestran mensajes previos' }
           ]
         }
       ]
@@ -79,30 +79,30 @@ const Session3Deliverable = () => {
       subItems: [
         {
           id: 'F',
-          text: 'F. Feedback de Sistema',
+          text: 'F. Feedback de Conversación',
           subItems: [
-            { id: 'F1', text: 'Aparecen mensajes de estado: "Procesando…"' },
-            { id: 'F2', text: 'Aparecen mensajes de estado: "¡Listo!"' },
-            { id: 'F3', text: 'Aparecen mensajes de error si algo falla' },
-            { id: 'F4', text: 'El usuario entiende qué está pasando en todo momento' }
+            { id: 'F1', text: 'Aparece un indicador de "Escribiendo…" antes de la respuesta' },
+            { id: 'F2', text: 'El indicador desaparece al responder' },
+            { id: 'F3', text: 'El flujo no se siente inmediato ni cortado' }
           ]
         },
         {
           id: 'G',
-          text: 'G. Detalles Visuales de Economía',
+          text: 'G. Sistema de Efectos en Stats',
           subItems: [
-            { id: 'G1', text: 'Al gastar monedas: Se muestra el cambio visual (ej: "-10 🍊")' },
-            { id: 'G2', text: 'El contador de monedas se actualiza inmediatamente' },
-            { id: 'G3', text: 'La interacción se siente fluida' }
+            { id: 'G1', text: 'Las conversaciones afectan los stats del Regenmon' },
+            { id: 'G2', text: 'Regla: Interacción positiva → sube Felicidad' },
+            { id: 'G3', text: 'Regla: Conversación larga → baja Energía' },
+            { id: 'G4', text: 'El cambio de stats es visible' }
           ]
         },
         {
           id: 'H',
-          text: 'H. Validaciones Claras',
+          text: 'H. Comportamiento Según Estado',
           subItems: [
-            { id: 'H1', text: 'No puedes alimentar si no tienes monedas' },
-            { id: 'H2', text: 'Los botones se deshabilitan correctamente' },
-            { id: 'H3', text: 'El sistema evita acciones inválidas' }
+            { id: 'H1', text: 'El Regenmon cambia su forma de responder según stats' },
+            { id: 'H2', text: 'Bajo Energía → menciona cansancio' },
+            { id: 'H3', text: 'Alta Felicidad → se muestra más entusiasta' }
           ]
         }
       ]
@@ -113,23 +113,21 @@ const Session3Deliverable = () => {
       subItems: [
         {
           id: 'I',
-          text: 'I. Historial de Actividades',
+          text: 'I. Memoria Conversacional',
           subItems: [
-            { id: 'I1', text: 'Existe un historial de acciones: Conseguir monedas' },
-            { id: 'I2', text: 'Existe un historial de acciones: Alimentar' },
-            { id: 'I3', text: 'Cada entrada muestra: Qué acción fue' },
-            { id: 'I4', text: 'Cada entrada muestra: Cuántas monedas' },
-            { id: 'I5', text: 'Cada entrada muestra: Cuándo ocurrió' },
-            { id: 'I6', text: 'El historial se guarda al recargar' }
+            { id: 'I1', text: 'El Regenmon detecta información personal (nombre, gustos, etc.)' },
+            { id: 'I2', text: 'Guarda memorias en localStorage' },
+            { id: 'I3', text: 'Usa memorias en respuestas futuras' },
+            { id: 'I4', text: 'Muestra indicador de memorias (ej: 🧠 3)' }
           ]
         },
         {
           id: 'J',
-          text: 'J. Micro-interacciones',
+          text: 'J. Feedback Visual Avanzado',
           subItems: [
-            { id: 'J1', text: 'Animaciones suaves al ganar o gastar' },
-            { id: 'J2', text: 'Reacciones visuales del Regenmon' },
-            { id: 'J3', text: 'Pequeños detalles UX' }
+            { id: 'J1', text: 'Texto flotante al cambiar stats' },
+            { id: 'J2', text: 'Animaciones suaves en el chat' },
+            { id: 'J3', text: 'Micro-reacciones visuales' }
           ]
         }
       ]
@@ -137,12 +135,12 @@ const Session3Deliverable = () => {
   ];
 
   const [checkedItems, setCheckedItems] = useState<Set<string>>(() => {
-    const saved = localStorage.getItem('session3-checklist-v2');
+    const saved = localStorage.getItem('session2-checklist-v2');
     return saved ? new Set(JSON.parse(saved)) : new Set();
   });
 
   useEffect(() => {
-    localStorage.setItem('session3-checklist-v2', JSON.stringify(Array.from(checkedItems)));
+    localStorage.setItem('session2-checklist-v2', JSON.stringify(Array.from(checkedItems)));
   }, [checkedItems]);
 
   const getAllChildIds = (item: ChecklistItem): string[] => {
@@ -228,11 +226,11 @@ const Session3Deliverable = () => {
     <DocLayout>
       <DocContent>
         <h1 className="gradient-text text-4xl font-bold mb-4">
-          🍊 SESIÓN 3 — Tu Regenmon Tiene Valor
+          💬 SESIÓN 2 — Tu Regenmon Habla
         </h1>
 
         <h2 className="text-2xl font-bold text-orange-400 mb-6">
-          Entregable 3: "Regenmon con Economía"
+          Entregable 2: "Regenmon Conversacional"
         </h2>
 
         <div className="mb-8 p-6 border border-border/50 rounded-lg bg-muted/20">
@@ -240,16 +238,16 @@ const Session3Deliverable = () => {
             📊 Evaluación por Niveles (Estandarizada)
           </h3>
           <p className="text-sm text-muted-foreground mb-2">
-            🔑 <strong>NIVEL 1 — CORE:</strong> El Regenmon está vinculado a un usuario y existen recursos
+            🔑 <strong>NIVEL 1 — CORE:</strong> El Regenmon puede conversar
           </p>
           <p className="text-sm text-muted-foreground mb-2">
-            🎯 <strong>NIVEL 2 — COMPLETO:</strong> Economía funcional y entendible
+            🎯 <strong>NIVEL 2 — COMPLETO:</strong> Buen entendimiento del flujo y experiencia de chat
           </p>
           <p className="text-sm text-muted-foreground mb-2">
-            ✨ <strong>NIVEL 3 — EXCELENTE:</strong> Cuidado por UX y experiencia de sistema
+            ✨ <strong>NIVEL 3 — EXCELENTE:</strong> Cuidado por experiencia, reglas y coherencia
           </p>
           <p className="text-sm text-muted-foreground">
-            🚀 <strong>NIVEL 4 — BONUS:</strong> Historial de actividades y micro-interacciones
+            🚀 <strong>NIVEL 4 — BONUS:</strong> Memoria conversacional y feedback avanzado
           </p>
         </div>
 
@@ -291,7 +289,7 @@ const Session3Deliverable = () => {
           className="block w-full py-4 px-6 bg-gradient-to-r from-orange-500 to-orange-400 hover:from-orange-600 hover:to-orange-500 text-white font-bold text-center rounded-xl transition-all duration-300 transform hover:scale-[1.02] shadow-lg hover:shadow-xl mb-12"
         >
           <span className="flex items-center justify-center gap-2">
-            Entregar Sesión 3
+            Entregar Sesión 2
             <ExternalLink size={20} />
           </span>
         </a>
@@ -299,7 +297,7 @@ const Session3Deliverable = () => {
         {/* Navegación */}
         <div className="mt-16 flex items-center justify-between border-t border-border/50 pt-8">
           <Link
-            to="/doc/session-3/support"
+            to="/doc/session-2/support"
             className="flex items-center gap-2 text-muted-foreground hover:text-doc-primary transition-colors"
           >
             <span>←</span>
@@ -310,12 +308,12 @@ const Session3Deliverable = () => {
           </Link>
 
           <Link
-            to="/doc/session-3/support"
+            to="/doc/session-2/support"
             className="flex items-center gap-2 text-muted-foreground hover:text-doc-primary transition-colors text-right"
           >
             <div>
               <div className="text-xs text-muted-foreground">Siguiente</div>
-              <div className="font-semibold">Prompt</div>
+              <div className="font-semibold">Material de Apoyo</div>
             </div>
             <span>→</span>
           </Link>
@@ -325,4 +323,4 @@ const Session3Deliverable = () => {
   );
 };
 
-export default Session3Deliverable;
+export default Session2Deliverable;

@@ -315,7 +315,7 @@ const Session3Deliverable = () => {
           >
             <div>
               <div className="text-xs text-muted-foreground">Siguiente</div>
-              <div className="font-semibold">Prompt</div>
+              <div className="font-semibold">Material de Apoyo</div>
             </div>
             <span>→</span>
           </Link>

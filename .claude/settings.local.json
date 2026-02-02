@@ -28,7 +28,8 @@
       "Bash(grep:*)",
       "WebFetch(domain:fruteroclub.notion.site)",
       "Bash(git checkout:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(do echo \"=== Updating $session Support.tsx ===\")"
     ]
   }
 }

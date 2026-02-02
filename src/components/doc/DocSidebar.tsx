@@ -38,9 +38,9 @@ export const DocSidebar = () => {
       title: t('doc.sidebarItems.session1'),
       href: '/doc/session-1',
       subItems: [
-        { title: t('doc.quickStartPage.subsections.prompt'), href: '/doc/session-1/prompt' },
-        { title: t('doc.quickStartPage.subsections.deliverable'), href: '/doc/session-1/deliverable' },
         { title: t('doc.quickStartPage.subsections.supportMaterial'), href: '/doc/session-1/support' },
+        { title: t('doc.quickStartPage.subsections.deliverable'), href: '/doc/session-1/deliverable' },
+        { title: t('doc.quickStartPage.subsections.prompt'), href: '/doc/session-1/prompt' },
       ]
     },
     {
@@ -48,9 +48,9 @@ export const DocSidebar = () => {
       title: t('doc.sidebarItems.session2'),
       href: '/doc/session-2',
       subItems: [
-        { title: t('doc.quickStartPage.subsections.prompt'), href: '/doc/session-2/prompt' },
-        { title: t('doc.quickStartPage.subsections.deliverable'), href: '/doc/session-2/deliverable' },
         { title: t('doc.quickStartPage.subsections.supportMaterial'), href: '/doc/session-2/support' },
+        { title: t('doc.quickStartPage.subsections.deliverable'), href: '/doc/session-2/deliverable' },
+        { title: t('doc.quickStartPage.subsections.prompt'), href: '/doc/session-2/prompt' },
       ]
     },
     {
@@ -58,9 +58,9 @@ export const DocSidebar = () => {
       title: t('doc.sidebarItems.session3'),
       href: '/doc/session-3',
       subItems: [
-        { title: t('doc.quickStartPage.subsections.prompt'), href: '/doc/session-3/prompt' },
-        { title: t('doc.quickStartPage.subsections.deliverable'), href: '/doc/session-3/deliverable' },
         { title: t('doc.quickStartPage.subsections.supportMaterial'), href: '/doc/session-3/support' },
+        { title: t('doc.quickStartPage.subsections.deliverable'), href: '/doc/session-3/deliverable' },
+        { title: t('doc.quickStartPage.subsections.prompt'), href: '/doc/session-3/prompt' },
       ]
     },
     {
@@ -68,9 +68,9 @@ export const DocSidebar = () => {
       title: t('doc.sidebarItems.session4'),
       href: '/doc/session-4',
       subItems: [
-        { title: t('doc.quickStartPage.subsections.prompt'), href: '/doc/session-4/prompt' },
-        { title: t('doc.quickStartPage.subsections.deliverable'), href: '/doc/session-4/deliverable' },
         { title: t('doc.quickStartPage.subsections.supportMaterial'), href: '/doc/session-4/support' },
+        { title: t('doc.quickStartPage.subsections.deliverable'), href: '/doc/session-4/deliverable' },
+        { title: t('doc.quickStartPage.subsections.prompt'), href: '/doc/session-4/prompt' },
       ]
     },
     {
@@ -78,9 +78,9 @@ export const DocSidebar = () => {
       title: t('doc.sidebarItems.session5'),
       href: '/doc/session-5',
       subItems: [
-        { title: t('doc.quickStartPage.subsections.prompt'), href: '/doc/session-5/prompt' },
-        { title: t('doc.quickStartPage.subsections.deliverable'), href: '/doc/session-5/deliverable' },
         { title: t('doc.quickStartPage.subsections.supportMaterial'), href: '/doc/session-5/support' },
+        { title: t('doc.quickStartPage.subsections.deliverable'), href: '/doc/session-5/deliverable' },
+        { title: t('doc.quickStartPage.subsections.prompt'), href: '/doc/session-5/prompt' },
       ]
     },
   ];
