@@ -43,6 +43,7 @@ export const DocSidebar = () => {
         { title: t('doc.quickStartPage.subsections.supportMaterial'), href: '/doc/session-1/support' },
         { title: t('doc.quickStartPage.subsections.deliverable'), href: '/doc/session-1/deliverable' },
         { title: t('doc.quickStartPage.subsections.prompt'), href: '/doc/session-1/prompt' },
+        { title: '🚨 Errores Comunes', href: '/doc/session-1/troubleshooting' },
       ]
     },
     {
@@ -53,6 +54,7 @@ export const DocSidebar = () => {
         { title: t('doc.quickStartPage.subsections.supportMaterial'), href: '/doc/session-2/support' },
         { title: t('doc.quickStartPage.subsections.deliverable'), href: '/doc/session-2/deliverable' },
         { title: t('doc.quickStartPage.subsections.prompt'), href: '/doc/session-2/prompt' },
+        { title: '🚨 Errores Comunes', href: '/doc/session-2/troubleshooting' },
       ]
     },
     {
@@ -63,6 +65,7 @@ export const DocSidebar = () => {
         { title: t('doc.quickStartPage.subsections.supportMaterial'), href: '/doc/session-3/support' },
         { title: t('doc.quickStartPage.subsections.deliverable'), href: '/doc/session-3/deliverable' },
         { title: t('doc.quickStartPage.subsections.prompt'), href: '/doc/session-3/prompt' },
+        { title: '🚨 Errores Comunes', href: '/doc/session-3/troubleshooting' },
       ]
     },
     {
@@ -73,6 +76,7 @@ export const DocSidebar = () => {
         { title: t('doc.quickStartPage.subsections.supportMaterial'), href: '/doc/session-4/support' },
         { title: t('doc.quickStartPage.subsections.deliverable'), href: '/doc/session-4/deliverable' },
         { title: t('doc.quickStartPage.subsections.prompt'), href: '/doc/session-4/prompt' },
+        { title: '🚨 Errores Comunes', href: '/doc/session-4/troubleshooting' },
       ]
     },
     {
@@ -83,6 +87,7 @@ export const DocSidebar = () => {
         { title: t('doc.quickStartPage.subsections.supportMaterial'), href: '/doc/session-5/support' },
         { title: t('doc.quickStartPage.subsections.deliverable'), href: '/doc/session-5/deliverable' },
         { title: t('doc.quickStartPage.subsections.prompt'), href: '/doc/session-5/prompt' },
+        { title: '🚨 Errores Comunes', href: '/doc/session-5/troubleshooting' },
       ]
     },
   ];
