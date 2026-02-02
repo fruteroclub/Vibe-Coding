@@ -1,347 +1,245 @@
-import { useState, useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
+import { useState } from 'react';
 import { DocLayout } from '@/components/doc/DocLayout';
 import { DocContent } from '@/components/doc/DocContent';
 import { Link } from 'react-router-dom';
-import { CheckCircle2, Circle, ExternalLink } from 'lucide-react';
-
-interface ChecklistItem {
-  id: string;
-  text: string;
-  subItems?: ChecklistItem[];
-}
+import { CheckCircle2, ExternalLink, CheckCircle } from 'lucide-react';
 
 const Session1Deliverable = () => {
-  const { t } = useTranslation();
+  const [selectedLevel, setSelectedLevel] = useState<string | null>(null);
 
-  const checklistData: ChecklistItem[] = [
+  const levels = [
     {
-      id: 'A',
-      text: 'A. Configuración Inicial',
-      subItems: [
-        { id: 'A1', text: 'Cuenta de V0 creada y verificada' },
-        { id: 'A2', text: 'Proyecto conectado a Vercel' }
-      ]
-    },
-    {
-      id: 'B',
-      text: 'B. Modal de Creación',
-      subItems: [
-        { id: 'B1', text: 'Modal aparece automáticamente cuando no existe Regenmon' },
+      id: 'core',
+      emoji: '🟢',
+      title: 'NIVEL 1 — CORE (Mínimo Aceptable)',
+      subtitle: '🔑 Este nivel demuestra que el alumno entendió la sesión y puede continuar.',
+      sections: [
         {
-          id: 'B2',
-          text: 'Campo de nombre:',
-          subItems: [
-            { id: 'B2a', text: 'Input de texto visible' },
-            { id: 'B2b', text: 'Placeholder dice "¿Cómo se llamará?"' },
-            { id: 'B2c', text: 'Contador de caracteres visible (ej: "5/15")' },
-            { id: 'B2d', text: 'Validación: mínimo 2 caracteres' },
-            { id: 'B2e', text: 'Validación: máximo 15 caracteres' },
-            { id: 'B2f', text: 'Error visible si no cumple requisitos' }
+          title: 'A. Creación Básica del Regenmon',
+          items: [
+            'Existe una app desplegada con URL pública',
+            'Se muestra un Regenmon en pantalla',
+            'El usuario puede:',
+            '  • Escribir un nombre',
+            '  • Elegir un tipo (🌱 / 💧 / ✨)',
+            '  • Crear el Regenmon'
           ]
         },
         {
-          id: 'B3',
-          text: 'Selección de tipo:',
-          subItems: [
-            { id: 'B3a', text: 'Tres opciones visibles: 🌱 Semilla, 💧 Gota, ✨ Chispa' },
-            { id: 'B3b', text: 'Solo una opción se puede seleccionar a la vez' },
-            { id: 'B3c', text: 'Opción seleccionada tiene borde/color diferente' },
-            { id: 'B3d', text: 'Muestra el nombre del tipo debajo del emoji' }
+          title: 'B. Display Principal',
+          items: [
+            'Se muestra el nombre del Regenmon',
+            'Se muestra un sprite o emoji del tipo elegido',
+            'Existen 3 barras de stats visibles:',
+            '  • Felicidad',
+            '  • Energía',
+            '  • Hambre',
+            'Los stats tienen valores iniciales (no importa el número exacto)'
           ]
         },
         {
-          id: 'B4',
-          text: 'Botón "¡Eclosionar!":',
-          subItems: [
-            { id: 'B4a', text: 'Botón visible' },
-            { id: 'B4b', text: 'Deshabilitado (gris) hasta tener nombre válido + tipo seleccionado' },
-            { id: 'B4c', text: 'Habilitado (color) cuando se cumplen requisitos' },
-            { id: 'B4d', text: 'Al hacer click, cierra el modal' },
-            { id: 'B4e', text: 'Al hacer click, crea el Regenmon' }
+          title: 'C. Persistencia Básica',
+          items: [
+            'Al recargar la página:',
+            '  • El Regenmon sigue existiendo',
+            '  • El nombre y tipo no se pierden'
           ]
         }
-      ]
+      ],
+      result: '"Mi Regenmon existe, vive en internet y no se borra."',
+      approval: '👉 Aprobado para continuar a Sesión 2'
     },
     {
-      id: 'C',
-      text: 'C. Display Principal',
-      subItems: [
+      id: 'complete',
+      emoji: '🟡',
+      title: 'NIVEL 2 — COMPLETO (Esperado)',
+      subtitle: '🎯 Este nivel demuestra buen entendimiento y ejecución correcta.',
+      sections: [
         {
-          id: 'C1',
-          text: 'Header/Título:',
-          subItems: [
-            { id: 'C1a', text: 'Muestra "🥚 Regenmon" o nombre de la app' },
-            { id: 'C1b', text: 'Fuente estilo pixel o retro visible' },
-            { id: 'C1c', text: 'Header fijo en la parte superior' }
+          title: 'D. Modal de Creación Funcional',
+          items: [
+            'El modal aparece solo si NO existe Regenmon',
+            'Input de nombre visible y usable',
+            'No permite crear Regenmon sin nombre',
+            'Solo se puede elegir un tipo a la vez',
+            'El botón de crear:',
+            '  • Se deshabilita si faltan datos',
+            '  • Crea el Regenmon correctamente'
           ]
         },
         {
-          id: 'C2',
-          text: 'Nombre del Regenmon:',
-          subItems: [
-            { id: 'C2a', text: 'Se muestra el nombre que el usuario eligió' },
-            { id: 'C2b', text: 'Fuente grande y legible' },
-            { id: 'C2c', text: 'Centrado arriba del sprite' }
+          title: 'E. Display Refinado',
+          items: [
+            'El nombre se muestra de forma clara y centrada',
+            'El sprite está centrado en su contenedor',
+            'Las barras:',
+            '  • Tienen colores distintos',
+            '  • Representan visualmente el valor'
           ]
         },
         {
-          id: 'C3',
-          text: 'Sprite/Emoji:',
-          subItems: [
-            { id: 'C3a', text: 'Área de 200x200px (aproximadamente)' },
-            { id: 'C3b', text: 'Muestra el emoji del tipo seleccionado (🌱/💧/✨)' },
-            { id: 'C3c', text: 'Centrado en el contenedor' },
-            { id: 'C3d', text: 'Fondo ligeramente diferente del contenedor principal' }
-          ]
-        },
-        {
-          id: 'C4',
-          text: 'Barras de Estadísticas:',
-          subItems: [
-            { id: 'C4a', text: 'Tres barras visibles: 💚 Felicidad, ⚡ Energía, 🍎 Hambre' },
-            { id: 'C4b', text: 'Cada barra muestra icono/emoji correspondiente' },
-            { id: 'C4c', text: 'Cada barra muestra nombre del stat' },
-            { id: 'C4d', text: 'Cada barra muestra progreso con color' },
-            { id: 'C4e', text: 'Cada barra muestra valor numérico (ej: "50/100")' },
-            { id: 'C4f', text: 'Valores iniciales: Felicidad 50, Energía 50, Hambre 50' },
-            { id: 'C4g', text: 'Las barras son visualmente proporcionales al valor' }
+          title: 'F. Persistencia Completa',
+          items: [
+            'Los datos se guardan en localStorage',
+            'Al recargar:',
+            '  • No reaparece el modal',
+            '  • Stats y tipo persisten'
           ]
         }
-      ]
+      ],
+      result: '"Mi Regenmon se siente como una app real."',
+      approval: '👉 Este es el nivel recomendado para la mayoría de alumnos'
     },
     {
-      id: 'D',
-      text: 'D. Persistencia (localStorage)',
-      subItems: [
+      id: 'excellent',
+      emoji: '🔵',
+      title: 'NIVEL 3 — EXCELENTE (Alta Calidad)',
+      subtitle: '✨ Este nivel demuestra cuidado por UX y detalle.',
+      sections: [
         {
-          id: 'D1',
-          text: 'Al crear Regenmon:',
-          subItems: [
-            { id: 'D1a', text: 'Los datos se guardan inmediatamente' },
-            { id: 'D1b', text: 'Key en localStorage: "regenmon-data"' },
-            { id: 'D1c', text: 'Datos incluyen: nombre, tipo, felicidad:50, energia:50, hambre:50, fechaCreacion' }
+          title: 'G. Validaciones y UX',
+          items: [
+            'Nombre con validaciones claras (mín / máx)',
+            'Mensajes de error visibles y entendibles',
+            'Feedback visual al seleccionar tipo',
+            'Botón cambia visualmente según estado'
           ]
         },
         {
-          id: 'D2',
-          text: 'Al recargar página:',
-          subItems: [
-            { id: 'D2a', text: 'NO aparece el modal de creación' },
-            { id: 'D2b', text: 'Se muestra el Regenmon guardado' },
-            { id: 'D2c', text: 'Todos los datos persisten (nombre, tipo, stats)' }
+          title: 'H. Reinicio del Regenmon',
+          items: [
+            'Botón de reinicio visible pero discreto',
+            'Modal de confirmación antes de borrar',
+            'Al confirmar:',
+            '  • Se borra localStorage',
+            '  • Vuelve el modal de creación'
+          ]
+        },
+        {
+          title: 'I. Responsive',
+          items: [
+            'Funciona correctamente en:',
+            '  • Celular',
+            '  • Tablet',
+            '  • Computadora',
+            'No se desborda el contenido',
+            'Texto legible sin zoom'
           ]
         }
-      ]
+      ],
+      result: '"Mi Regenmon está bien diseñado y cuidado."',
+      approval: ''
     },
     {
-      id: 'E',
-      text: 'E. Botón de Reinicio',
-      subItems: [
+      id: 'bonus',
+      emoji: '🟣',
+      title: 'NIVEL 4 — BONUS / EXTRA (No Obligatorio)',
+      subtitle: '🚀 Este nivel NO es requerido, solo suma.',
+      sections: [
         {
-          id: 'E1',
-          text: 'Ubicación:',
-          subItems: [
-            { id: 'E1a', text: 'Botón pequeño en esquina superior derecha' },
-            { id: 'E1b', text: 'Texto: "🔄 Reiniciar" o solo "🔄"' },
-            { id: 'E1c', text: 'Discreto pero accesible' }
-          ]
-        },
-        {
-          id: 'E2',
-          text: 'Al hacer click:',
-          subItems: [
-            { id: 'E2a', text: 'Abre modal de confirmación' },
-            { id: 'E2b', text: 'Modal pregunta: "¿Estás seguro?"' },
-            { id: 'E2c', text: 'Mensaje: "Tu Regenmon se irá para siempre..."' },
-            { id: 'E2d', text: 'Dos botones: "Cancelar" y "Sí, reiniciar"' }
-          ]
-        },
-        {
-          id: 'E3',
-          text: 'Al confirmar reinicio:',
-          subItems: [
-            { id: 'E3a', text: 'Borra key "regenmon-data" de localStorage' },
-            { id: 'E3b', text: 'Recarga la página' },
-            { id: 'E3c', text: 'Aparece modal de creación de nuevo' }
+          title: '',
+          items: [
+            'Contador de caracteres en el nombre',
+            'Animaciones suaves (hover, transición)',
+            'Estilo pixel/retro bien marcado',
+            'Microinteracciones visuales'
           ]
         }
-      ]
-    },
-    {
-      id: 'F',
-      text: 'F. Responsive (Móvil)',
-      subItems: [
-        { id: 'F1', text: 'Responsivo para todos los dispositivos móviles, laptop, PC' },
-        { id: 'F2', text: 'Contenedor no se desborda' },
-        { id: 'F3', text: 'Texto legible sin zoom' }
-      ]
+      ],
+      result: '',
+      approval: '❗ Este nivel NO afecta aprobación'
     }
   ];
-
-  const [checkedItems, setCheckedItems] = useState<Set<string>>(() => {
-    const saved = localStorage.getItem('session1-checklist');
-    return saved ? new Set(JSON.parse(saved)) : new Set();
-  });
-
-  useEffect(() => {
-    localStorage.setItem('session1-checklist', JSON.stringify(Array.from(checkedItems)));
-  }, [checkedItems]);
-
-  const getAllChildIds = (item: ChecklistItem): string[] => {
-    let ids: string[] = [item.id];
-    if (item.subItems) {
-      item.subItems.forEach(subItem => {
-        ids = [...ids, ...getAllChildIds(subItem)];
-      });
-    }
-    return ids;
-  };
-
-  const toggleItem = (id: string, item: ChecklistItem) => {
-    setCheckedItems(prev => {
-      const newSet = new Set(prev);
-      const isCurrentlyChecked = newSet.has(id);
-
-      // Obtener todos los IDs del item y sus hijos
-      const allIds = getAllChildIds(item);
-
-      if (isCurrentlyChecked) {
-        // Si está marcado, desmarcar el item y todos sus hijos
-        allIds.forEach(childId => newSet.delete(childId));
-      } else {
-        // Si no está marcado, marcar el item y todos sus hijos
-        allIds.forEach(childId => newSet.add(childId));
-      }
-
-      return newSet;
-    });
-  };
-
-  const renderChecklistItem = (item: ChecklistItem, level: number = 0) => {
-    const isChecked = checkedItems.has(item.id);
-    const hasSubItems = item.subItems && item.subItems.length > 0;
-    const marginLeft = level * 24;
-
-    return (
-      <div key={item.id} style={{ marginLeft: `${marginLeft}px` }}>
-        <div
-          className={`flex items-start gap-3 py-2 px-3 rounded-lg transition-all cursor-pointer hover:bg-muted/30 ${
-            isChecked ? 'opacity-50' : ''
-          }`}
-          onClick={() => toggleItem(item.id, item)}
-        >
-          {isChecked ? (
-            <CheckCircle2 size={20} className="text-green-400 mt-0.5 flex-shrink-0" />
-          ) : (
-            <Circle size={20} className="text-muted-foreground mt-0.5 flex-shrink-0" />
-          )}
-          <p
-            className={`text-sm leading-relaxed ${
-              isChecked
-                ? 'line-through text-muted-foreground'
-                : hasSubItems
-                ? 'font-semibold text-foreground'
-                : 'text-foreground'
-            }`}
-          >
-            {item.text}
-          </p>
-        </div>
-        {item.subItems &&
-          item.subItems.map(subItem => renderChecklistItem(subItem, level + 1))}
-      </div>
-    );
-  };
-
-  const totalItems = () => {
-    let count = 0;
-    const countItems = (items: ChecklistItem[]) => {
-      items.forEach(item => {
-        count++;
-        if (item.subItems) countItems(item.subItems);
-      });
-    };
-    countItems(checklistData);
-    return count;
-  };
-
-  const completedItems = checkedItems.size;
-  const total = totalItems();
-  const progress = Math.round((completedItems / total) * 100);
 
   return (
     <DocLayout>
       <DocContent>
         <h1 className="gradient-text text-4xl font-bold mb-4">
-          Entregable 1: "Regenmon Estático Desplegado"
+          🥚 SESIÓN 1 — Nace tu Regenmon
         </h1>
 
-        <p className="text-muted-foreground text-lg mb-8">
-          {t('doc.quickStartPage.sessions.session1.title')}
-        </p>
-
-        {/* Progress Bar */}
-        <div className="mb-8 p-6 border border-border/50 rounded-lg bg-muted/20">
-          <div className="flex items-center justify-between mb-2">
-            <span className="text-sm font-semibold text-foreground">Progreso del Checklist</span>
-            <span className="text-sm text-muted-foreground">
-              {completedItems} / {total} completados
-            </span>
-          </div>
-          <div className="w-full bg-muted/50 rounded-full h-3 overflow-hidden">
-            <div
-              className="bg-gradient-to-r from-green-500 to-green-400 h-full transition-all duration-500 rounded-full"
-              style={{ width: `${progress}%` }}
-            />
-          </div>
-          <p className="text-xs text-muted-foreground mt-2">
-            {progress}% completado
-          </p>
-        </div>
-
         <h2 className="text-2xl font-bold text-orange-400 mb-6">
-          Checklist Técnico Completo
+          Entregable 1: "Regenmon Estático Desplegado"
         </h2>
 
-        <div className="mb-8 p-4 border border-blue-500/30 rounded-lg bg-blue-500/5">
+        <div className="mb-8 p-6 border border-border/50 rounded-lg bg-muted/20">
+          <h3 className="text-xl font-bold text-foreground mb-4">
+            📊 Evaluación por Niveles (Estandarizada)
+          </h3>
           <p className="text-sm text-muted-foreground">
-            <strong className="text-foreground">Instrucciones:</strong> Haz clic en cada elemento para marcarlo como completado.
-            Los elementos completados aparecerán tachados y en gris. Tu progreso se guarda automáticamente.
+            Haz clic en cada nivel para ver los detalles de los requisitos.
           </p>
         </div>
 
-        <div className="space-y-1 mb-12 border border-border/50 rounded-lg p-4 bg-card/30">
-          {checklistData.map(item => renderChecklistItem(item))}
-        </div>
+        <div className="space-y-4 mb-12">
+          {levels.map((level) => (
+            <div key={level.id} className="border border-border/50 rounded-lg overflow-hidden bg-card/30">
+              <button
+                type="button"
+                onClick={() => setSelectedLevel(selectedLevel === level.id ? null : level.id)}
+                className="w-full p-6 text-left hover:bg-muted/30 transition-colors flex items-start justify-between"
+              >
+                <div className="flex-1">
+                  <h3 className="text-xl font-bold text-foreground mb-2 flex items-center gap-2">
+                    <span className="text-2xl">{level.emoji}</span>
+                    {level.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground">{level.subtitle}</p>
+                </div>
+                <span className="text-2xl ml-4">
+                  {selectedLevel === level.id ? '▼' : '▶'}
+                </span>
+              </button>
 
-        {/* Troubleshooting Section */}
-        <div className="mb-12 p-6 border border-yellow-500/30 rounded-lg bg-yellow-500/5">
-          <h3 className="text-xl font-bold text-yellow-400 mb-4">
-            Troubleshooting Común
-          </h3>
-          <div className="space-y-3 text-sm">
-            <div>
-              <p className="font-semibold text-foreground">Problema 1: El modal no aparece</p>
-              <p className="text-muted-foreground">Verifica que no exista la key "regenmon-data" en localStorage</p>
+              {selectedLevel === level.id && (
+                <div className="p-6 pt-0 space-y-6">
+                  {level.sections.map((section, idx) => (
+                    <div key={idx}>
+                      {section.title && (
+                        <h4 className="font-bold text-foreground mb-3">{section.title}</h4>
+                      )}
+                      <div className="space-y-2">
+                        {section.items.map((item, itemIdx) => (
+                          <div key={itemIdx} className="flex items-start gap-2">
+                            <CheckCircle2
+                              size={16}
+                              className="text-green-400 mt-1 flex-shrink-0"
+                            />
+                            <p className="text-sm text-muted-foreground">{item}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+
+                  {level.result && (
+                    <div className="mt-6 p-4 border border-green-500/30 rounded-lg bg-green-500/5">
+                      <div className="flex items-start gap-2">
+                        <CheckCircle size={20} className="text-green-400 mt-0.5 flex-shrink-0" />
+                        <div>
+                          <p className="font-semibold text-foreground mb-1">
+                            ✅ Resultado del Nivel {level.title.split('—')[0].trim()}:
+                          </p>
+                          <p className="text-sm text-muted-foreground">{level.result}</p>
+                          {level.approval && (
+                            <p className="text-sm text-muted-foreground mt-2">{level.approval}</p>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
+                  {level.id === 'bonus' && (
+                    <div className="mt-6 p-4 border border-purple-500/30 rounded-lg bg-purple-500/5">
+                      <p className="text-sm text-muted-foreground font-semibold">
+                        {level.approval}
+                      </p>
+                    </div>
+                  )}
+                </div>
+              )}
             </div>
-            <div>
-              <p className="font-semibold text-foreground">Problema 2: Los datos no se guardan</p>
-              <p className="text-muted-foreground">Revisa que estés usando localStorage.setItem() correctamente</p>
-            </div>
-            <div>
-              <p className="font-semibold text-foreground">Problema 3: El botón no se habilita</p>
-              <p className="text-muted-foreground">Verifica las condiciones de validación del nombre y tipo seleccionado</p>
-            </div>
-            <div>
-              <p className="font-semibold text-foreground">Problema 4: No es responsive</p>
-              <p className="text-muted-foreground">Usa clases responsive de Tailwind (sm:, md:, lg:) y prueba en diferentes tamaños</p>
-            </div>
-            <div>
-              <p className="font-semibold text-foreground">Problema 5: El reinicio no funciona</p>
-              <p className="text-muted-foreground">Asegúrate de borrar localStorage y recargar con window.location.reload()</p>
-            </div>
-          </div>
+          ))}
         </div>
 
         {/* Submit Button */}
@@ -352,7 +250,7 @@ const Session1Deliverable = () => {
           className="block w-full py-4 px-6 bg-gradient-to-r from-orange-500 to-orange-400 hover:from-orange-600 hover:to-orange-500 text-white font-bold text-center rounded-xl transition-all duration-300 transform hover:scale-[1.02] shadow-lg hover:shadow-xl mb-12"
         >
           <span className="flex items-center justify-center gap-2">
-            Entregar
+            Entregar Sesión 1
             <ExternalLink size={20} />
           </span>
         </a>
@@ -366,7 +264,7 @@ const Session1Deliverable = () => {
             <span>←</span>
             <div>
               <div className="text-xs text-muted-foreground">Anterior</div>
-              <div className="font-semibold">{t('doc.quickStartPage.subsections.prompt')}</div>
+              <div className="font-semibold">Prompt</div>
             </div>
           </Link>
 
@@ -376,7 +274,7 @@ const Session1Deliverable = () => {
           >
             <div>
               <div className="text-xs text-muted-foreground">Siguiente</div>
-              <div className="font-semibold">{t('doc.quickStartPage.subsections.supportMaterial')}</div>
+              <div className="font-semibold">Material de Apoyo</div>
             </div>
             <span>→</span>
           </Link>
