@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { useTranslation } from 'react-i18next';
 import { DocLayout } from '@/components/doc/DocLayout';
 import { DocContent } from '@/components/doc/DocContent';
 import { Link } from 'react-router-dom';
@@ -8,11 +7,9 @@ import {
   Cpu,
   PenTool,
   Component,
-  Database,
   Rocket,
   X,
-  ChevronRight,
-  CheckCircle2
+  ChevronRight
 } from 'lucide-react';
 
 interface ResourceSection {
@@ -28,221 +25,223 @@ interface ResourceSection {
 }
 
 const Session1Support = () => {
-  const { t } = useTranslation();
   const [selectedResource, setSelectedResource] = useState<ResourceSection | null>(null);
 
   const resources: ResourceSection[] = [
     {
-      id: 'framework',
-      title: 'Arquitectura de 5 Capas',
-      icon: <Layers size={20} />,
-      description: 'Entiende la estructura fundamental de toda aplicación web moderna',
-      color: 'orange',
-      sections: [
-        {
-          title: 'La Jerarquía de Toda Aplicación Web',
-          items: [
-            'LAYER 5: DEPLOY - Hacer público (Production & Distribution)',
-            'LAYER 4: AUTH - Múltiples usuarios (Identity & Permissions)',
-            'LAYER 3: AI - Inteligencia (Intelligence & Processing)',
-            'LAYER 2: DATA - Persistencia (Storage & State)',
-            'LAYER 1: UI - Interfaz (Interface & Interaction)'
-          ]
-        },
-        {
-          title: 'Por Qué Esta Jerarquía Importa',
-          items: [
-            'No puedes tener usuarios (Layer 4) sin interfaz (Layer 1)',
-            'No puedes guardar datos (Layer 2) sin capturar input (Layer 1)',
-            'No puedes desplegar (Layer 5) sin tener algo que funcione'
-          ]
-        },
-        {
-          title: 'En Regenmon',
-          items: [
-            'Layer 1 (UI): Pantalla donde ves tu mascota, botones, barras',
-            'Layer 2 (DATA): Guardar nombre, stats en localStorage',
-            'Layer 5 (DEPLOY): Publicar en Vercel para compartir'
-          ]
-        }
-      ]
-    },
-    {
-      id: 'ai-dev',
-      title: 'Desarrollo con IA',
+      id: 'intro-ia',
+      title: 'Introducción al desarrollo asistido por IA',
       icon: <Cpu size={20} />,
-      description: 'Aprende a trabajar con herramientas de IA para acelerar tu desarrollo',
+      description: 'Entiende qué significa programar con IA y cómo funciona',
       color: 'blue',
       sections: [
         {
-          title: 'Qué Es Desarrollo Asistido por IA',
+          title: '¿Qué significa programar con IA?',
           items: [
-            'Describes lo que quieres en lenguaje natural',
-            'La IA genera el código por ti',
-            'Validas que funciona correctamente',
-            'Iteras si es necesario'
+            'Cuando hablamos de programar con IA, no hablamos de escribir código complicado ni de aprender lenguajes difíciles.',
+            'Aquí, programar significa decir lo que quieres que pase.',
+            'Imagina que tienes una idea clara en tu cabeza: una mascota digital que vive en una pantalla, que tiene energía, felicidad y hambre. En lugar de preguntarte "¿cómo hago esto técnicamente?", simplemente lo explicas.',
+            'La IA toma esa explicación y la convierte en una aplicación real. Tú sigues tomando decisiones, la IA hace el trabajo técnico.',
+            'Programar con IA es pasar de: "No sé programar" a "Sé explicar lo que quiero construir"'
           ]
         },
         {
-          title: 'Componentes del Sistema',
+          title: '¿Cómo funciona el desarrollo con IA?',
           items: [
-            'El Humano: Tener la visión, describir claramente, validar resultados',
-            'La IA: Entender lenguaje natural, generar código correcto',
-            'Las Herramientas: v0.dev, Claude, Copilot para iteración rápida'
+            'El desarrollo con IA no es un solo paso, es un proceso continuo.',
+            'Primero explicas la idea general. La IA te muestra algo funcionando. Luego lo miras con calma y piensas: "Esto está bien, pero quiero cambiar esto otro".',
+            'Ese diálogo se repite varias veces. Cada vez la app mejora un poco más.',
+            'No hay presión por hacerlo perfecto. La clave está en probar, observar y ajustar.'
           ]
         },
         {
-          title: 'Ventajas',
+          title: '¿Qué es v0.dev?',
           items: [
-            'Velocidad: Prototipo a producción en horas',
-            'Accesibilidad: Barrera de entrada baja',
-            'Calidad: IA conoce mejores prácticas',
-            'Enfoque: Problemas, no implementación'
+            'v0.dev es el lugar donde empiezas a construir.',
+            'Ahí escribes tus ideas como si se las explicaras a alguien más. En segundos, ves una versión visual de tu app.',
+            'No necesitas instalar programas ni configurar nada complicado. Solo escribir, ver y ajustar.',
+            'Es como un borrador inteligente que responde a lo que le pides.'
+          ]
+        },
+        {
+          title: '¿Qué es Vercel?',
+          items: [
+            'Vercel es donde tu app deja de ser solo un experimento.',
+            'Cuando usas Vercel: Tu app vive en internet, Tiene una dirección propia, Puede abrirse desde el celular o la computadora',
+            'Publicar tu app desde el inicio cambia la experiencia: ya no estás "practicando", estás creando algo real.'
+          ]
+        },
+        {
+          title: '¿Qué es un prompt?',
+          items: [
+            'Un prompt es la instrucción que le das a la IA.',
+            'No tiene que ser perfecta. Tiene que ser clara.',
+            'Mientras mejor expliques: Qué quieres, Cómo debería verse, Qué debería hacer. Mejor será el resultado.',
+            'Aprender a escribir buenos prompts es aprender a pensar y comunicar ideas.'
+          ]
+        },
+        {
+          title: 'Mentalidad de iteración',
+          items: [
+            'Aquí no se espera que todo funcione a la primera.',
+            'La mentalidad correcta es: "Voy a intentarlo, ver qué pasa y mejorarlo".',
+            'Cada ajuste es parte del proceso. Cada error es solo información.',
+            'Esta forma de trabajar reduce el miedo y aumenta la confianza.'
           ]
         }
       ]
     },
     {
-      id: 'prompts',
-      title: 'Prompts Efectivos',
-      icon: <PenTool size={20} />,
-      description: 'Domina el arte de escribir instrucciones claras para la IA',
-      color: 'purple',
-      sections: [
-        {
-          title: 'Anatomía de un Prompt Efectivo',
-          items: [
-            'Contexto: Qué framework (React, Vue), qué estilo (TailwindCSS)',
-            'Objetivo: Qué quieres construir específicamente',
-            'Estructura: Cómo debe organizarse el código',
-            'Detalles: Nombres de variables, funciones específicas'
-          ]
-        },
-        {
-          title: 'Ejemplo de Prompt para Regenmon',
-          items: [
-            '"Crea un componente React llamado Display"',
-            '"Debe mostrar el nombre del Regenmon en grande"',
-            '"Debe mostrar 3 barras de progreso: Felicidad, Energía, Hambre"',
-            '"Usa TailwindCSS para los estilos"',
-            '"Usa lucide-react para los iconos"'
-          ]
-        },
-        {
-          title: 'Tips para Mejores Resultados',
-          items: [
-            'Sé específico con nombres y términos técnicos',
-            'Divide tareas grandes en componentes pequeños',
-            'Itera: pide cambios específicos si algo no está bien',
-            'Pide código comentado si estás aprendiendo'
-          ]
-        }
-      ]
-    },
-    {
-      id: 'components',
-      title: 'Componentes React',
+      id: 'componentes-estado',
+      title: 'Componentes y manejo de información',
       icon: <Component size={20} />,
-      description: 'Los bloques fundamentales de construcción de tu aplicación',
+      description: 'Entiende las piezas fundamentales de tu aplicación',
       color: 'green',
       sections: [
         {
-          title: 'Qué Es Un Componente',
+          title: '¿Qué es un componente?',
           items: [
-            'Una pieza independiente de interfaz que puedes reutilizar',
-            'Función que retorna HTML (JSX)',
-            'Puede tener su propia lógica y estado',
-            'Se puede componer con otros componentes'
+            'Para entender una app, ayuda dividirla en partes.',
+            'Un componente es una parte pequeña que cumple una función clara.',
+            'Por ejemplo: Mostrar la mascota, Mostrar una barra de energía, Mostrar el nombre',
+            'Cada pieza es simple por sí sola, pero juntas crean la experiencia completa.'
           ]
         },
         {
-          title: 'Props: Cómo se Comunican',
+          title: '¿Qué significa estado?',
           items: [
-            'Props son parámetros que pasas al componente',
-            'Hacen que los componentes sean reutilizables',
-            'Flujo de datos de padre a hijo',
-            'Inmutables: el hijo no puede modificar las props'
+            'El estado es la información que cambia mientras usas la app.',
+            'Es lo que hace que el Regenmon se sienta "vivo": La energía sube o baja, La felicidad cambia, El hambre aumenta',
+            'Cuando algo cambia, la app lo refleja automáticamente en pantalla.'
           ]
         },
         {
-          title: 'Componentes en Regenmon',
+          title: '¿Qué significa guardar información?',
           items: [
-            'Display: Muestra la mascota y sus stats',
-            'ModalCreacion: Formulario para crear nuevo Regenmon',
-            'BarraProgreso: Muestra felicidad, energía, hambre',
-            'App: Componente raíz que decide qué mostrar'
+            'Guardar información evita que el usuario pierda su progreso.',
+            'Nadie quiere volver a empezar cada vez que entra. Por eso la app recuerda decisiones importantes.',
+            'Esto hace que la experiencia se sienta continua y personal.'
+          ]
+        },
+        {
+          title: '¿Qué es localStorage?',
+          items: [
+            'localStorage es el lugar donde la app guarda esa información.',
+            'No es visible para el usuario, pero funciona como una memoria silenciosa. Gracias a esto, el Regenmon sigue ahí cuando vuelves.'
           ]
         }
       ]
     },
     {
-      id: 'state',
-      title: 'State y localStorage',
-      icon: <Database size={20} />,
-      description: 'Maneja y persiste los datos de tu aplicación',
-      color: 'sky',
+      id: 'construir-display',
+      title: 'Construcción del display principal',
+      icon: <Layers size={20} />,
+      description: 'La pantalla principal donde vive tu Regenmon',
+      color: 'orange',
       sections: [
         {
-          title: 'useState: La Memoria Activa',
+          title: '¿Qué es el display principal?',
           items: [
-            'Variable que cuando cambia, actualiza automáticamente la pantalla',
-            'const [valor, setValor] = useState(inicial)',
-            'Solo cambia con setValor(), nunca modificar directamente',
-            'React renderiza el componente cuando el state cambia'
+            'Es la pantalla donde sucede todo.',
+            'Ahí vive el Regenmon. Ahí se ven los cambios. Ahí el usuario pasa la mayor parte del tiempo.',
+            'Por eso debe ser clara, agradable y fácil de entender.'
           ]
         },
         {
-          title: 'localStorage: La Memoria Persistente',
+          title: '¿Qué son las barras de estadísticas?',
           items: [
-            'Guarda datos en el navegador permanentemente',
-            'localStorage.setItem("key", JSON.stringify(data))',
-            'JSON.parse(localStorage.getItem("key"))',
-            'Los datos persisten aunque cierres el navegador'
+            'Las barras muestran el estado del Regenmon sin necesidad de explicar nada.',
+            'Una barra baja comunica urgencia. Una barra llena comunica bienestar.',
+            'Son una forma visual de entender lo que está pasando.'
           ]
         },
         {
-          title: 'Pattern: State + localStorage',
+          title: '¿Qué significa estilizar?',
           items: [
-            'Inicializar state con datos de localStorage',
-            'Cada vez que state cambia, guardar en localStorage',
-            'Usar useEffect para sincronización automática',
-            'En Regenmon: guardar nombre, tipo, stats'
+            'Estilizar es tomar decisiones visuales con intención.',
+            'Colores, tamaños y formas ayudan al usuario a: Entender la información, Sentirse cómodo usando la app, Disfrutar la experiencia'
+          ]
+        },
+        {
+          title: '¿Qué son animaciones simples?',
+          items: [
+            'Las animaciones pequeñas hacen que la app se sienta viva.',
+            'No buscan llamar la atención, solo acompañar los cambios: Barras que se mueven, Botones que reaccionan, Transiciones suaves'
           ]
         }
       ]
     },
     {
-      id: 'deploy',
-      title: 'Deploy y Responsive',
+      id: 'flujo-creacion',
+      title: 'Flujo de creación del Regenmon',
+      icon: <PenTool size={20} />,
+      description: 'Cómo nace tu mascota virtual paso a paso',
+      color: 'purple',
+      sections: [
+        {
+          title: '¿Qué es un flujo?',
+          items: [
+            'El flujo es el camino natural que sigue el usuario.',
+            'Desde que entra hasta que empieza a usar la app. Un buen flujo no confunde ni abruma.'
+          ]
+        },
+        {
+          title: '¿Qué es un modal?',
+          items: [
+            'El modal aparece para guiar el primer paso.',
+            'Le dice al usuario: "Antes de continuar, crea tu Regenmon".',
+            'Así no hay dudas sobre qué hacer primero.'
+          ]
+        },
+        {
+          title: '¿Qué es un input?',
+          items: [
+            'Un input permite al usuario participar activamente.',
+            'Escribir el nombre crea una conexión emocional inmediata.'
+          ]
+        },
+        {
+          title: '¿Qué es un sprite?',
+          items: [
+            'El sprite es la imagen del Regenmon.',
+            'Elegirlo hace que la mascota se sienta única desde el inicio.'
+          ]
+        },
+        {
+          title: '¿Qué hace el botón "¡Nace!"?',
+          items: [
+            'Es el momento donde todo comienza.',
+            'Al presionarlo: La mascota aparece, La app cobra sentido, Empieza la experiencia'
+          ]
+        }
+      ]
+    },
+    {
+      id: 'deploy-produccion',
+      title: 'Deploy a producción',
       icon: <Rocket size={20} />,
-      description: 'Publica tu aplicación y hazla accesible desde cualquier dispositivo',
+      description: 'Publica tu Regenmon para que el mundo lo vea',
       color: 'pink',
       sections: [
         {
-          title: 'Qué Es Deploy',
+          title: '¿Qué significa deploy?',
           items: [
-            'Publicar tu app en internet para que cualquiera pueda acceder',
-            'Tu código en Vercel/Netlify, no en tu computadora',
-            'Tienes una URL única y pública',
-            'Cada cambio se refleja automáticamente'
+            'Deploy significa publicar lo que construiste.',
+            'Es el paso que convierte una idea en algo visible y compartible.'
           ]
         },
         {
-          title: 'Deploy en Vercel (Recomendado)',
+          title: '¿Qué es una URL?',
           items: [
-            '1. Conecta tu cuenta de GitHub',
-            '2. Importa el proyecto de v0',
-            '3. Vercel detecta configuración automáticamente',
-            '4. Click en Deploy y espera ~2 minutos'
+            'Es la dirección de tu app en internet.',
+            'Gracias a ella puedes compartir tu creación con otras personas.'
           ]
         },
         {
-          title: 'Diseño Responsive',
+          title: '¿Qué significa responsive?',
           items: [
-            'Tu app debe verse bien en móvil, tablet y desktop',
-            'TailwindCSS: sm:, md:, lg: para diferentes tamaños',
-            'Prueba en múltiples dispositivos',
-            'Chrome DevTools para simular diferentes pantallas'
+            'Significa que la app se adapta a cualquier pantalla.',
+            'No importa desde dónde se abra, la experiencia se mantiene.'
           ]
         }
       ]
@@ -312,7 +311,7 @@ const Session1Support = () => {
             <span>←</span>
             <div>
               <div className="text-xs text-muted-foreground">Anterior</div>
-              <div className="font-semibold">{t('doc.quickStartPage.subsections.deliverable')}</div>
+              <div className="font-semibold">Entregable</div>
             </div>
           </Link>
 
@@ -331,49 +330,56 @@ const Session1Support = () => {
         {/* Modal for Resource Details */}
         {selectedResource && (
           <div
-            className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4"
+            className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-2 sm:p-4"
             onClick={() => setSelectedResource(null)}
           >
             <div
-              className="bg-background border border-border rounded-2xl max-w-4xl w-full max-h-[85vh] overflow-hidden shadow-2xl"
+              className="bg-background border border-border rounded-xl sm:rounded-2xl max-w-4xl w-full max-h-[95vh] sm:max-h-[85vh] overflow-hidden shadow-2xl"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Modal Header */}
-              <div className="p-6 bg-card border-b border-border/50 flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <div className="p-2 border border-border/50 rounded text-muted-foreground">
+              <div className="p-3 sm:p-4 md:p-6 bg-card border-b border-border/50 flex items-start sm:items-center justify-between gap-2">
+                <div className="flex items-start sm:items-center gap-2 sm:gap-3 flex-1 min-w-0">
+                  <div className="p-1.5 sm:p-2 border border-border/50 rounded text-muted-foreground flex-shrink-0">
                     {selectedResource.icon}
                   </div>
-                  <div>
-                    <h2 className="text-2xl font-bold text-foreground">{selectedResource.title}</h2>
-                    <p className="text-muted-foreground text-sm mt-0.5">{selectedResource.description}</p>
+                  <div className="flex-1 min-w-0">
+                    <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-foreground leading-tight">
+                      {selectedResource.title}
+                    </h2>
+                    <p className="text-muted-foreground text-xs sm:text-sm mt-0.5 line-clamp-2">
+                      {selectedResource.description}
+                    </p>
                   </div>
                 </div>
                 <button
                   type="button"
                   onClick={() => setSelectedResource(null)}
-                  className="p-2 hover:bg-muted rounded-lg transition-colors text-muted-foreground hover:text-foreground"
+                  className="p-1.5 sm:p-2 hover:bg-muted rounded-lg transition-colors text-muted-foreground hover:text-foreground flex-shrink-0"
                   aria-label="Cerrar ventana"
                 >
-                  <X size={20} />
+                  <X size={18} className="sm:w-5 sm:h-5" />
                 </button>
               </div>
 
               {/* Modal Content */}
-              <div className="p-8 overflow-y-auto max-h-[calc(85vh-140px)] bg-background space-y-8">
+              <div className="p-3 sm:p-4 md:p-6 lg:p-8 overflow-y-auto max-h-[calc(95vh-100px)] sm:max-h-[calc(85vh-120px)] md:max-h-[calc(85vh-140px)] bg-background space-y-6 sm:space-y-8">
                 {selectedResource.sections.map((section, idx) => (
-                  <div key={idx} className="space-y-4">
-                    <h3 className="text-xl font-bold text-orange-400 flex items-center gap-2">
-                      <div className="w-1 h-6 bg-orange-400 rounded-full"></div>
-                      {section.title}
+                  <div key={idx} className="space-y-3 sm:space-y-4">
+                    <h3 className="text-base sm:text-lg md:text-xl font-bold text-orange-400 flex items-center gap-2">
+                      <div className="w-0.5 sm:w-1 h-5 sm:h-6 bg-orange-400 rounded-full flex-shrink-0"></div>
+                      <span className="leading-tight">{section.title}</span>
                     </h3>
-                    <div className="space-y-3 ml-5">
-                      {section.items.map((item, itemIdx) => (
-                        <div key={itemIdx} className="flex items-start gap-3 group">
-                          <CheckCircle2 size={20} className="text-green-400 mt-0.5 flex-shrink-0" />
-                          <p className="text-foreground/90 leading-relaxed">{item}</p>
-                        </div>
-                      ))}
+                    <div className="ml-0 sm:ml-3 md:ml-5 bg-gradient-to-br from-muted/40 to-muted/20 rounded-lg sm:rounded-xl p-3 sm:p-4 md:p-5 lg:p-6 border border-border/40 shadow-sm">
+                      <div className="space-y-3 sm:space-y-4">
+                        {section.items.map((item, itemIdx) => (
+                          <div key={itemIdx} className="group">
+                            <p className="text-foreground/95 leading-relaxed text-sm sm:text-[15px] pl-2 sm:pl-3 md:pl-4 border-l-2 border-orange-400/30 hover:border-orange-400/60 transition-colors">
+                              {item}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 ))}

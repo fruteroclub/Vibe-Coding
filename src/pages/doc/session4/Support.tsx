@@ -1,18 +1,15 @@
 import { useState } from 'react';
-import { useTranslation } from 'react-i18next';
 import { DocLayout } from '@/components/doc/DocLayout';
 import { DocContent } from '@/components/doc/DocContent';
 import { Link } from 'react-router-dom';
 import {
-  Layers,
-  Cpu,
-  PenTool,
-  Component,
-  Database,
-  Rocket,
+  Eye,
+  ImageUp,
+  ClipboardCheck,
+  TrendingUp,
+  Images,
   X,
-  ChevronRight,
-  CheckCircle2
+  ChevronRight
 } from 'lucide-react';
 
 interface ResourceSection {
@@ -27,222 +24,317 @@ interface ResourceSection {
   }[];
 }
 
-const Session1Support = () => {
-  const { t } = useTranslation();
+const Session4Support = () => {
   const [selectedResource, setSelectedResource] = useState<ResourceSection | null>(null);
 
   const resources: ResourceSection[] = [
     {
-      id: 'framework',
-      title: 'Arquitectura de 5 Capas',
-      icon: <Layers size={20} />,
-      description: 'Entiende la estructura fundamental de toda aplicación web moderna',
-      color: 'orange',
-      sections: [
-        {
-          title: 'La Jerarquía de Toda Aplicación Web',
-          items: [
-            'LAYER 5: DEPLOY - Hacer público (Production & Distribution)',
-            'LAYER 4: AUTH - Múltiples usuarios (Identity & Permissions)',
-            'LAYER 3: AI - Inteligencia (Intelligence & Processing)',
-            'LAYER 2: DATA - Persistencia (Storage & State)',
-            'LAYER 1: UI - Interfaz (Interface & Interaction)'
-          ]
-        },
-        {
-          title: 'Por Qué Esta Jerarquía Importa',
-          items: [
-            'No puedes tener usuarios (Layer 4) sin interfaz (Layer 1)',
-            'No puedes guardar datos (Layer 2) sin capturar input (Layer 1)',
-            'No puedes desplegar (Layer 5) sin tener algo que funcione'
-          ]
-        },
-        {
-          title: 'En Regenmon',
-          items: [
-            'Layer 1 (UI): Pantalla donde ves tu mascota, botones, barras',
-            'Layer 2 (DATA): Guardar nombre, stats en localStorage',
-            'Layer 5 (DEPLOY): Publicar en Vercel para compartir'
-          ]
-        }
-      ]
-    },
-    {
-      id: 'ai-dev',
-      title: 'Desarrollo con IA',
-      icon: <Cpu size={20} />,
-      description: 'Aprende a trabajar con herramientas de IA para acelerar tu desarrollo',
+      id: 'ia-multimodal',
+      title: 'IA Multimodal: cuando la IA empieza a "ver"',
+      icon: <Eye size={20} />,
+      description: 'La IA ya no solo lee, ahora también interpreta imágenes',
       color: 'blue',
       sections: [
         {
-          title: 'Qué Es Desarrollo Asistido por IA',
+          title: '¿Qué significa IA multimodal?',
           items: [
-            'Describes lo que quieres en lenguaje natural',
-            'La IA genera el código por ti',
-            'Validas que funciona correctamente',
-            'Iteras si es necesario'
+            'Hasta ahora, la relación con la IA ha sido a través de texto:',
+            'le escribes algo y ella responde.',
+            'En esta sesión damos un paso importante:',
+            'la IA ya no solo lee, ahora también interpreta imágenes.',
+            'IA multimodal significa que la inteligencia artificial puede trabajar con:',
+            'Palabras',
+            'Imágenes',
+            'Contexto combinado',
+            'Esto abre la puerta a interacciones mucho más ricas y cercanas a la vida real.'
           ]
         },
         {
-          title: 'Componentes del Sistema',
+          title: '¿Cómo "ve" una IA una imagen?',
           items: [
-            'El Humano: Tener la visión, describir claramente, validar resultados',
-            'La IA: Entender lenguaje natural, generar código correcto',
-            'Las Herramientas: v0.dev, Claude, Copilot para iteración rápida'
+            'La IA no ve como una persona.',
+            'No siente emociones ni reconoce una imagen como "bonita" o "fea".',
+            'Lo que hace es analizar:',
+            'Formas',
+            'Elementos presentes',
+            'Relación entre objetos',
+            'Contexto general',
+            'Es como si la imagen se tradujera a información que la IA puede entender y evaluar.'
           ]
         },
         {
-          title: 'Ventajas',
+          title: 'Diferencia entre texto e imagen como entrada',
           items: [
-            'Velocidad: Prototipo a producción en horas',
-            'Accesibilidad: Barrera de entrada baja',
-            'Calidad: IA conoce mejores prácticas',
-            'Enfoque: Problemas, no implementación'
+            'Cuando escribes texto, describes una acción.',
+            'Cuando envías una imagen, muestras la acción.',
+            'Esto reduce ambigüedad:',
+            'No tienes que explicar tanto',
+            'La evidencia es visual',
+            'La evaluación se basa en lo que realmente hiciste',
+            'Aquí el Regenmon empieza a reaccionar a hechos, no solo palabras.'
+          ]
+        },
+        {
+          title: 'Preparar imágenes para la IA',
+          items: [
+            'Antes de enviar una imagen:',
+            'La app la adapta',
+            'La convierte a un formato adecuado',
+            'Se asegura de que la IA pueda procesarla',
+            'Todo este proceso ocurre "detrás de escena".',
+            'El usuario solo ve que la imagen se envía y recibe respuesta.'
+          ]
+        },
+        {
+          title: 'Evaluar imágenes con IA',
+          items: [
+            'Cuando la imagen se envía:',
+            'La IA la analiza',
+            'La compara con criterios definidos',
+            'Devuelve una evaluación clara',
+            'Aquí la IA deja de ser solo conversacional y se vuelve evaluadora y guía.'
           ]
         }
       ]
     },
     {
-      id: 'prompts',
-      title: 'Prompts Efectivos',
-      icon: <PenTool size={20} />,
-      description: 'Domina el arte de escribir instrucciones claras para la IA',
+      id: 'subida-imagenes',
+      title: 'Sistema de subida de imágenes',
+      icon: <ImageUp size={20} />,
+      description: 'Muestra lo que haces, no solo lo que dices',
       color: 'purple',
       sections: [
         {
-          title: 'Anatomía de un Prompt Efectivo',
+          title: '¿Por qué subir imágenes?',
           items: [
-            'Contexto: Qué framework (React, Vue), qué estilo (TailwindCSS)',
-            'Objetivo: Qué quieres construir específicamente',
-            'Estructura: Cómo debe organizarse el código',
-            'Detalles: Nombres de variables, funciones específicas'
+            'Subir imágenes cambia la dinámica de la experiencia.',
+            'Ya no se trata solo de decir:',
+            '"Hice algo bueno hoy"',
+            'Ahora se trata de:',
+            '"Aquí está lo que hice"',
+            'Esto:',
+            'Refuerza el compromiso',
+            'Da sentido de responsabilidad',
+            'Hace que el progreso sea tangible'
           ]
         },
         {
-          title: 'Ejemplo de Prompt para Regenmon',
+          title: 'Interacción simple: arrastrar y soltar',
           items: [
-            '"Crea un componente React llamado Display"',
-            '"Debe mostrar el nombre del Regenmon en grande"',
-            '"Debe mostrar 3 barras de progreso: Felicidad, Energía, Hambre"',
-            '"Usa TailwindCSS para los estilos"',
-            '"Usa lucide-react para los iconos"'
+            'La subida de imágenes se diseña para ser natural.',
+            'No hay formularios largos ni pasos complejos.',
+            'Arrastras la imagen y la app se encarga del resto.',
+            'Esto reduce fricción y facilita la participación constante.'
           ]
         },
         {
-          title: 'Tips para Mejores Resultados',
+          title: 'Vista previa antes de enviar',
           items: [
-            'Sé específico con nombres y términos técnicos',
-            'Divide tareas grandes en componentes pequeños',
-            'Itera: pide cambios específicos si algo no está bien',
-            'Pide código comentado si estás aprendiendo'
+            'Antes de enviar la imagen:',
+            'El usuario la ve',
+            'Confirma que es correcta',
+            'Decide continuar o cambiarla',
+            'Este pequeño paso genera seguridad y control.'
+          ]
+        },
+        {
+          title: 'Validaciones claras',
+          items: [
+            'La app revisa cosas básicas:',
+            'Que sea una imagen',
+            'Que no sea demasiado pesada',
+            'Si algo no cumple, lo explica con claridad.',
+            'No hay mensajes confusos ni técnicos.'
+          ]
+        },
+        {
+          title: 'Estados de espera visibles',
+          items: [
+            'Mientras la IA evalúa:',
+            'La app muestra que está procesando',
+            'El usuario sabe que debe esperar',
+            'Esto evita ansiedad y mejora la experiencia.'
           ]
         }
       ]
     },
     {
-      id: 'components',
-      title: 'Componentes React',
-      icon: <Component size={20} />,
-      description: 'Los bloques fundamentales de construcción de tu aplicación',
+      id: 'evaluacion-scoring',
+      title: 'Evaluación y scoring con IA',
+      icon: <ClipboardCheck size={20} />,
+      description: 'Feedback automático que te ayuda a mejorar',
       color: 'green',
       sections: [
         {
-          title: 'Qué Es Un Componente',
+          title: '¿Qué significa evaluar con IA?',
           items: [
-            'Una pieza independiente de interfaz que puedes reutilizar',
-            'Función que retorna HTML (JSX)',
-            'Puede tener su propia lógica y estado',
-            'Se puede componer con otros componentes'
+            'Evaluar con IA no es juzgar.',
+            'Es recibir:',
+            'Una mirada externa',
+            'Un análisis consistente',
+            'Un feedback inmediato',
+            'La IA no compara personas, analiza acciones.'
           ]
         },
         {
-          title: 'Props: Cómo se Comunican',
+          title: 'La rúbrica como guía',
           items: [
-            'Props son parámetros que pasas al componente',
-            'Hacen que los componentes sean reutilizables',
-            'Flujo de datos de padre a hijo',
-            'Inmutables: el hijo no puede modificar las props'
+            'La evaluación se basa en una rúbrica clara y balanceada.',
+            'Se divide en tres dimensiones:',
+            'Personal: hábitos, aprendizaje, creación individual',
+            'Comunidad: colaboración, ayuda, compartir',
+            'Impacto: acciones con efecto más amplio',
+            'Esto ayuda a entender que el progreso no es solo personal, también colectivo.'
           ]
         },
         {
-          title: 'Componentes en Regenmon',
+          title: 'El score como referencia',
           items: [
-            'Display: Muestra la mascota y sus stats',
-            'ModalCreacion: Formulario para crear nuevo Regenmon',
-            'BarraProgreso: Muestra felicidad, energía, hambre',
-            'App: Componente raíz que decide qué mostrar'
+            'El puntaje no es una calificación escolar.',
+            'Es una referencia que:',
+            'Ayuda a medir esfuerzo',
+            'Permite ver mejora con el tiempo',
+            'Motiva a intentarlo de nuevo',
+            'No importa un solo resultado, importa la tendencia.'
+          ]
+        },
+        {
+          title: 'Feedback escrito por la IA',
+          items: [
+            'Además del número, la IA explica:',
+            'Qué se hizo bien',
+            'Qué se puede mejorar',
+            'En qué área se destacó más',
+            'Esto convierte cada evaluación en aprendizaje activo.'
+          ]
+        },
+        {
+          title: 'Recompensa conectada al esfuerzo',
+          items: [
+            'El score se transforma en monedas.',
+            'Esto refuerza la idea de:',
+            'Hacer → recibir → avanzar',
+            'La recompensa no es automática, es consecuencia.'
           ]
         }
       ]
     },
     {
-      id: 'state',
-      title: 'State y localStorage',
-      icon: <Database size={20} />,
-      description: 'Maneja y persiste los datos de tu aplicación',
-      color: 'sky',
+      id: 'evolucion',
+      title: 'Sistema de evolución del Regenmon',
+      icon: <TrendingUp size={20} />,
+      description: 'Tu Regenmon crece como reflejo de tus acciones',
+      color: 'orange',
       sections: [
         {
-          title: 'useState: La Memoria Activa',
+          title: '¿Qué significa que el Regenmon evolucione?',
           items: [
-            'Variable que cuando cambia, actualiza automáticamente la pantalla',
-            'const [valor, setValor] = useState(inicial)',
-            'Solo cambia con setValor(), nunca modificar directamente',
-            'React renderiza el componente cuando el state cambia'
+            'La evolución representa crecimiento acumulado.',
+            'No ocurre por una sola acción, ocurre por constancia.',
+            'El Regenmon cambia porque tú cambias.',
+            'Esto refuerza una relación a largo plazo.'
           ]
         },
         {
-          title: 'localStorage: La Memoria Persistente',
+          title: 'Puntos de entrenamiento acumulados',
           items: [
-            'Guarda datos en el navegador permanentemente',
-            'localStorage.setItem("key", JSON.stringify(data))',
-            'JSON.parse(localStorage.getItem("key"))',
-            'Los datos persisten aunque cierres el navegador'
+            'Cada evaluación suma puntos.',
+            'No importa si un día fue mejor que otro.',
+            'Todo cuenta.',
+            'Esto premia:',
+            'Continuidad',
+            'Participación',
+            'Persistencia'
           ]
         },
         {
-          title: 'Pattern: State + localStorage',
+          title: 'Etapas como hitos visibles',
           items: [
-            'Inicializar state con datos de localStorage',
-            'Cada vez que state cambia, guardar en localStorage',
-            'Usar useEffect para sincronización automática',
-            'En Regenmon: guardar nombre, tipo, stats'
+            'Las etapas de evolución funcionan como metas claras.',
+            'El usuario sabe:',
+            'Dónde está',
+            'Qué sigue',
+            'Qué tan cerca está del siguiente nivel',
+            'Esto mantiene motivación sin presión.'
+          ]
+        },
+        {
+          title: 'Barra de progreso',
+          items: [
+            'La barra hace visible el camino.',
+            'No es solo "me falta mucho", es:',
+            '"Me faltan X puntos"',
+            'Eso vuelve el objetivo alcanzable.'
+          ]
+        },
+        {
+          title: 'Momento de evolución',
+          items: [
+            'Cuando se alcanza un umbral:',
+            'Hay animación',
+            'Hay cambio visual',
+            'Hay celebración',
+            'Este momento es clave emocionalmente.',
+            'Refuerza el esfuerzo acumulado.'
           ]
         }
       ]
     },
     {
-      id: 'deploy',
-      title: 'Deploy y Responsive',
-      icon: <Rocket size={20} />,
-      description: 'Publica tu aplicación y hazla accesible desde cualquier dispositivo',
+      id: 'galeria',
+      title: 'Galería de entrenamientos y progreso',
+      icon: <Images size={20} />,
+      description: 'Tu historial visual de crecimiento',
       color: 'pink',
       sections: [
         {
-          title: 'Qué Es Deploy',
+          title: '¿Por qué guardar el historial?',
           items: [
-            'Publicar tu app en internet para que cualquiera pueda acceder',
-            'Tu código en Vercel/Netlify, no en tu computadora',
-            'Tienes una URL única y pública',
-            'Cada cambio se refleja automáticamente'
+            'La galería muestra el camino recorrido.',
+            'Permite mirar atrás y decir:',
+            '"Sí he avanzado".',
+            'Esto refuerza autoestima y constancia.'
           ]
         },
         {
-          title: 'Deploy en Vercel (Recomendado)',
+          title: 'Vista detallada de cada entrenamiento',
           items: [
-            '1. Conecta tu cuenta de GitHub',
-            '2. Importa el proyecto de v0',
-            '3. Vercel detecta configuración automáticamente',
-            '4. Click en Deploy y espera ~2 minutos'
+            'Cada imagen guarda:',
+            'Su evaluación',
+            'Su feedback',
+            'Su categoría',
+            'Nada se pierde, todo suma a la historia.'
           ]
         },
         {
-          title: 'Diseño Responsive',
+          title: 'Filtros para entender patrones',
           items: [
-            'Tu app debe verse bien en móvil, tablet y desktop',
-            'TailwindCSS: sm:, md:, lg: para diferentes tamaños',
-            'Prueba en múltiples dispositivos',
-            'Chrome DevTools para simular diferentes pantallas'
+            'Los filtros ayudan a descubrir:',
+            'En qué área destacas',
+            'Qué tipo de acciones haces más',
+            'Dónde puedes mejorar',
+            'Esto convierte datos en reflexión.'
+          ]
+        },
+        {
+          title: 'Estadísticas generales',
+          items: [
+            'La app resume tu progreso:',
+            'Total de acciones',
+            'Promedios',
+            'Mejor categoría',
+            'Esto da perspectiva global.'
+          ]
+        },
+        {
+          title: 'Racha como hábito',
+          items: [
+            'La racha mide presencia, no perfección.',
+            'Premia:',
+            'Volver',
+            'Intentar',
+            'Mantener constancia',
+            'Es un refuerzo suave, no una presión.'
           ]
         }
       ]
@@ -252,58 +344,86 @@ const Session1Support = () => {
   return (
     <DocLayout>
       <DocContent>
-        <h1 className="gradient-text text-4xl font-bold mb-4">
-          Material de Apoyo
+        <h1 className="gradient-text text-4xl font-bold mb-6">
+          Material de Apoyo - Sesión 4
         </h1>
 
-        <p className="text-muted-foreground text-lg mb-8">
-          Recursos organizados para ayudarte a dominar los conceptos fundamentales.
-          Haz clic en cualquier tema para explorar el contenido completo.
+        <p className="text-muted-foreground text-lg mb-4">
+          IA Multimodal, Evaluación y Progreso
         </p>
 
-        {/* Progress Overview */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
-          <div className="p-4 border border-border/50 rounded-lg bg-purple-500/10">
-            <div className="text-3xl font-bold text-purple-400">{resources.length}</div>
-            <div className="text-sm text-muted-foreground">Temas Principales</div>
-          </div>
-          <div className="p-4 border border-border/50 rounded-lg bg-blue-500/10">
-            <div className="text-3xl font-bold text-blue-400">~2h</div>
-            <div className="text-sm text-muted-foreground">Tiempo Estimado</div>
-          </div>
-          <div className="p-4 border border-border/50 rounded-lg bg-green-500/10">
-            <div className="text-3xl font-bold text-green-400">100%</div>
-            <div className="text-sm text-muted-foreground">Material Gratuito</div>
-          </div>
-        </div>
+        <p className="text-muted-foreground leading-relaxed mb-8">
+          En esta sesión tu Regenmon evoluciona. La IA ahora interpreta imágenes, evalúa tus acciones y tu mascota crece como reflejo de tu constancia.
+        </p>
 
-        {/* Resource Cards Grid */}
+        {/* Resource Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12">
           {resources.map((resource) => (
-            <div
+            <button
               key={resource.id}
+              type="button"
               onClick={() => setSelectedResource(resource)}
-              className="group cursor-pointer p-5 border border-border/50 rounded-lg bg-card/20 hover:border-orange-400/50 hover:bg-card/40 transition-all duration-200"
+              className="p-6 border border-border/50 rounded-xl bg-card/30 hover:border-doc-primary/50 hover:bg-card/50 transition-all duration-200 text-left group"
             >
-              <div className="flex items-start gap-3">
-                <div className="p-2 rounded border border-border/50 text-muted-foreground flex-shrink-0">
+              <div className="flex items-start gap-4">
+                <div className={`p-3 rounded-lg border ${
+                  resource.color === 'blue' ? 'bg-blue-500/10 border-blue-500/20 text-blue-400' :
+                  resource.color === 'purple' ? 'bg-purple-500/10 border-purple-500/20 text-purple-400' :
+                  resource.color === 'green' ? 'bg-green-500/10 border-green-500/20 text-green-400' :
+                  resource.color === 'orange' ? 'bg-orange-500/10 border-orange-500/20 text-orange-400' :
+                  'bg-pink-500/10 border-pink-500/20 text-pink-400'
+                } flex-shrink-0`}>
                   {resource.icon}
                 </div>
                 <div className="flex-1 min-w-0">
-                  <h3 className="text-base font-semibold text-foreground mb-1 group-hover:text-orange-400 transition-colors">
+                  <h3 className="text-lg font-bold text-foreground mb-2 group-hover:text-doc-primary transition-colors">
                     {resource.title}
                   </h3>
-                  <p className="text-sm text-muted-foreground">
+                  <p className="text-sm text-muted-foreground line-clamp-2">
                     {resource.description}
                   </p>
                 </div>
-                <ChevronRight size={18} className="text-muted-foreground group-hover:text-orange-400 group-hover:translate-x-1 transition-all flex-shrink-0 mt-1" />
+                <ChevronRight size={20} className="text-muted-foreground group-hover:text-doc-primary group-hover:translate-x-1 transition-all flex-shrink-0 mt-1" />
               </div>
-            </div>
+            </button>
           ))}
         </div>
 
-        {/* Navigation */}
+        {/* Entregable Section */}
+        <div className="my-12 glass-card p-6 border-l-4 border-green-500">
+          <h2 className="text-2xl font-bold text-green-400 mb-4">
+            ✅ Entregable de la Sesión 4
+          </h2>
+          <p className="text-muted-foreground mb-4">
+            Al finalizar esta sesión, el alumno tiene:
+          </p>
+          <div className="space-y-2 ml-4">
+            <div className="flex items-start gap-3">
+              <span className="text-green-400 mt-1">✓</span>
+              <span className="text-foreground">Evaluación con imágenes</span>
+            </div>
+            <div className="flex items-start gap-3">
+              <span className="text-green-400 mt-1">✓</span>
+              <span className="text-foreground">Feedback automático y entendible</span>
+            </div>
+            <div className="flex items-start gap-3">
+              <span className="text-green-400 mt-1">✓</span>
+              <span className="text-foreground">Sistema de evolución visible</span>
+            </div>
+            <div className="flex items-start gap-3">
+              <span className="text-green-400 mt-1">✓</span>
+              <span className="text-foreground">Historial claro de progreso</span>
+            </div>
+          </div>
+          <p className="text-foreground font-medium mt-6">
+            El Regenmon ya no solo reacciona:
+          </p>
+          <p className="text-muted-foreground italic">
+            Evoluciona como reflejo de tus acciones.
+          </p>
+        </div>
+
+        {/* Navegación */}
         <div className="mt-16 flex items-center justify-between border-t border-border/50 pt-8">
           <Link
             to="/doc/session-4/deliverable"
@@ -312,7 +432,7 @@ const Session1Support = () => {
             <span>←</span>
             <div>
               <div className="text-xs text-muted-foreground">Anterior</div>
-              <div className="font-semibold">{t('doc.quickStartPage.subsections.deliverable')}</div>
+              <div className="font-semibold">Entregable</div>
             </div>
           </Link>
 
@@ -331,49 +451,56 @@ const Session1Support = () => {
         {/* Modal for Resource Details */}
         {selectedResource && (
           <div
-            className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4"
+            className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-2 sm:p-4"
             onClick={() => setSelectedResource(null)}
           >
             <div
-              className="bg-background border border-border rounded-2xl max-w-4xl w-full max-h-[85vh] overflow-hidden shadow-2xl"
+              className="bg-background border border-border rounded-xl sm:rounded-2xl max-w-4xl w-full max-h-[95vh] sm:max-h-[85vh] overflow-hidden shadow-2xl"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Modal Header */}
-              <div className="p-6 bg-card border-b border-border/50 flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <div className="p-2 border border-border/50 rounded text-muted-foreground">
+              <div className="p-3 sm:p-4 md:p-6 bg-card border-b border-border/50 flex items-start sm:items-center justify-between gap-2">
+                <div className="flex items-start sm:items-center gap-2 sm:gap-3 flex-1 min-w-0">
+                  <div className="p-1.5 sm:p-2 border border-border/50 rounded text-muted-foreground flex-shrink-0">
                     {selectedResource.icon}
                   </div>
-                  <div>
-                    <h2 className="text-2xl font-bold text-foreground">{selectedResource.title}</h2>
-                    <p className="text-muted-foreground text-sm mt-0.5">{selectedResource.description}</p>
+                  <div className="flex-1 min-w-0">
+                    <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-foreground leading-tight">
+                      {selectedResource.title}
+                    </h2>
+                    <p className="text-muted-foreground text-xs sm:text-sm mt-0.5 line-clamp-2">
+                      {selectedResource.description}
+                    </p>
                   </div>
                 </div>
                 <button
                   type="button"
                   onClick={() => setSelectedResource(null)}
-                  className="p-2 hover:bg-muted rounded-lg transition-colors text-muted-foreground hover:text-foreground"
+                  className="p-1.5 sm:p-2 hover:bg-muted rounded-lg transition-colors text-muted-foreground hover:text-foreground flex-shrink-0"
                   aria-label="Cerrar ventana"
                 >
-                  <X size={20} />
+                  <X size={18} className="sm:w-5 sm:h-5" />
                 </button>
               </div>
 
               {/* Modal Content */}
-              <div className="p-8 overflow-y-auto max-h-[calc(85vh-140px)] bg-background space-y-8">
+              <div className="p-3 sm:p-4 md:p-6 lg:p-8 overflow-y-auto max-h-[calc(95vh-100px)] sm:max-h-[calc(85vh-120px)] md:max-h-[calc(85vh-140px)] bg-background space-y-6 sm:space-y-8">
                 {selectedResource.sections.map((section, idx) => (
-                  <div key={idx} className="space-y-4">
-                    <h3 className="text-xl font-bold text-orange-400 flex items-center gap-2">
-                      <div className="w-1 h-6 bg-orange-400 rounded-full"></div>
-                      {section.title}
+                  <div key={idx} className="space-y-3 sm:space-y-4">
+                    <h3 className="text-base sm:text-lg md:text-xl font-bold text-orange-400 flex items-center gap-2">
+                      <div className="w-0.5 sm:w-1 h-5 sm:h-6 bg-orange-400 rounded-full flex-shrink-0"></div>
+                      <span className="leading-tight">{section.title}</span>
                     </h3>
-                    <div className="space-y-3 ml-5">
-                      {section.items.map((item, itemIdx) => (
-                        <div key={itemIdx} className="flex items-start gap-3 group">
-                          <CheckCircle2 size={20} className="text-green-400 mt-0.5 flex-shrink-0" />
-                          <p className="text-foreground/90 leading-relaxed">{item}</p>
-                        </div>
-                      ))}
+                    <div className="ml-0 sm:ml-3 md:ml-5 bg-gradient-to-br from-muted/40 to-muted/20 rounded-lg sm:rounded-xl p-3 sm:p-4 md:p-5 lg:p-6 border border-border/40 shadow-sm">
+                      <div className="space-y-3 sm:space-y-4">
+                        {section.items.map((item, itemIdx) => (
+                          <div key={itemIdx} className="group">
+                            <p className="text-foreground/95 leading-relaxed text-sm sm:text-[15px] pl-2 sm:pl-3 md:pl-4 border-l-2 border-orange-400/30 hover:border-orange-400/60 transition-colors">
+                              {item}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 ))}
@@ -386,4 +513,4 @@ const Session1Support = () => {
   );
 };
 
-export default Session1Support;
+export default Session4Support;

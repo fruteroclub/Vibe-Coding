@@ -151,34 +151,34 @@ const Doc = () => {
   return (
     <DocLayout>
       <DocContent>
-        <h1 className="gradient-text text-4xl md:text-5xl font-bold mb-6">
+        <h1 className="gradient-text text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 leading-tight">
           Bienvenido a VibeCoding
         </h1>
-        <p className="text-muted-foreground text-xl mb-12 leading-relaxed">
+        <p className="text-muted-foreground text-base sm:text-lg md:text-xl mb-8 sm:mb-12 leading-relaxed">
           El bootcamp que te enseña a construir apps reales usando IA como herramienta, no como sustituto.
           En 2 semanas pasas de idea a app desplegada.
         </p>
 
         {/* Misión y Visión */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
-          <div className="p-6 border border-border/50 rounded-lg bg-gradient-to-br from-orange-500/10 to-orange-500/5">
-            <div className="flex items-center gap-3 mb-4">
-              <Target size={32} className="text-orange-400" />
-              <h2 className="text-2xl font-bold text-foreground">Misión</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-12 sm:mb-16">
+          <div className="p-4 sm:p-6 border border-border/50 rounded-lg bg-gradient-to-br from-orange-500/10 to-orange-500/5">
+            <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+              <Target size={24} className="sm:w-8 sm:h-8 text-orange-400 flex-shrink-0" />
+              <h2 className="text-xl sm:text-2xl font-bold text-foreground">Misión</h2>
             </div>
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
               Democratizar el desarrollo de software enseñándote a usar IA de forma efectiva.
               No reemplazamos el conocimiento técnico, lo aceleramos. Aprenderás los fundamentos
               construyendo proyectos reales desde el día uno.
             </p>
           </div>
 
-          <div className="p-6 border border-border/50 rounded-lg bg-gradient-to-br from-blue-500/10 to-blue-500/5">
-            <div className="flex items-center gap-3 mb-4">
-              <Eye size={32} className="text-blue-400" />
-              <h2 className="text-2xl font-bold text-foreground">Visión</h2>
+          <div className="p-4 sm:p-6 border border-border/50 rounded-lg bg-gradient-to-br from-blue-500/10 to-blue-500/5">
+            <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+              <Eye size={24} className="sm:w-8 sm:h-8 text-blue-400 flex-shrink-0" />
+              <h2 className="text-xl sm:text-2xl font-bold text-foreground">Visión</h2>
             </div>
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
               Formar una generación de builders que entienden cómo funcionan las apps modernas,
               saben prompt engineering, y pueden validar ideas en días, no meses. El futuro es
               de quienes saben combinar pensamiento técnico con herramientas de IA.
@@ -187,98 +187,98 @@ const Doc = () => {
         </div>
 
         {/* Qué es esta documentación */}
-        <div className="mb-16 p-8 border border-orange-400/30 rounded-2xl bg-gradient-to-br from-orange-500/5 to-background">
-          <h2 className="text-3xl font-bold text-foreground mb-4 flex items-center gap-3">
-            <BookOpen size={32} className="text-orange-400" />
-            ¿Qué es esta documentación?
+        <div className="mb-12 sm:mb-16 p-4 sm:p-6 md:p-8 border border-orange-400/30 rounded-xl sm:rounded-2xl bg-gradient-to-br from-orange-500/5 to-background">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground mb-3 sm:mb-4 flex items-center gap-2 sm:gap-3">
+            <BookOpen size={24} className="sm:w-8 sm:h-8 text-orange-400 flex-shrink-0" />
+            <span className="leading-tight">¿Qué es esta documentación?</span>
           </h2>
-          <p className="text-muted-foreground text-lg leading-relaxed mb-6">
+          <p className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed mb-4 sm:mb-6">
             Esta es tu guía completa para el bootcamp VibeCoding. Aquí encontrarás todo lo que necesitas
             para completar las 6 sesiones: desde los conceptos fundamentales hasta los prompts exactos
             que usarás con v0 y Claude.
           </p>
-          <p className="text-foreground font-medium text-lg">
+          <p className="text-sm sm:text-base md:text-lg text-foreground font-medium">
             No es un curso tradicional. Es un sistema de aprendizaje basado en:
           </p>
-          <ul className="mt-4 space-y-2 text-muted-foreground">
+          <ul className="mt-3 sm:mt-4 space-y-2 text-sm sm:text-base text-muted-foreground">
             <li className="flex items-start gap-2">
-              <span className="text-orange-400 mt-1">•</span>
+              <span className="text-orange-400 mt-1 flex-shrink-0">•</span>
               <span><strong className="text-foreground">Construcción activa:</strong> Aprenderás haciendo, no solo viendo videos</span>
             </li>
             <li className="flex items-start gap-2">
-              <span className="text-orange-400 mt-1">•</span>
+              <span className="text-orange-400 mt-1 flex-shrink-0">•</span>
               <span><strong className="text-foreground">Progresión estructurada:</strong> Cada sesión construye sobre la anterior</span>
             </li>
             <li className="flex items-start gap-2">
-              <span className="text-orange-400 mt-1">•</span>
+              <span className="text-orange-400 mt-1 flex-shrink-0">•</span>
               <span><strong className="text-foreground">Entregables reales:</strong> Cada sesión termina con una app funcional y desplegada</span>
             </li>
           </ul>
         </div>
 
         {/* Cómo usar esta documentación */}
-        <h2 className="text-3xl font-bold text-foreground mb-8 flex items-center gap-3">
-          <Layers size={32} className="text-blue-400" />
-          Cómo funciona la documentación
+        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground mb-6 sm:mb-8 flex items-center gap-2 sm:gap-3">
+          <Layers size={24} className="sm:w-8 sm:h-8 text-blue-400 flex-shrink-0" />
+          <span className="leading-tight">Cómo funciona la documentación</span>
         </h2>
 
-        <div className="space-y-6 mb-16">
+        <div className="space-y-4 sm:space-y-6 mb-12 sm:mb-16">
           {/* Quick Start */}
           <Link to="/doc/quick-start" className="block group">
-            <div className="p-6 border border-border/50 rounded-lg bg-card/20 hover:border-purple-400/50 hover:bg-card/40 transition-all duration-200">
-              <div className="flex items-start justify-between">
-                <div className="flex items-start gap-4">
-                  <div className="p-3 bg-purple-500/10 rounded-lg border border-purple-500/20">
-                    <Rocket size={24} className="text-purple-400" />
+            <div className="p-4 sm:p-6 border border-border/50 rounded-lg bg-card/20 hover:border-purple-400/50 hover:bg-card/40 transition-all duration-200">
+              <div className="flex items-start justify-between gap-3">
+                <div className="flex items-start gap-3 sm:gap-4 flex-1 min-w-0">
+                  <div className="p-2 sm:p-3 bg-purple-500/10 rounded-lg border border-purple-500/20 flex-shrink-0">
+                    <Rocket size={20} className="sm:w-6 sm:h-6 text-purple-400" />
                   </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-purple-400 transition-colors">
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-base sm:text-lg md:text-xl font-bold text-foreground mb-1 sm:mb-2 group-hover:text-purple-400 transition-colors leading-tight">
                       1. Quick Start
                     </h3>
-                    <p className="text-muted-foreground leading-relaxed">
+                    <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                       Configuración inicial del bootcamp. Crea tu cuenta en v0, conecta con Vercel,
                       y prepara tu entorno de desarrollo. Toma 15-20 minutos y lo haces una sola vez.
                     </p>
                   </div>
                 </div>
-                <ChevronRight size={20} className="text-muted-foreground group-hover:text-purple-400 group-hover:translate-x-1 transition-all flex-shrink-0 mt-2" />
+                <ChevronRight size={18} className="sm:w-5 sm:h-5 text-muted-foreground group-hover:text-purple-400 group-hover:translate-x-1 transition-all flex-shrink-0 mt-1" />
               </div>
             </div>
           </Link>
 
           {/* Sesiones */}
           <Link to="/doc/sessions" className="block group">
-            <div className="p-6 border border-border/50 rounded-lg bg-card/20 hover:border-orange-400/50 hover:bg-card/40 transition-all duration-200">
-              <div className="flex items-start justify-between">
-                <div className="flex items-start gap-4">
-                  <div className="p-3 bg-orange-500/10 rounded-lg border border-orange-500/20">
-                    <FileText size={24} className="text-orange-400" />
+            <div className="p-4 sm:p-6 border border-border/50 rounded-lg bg-card/20 hover:border-orange-400/50 hover:bg-card/40 transition-all duration-200">
+              <div className="flex items-start justify-between gap-3">
+                <div className="flex items-start gap-3 sm:gap-4 flex-1 min-w-0">
+                  <div className="p-2 sm:p-3 bg-orange-500/10 rounded-lg border border-orange-500/20 flex-shrink-0">
+                    <FileText size={20} className="sm:w-6 sm:h-6 text-orange-400" />
                   </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-orange-400 transition-colors">
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-base sm:text-lg md:text-xl font-bold text-foreground mb-1 sm:mb-2 group-hover:text-orange-400 transition-colors leading-tight">
                       2. Sesiones (1-6)
                     </h3>
-                    <p className="text-muted-foreground leading-relaxed mb-3">
+                    <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-2 sm:mb-3">
                       El corazón del bootcamp. Cada sesión tiene 3 apartados:
                     </p>
-                    <div className="space-y-2 ml-4">
+                    <div className="space-y-1.5 sm:space-y-2 ml-2 sm:ml-4">
                       <div className="flex items-start gap-2">
-                        <span className="text-orange-400">→</span>
-                        <div>
+                        <span className="text-orange-400 flex-shrink-0">→</span>
+                        <div className="text-sm sm:text-base">
                           <strong className="text-foreground">Prompt:</strong>
                           <span className="text-muted-foreground"> El prompt exacto para copiar y pegar en v0</span>
                         </div>
                       </div>
                       <div className="flex items-start gap-2">
-                        <span className="text-orange-400">→</span>
-                        <div>
+                        <span className="text-orange-400 flex-shrink-0">→</span>
+                        <div className="text-sm sm:text-base">
                           <strong className="text-foreground">Entregable:</strong>
                           <span className="text-muted-foreground"> Checklist técnico para verificar que completaste todo</span>
                         </div>
                       </div>
                       <div className="flex items-start gap-2">
-                        <span className="text-orange-400">→</span>
-                        <div>
+                        <span className="text-orange-400 flex-shrink-0">→</span>
+                        <div className="text-sm sm:text-base">
                           <strong className="text-foreground">Material de Apoyo:</strong>
                           <span className="text-muted-foreground"> Explicaciones técnicas de los conceptos clave</span>
                         </div>
@@ -286,41 +286,41 @@ const Doc = () => {
                     </div>
                   </div>
                 </div>
-                <ChevronRight size={20} className="text-muted-foreground group-hover:text-orange-400 group-hover:translate-x-1 transition-all flex-shrink-0 mt-2" />
+                <ChevronRight size={18} className="sm:w-5 sm:h-5 text-muted-foreground group-hover:text-orange-400 group-hover:translate-x-1 transition-all flex-shrink-0 mt-1" />
               </div>
             </div>
           </Link>
 
           {/* Recursos */}
           <Link to="/doc/resources" className="block group">
-            <div className="p-6 border border-border/50 rounded-lg bg-card/20 hover:border-green-400/50 hover:bg-card/40 transition-all duration-200">
-              <div className="flex items-start justify-between">
-                <div className="flex items-start gap-4">
-                  <div className="p-3 bg-green-500/10 rounded-lg border border-green-500/20">
-                    <Layers size={24} className="text-green-400" />
+            <div className="p-4 sm:p-6 border border-border/50 rounded-lg bg-card/20 hover:border-green-400/50 hover:bg-card/40 transition-all duration-200">
+              <div className="flex items-start justify-between gap-3">
+                <div className="flex items-start gap-3 sm:gap-4 flex-1 min-w-0">
+                  <div className="p-2 sm:p-3 bg-green-500/10 rounded-lg border border-green-500/20 flex-shrink-0">
+                    <Layers size={20} className="sm:w-6 sm:h-6 text-green-400" />
                   </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-green-400 transition-colors">
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-base sm:text-lg md:text-xl font-bold text-foreground mb-1 sm:mb-2 group-hover:text-green-400 transition-colors leading-tight">
                       3. Recursos
                     </h3>
-                    <p className="text-muted-foreground leading-relaxed">
+                    <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                       Herramientas, plataformas y APIs que usarás. Incluye links directos a v0, Vercel,
                       Claude, y cómo obtener API keys cuando las necesites.
                     </p>
                   </div>
                 </div>
-                <ChevronRight size={20} className="text-muted-foreground group-hover:text-green-400 group-hover:translate-x-1 transition-all flex-shrink-0 mt-2" />
+                <ChevronRight size={18} className="sm:w-5 sm:h-5 text-muted-foreground group-hover:text-green-400 group-hover:translate-x-1 transition-all flex-shrink-0 mt-1" />
               </div>
             </div>
           </Link>
         </div>
 
         {/* Tablero Interactivo de Tareas */}
-        <div className="mb-16 p-8 border border-purple-400/30 rounded-2xl bg-gradient-to-br from-purple-500/5 to-background">
-          <h2 className="text-3xl font-bold text-foreground mb-4">
+        <div className="mb-12 sm:mb-16 p-4 sm:p-6 md:p-8 border border-purple-400/30 rounded-xl sm:rounded-2xl bg-gradient-to-br from-purple-500/5 to-background">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground mb-3 sm:mb-4 leading-tight">
             Tu Tablero de Tareas
           </h2>
-          <p className="text-muted-foreground text-lg leading-relaxed mb-6">
+          <p className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed mb-4 sm:mb-6">
             Organiza tus ideas, tareas pendientes y progreso del bootcamp. Arrastra las notas libremente
             por el tablero y mantén todo bajo control. Tus notas se guardan automáticamente.
           </p>

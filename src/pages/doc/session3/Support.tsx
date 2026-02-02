@@ -1,18 +1,15 @@
 import { useState } from 'react';
-import { useTranslation } from 'react-i18next';
 import { DocLayout } from '@/components/doc/DocLayout';
 import { DocContent } from '@/components/doc/DocContent';
 import { Link } from 'react-router-dom';
 import {
-  Layers,
-  Cpu,
-  PenTool,
-  Component,
-  Database,
-  Rocket,
+  ShieldCheck,
+  Coins,
+  UtensilsCrossed,
+  Loader2,
+  Link as LinkIcon,
   X,
-  ChevronRight,
-  CheckCircle2
+  ChevronRight
 } from 'lucide-react';
 
 interface ResourceSection {
@@ -27,222 +24,282 @@ interface ResourceSection {
   }[];
 }
 
-const Session1Support = () => {
-  const { t } = useTranslation();
+const Session3Support = () => {
   const [selectedResource, setSelectedResource] = useState<ResourceSection | null>(null);
 
   const resources: ResourceSection[] = [
     {
-      id: 'framework',
-      title: 'Arquitectura de 5 Capas',
-      icon: <Layers size={20} />,
-      description: 'Entiende la estructura fundamental de toda aplicación web moderna',
-      color: 'orange',
-      sections: [
-        {
-          title: 'La Jerarquía de Toda Aplicación Web',
-          items: [
-            'LAYER 5: DEPLOY - Hacer público (Production & Distribution)',
-            'LAYER 4: AUTH - Múltiples usuarios (Identity & Permissions)',
-            'LAYER 3: AI - Inteligencia (Intelligence & Processing)',
-            'LAYER 2: DATA - Persistencia (Storage & State)',
-            'LAYER 1: UI - Interfaz (Interface & Interaction)'
-          ]
-        },
-        {
-          title: 'Por Qué Esta Jerarquía Importa',
-          items: [
-            'No puedes tener usuarios (Layer 4) sin interfaz (Layer 1)',
-            'No puedes guardar datos (Layer 2) sin capturar input (Layer 1)',
-            'No puedes desplegar (Layer 5) sin tener algo que funcione'
-          ]
-        },
-        {
-          title: 'En Regenmon',
-          items: [
-            'Layer 1 (UI): Pantalla donde ves tu mascota, botones, barras',
-            'Layer 2 (DATA): Guardar nombre, stats en localStorage',
-            'Layer 5 (DEPLOY): Publicar en Vercel para compartir'
-          ]
-        }
-      ]
-    },
-    {
-      id: 'ai-dev',
-      title: 'Desarrollo con IA',
-      icon: <Cpu size={20} />,
-      description: 'Aprende a trabajar con herramientas de IA para acelerar tu desarrollo',
+      id: 'autenticacion',
+      title: 'Autenticación: conectar al usuario con su Regenmon',
+      icon: <ShieldCheck size={20} />,
+      description: 'Tu Regenmon ahora te reconoce y te pertenece',
       color: 'blue',
       sections: [
         {
-          title: 'Qué Es Desarrollo Asistido por IA',
+          title: '¿Qué significa autenticación?',
           items: [
-            'Describes lo que quieres en lenguaje natural',
-            'La IA genera el código por ti',
-            'Validas que funciona correctamente',
-            'Iteras si es necesario'
+            'Autenticación significa:',
+            'Saber quién eres cuando usas la app.',
+            'No se trata solo de "iniciar sesión", sino de:',
+            'Reconocer al usuario',
+            'Mantener su progreso',
+            'Proteger su información',
+            'Hasta ahora, el Regenmon vive en el navegador.',
+            'Con autenticación, empieza a pertenecer a una persona.'
           ]
         },
         {
-          title: 'Componentes del Sistema',
+          title: '¿Por qué es importante autenticarse?',
           items: [
-            'El Humano: Tener la visión, describir claramente, validar resultados',
-            'La IA: Entender lenguaje natural, generar código correcto',
-            'Las Herramientas: v0.dev, Claude, Copilot para iteración rápida'
+            'Sin autenticación:',
+            'El progreso se puede perder',
+            'No hay identidad',
+            'No se pueden compartir cosas',
+            'Con autenticación:',
+            'Tu Regenmon es tuyo',
+            'Tu progreso te acompaña',
+            'La experiencia se vuelve personal',
+            'Es el paso de:',
+            '"Una app"',
+            'a',
+            '"Mi app"'
           ]
         },
         {
-          title: 'Ventajas',
+          title: '¿Qué es Privy y para qué se usa?',
           items: [
-            'Velocidad: Prototipo a producción en horas',
-            'Accesibilidad: Barrera de entrada baja',
-            'Calidad: IA conoce mejores prácticas',
-            'Enfoque: Problemas, no implementación'
+            'Privy es una herramienta que se encarga de la parte complicada.',
+            'Permite:',
+            'Iniciar sesión fácilmente',
+            'No manejar contraseñas',
+            'Reducir fricción',
+            'Para el usuario es simple:',
+            'Un botón',
+            'Un par de clics',
+            'Listo'
+          ]
+        },
+        {
+          title: '¿Qué significa guardar una sesión?',
+          items: [
+            'Guardar sesión significa:',
+            'Que la app recuerda quién eres aunque cierres y vuelvas a entrar.',
+            'No tienes que iniciar sesión cada vez.',
+            'La app reconoce que sigues siendo tú.',
+            'Esto da sensación de continuidad y comodidad.'
+          ]
+        },
+        {
+          title: 'Mostrar perfil del usuario',
+          items: [
+            'Una vez autenticado, la app puede mostrar:',
+            'Tu nombre',
+            'Tu avatar',
+            'Tu conexión con el Regenmon',
+            'Este detalle refuerza la relación:',
+            'Usuario ↔ Mascota'
           ]
         }
       ]
     },
     {
-      id: 'prompts',
-      title: 'Prompts Efectivos',
-      icon: <PenTool size={20} />,
-      description: 'Domina el arte de escribir instrucciones claras para la IA',
-      color: 'purple',
+      id: 'sistema-monedas',
+      title: 'Sistema de monedas: $FRUTA',
+      icon: <Coins size={20} />,
+      description: 'Las acciones tienen valor y consecuencias',
+      color: 'yellow',
       sections: [
         {
-          title: 'Anatomía de un Prompt Efectivo',
+          title: '¿Por qué un sistema de monedas?',
           items: [
-            'Contexto: Qué framework (React, Vue), qué estilo (TailwindCSS)',
-            'Objetivo: Qué quieres construir específicamente',
-            'Estructura: Cómo debe organizarse el código',
-            'Detalles: Nombres de variables, funciones específicas'
+            'Las monedas introducen una idea clave:',
+            'Las acciones tienen valor.',
+            'No todo es gratis ni automático.',
+            'Algunas cosas se ganan, se usan y se cuidan.',
+            'Esto hace la experiencia más interesante y más parecida a un juego.'
           ]
         },
         {
-          title: 'Ejemplo de Prompt para Regenmon',
+          title: '¿Qué es el balance?',
           items: [
-            '"Crea un componente React llamado Display"',
-            '"Debe mostrar el nombre del Regenmon en grande"',
-            '"Debe mostrar 3 barras de progreso: Felicidad, Energía, Hambre"',
-            '"Usa TailwindCSS para los estilos"',
-            '"Usa lucide-react para los iconos"'
+            'El balance es:',
+            'La cantidad de monedas que tienes.',
+            'Funciona como un marcador:',
+            'Sabes cuánto puedes gastar',
+            'Tomas decisiones',
+            'Planeas tus acciones',
+            'Ver el balance crea conciencia de recursos.'
           ]
         },
         {
-          title: 'Tips para Mejores Resultados',
+          title: 'Ver el balance en la app',
           items: [
-            'Sé específico con nombres y términos técnicos',
-            'Divide tareas grandes en componentes pequeños',
-            'Itera: pide cambios específicos si algo no está bien',
-            'Pide código comentado si estás aprendiendo'
+            'El balance se muestra de forma clara:',
+            'Con un número',
+            'Con un ícono',
+            'Con una pequeña animación',
+            'Esto hace que las monedas se sientan reales y valiosas.'
+          ]
+        },
+        {
+          title: '¿Qué significa reclamar monedas?',
+          items: [
+            'Reclamar monedas es:',
+            'Obtener tus primeras monedas para empezar.',
+            'Es una forma de bienvenida:',
+            'No empiezas desde cero',
+            'Tienes algo para usar',
+            'Puedes interactuar desde el inicio'
+          ]
+        },
+        {
+          title: 'Actualización en tiempo real',
+          items: [
+            'Cuando ganas o gastas monedas:',
+            'El número cambia al instante',
+            'La app responde visualmente',
+            'Esto refuerza la sensación de causa y efecto.'
           ]
         }
       ]
     },
     {
-      id: 'components',
-      title: 'Componentes React',
-      icon: <Component size={20} />,
-      description: 'Los bloques fundamentales de construcción de tu aplicación',
+      id: 'alimentar',
+      title: 'Alimentar al Regenmon',
+      icon: <UtensilsCrossed size={20} />,
+      description: 'Cuida a tu mascota con recursos reales',
       color: 'green',
       sections: [
         {
-          title: 'Qué Es Un Componente',
+          title: '¿Por qué alimentar al Regenmon?',
           items: [
-            'Una pieza independiente de interfaz que puedes reutilizar',
-            'Función que retorna HTML (JSX)',
-            'Puede tener su propia lógica y estado',
-            'Se puede componer con otros componentes'
+            'Alimentar es una acción clave de cuidado.',
+            'Conecta:',
+            'El sistema de monedas',
+            'Los stats',
+            'La relación con la mascota',
+            'No es solo un botón, es una decisión.'
           ]
         },
         {
-          title: 'Props: Cómo se Comunican',
+          title: '¿Qué pasa cuando alimentas?',
           items: [
-            'Props son parámetros que pasas al componente',
-            'Hacen que los componentes sean reutilizables',
-            'Flujo de datos de padre a hijo',
-            'Inmutables: el hijo no puede modificar las props'
+            'Cuando alimentas al Regenmon:',
+            'Gastas monedas',
+            'El hambre disminuye',
+            'El Regenmon reacciona',
+            'Esto hace que el usuario sienta que su acción tuvo impacto.'
           ]
         },
         {
-          title: 'Componentes en Regenmon',
+          title: 'Validar recursos suficientes',
           items: [
-            'Display: Muestra la mascota y sus stats',
-            'ModalCreacion: Formulario para crear nuevo Regenmon',
-            'BarraProgreso: Muestra felicidad, energía, hambre',
-            'App: Componente raíz que decide qué mostrar'
+            'La app verifica:',
+            'Si tienes monedas suficientes',
+            'Si puedes realizar la acción',
+            'Si no puedes:',
+            'Te lo dice claramente',
+            'No te deja continuar',
+            'Esto evita frustraciones y errores.'
+          ]
+        },
+        {
+          title: 'Animaciones de la acción',
+          items: [
+            'Las animaciones ayudan a entender lo que pasó:',
+            'Monedas que se mueven',
+            'Cambios visibles en stats',
+            'Reacciones del Regenmon',
+            'No necesitas leer texto para entenderlo.'
+          ]
+        },
+        {
+          title: 'Feedback emocional',
+          items: [
+            'Después de comer, el Regenmon responde:',
+            'Agradece',
+            'Cambia su actitud',
+            'Refuerza la conexión emocional',
+            'Esto convierte una acción técnica en una experiencia.'
           ]
         }
       ]
     },
     {
-      id: 'state',
-      title: 'State y localStorage',
-      icon: <Database size={20} />,
-      description: 'Maneja y persiste los datos de tu aplicación',
-      color: 'sky',
+      id: 'estados-interfaz',
+      title: 'Manejo de estados de la interfaz',
+      icon: <Loader2 size={20} />,
+      description: 'Comunica claramente lo que está pasando',
+      color: 'purple',
       sections: [
         {
-          title: 'useState: La Memoria Activa',
+          title: '¿Qué es un estado de carga?',
           items: [
-            'Variable que cuando cambia, actualiza automáticamente la pantalla',
-            'const [valor, setValor] = useState(inicial)',
-            'Solo cambia con setValor(), nunca modificar directamente',
-            'React renderiza el componente cuando el state cambia'
+            'Un estado de carga aparece cuando:',
+            'La app está esperando una respuesta',
+            'Algo está procesándose',
+            'En lugar de quedarse "congelada", la app comunica:',
+            '"Estoy trabajando".'
           ]
         },
         {
-          title: 'localStorage: La Memoria Persistente',
+          title: '¿Por qué mostrar errores claramente?',
           items: [
-            'Guarda datos en el navegador permanentemente',
-            'localStorage.setItem("key", JSON.stringify(data))',
-            'JSON.parse(localStorage.getItem("key"))',
-            'Los datos persisten aunque cierres el navegador'
+            'Los errores pueden pasar, y eso está bien.',
+            'Lo importante es:',
+            'Explicar qué pasó',
+            'Qué puede hacer el usuario',
+            'No usar mensajes confusos',
+            'Esto genera confianza.'
           ]
         },
         {
-          title: 'Pattern: State + localStorage',
+          title: 'Botones deshabilitados',
           items: [
-            'Inicializar state con datos de localStorage',
-            'Cada vez que state cambia, guardar en localStorage',
-            'Usar useEffect para sincronización automática',
-            'En Regenmon: guardar nombre, tipo, stats'
+            'Cuando una acción no es posible:',
+            'El botón se desactiva',
+            'Visualmente se entiende',
+            'Así el usuario no intenta algo que no puede hacer.'
+          ]
+        },
+        {
+          title: 'Confirmaciones visuales',
+          items: [
+            'Cuando algo sale bien:',
+            'Hay una señal clara',
+            'Un mensaje positivo',
+            'Una reacción visual',
+            'Esto refuerza el aprendizaje y la satisfacción.'
           ]
         }
       ]
     },
     {
-      id: 'deploy',
-      title: 'Deploy y Responsive',
-      icon: <Rocket size={20} />,
-      description: 'Publica tu aplicación y hazla accesible desde cualquier dispositivo',
-      color: 'pink',
+      id: 'experiencia-completa',
+      title: 'Conectar todo: experiencia completa',
+      icon: <LinkIcon size={20} />,
+      description: 'De mascota visual a compañero digital',
+      color: 'orange',
       sections: [
         {
-          title: 'Qué Es Deploy',
+          title: 'Cómo se unen todas las piezas',
           items: [
-            'Publicar tu app en internet para que cualquiera pueda acceder',
-            'Tu código en Vercel/Netlify, no en tu computadora',
-            'Tienes una URL única y pública',
-            'Cada cambio se refleja automáticamente'
+            'En esta sesión:',
+            'El usuario tiene identidad',
+            'Tiene recursos',
+            'Puede tomar decisiones',
+            'Todo empieza a sentirse como un sistema completo.'
           ]
         },
         {
-          title: 'Deploy en Vercel (Recomendado)',
+          title: 'De mascota a compañero',
           items: [
-            '1. Conecta tu cuenta de GitHub',
-            '2. Importa el proyecto de v0',
-            '3. Vercel detecta configuración automáticamente',
-            '4. Click en Deploy y espera ~2 minutos'
-          ]
-        },
-        {
-          title: 'Diseño Responsive',
-          items: [
-            'Tu app debe verse bien en móvil, tablet y desktop',
-            'TailwindCSS: sm:, md:, lg: para diferentes tamaños',
-            'Prueba en múltiples dispositivos',
-            'Chrome DevTools para simular diferentes pantallas'
+            'El Regenmon ya no es solo algo que miras.',
+            'Ahora:',
+            'Lo cuidas',
+            'Inviertes en él',
+            'Tomas decisiones por él',
+            'La relación se profundiza.'
           ]
         }
       ]
@@ -252,58 +309,86 @@ const Session1Support = () => {
   return (
     <DocLayout>
       <DocContent>
-        <h1 className="gradient-text text-4xl font-bold mb-4">
-          Material de Apoyo
+        <h1 className="gradient-text text-4xl font-bold mb-6">
+          Material de Apoyo - Sesión 3
         </h1>
 
-        <p className="text-muted-foreground text-lg mb-8">
-          Recursos organizados para ayudarte a dominar los conceptos fundamentales.
-          Haz clic en cualquier tema para explorar el contenido completo.
+        <p className="text-muted-foreground text-lg mb-4">
+          Autenticación y Sistema de Monedas
         </p>
 
-        {/* Progress Overview */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
-          <div className="p-4 border border-border/50 rounded-lg bg-purple-500/10">
-            <div className="text-3xl font-bold text-purple-400">{resources.length}</div>
-            <div className="text-sm text-muted-foreground">Temas Principales</div>
-          </div>
-          <div className="p-4 border border-border/50 rounded-lg bg-blue-500/10">
-            <div className="text-3xl font-bold text-blue-400">~2h</div>
-            <div className="text-sm text-muted-foreground">Tiempo Estimado</div>
-          </div>
-          <div className="p-4 border border-border/50 rounded-lg bg-green-500/10">
-            <div className="text-3xl font-bold text-green-400">100%</div>
-            <div className="text-sm text-muted-foreground">Material Gratuito</div>
-          </div>
-        </div>
+        <p className="text-muted-foreground leading-relaxed mb-8">
+          En esta sesión tu Regenmon se conecta contigo. Ahora tiene identidad, pertenece a alguien y las acciones tienen consecuencias reales a través del sistema de monedas.
+        </p>
 
-        {/* Resource Cards Grid */}
+        {/* Resource Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12">
           {resources.map((resource) => (
-            <div
+            <button
               key={resource.id}
+              type="button"
               onClick={() => setSelectedResource(resource)}
-              className="group cursor-pointer p-5 border border-border/50 rounded-lg bg-card/20 hover:border-orange-400/50 hover:bg-card/40 transition-all duration-200"
+              className="p-6 border border-border/50 rounded-xl bg-card/30 hover:border-doc-primary/50 hover:bg-card/50 transition-all duration-200 text-left group"
             >
-              <div className="flex items-start gap-3">
-                <div className="p-2 rounded border border-border/50 text-muted-foreground flex-shrink-0">
+              <div className="flex items-start gap-4">
+                <div className={`p-3 rounded-lg border ${
+                  resource.color === 'blue' ? 'bg-blue-500/10 border-blue-500/20 text-blue-400' :
+                  resource.color === 'yellow' ? 'bg-yellow-500/10 border-yellow-500/20 text-yellow-400' :
+                  resource.color === 'green' ? 'bg-green-500/10 border-green-500/20 text-green-400' :
+                  resource.color === 'purple' ? 'bg-purple-500/10 border-purple-500/20 text-purple-400' :
+                  'bg-orange-500/10 border-orange-500/20 text-orange-400'
+                } flex-shrink-0`}>
                   {resource.icon}
                 </div>
                 <div className="flex-1 min-w-0">
-                  <h3 className="text-base font-semibold text-foreground mb-1 group-hover:text-orange-400 transition-colors">
+                  <h3 className="text-lg font-bold text-foreground mb-2 group-hover:text-doc-primary transition-colors">
                     {resource.title}
                   </h3>
-                  <p className="text-sm text-muted-foreground">
+                  <p className="text-sm text-muted-foreground line-clamp-2">
                     {resource.description}
                   </p>
                 </div>
-                <ChevronRight size={18} className="text-muted-foreground group-hover:text-orange-400 group-hover:translate-x-1 transition-all flex-shrink-0 mt-1" />
+                <ChevronRight size={20} className="text-muted-foreground group-hover:text-doc-primary group-hover:translate-x-1 transition-all flex-shrink-0 mt-1" />
               </div>
-            </div>
+            </button>
           ))}
         </div>
 
-        {/* Navigation */}
+        {/* Entregable Section */}
+        <div className="my-12 glass-card p-6 border-l-4 border-green-500">
+          <h2 className="text-2xl font-bold text-green-400 mb-4">
+            ✅ Entregable de la Sesión 3
+          </h2>
+          <p className="text-muted-foreground mb-4">
+            Al finalizar esta sesión, el alumno tiene:
+          </p>
+          <div className="space-y-2 ml-4">
+            <div className="flex items-start gap-3">
+              <span className="text-green-400 mt-1">✓</span>
+              <span className="text-foreground">Usuario autenticado</span>
+            </div>
+            <div className="flex items-start gap-3">
+              <span className="text-green-400 mt-1">✓</span>
+              <span className="text-foreground">Sesión persistente</span>
+            </div>
+            <div className="flex items-start gap-3">
+              <span className="text-green-400 mt-1">✓</span>
+              <span className="text-foreground">Sistema de monedas funcional</span>
+            </div>
+            <div className="flex items-start gap-3">
+              <span className="text-green-400 mt-1">✓</span>
+              <span className="text-foreground">Regenmon alimentado con feedback</span>
+            </div>
+          </div>
+          <p className="text-foreground font-medium mt-6">
+            El Regenmon ahora:
+          </p>
+          <p className="text-muted-foreground italic">
+            Te reconoce y depende de ti.
+          </p>
+        </div>
+
+        {/* Navegación */}
         <div className="mt-16 flex items-center justify-between border-t border-border/50 pt-8">
           <Link
             to="/doc/session-3/deliverable"
@@ -312,7 +397,7 @@ const Session1Support = () => {
             <span>←</span>
             <div>
               <div className="text-xs text-muted-foreground">Anterior</div>
-              <div className="font-semibold">{t('doc.quickStartPage.subsections.deliverable')}</div>
+              <div className="font-semibold">Entregable</div>
             </div>
           </Link>
 
@@ -331,49 +416,56 @@ const Session1Support = () => {
         {/* Modal for Resource Details */}
         {selectedResource && (
           <div
-            className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4"
+            className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-2 sm:p-4"
             onClick={() => setSelectedResource(null)}
           >
             <div
-              className="bg-background border border-border rounded-2xl max-w-4xl w-full max-h-[85vh] overflow-hidden shadow-2xl"
+              className="bg-background border border-border rounded-xl sm:rounded-2xl max-w-4xl w-full max-h-[95vh] sm:max-h-[85vh] overflow-hidden shadow-2xl"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Modal Header */}
-              <div className="p-6 bg-card border-b border-border/50 flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <div className="p-2 border border-border/50 rounded text-muted-foreground">
+              <div className="p-3 sm:p-4 md:p-6 bg-card border-b border-border/50 flex items-start sm:items-center justify-between gap-2">
+                <div className="flex items-start sm:items-center gap-2 sm:gap-3 flex-1 min-w-0">
+                  <div className="p-1.5 sm:p-2 border border-border/50 rounded text-muted-foreground flex-shrink-0">
                     {selectedResource.icon}
                   </div>
-                  <div>
-                    <h2 className="text-2xl font-bold text-foreground">{selectedResource.title}</h2>
-                    <p className="text-muted-foreground text-sm mt-0.5">{selectedResource.description}</p>
+                  <div className="flex-1 min-w-0">
+                    <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-foreground leading-tight">
+                      {selectedResource.title}
+                    </h2>
+                    <p className="text-muted-foreground text-xs sm:text-sm mt-0.5 line-clamp-2">
+                      {selectedResource.description}
+                    </p>
                   </div>
                 </div>
                 <button
                   type="button"
                   onClick={() => setSelectedResource(null)}
-                  className="p-2 hover:bg-muted rounded-lg transition-colors text-muted-foreground hover:text-foreground"
+                  className="p-1.5 sm:p-2 hover:bg-muted rounded-lg transition-colors text-muted-foreground hover:text-foreground flex-shrink-0"
                   aria-label="Cerrar ventana"
                 >
-                  <X size={20} />
+                  <X size={18} className="sm:w-5 sm:h-5" />
                 </button>
               </div>
 
               {/* Modal Content */}
-              <div className="p-8 overflow-y-auto max-h-[calc(85vh-140px)] bg-background space-y-8">
+              <div className="p-3 sm:p-4 md:p-6 lg:p-8 overflow-y-auto max-h-[calc(95vh-100px)] sm:max-h-[calc(85vh-120px)] md:max-h-[calc(85vh-140px)] bg-background space-y-6 sm:space-y-8">
                 {selectedResource.sections.map((section, idx) => (
-                  <div key={idx} className="space-y-4">
-                    <h3 className="text-xl font-bold text-orange-400 flex items-center gap-2">
-                      <div className="w-1 h-6 bg-orange-400 rounded-full"></div>
-                      {section.title}
+                  <div key={idx} className="space-y-3 sm:space-y-4">
+                    <h3 className="text-base sm:text-lg md:text-xl font-bold text-orange-400 flex items-center gap-2">
+                      <div className="w-0.5 sm:w-1 h-5 sm:h-6 bg-orange-400 rounded-full flex-shrink-0"></div>
+                      <span className="leading-tight">{section.title}</span>
                     </h3>
-                    <div className="space-y-3 ml-5">
-                      {section.items.map((item, itemIdx) => (
-                        <div key={itemIdx} className="flex items-start gap-3 group">
-                          <CheckCircle2 size={20} className="text-green-400 mt-0.5 flex-shrink-0" />
-                          <p className="text-foreground/90 leading-relaxed">{item}</p>
-                        </div>
-                      ))}
+                    <div className="ml-0 sm:ml-3 md:ml-5 bg-gradient-to-br from-muted/40 to-muted/20 rounded-lg sm:rounded-xl p-3 sm:p-4 md:p-5 lg:p-6 border border-border/40 shadow-sm">
+                      <div className="space-y-3 sm:space-y-4">
+                        {section.items.map((item, itemIdx) => (
+                          <div key={itemIdx} className="group">
+                            <p className="text-foreground/95 leading-relaxed text-sm sm:text-[15px] pl-2 sm:pl-3 md:pl-4 border-l-2 border-orange-400/30 hover:border-orange-400/60 transition-colors">
+                              {item}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 ))}
@@ -386,4 +478,4 @@ const Session1Support = () => {
   );
 };
 
-export default Session1Support;
+export default Session3Support;
