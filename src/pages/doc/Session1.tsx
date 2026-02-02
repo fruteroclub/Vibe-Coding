@@ -242,6 +242,44 @@ const Session1 = () => {
           </p>
         </div>
 
+        {/* Puente hacia Sesión 2 */}
+        <div className="glass-card p-8 mt-12 border-2 border-orange-400/30">
+          <h2 className="text-2xl font-bold text-orange-400 mb-4">
+            🔌 Preparando el siguiente paso
+          </h2>
+          <p className="text-foreground text-lg mb-4">
+            Hasta ahora tu Regenmon es <strong>visual</strong> (tiene cara, stats, botones).
+            En la siguiente sesión le darás un <strong>cerebro</strong> (IA conversacional).
+          </p>
+
+          <div className="glass-card p-6 mb-4">
+            <h3 className="text-xl font-semibold text-orange-400 mb-3">
+              ¿Qué necesitas antes de Sesión 2?
+            </h3>
+            <ul className="space-y-2 text-foreground">
+              <li className="flex items-start gap-3">
+                <span className="text-orange-400 font-bold">1.</span>
+                <span>Una <strong>API Key de Claude</strong> (como una contraseña para usar IA)</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-orange-400 font-bold">2.</span>
+                <span>Entender que la IA no está en tu app, está en internet (por eso necesitas la "llave")</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-orange-400 font-bold">3.</span>
+                <span>Saber que cada vez que tu Regenmon "habla", le pide ayuda a Claude</span>
+              </li>
+            </ul>
+          </div>
+
+          <div className="bg-orange-400/10 border border-orange-400/30 rounded-lg p-4">
+            <p className="text-foreground text-sm">
+              <strong>💡 Analogía:</strong> Imagina que tu Regenmon es un muñeco de ventrílocuo.
+              En Sesión 1 construiste el muñeco. En Sesión 2 le darás la voz (Claude es el ventrílocuo).
+            </p>
+          </div>
+        </div>
+
         {/* Navegación entre páginas */}
         <div className="mt-16 flex items-center justify-between border-t border-border/50 pt-8">
           <Link

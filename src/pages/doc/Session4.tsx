@@ -300,6 +300,49 @@ const Session4 = () => {
           </p>
         </div>
 
+        {/* Puente hacia Sesión 5 */}
+        <div className="glass-card p-8 mt-12 border-2 border-orange-400/30">
+          <h2 className="text-2xl font-bold text-orange-400 mb-4">
+            🌍 El paso final: Comunidad
+          </h2>
+          <p className="text-foreground text-lg mb-4">
+            Tu Regenmon funciona perfectamente... pero está solo. En la última sesión
+            transformarás tu proyecto en una <strong>experiencia social</strong>.
+          </p>
+
+          <div className="glass-card p-6">
+            <h3 className="text-xl font-semibold text-orange-400 mb-3">
+              En Sesión 5 crearás:
+            </h3>
+            <ul className="space-y-2 text-foreground">
+              <li className="flex items-start gap-3">
+                <span className="text-orange-400">•</span>
+                <span>Perfiles públicos (otros pueden ver tu Regenmon)</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-orange-400">•</span>
+                <span>Sistema de visitas e interacciones</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-orange-400">•</span>
+                <span>Feed comunitario (descubrir otros Regenmons)</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-orange-400">•</span>
+                <span>Notificaciones sociales</span>
+              </li>
+            </ul>
+          </div>
+
+          <div className="bg-orange-400/10 border border-orange-400/30 rounded-lg p-4 mt-4">
+            <p className="text-foreground text-sm">
+              <strong>💡 Analogía:</strong> Hasta ahora construiste un producto personal increíble.
+              En Sesión 5 abrirás las puertas para que otros entren, visiten, y compartan el espacio.
+              Como convertir tu casa en un lugar al que tus amigos pueden ir.
+            </p>
+          </div>
+        </div>
+
         {/* Navegación entre páginas */}
         <div className="mt-16 flex items-center justify-between border-t border-border/50 pt-8">
           <Link

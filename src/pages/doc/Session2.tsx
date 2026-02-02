@@ -272,6 +272,48 @@ const Session2 = () => {
           </p>
         </div>
 
+        {/* Puente hacia Sesión 3 */}
+        <div className="glass-card p-8 mt-12 border-2 border-orange-400/30">
+          <h2 className="text-2xl font-bold text-orange-400 mb-4">
+            🎭 Lo que viene: Identidad
+          </h2>
+          <p className="text-foreground text-lg mb-4">
+            Tu Regenmon ya habla, pero <strong>no te reconoce</strong>. Cada vez que
+            recargas la página, es como si fueras un extraño.
+          </p>
+
+          <div className="glass-card p-6">
+            <h3 className="text-xl font-semibold text-orange-400 mb-3">
+              En Sesión 3 aprenderás:
+            </h3>
+            <ul className="space-y-2 text-foreground">
+              <li className="flex items-start gap-3">
+                <span className="text-orange-400">•</span>
+                <span>Cómo hacer que tu Regenmon sepa quién eres (login)</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-orange-400">•</span>
+                <span>La diferencia entre TU mascota y la de otros usuarios</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-orange-400">•</span>
+                <span>Cómo crear un sistema de monedas y recursos</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-orange-400">•</span>
+                <span>Por qué necesitas una "base de datos" (memoria permanente)</span>
+              </li>
+            </ul>
+          </div>
+
+          <div className="bg-orange-400/10 border border-orange-400/30 rounded-lg p-4 mt-4">
+            <p className="text-foreground text-sm">
+              <strong>💡 Analogía:</strong> Ahora tu Regenmon habla con todos, pero no sabe quién es quién.
+              Es como un vendedor que olvida tu nombre cada vez que entras a la tienda. En Sesión 3 le darás memoria.
+            </p>
+          </div>
+        </div>
+
         {/* Navegación entre páginas */}
         <div className="mt-16 flex items-center justify-between border-t border-border/50 pt-8">
           <Link

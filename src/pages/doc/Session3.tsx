@@ -286,6 +286,49 @@ const Session3 = () => {
           </p>
         </div>
 
+        {/* Puente hacia Sesión 4 */}
+        <div className="glass-card p-8 mt-12 border-2 border-orange-400/30">
+          <h2 className="text-2xl font-bold text-orange-400 mb-4">
+            📈 Lo que viene: Progreso
+          </h2>
+          <p className="text-foreground text-lg mb-4">
+            Tu Regenmon ya sabe quién eres y guarda tu información. Ahora falta que
+            <strong> crezca y evolucione</strong> según cómo lo cuides.
+          </p>
+
+          <div className="glass-card p-6">
+            <h3 className="text-xl font-semibold text-orange-400 mb-3">
+              En Sesión 4 implementarás:
+            </h3>
+            <ul className="space-y-2 text-foreground">
+              <li className="flex items-start gap-3">
+                <span className="text-orange-400">•</span>
+                <span>Sistema de entrenamiento (subir fotos, ganar experiencia)</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-orange-400">•</span>
+                <span>IA que evalúa imágenes (no solo texto)</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-orange-400">•</span>
+                <span>Evoluciones (cambios visuales según nivel)</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-orange-400">•</span>
+                <span>Recompensas por consistencia</span>
+              </li>
+            </ul>
+          </div>
+
+          <div className="bg-orange-400/10 border border-orange-400/30 rounded-lg p-4 mt-4">
+            <p className="text-foreground text-sm">
+              <strong>💡 Analogía:</strong> Tu Regenmon ahora tiene identidad y recursos.
+              En Sesión 4 aprenderá a crecer como lo haría un Tamagotchi: subiendo de nivel,
+              cambiando de forma, y respondiendo a tu cuidado consistente.
+            </p>
+          </div>
+        </div>
+
         {/* Navegación entre páginas */}
         <div className="mt-16 flex items-center justify-between border-t border-border/50 pt-8">
           <Link
