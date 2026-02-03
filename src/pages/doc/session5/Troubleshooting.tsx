@@ -1,22 +1,26 @@
 import { DocLayout } from '@/components/doc/DocLayout';
 import { DocContent } from '@/components/doc/DocContent';
 import { Link } from 'react-router-dom';
+import { AlertTriangle, Globe, Bell, Users, LifeBuoy } from 'lucide-react';
 
 const Session5Troubleshooting = () => {
   return (
     <DocLayout>
       <DocContent>
-        <h1 className="gradient-text text-4xl font-bold mb-4">
-          🚨 Errores Comunes - Sesión 5
-        </h1>
+        <div className="flex items-center gap-3 mb-4">
+          <AlertTriangle className="w-10 h-10 text-orange-400" />
+          <h1 className="gradient-text text-4xl font-bold">
+            Errores Comunes - Sesión 5
+          </h1>
+        </div>
         <p className="text-muted-foreground text-lg mb-8">
           Soluciones para problemas con características sociales, perfiles públicos e interacciones.
         </p>
 
         {/* Error 1 */}
-        <div className="glass-card p-6 mb-6">
+        <div className="glass-card p-6 mb-6 border-l-4 border-red-500">
           <div className="flex items-start gap-4 mb-4">
-            <span className="text-4xl">🌐</span>
+            <Globe className="w-10 h-10 text-red-400 flex-shrink-0" />
             <div>
               <h2 className="text-2xl font-bold text-orange-400 mb-2">
                 "Los perfiles públicos no se ven o muestran error 404"
@@ -47,9 +51,9 @@ const Session5Troubleshooting = () => {
         </div>
 
         {/* Error 2 */}
-        <div className="glass-card p-6 mb-6">
+        <div className="glass-card p-6 mb-6 border-l-4 border-yellow-500">
           <div className="flex items-start gap-4 mb-4">
-            <span className="text-4xl">🔔</span>
+            <Bell className="w-10 h-10 text-yellow-400 flex-shrink-0" />
             <div>
               <h2 className="text-2xl font-bold text-orange-400 mb-2">
                 "Las notificaciones no aparecen"
@@ -80,9 +84,9 @@ const Session5Troubleshooting = () => {
         </div>
 
         {/* Error 3 */}
-        <div className="glass-card p-6 mb-6">
+        <div className="glass-card p-6 mb-6 border-l-4 border-purple-500">
           <div className="flex items-start gap-4 mb-4">
-            <span className="text-4xl">👥</span>
+            <Users className="w-10 h-10 text-purple-400 flex-shrink-0" />
             <div>
               <h2 className="text-2xl font-bold text-orange-400 mb-2">
                 "El feed no muestra otros Regenmons"
@@ -114,9 +118,12 @@ const Session5Troubleshooting = () => {
 
         {/* Ayuda Adicional */}
         <div className="glass-card p-6 bg-gradient-to-r from-orange-400/10 to-pink-400/10 border-2 border-orange-400/30">
-          <h2 className="text-2xl font-bold text-orange-400 mb-4">
-            🆘 Problemas con características sociales?
-          </h2>
+          <div className="flex items-center gap-3 mb-4">
+            <LifeBuoy className="w-8 h-8 text-orange-400" />
+            <h2 className="text-2xl font-bold text-orange-400">
+              Problemas con características sociales?
+            </h2>
+          </div>
           <p className="text-foreground mb-4">
             Para debugging de features sociales:
           </p>

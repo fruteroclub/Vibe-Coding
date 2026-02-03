@@ -1,22 +1,26 @@
 import { DocLayout } from '@/components/doc/DocLayout';
 import { DocContent } from '@/components/doc/DocContent';
 import { Link } from 'react-router-dom';
+import { AlertTriangle, Key, MessageCircle, RefreshCw, Bot, DollarSign, LifeBuoy } from 'lucide-react';
 
 const Session2Troubleshooting = () => {
   return (
     <DocLayout>
       <DocContent>
-        <h1 className="gradient-text text-4xl font-bold mb-4">
-          🚨 Errores Comunes - Sesión 2
-        </h1>
+        <div className="flex items-center gap-3 mb-4">
+          <AlertTriangle className="w-10 h-10 text-orange-400" />
+          <h1 className="gradient-text text-4xl font-bold">
+            Errores Comunes - Sesión 2
+          </h1>
+        </div>
         <p className="text-muted-foreground text-lg mb-8">
           Problemas frecuentes al integrar IA conversacional y sus soluciones.
         </p>
 
         {/* Error 1 */}
-        <div className="glass-card p-6 mb-6">
+        <div className="glass-card p-6 mb-6 border-l-4 border-red-500">
           <div className="flex items-start gap-4 mb-4">
-            <span className="text-4xl">🔑</span>
+            <Key className="w-10 h-10 text-red-400 flex-shrink-0" />
             <div>
               <h2 className="text-2xl font-bold text-orange-400 mb-2">
                 "Error: API Key inválida o no funciona"
@@ -31,26 +35,25 @@ const Session2Troubleshooting = () => {
             <h3 className="font-bold text-orange-400 mb-2">✅ Soluciones:</h3>
             <ol className="space-y-2 text-foreground">
               <li>1. Verifica que <strong>copiaste la API Key completa</strong> sin espacios extra</li>
-              <li>2. Confirma que la key comience con "sk-ant-" (para Claude API)</li>
-              <li>3. Revisa en tu cuenta de Anthropic que la key esté activa</li>
-              <li>4. Si no tienes créditos, la API no funcionará (revisa balance)</li>
-              <li>5. Genera una nueva API Key si la anterior no funciona</li>
+              <li>2. Revisa en tu cuenta del proveedor de IA que la key esté activa</li>
+              <li>3. Si no tienes créditos, la API no funcionará (revisa balance)</li>
+              <li>4. Genera una nueva API Key si la anterior no funciona</li>
             </ol>
           </div>
 
           <div className="bg-blue-400/10 border border-blue-400/30 rounded-lg p-4">
             <h3 className="font-bold text-blue-400 mb-2">💡 Por qué pasa:</h3>
             <p className="text-foreground text-sm">
-              La API Key es tu contraseña para usar Claude. Si tiene errores, está vencida,
-              o no tienes créditos, Anthropic rechaza la conexión.
+              La API Key es tu contraseña para usar la IA. Si tiene errores, está vencida,
+              o no tienes créditos, el proveedor rechaza la conexión.
             </p>
           </div>
         </div>
 
         {/* Error 2 */}
-        <div className="glass-card p-6 mb-6">
+        <div className="glass-card p-6 mb-6 border-l-4 border-yellow-500">
           <div className="flex items-start gap-4 mb-4">
-            <span className="text-4xl">💬</span>
+            <MessageCircle className="w-10 h-10 text-yellow-400 flex-shrink-0" />
             <div>
               <h2 className="text-2xl font-bold text-orange-400 mb-2">
                 "El chat no responde nada"
@@ -75,16 +78,16 @@ const Session2Troubleshooting = () => {
           <div className="bg-blue-400/10 border border-blue-400/30 rounded-lg p-4">
             <h3 className="font-bold text-blue-400 mb-2">💡 Por qué pasa:</h3>
             <p className="text-foreground text-sm">
-              Tu app envía el mensaje a Claude en internet, espera respuesta, y la muestra.
+              Tu app envía el mensaje a la IA en internet, espera respuesta, y la muestra.
               Si algo falla en ese proceso (API, conexión, código), se queda esperando.
             </p>
           </div>
         </div>
 
         {/* Error 3 */}
-        <div className="glass-card p-6 mb-6">
+        <div className="glass-card p-6 mb-6 border-l-4 border-purple-500">
           <div className="flex items-start gap-4 mb-4">
-            <span className="text-4xl">🔄</span>
+            <RefreshCw className="w-10 h-10 text-purple-400 flex-shrink-0" />
             <div>
               <h2 className="text-2xl font-bold text-orange-400 mb-2">
                 "El historial de chat se borra al recargar"
@@ -115,9 +118,9 @@ const Session2Troubleshooting = () => {
         </div>
 
         {/* Error 4 */}
-        <div className="glass-card p-6 mb-6">
+        <div className="glass-card p-6 mb-6 border-l-4 border-blue-500">
           <div className="flex items-start gap-4 mb-4">
-            <span className="text-4xl">🤖</span>
+            <Bot className="w-10 h-10 text-blue-400 flex-shrink-0" />
             <div>
               <h2 className="text-2xl font-bold text-orange-400 mb-2">
                 "El Regenmon responde cosas raras o fuera de contexto"
@@ -135,7 +138,6 @@ const Session2Troubleshooting = () => {
               <li>2. Incluye información del tipo de Regenmon (Fuego/Agua/Planta)</li>
               <li>3. Agrega stats actuales (felicidad, energía) al prompt</li>
               <li>4. Define límites claros: "Responde como una mascota, no como asistente"</li>
-              <li>5. Prueba ajustar la temperatura (0.7 es un buen balance)</li>
             </ol>
           </div>
 
@@ -149,9 +151,9 @@ const Session2Troubleshooting = () => {
         </div>
 
         {/* Error 5 */}
-        <div className="glass-card p-6 mb-6">
+        <div className="glass-card p-6 mb-6 border-l-4 border-green-500">
           <div className="flex items-start gap-4 mb-4">
-            <span className="text-4xl">💸</span>
+            <DollarSign className="w-10 h-10 text-green-400 flex-shrink-0" />
             <div>
               <h2 className="text-2xl font-bold text-orange-400 mb-2">
                 "Error: Créditos insuficientes o límite alcanzado"
@@ -165,28 +167,28 @@ const Session2Troubleshooting = () => {
           <div className="bg-orange-400/10 border border-orange-400/30 rounded-lg p-4 mb-4">
             <h3 className="font-bold text-orange-400 mb-2">✅ Soluciones:</h3>
             <ol className="space-y-2 text-foreground">
-              <li>1. Revisa tu balance en console.anthropic.com</li>
-              <li>2. Si tienes $5 gratis, verifica que no se hayan agotado</li>
-              <li>3. Agrega un método de pago si necesitas más créditos</li>
-              <li>4. Configura alertas de uso para evitar sorpresas</li>
-              <li>5. Optimiza el prompt para usar menos tokens</li>
+              <li>1. Revisa tu balance en la consola del proveedor de IA</li>
+              <li>2. Optimiza el prompt para usar menos tokens</li>
             </ol>
           </div>
 
           <div className="bg-blue-400/10 border border-blue-400/30 rounded-lg p-4">
             <h3 className="font-bold text-blue-400 mb-2">💡 Por qué pasa:</h3>
             <p className="text-foreground text-sm">
-              Cada mensaje a la IA cuesta tokens (créditos). Anthropic da $5 gratis
-              para empezar, pero eventualmente se acaban si usas mucho la API.
+              Cada mensaje a la IA cuesta tokens (créditos). Los proveedores suelen dar
+              créditos gratis para empezar, pero eventualmente se acaban si usas mucho la API.
             </p>
           </div>
         </div>
 
         {/* Ayuda Adicional */}
         <div className="glass-card p-6 bg-gradient-to-r from-orange-400/10 to-pink-400/10 border-2 border-orange-400/30">
-          <h2 className="text-2xl font-bold text-orange-400 mb-4">
-            🆘 ¿Sigues teniendo problemas?
-          </h2>
+          <div className="flex items-center gap-3 mb-4">
+            <LifeBuoy className="w-8 h-8 text-orange-400" />
+            <h2 className="text-2xl font-bold text-orange-400">
+              ¿Sigues teniendo problemas?
+            </h2>
+          </div>
           <p className="text-foreground mb-4">
             Para debugging de IA, incluye esta información:
           </p>

@@ -1,22 +1,26 @@
 import { DocLayout } from '@/components/doc/DocLayout';
 import { DocContent } from '@/components/doc/DocContent';
 import { Link } from 'react-router-dom';
+import { AlertTriangle, Lock, Coins, Users, LifeBuoy } from 'lucide-react';
 
 const Session3Troubleshooting = () => {
   return (
     <DocLayout>
       <DocContent>
-        <h1 className="gradient-text text-4xl font-bold mb-4">
-          🚨 Errores Comunes - Sesión 3
-        </h1>
+        <div className="flex items-center gap-3 mb-4">
+          <AlertTriangle className="w-10 h-10 text-orange-400" />
+          <h1 className="gradient-text text-4xl font-bold">
+            Errores Comunes - Sesión 3
+          </h1>
+        </div>
         <p className="text-muted-foreground text-lg mb-8">
           Soluciones para problemas de autenticación, datos y sistemas de recursos.
         </p>
 
         {/* Error 1 */}
-        <div className="glass-card p-6 mb-6">
+        <div className="glass-card p-6 mb-6 border-l-4 border-red-500">
           <div className="flex items-start gap-4 mb-4">
-            <span className="text-4xl">🔐</span>
+            <Lock className="w-10 h-10 text-red-400 flex-shrink-0" />
             <div>
               <h2 className="text-2xl font-bold text-orange-400 mb-2">
                 "El login no funciona o falla constantemente"
@@ -47,9 +51,9 @@ const Session3Troubleshooting = () => {
         </div>
 
         {/* Error 2 */}
-        <div className="glass-card p-6 mb-6">
+        <div className="glass-card p-6 mb-6 border-l-4 border-yellow-500">
           <div className="flex items-start gap-4 mb-4">
-            <span className="text-4xl">💰</span>
+            <Coins className="w-10 h-10 text-yellow-400 flex-shrink-0" />
             <div>
               <h2 className="text-2xl font-bold text-orange-400 mb-2">
                 "Las monedas no se guardan o desaparecen"
@@ -80,9 +84,9 @@ const Session3Troubleshooting = () => {
         </div>
 
         {/* Error 3 */}
-        <div className="glass-card p-6 mb-6">
+        <div className="glass-card p-6 mb-6 border-l-4 border-purple-500">
           <div className="flex items-start gap-4 mb-4">
-            <span className="text-4xl">👤</span>
+            <Users className="w-10 h-10 text-purple-400 flex-shrink-0" />
             <div>
               <h2 className="text-2xl font-bold text-orange-400 mb-2">
                 "Veo el Regenmon de otro usuario o datos mezclados"
@@ -114,9 +118,12 @@ const Session3Troubleshooting = () => {
 
         {/* Ayuda Adicional */}
         <div className="glass-card p-6 bg-gradient-to-r from-orange-400/10 to-pink-400/10 border-2 border-orange-400/30">
-          <h2 className="text-2xl font-bold text-orange-400 mb-4">
-            🆘 Problemas de base de datos?
-          </h2>
+          <div className="flex items-center gap-3 mb-4">
+            <LifeBuoy className="w-8 h-8 text-orange-400" />
+            <h2 className="text-2xl font-bold text-orange-400">
+              Problemas de base de datos?
+            </h2>
+          </div>
           <p className="text-foreground mb-4">
             Para debugging de DB, necesitas:
           </p>

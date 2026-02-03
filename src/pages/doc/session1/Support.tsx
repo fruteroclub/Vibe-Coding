@@ -203,15 +203,21 @@ const Session1Support = () => {
         {
           title: '¿Qué es un input?',
           items: [
-            'Un input permite al usuario participar activamente.',
-            'Escribir el nombre crea una conexión emocional inmediata.'
+            'Un input es una caja de texto donde el usuario puede escribir.',
+            'Es como un campo de formulario: haces clic y puedes empezar a teclear.',
+            'En tu app, el input permite escribir el nombre del Regenmon.',
+            'Sin el input, el usuario solo vería información pero no podría participar.',
+            'Escribir el nombre crea una conexión emocional: "Este Regenmon es MÍO porque YO lo nombré".'
           ]
         },
         {
           title: '¿Qué es un sprite?',
           items: [
-            'El sprite es la imagen del Regenmon.',
-            'Elegirlo hace que la mascota se sienta única desde el inicio.'
+            'Un sprite es la imagen visual del Regenmon (su "cara" o apariencia).',
+            'Es un archivo PNG o imagen que representa cómo se ve tu mascota.',
+            'Hay diferentes sprites para diferentes tipos: Fuego (rojo), Agua (azul), Planta (verde).',
+            'Elegir el sprite hace que el usuario sienta: "Mi Regenmon luce diferente al de otros".',
+            'El sprite cambia visualmente según el tipo que elijas, dando personalidad única desde el inicio.'
           ]
         },
         {

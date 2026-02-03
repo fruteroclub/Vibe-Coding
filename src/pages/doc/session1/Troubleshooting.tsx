@@ -1,22 +1,26 @@
 import { DocLayout } from '@/components/doc/DocLayout';
 import { DocContent } from '@/components/doc/DocContent';
 import { Link } from 'react-router-dom';
+import { AlertTriangle, XCircle, Clock, Save, Wrench, LifeBuoy } from 'lucide-react';
 
 const Session1Troubleshooting = () => {
   return (
     <DocLayout>
       <DocContent>
-        <h1 className="gradient-text text-4xl font-bold mb-4">
-          🚨 Errores Comunes - Sesión 1
-        </h1>
+        <div className="flex items-center gap-3 mb-4">
+          <AlertTriangle className="w-10 h-10 text-orange-400" />
+          <h1 className="gradient-text text-4xl font-bold">
+            Errores Comunes - Sesión 1
+          </h1>
+        </div>
         <p className="text-muted-foreground text-lg mb-8">
           Si algo no funciona, aquí están las soluciones a los problemas más frecuentes.
         </p>
 
         {/* Error 1 */}
-        <div className="glass-card p-6 mb-6">
+        <div className="glass-card p-6 mb-6 border-l-4 border-red-500">
           <div className="flex items-start gap-4 mb-4">
-            <span className="text-4xl">❌</span>
+            <XCircle className="w-10 h-10 text-red-400 flex-shrink-0" />
             <div>
               <h2 className="text-2xl font-bold text-orange-400 mb-2">
                 "Mi Regenmon no aparece en pantalla"
@@ -47,9 +51,9 @@ const Session1Troubleshooting = () => {
         </div>
 
         {/* Error 2 */}
-        <div className="glass-card p-6 mb-6">
+        <div className="glass-card p-6 mb-6 border-l-4 border-yellow-500">
           <div className="flex items-start gap-4 mb-4">
-            <span className="text-4xl">⏳</span>
+            <Clock className="w-10 h-10 text-yellow-400 flex-shrink-0" />
             <div>
               <h2 className="text-2xl font-bold text-orange-400 mb-2">
                 "La página no carga después de hacer deploy"
@@ -80,42 +84,9 @@ const Session1Troubleshooting = () => {
         </div>
 
         {/* Error 3 */}
-        <div className="glass-card p-6 mb-6">
+        <div className="glass-card p-6 mb-6 border-l-4 border-purple-500">
           <div className="flex items-start gap-4 mb-4">
-            <span className="text-4xl">🖼️</span>
-            <div>
-              <h2 className="text-2xl font-bold text-orange-400 mb-2">
-                "La imagen de mi Regenmon no se ve"
-              </h2>
-              <p className="text-muted-foreground mb-4">
-                Todo funciona pero aparece un cuadro roto donde debería estar la imagen.
-              </p>
-            </div>
-          </div>
-
-          <div className="bg-orange-400/10 border border-orange-400/30 rounded-lg p-4 mb-4">
-            <h3 className="font-bold text-orange-400 mb-2">✅ Soluciones:</h3>
-            <ol className="space-y-2 text-foreground">
-              <li>1. Revisa que la URL de la imagen sea válida (cópiala y ábrela en nueva pestaña)</li>
-              <li>2. Asegúrate de usar <strong>imágenes públicas</strong> (no de Google Drive privado)</li>
-              <li>3. Usa servicios como imgur.com o similares para hospedar imágenes</li>
-              <li>4. Verifica que la URL termine en .png, .jpg o .webp</li>
-            </ol>
-          </div>
-
-          <div className="bg-blue-400/10 border border-blue-400/30 rounded-lg p-4">
-            <h3 className="font-bold text-blue-400 mb-2">💡 Por qué pasa:</h3>
-            <p className="text-foreground text-sm">
-              Las imágenes necesitan estar en un servidor público. Si la URL requiere
-              login o permisos especiales, tu app no puede accederlas.
-            </p>
-          </div>
-        </div>
-
-        {/* Error 4 */}
-        <div className="glass-card p-6 mb-6">
-          <div className="flex items-start gap-4 mb-4">
-            <span className="text-4xl">💾</span>
+            <Save className="w-10 h-10 text-purple-400 flex-shrink-0" />
             <div>
               <h2 className="text-2xl font-bold text-orange-400 mb-2">
                 "Mi Regenmon desaparece cuando recargo la página"
@@ -129,26 +100,26 @@ const Session1Troubleshooting = () => {
           <div className="bg-orange-400/10 border border-orange-400/30 rounded-lg p-4 mb-4">
             <h3 className="font-bold text-orange-400 mb-2">✅ Soluciones:</h3>
             <ol className="space-y-2 text-foreground">
-              <li>1. Verifica que el código incluya <strong>localStorage</strong> para guardar datos</li>
-              <li>2. Abre la consola (F12) → pestaña Application → Local Storage</li>
-              <li>3. Confirma que los datos de tu Regenmon estén guardados ahí</li>
-              <li>4. Si no hay localStorage, pídele a v0 que agregue persistencia</li>
+              <li>1. Pídele a v0: <strong>"Agrega persistencia para guardar el Regenmon"</strong></li>
+              <li>2. Verifica que v0 haya agregado código para recordar datos</li>
+              <li>3. Recarga la página y vuelve a crear tu Regenmon</li>
+              <li>4. Si sigue sin funcionar, dile a v0: <strong>"El Regenmon no se guarda al recargar"</strong></li>
             </ol>
           </div>
 
           <div className="bg-blue-400/10 border border-blue-400/30 rounded-lg p-4">
             <h3 className="font-bold text-blue-400 mb-2">💡 Por qué pasa:</h3>
             <p className="text-foreground text-sm">
-              Sin localStorage, tu app solo guarda información en "memoria temporal".
-              Cuando recargas, esa memoria se borra. localStorage es memoria permanente del navegador.
+              Tu app necesita un lugar donde "recordar" la información de tu Regenmon.
+              Sin esa memoria permanente, cuando recargas la página todo se olvida y vuelve a empezar desde cero.
             </p>
           </div>
         </div>
 
-        {/* Error 5 */}
-        <div className="glass-card p-6 mb-6">
+        {/* Error 4 */}
+        <div className="glass-card p-6 mb-6 border-l-4 border-blue-500">
           <div className="flex items-start gap-4 mb-4">
-            <span className="text-4xl">🔨</span>
+            <Wrench className="w-10 h-10 text-blue-400 flex-shrink-0" />
             <div>
               <h2 className="text-2xl font-bold text-orange-400 mb-2">
                 "El build en v0 falla con errores"
@@ -180,9 +151,12 @@ const Session1Troubleshooting = () => {
 
         {/* Ayuda Adicional */}
         <div className="glass-card p-6 bg-gradient-to-r from-orange-400/10 to-pink-400/10 border-2 border-orange-400/30">
-          <h2 className="text-2xl font-bold text-orange-400 mb-4">
-            🆘 ¿Ninguna solución funcionó?
-          </h2>
+          <div className="flex items-center gap-3 mb-4">
+            <LifeBuoy className="w-8 h-8 text-orange-400" />
+            <h2 className="text-2xl font-bold text-orange-400">
+              ¿Ninguna solución funcionó?
+            </h2>
+          </div>
           <p className="text-foreground mb-4">
             Si después de probar todo sigue sin funcionar:
           </p>

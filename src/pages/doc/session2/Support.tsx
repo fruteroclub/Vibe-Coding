@@ -402,15 +402,15 @@ const Session2Support = () => {
                 questions={[
             {
               id: 's2-q1',
-              question: '¿Qué es la API de Claude y para qué sirve?',
+              question: '¿Qué es la API de IA y para qué sirve?',
               options: [
                 'Un sitio web para chatear',
-                'Una puerta que conecta tu app con el cerebro de Claude',
+                'Una puerta que conecta tu app con el cerebro de la IA',
                 'Una base de datos',
                 'Un framework de programación'
               ],
               correctAnswer: 1,
-              explanation: 'La API de Claude es como una puerta que conecta tu aplicación con el cerebro de Claude. Tu app envía preguntas, Claude procesa y responde. Es lo que permite que tu Regenmon "piense" y converse.'
+              explanation: 'La API de IA es como una puerta que conecta tu aplicación con el cerebro de la inteligencia artificial. Tu app envía preguntas, la IA procesa y responde. Es lo que permite que tu Regenmon "piense" y converse.'
             },
             {
               id: 's2-q2',
@@ -438,7 +438,7 @@ const Session2Support = () => {
             },
             {
               id: 's2-q4',
-              question: '¿Qué significa "temperatura" en la configuración de Claude?',
+              question: '¿Qué significa "temperatura" en la configuración de la IA?',
               options: [
                 'La velocidad de respuesta',
                 'El nivel de creatividad vs. precisión en las respuestas',
@@ -463,15 +463,15 @@ const Session2Support = () => {
 
           <div className="grid md:grid-cols-2 gap-6">
             <AnalogyCard
-              technical="API Key para Claude"
+              technical="API Key para IA"
               analogy="Llave de tu casa"
-              explanation="Así como solo tú tienes la llave de tu casa y sin ella la puerta está cerrada, la API Key es tu 'llave personal' para usar los servicios de Claude. Sin ella, no puedes conectarte. Anthropic te da $5 gratis para empezar, como un periodo de prueba."
+              explanation="Así como solo tú tienes la llave de tu casa y sin ella la puerta está cerrada, la API Key es tu 'llave personal' para usar los servicios de IA. Sin ella, no puedes conectarte. Anthropic te da $5 gratis para empezar, como un periodo de prueba."
             />
 
             <AnalogyCard
               technical="System Prompt (personalidad de IA)"
               analogy="Guión de actor"
-              explanation="Imagina que Claude es un actor. El system prompt es el guión que le dice cómo actuar: 'Eres un Regenmon de tipo Fuego, hablas con entusiasmo, siempre estás motivado para entrenar'. El actor (Claude) sigue ese guión en cada respuesta, manteniendo el personaje consistente."
+              explanation="Imagina que la IA es un actor. El system prompt es el guión que le dice cómo actuar: 'Eres un Regenmon de tipo Fuego, hablas con entusiasmo, siempre estás motivado para entrenar'. El actor (IA) sigue ese guión en cada respuesta, manteniendo el personaje consistente."
             />
           </div>
         </div>
