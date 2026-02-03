@@ -39,6 +39,7 @@ import Session5Prompt from "./pages/doc/session5/Prompt";
 import Session5Deliverable from "./pages/doc/session5/Deliverable";
 import Session5Support from "./pages/doc/session5/Support";
 import Session5Troubleshooting from "./pages/doc/session5/Troubleshooting";
+import Privacy from "./pages/Privacy";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -86,6 +87,7 @@ const App = () => (
             <Route path="/doc/session-5/deliverable" element={<Session5Deliverable />} />
             <Route path="/doc/session-5/support" element={<Session5Support />} />
             <Route path="/doc/session-5/troubleshooting" element={<Session5Troubleshooting />} />
+            <Route path="/privacy" element={<Privacy />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

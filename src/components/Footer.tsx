@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -16,12 +17,20 @@ const Footer = () => {
             </p>
           </div>
 
-          <a
-            href="mailto:brian@frutero.club"
-            className="text-muted-foreground hover:text-primary transition-colors text-sm"
-          >
-            {t('footer.contact')}
-          </a>
+          <div className="flex items-center gap-6">
+            <Link
+              to="/privacy"
+              className="text-muted-foreground hover:text-primary transition-colors text-sm"
+            >
+              Privacidad
+            </Link>
+            <a
+              href="mailto:brian@frutero.club"
+              className="text-muted-foreground hover:text-primary transition-colors text-sm"
+            >
+              {t('footer.contact')}
+            </a>
+          </div>
         </div>
       </div>
     </footer>

@@ -1,20 +1,23 @@
+import { useTranslation } from 'react-i18next';
 import { DocLayout } from '@/components/doc/DocLayout';
 import { DocContent } from '@/components/doc/DocContent';
 import { Link } from 'react-router-dom';
-import { AlertTriangle, Lock, Coins, Users, LifeBuoy } from 'lucide-react';
+import { AlertTriangle, Lock, Coins, LifeBuoy } from 'lucide-react';
 
 const Session3Troubleshooting = () => {
+  const { t } = useTranslation();
+
   return (
     <DocLayout>
       <DocContent>
         <div className="flex items-center gap-3 mb-4">
           <AlertTriangle className="w-10 h-10 text-orange-400" />
           <h1 className="gradient-text text-4xl font-bold">
-            Errores Comunes - Sesión 3
+            {t('session3Troubleshooting.title')}
           </h1>
         </div>
         <p className="text-muted-foreground text-lg mb-8">
-          Soluciones para problemas de autenticación, datos y sistemas de recursos.
+          {t('session3Troubleshooting.subtitle')}
         </p>
 
         {/* Error 1 */}
@@ -23,10 +26,10 @@ const Session3Troubleshooting = () => {
             <Lock className="w-10 h-10 text-red-400 flex-shrink-0" />
             <div>
               <h2 className="text-2xl font-bold text-orange-400 mb-2">
-                "El login no funciona o falla constantemente"
+                {t('session3Troubleshooting.error1.title')}
               </h2>
               <p className="text-muted-foreground mb-4">
-                Intentas hacer login pero muestra error o no te deja entrar.
+                {t('session3Troubleshooting.error1.description')}
               </p>
             </div>
           </div>
@@ -34,18 +37,16 @@ const Session3Troubleshooting = () => {
           <div className="bg-orange-400/10 border border-orange-400/30 rounded-lg p-4 mb-4">
             <h3 className="font-bold text-orange-400 mb-2">✅ Soluciones:</h3>
             <ol className="space-y-2 text-foreground">
-              <li>1. Verifica que Privy/Clerk esté <strong>configurado correctamente</strong></li>
-              <li>2. Confirma que las API keys del servicio de auth estén activas</li>
-              <li>3. Revisa que el dominio esté permitido en la configuración</li>
-              <li>4. Prueba con ventana incógnito para eliminar cookies viejas</li>
+              {t('session3Troubleshooting.error1.solutions', { returnObjects: true }).map((solution: string, index: number) => (
+                <li key={index} dangerouslySetInnerHTML={{ __html: solution }} />
+              ))}
             </ol>
           </div>
 
           <div className="bg-blue-400/10 border border-blue-400/30 rounded-lg p-4">
             <h3 className="font-bold text-blue-400 mb-2">💡 Por qué pasa:</h3>
             <p className="text-foreground text-sm">
-              Los servicios de autenticación requieren configuración exacta. Si las keys,
-              dominios o permisos no están bien, rechazan el login.
+              {t('session3Troubleshooting.error1.why')}
             </p>
           </div>
         </div>
@@ -56,10 +57,10 @@ const Session3Troubleshooting = () => {
             <Coins className="w-10 h-10 text-yellow-400 flex-shrink-0" />
             <div>
               <h2 className="text-2xl font-bold text-orange-400 mb-2">
-                "Las monedas no se guardan o desaparecen"
+                {t('session3Troubleshooting.error2.title')}
               </h2>
               <p className="text-muted-foreground mb-4">
-                Ganas monedas pero al recargar vuelven a cero o se pierden.
+                {t('session3Troubleshooting.error2.description')}
               </p>
             </div>
           </div>
@@ -67,51 +68,16 @@ const Session3Troubleshooting = () => {
           <div className="bg-orange-400/10 border border-orange-400/30 rounded-lg p-4 mb-4">
             <h3 className="font-bold text-orange-400 mb-2">✅ Soluciones:</h3>
             <ol className="space-y-2 text-foreground">
-              <li>1. Confirma que uses <strong>base de datos (Supabase)</strong> no solo localStorage</li>
-              <li>2. Verifica que cada ganancia/gasto actualice la base de datos</li>
-              <li>3. Revisa los logs de Supabase para ver si las queries funcionan</li>
-              <li>4. Confirma que el userId esté correctamente vinculado</li>
+              {t('session3Troubleshooting.error2.solutions', { returnObjects: true }).map((solution: string, index: number) => (
+                <li key={index} dangerouslySetInnerHTML={{ __html: solution }} />
+              ))}
             </ol>
           </div>
 
           <div className="bg-blue-400/10 border border-blue-400/30 rounded-lg p-4">
             <h3 className="font-bold text-blue-400 mb-2">💡 Por qué pasa:</h3>
             <p className="text-foreground text-sm">
-              localStorage es temporal. Para persistencia real necesitas base de datos.
-              Si no guardas en DB o hay errores de query, los datos se pierden.
-            </p>
-          </div>
-        </div>
-
-        {/* Error 3 */}
-        <div className="glass-card p-6 mb-6 border-l-4 border-purple-500">
-          <div className="flex items-start gap-4 mb-4">
-            <Users className="w-10 h-10 text-purple-400 flex-shrink-0" />
-            <div>
-              <h2 className="text-2xl font-bold text-orange-400 mb-2">
-                "Veo el Regenmon de otro usuario o datos mezclados"
-              </h2>
-              <p className="text-muted-foreground mb-4">
-                Haces login pero ves información de otra persona o datos incorrectos.
-              </p>
-            </div>
-          </div>
-
-          <div className="bg-orange-400/10 border border-orange-400/30 rounded-lg p-4 mb-4">
-            <h3 className="font-bold text-orange-400 mb-2">✅ Soluciones:</h3>
-            <ol className="space-y-2 text-foreground">
-              <li>1. Verifica que las queries filtren por <strong>userId correcto</strong></li>
-              <li>2. Confirma que obtienes el userId del sistema de auth</li>
-              <li>3. Revisa las Row Level Security (RLS) policies en Supabase</li>
-              <li>4. Nunca guardes userId en localStorage - obtenerlo siempre de auth</li>
-            </ol>
-          </div>
-
-          <div className="bg-blue-400/10 border border-blue-400/30 rounded-lg p-4">
-            <h3 className="font-bold text-blue-400 mb-2">💡 Por qué pasa:</h3>
-            <p className="text-foreground text-sm">
-              Si no filtras datos por usuario, la app trae información de todos.
-              RLS en Supabase asegura que cada quien solo vea sus propios datos.
+              {t('session3Troubleshooting.error2.why')}
             </p>
           </div>
         </div>
@@ -121,29 +87,19 @@ const Session3Troubleshooting = () => {
           <div className="flex items-center gap-3 mb-4">
             <LifeBuoy className="w-8 h-8 text-orange-400" />
             <h2 className="text-2xl font-bold text-orange-400">
-              Problemas de base de datos?
+              {t('session3Troubleshooting.needHelp.title')}
             </h2>
           </div>
           <p className="text-foreground mb-4">
-            Para debugging de DB, necesitas:
+            {t('session3Troubleshooting.needHelp.intro')}
           </p>
           <ol className="space-y-3 text-foreground mb-6">
-            <li className="flex items-start gap-3">
-              <span className="font-bold text-orange-400">1.</span>
-              <span>Screenshot de logs de Supabase (no incluyas keys)</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="font-bold text-orange-400">2.</span>
-              <span>Descripción de qué debería pasar vs qué pasa realmente</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="font-bold text-orange-400">3.</span>
-              <span>Tu estructura de tablas (schema)</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="font-bold text-orange-400">4.</span>
-              <span>Contacta: <a href="mailto:brian@frutero.club" className="text-orange-400 underline">brian@frutero.club</a></span>
-            </li>
+            {t('session3Troubleshooting.needHelp.steps', { returnObjects: true }).map((step: string, index: number) => (
+              <li key={index} className="flex items-start gap-3">
+                <span className="font-bold text-orange-400">{index + 1}.</span>
+                <span dangerouslySetInnerHTML={{ __html: step }} />
+              </li>
+            ))}
           </ol>
         </div>
 

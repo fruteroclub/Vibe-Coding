@@ -938,6 +938,892 @@
           "description": "Puedes cambiar una capa sin tocar las demás. Cambiar de base de datos no afecta el UI. Cambiar de framework de UI no afecta la lógica de datos."
         }
       }
+    },
+    "glossary": {
+      "title": "Glosario Rápido para Vibecoders",
+      "subtitle": "Todos los términos técnicos explicados en lenguaje simple. Busca cualquier palabra que no entiendas.",
+      "searchPlaceholder": "Busca un término... (ej: API, Deploy, Estado)",
+      "noResults": "No se encontraron términos que coincidan con tu búsqueda.",
+      "allLabel": "Todos",
+      "categories": {
+        "development": "Desarrollo",
+        "data": "Datos",
+        "ai": "Inteligencia Artificial",
+        "ui": "Interfaz",
+        "auth": "Autenticación"
+      },
+      "terms": {
+        "deploy": {
+          "term": "Deploy / Desplegar",
+          "definition": "Subir tu app a internet para que funcione 24/7. Es como publicar un video en YouTube: pasas de tenerlo solo en tu computadora a que todos puedan verlo."
+        },
+        "production": {
+          "term": "Producción",
+          "definition": "Tu app funcionando en internet, accesible para todos. Es el \"modo final\" después de que terminas de construir y probar."
+        },
+        "localhost": {
+          "term": "Localhost",
+          "definition": "Tu app funcionando solo en tu computadora (nadie más puede verla). Es como un ensayo privado antes del show."
+        },
+        "url": {
+          "term": "URL",
+          "definition": "Dirección web de tu app (ej: miapp.vercel.app). Es como la dirección de una casa en internet."
+        },
+        "framework": {
+          "term": "Framework",
+          "definition": "Herramientas y reglas predefinidas para construir apps más rápido. Como una caja de LEGO con instrucciones vs construir desde cero."
+        },
+        "bug": {
+          "term": "Bug / Error",
+          "definition": "Algo que no funciona como debería en tu app. Como un agujero en una red: necesitas encontrarlo y arreglarlo."
+        },
+        "localStorage": {
+          "term": "localStorage",
+          "definition": "Memoria en tu navegador (se borra si limpias cookies). Es como notas adhesivas: temporales y solo en tu navegador."
+        },
+        "database": {
+          "term": "Base de datos",
+          "definition": "Memoria en internet (permanente, no se borra). Como un archivo de Excel gigante que vive en la nube: siempre está ahí."
+        },
+        "api": {
+          "term": "API",
+          "definition": "Puente que conecta tu app con servicios externos (como IA, imágenes, pagos). Es como un mesero: tú pides, él trae lo que necesitas."
+        },
+        "apiKey": {
+          "term": "API Key",
+          "definition": "Contraseña especial para usar servicios de IA o APIs. Como la llave de tu casa: sin ella no puedes entrar."
+        },
+        "endpoint": {
+          "term": "Endpoint",
+          "definition": "Dirección específica donde tu app pide o envía información. Como diferentes ventanillas en un banco: una para depósitos, otra para retiros."
+        },
+        "json": {
+          "term": "JSON",
+          "definition": "Formato para organizar información que las apps entienden. Como hablar el mismo idioma entre diferentes programas."
+        },
+        "prompt": {
+          "term": "Prompt",
+          "definition": "Instrucciones que le das a la IA. Mientras más claras, mejores respuestas."
+        },
+        "context": {
+          "term": "Contexto",
+          "definition": "Lo que la IA recuerda de conversaciones anteriores. Como la memoria a corto plazo: se pierde si pasas mucho tiempo."
+        },
+        "multimodal": {
+          "term": "Multimodal",
+          "definition": "IA que entiende texto + imágenes al mismo tiempo. Como un maestro que puede leer tu ensayo Y ver tus dibujos."
+        },
+        "temperature": {
+          "term": "Temperatura (IA)",
+          "definition": "Qué tan creativa es la IA (0=precisa y repetitiva, 1=creativa e impredecible). Como el volumen de la radio."
+        },
+        "token": {
+          "term": "Token",
+          "definition": "Unidad de texto que la IA procesa (≈4 caracteres). Como contar palabras, pero más técnico. Más tokens = más caro."
+        },
+        "systemPrompt": {
+          "term": "System Prompt",
+          "definition": "Personalidad base de la IA. Le dices \"eres un entrenador motivador\" y siempre responderá así."
+        },
+        "ui": {
+          "term": "UI (User Interface)",
+          "definition": "Todo lo que ves en pantalla: botones, texto, colores, imágenes. Es la \"cara\" de tu app."
+        },
+        "component": {
+          "term": "Componente",
+          "definition": "Una pieza reutilizable de tu interfaz (ej: botón, tarjeta, menú). Como piezas de LEGO que puedes combinar."
+        },
+        "state": {
+          "term": "Estado (State)",
+          "definition": "Información que cambia en tu app (ej: nivel de felicidad, monedas, nombre). Es la \"memoria activa\" de tu interfaz."
+        },
+        "props": {
+          "term": "Props",
+          "definition": "Información que pasas de un componente a otro. Como darle instrucciones específicas a cada pieza."
+        },
+        "responsive": {
+          "term": "Responsive",
+          "definition": "Que tu app se vea bien en celular, tablet y computadora. Se adapta automáticamente al tamaño de pantalla."
+        },
+        "auth": {
+          "term": "Auth / Autenticación",
+          "definition": "Sistema de login que verifica quién eres. Es como mostrar tu ID en la entrada."
+        },
+        "session": {
+          "term": "Sesión",
+          "definition": "El tiempo que estás logueado en la app. Cuando cierras sesión, termina."
+        },
+        "authToken": {
+          "term": "Token (Auth)",
+          "definition": "Pase temporal que prueba que ya hiciste login. La app lo guarda para no pedirte contraseña cada vez."
+        },
+        "permissions": {
+          "term": "Permisos",
+          "definition": "Qué puedes y no puedes hacer en la app según tu tipo de usuario (admin, usuario normal, visitante)."
+        }
+      }
+    },
+    "session1Troubleshooting": {
+      "title": "Errores Comunes - Sesión 1",
+      "subtitle": "Si algo no funciona, aquí están las soluciones a los problemas más frecuentes.",
+      "solutionsLabel": "✅ Soluciones:",
+      "whyLabel": "💡 Por qué pasa:",
+      "error1": {
+        "title": "\"Mi Regenmon no aparece en pantalla\"",
+        "description": "Creaste tu mascota pero no se ve nada, solo pantalla en blanco.",
+        "solutions": [
+          "1. Verifica que el <strong>nombre tenga al menos 3 letras</strong>",
+          "2. Revisa que hayas <strong>seleccionado un tipo</strong> (Fuego/Agua/Planta)",
+          "3. Abre la consola del navegador (F12) y busca errores en rojo",
+          "4. Refresca la página (F5) y vuelve a intentar"
+        ],
+        "why": "Tu app espera cierta información antes de mostrar el Regenmon. Si falta algo (nombre, tipo, imagen), no sabe qué mostrar y se queda en blanco."
+      },
+      "error2": {
+        "title": "\"La página no carga después de hacer deploy\"",
+        "description": "Hiciste deploy a Vercel pero el link muestra error 404 o carga infinita.",
+        "solutions": [
+          "1. <strong>Espera 2-3 minutos</strong> - Vercel tarda en procesar",
+          "2. Refresca la página varias veces (Ctrl + F5)",
+          "3. Abre el link en <strong>ventana incógnito</strong> para evitar caché",
+          "4. Verifica en tu dashboard de Vercel que el deploy diga \"Ready\""
+        ],
+        "why": "Vercel necesita tiempo para construir tu app, subirla a servidores y distribuirla globalmente. No es instantáneo, pero una vez listo funciona 24/7."
+      },
+      "error3": {
+        "title": "\"Mi Regenmon desaparece cuando recargo la página\"",
+        "description": "Creas tu mascota pero al recargar (F5) todo vuelve a empezar.",
+        "solutions": [
+          "1. Pídele a v0: <strong>\"Agrega persistencia para guardar el Regenmon\"</strong>",
+          "2. Verifica que v0 haya agregado código para recordar datos",
+          "3. Recarga la página y vuelve a crear tu Regenmon",
+          "4. Si sigue sin funcionar, dile a v0: <strong>\"El Regenmon no se guarda al recargar\"</strong>"
+        ],
+        "why": "Tu app necesita un lugar donde \"recordar\" la información de tu Regenmon. Sin esa memoria permanente, cuando recargas la página todo se olvida y vuelve a empezar desde cero."
+      },
+      "error4": {
+        "title": "\"El build en v0 falla con errores\"",
+        "description": "Cuando intentas hacer deploy, v0 muestra errores rojos y no compila.",
+        "solutions": [
+          "1. Lee el mensaje de error con calma - generalmente dice qué falta",
+          "2. Busca errores comunes: variables no definidas, imports faltantes",
+          "3. Pídele a v0 que <strong>\"fixee los errores de build\"</strong>",
+          "4. Si no funciona, describe el error específico a v0"
+        ],
+        "why": "Los errores de build son el código diciéndote \"me falta algo para funcionar\". Puede ser una variable, un import, o código que no está completo."
+      },
+      "needHelp": {
+        "title": "¿Sigues atorado?",
+        "description": "Si ninguna de estas soluciones funcionó:",
+        "steps": [
+          "Copia el error exacto que ves",
+          "Ve a Discord y pega el error en #ayuda",
+          "Comparte tu link de v0 para que alguien pueda ver el código",
+          "Mientras esperas respuesta, intenta empezar de nuevo con un proyecto limpio"
+        ]
+      },
+      "backLink": "← Volver a Sesión 1"
+    },
+    "session2Troubleshooting": {
+      "title": "Errores Comunes - Sesión 2",
+      "subtitle": "Problemas frecuentes al integrar IA conversacional y sus soluciones.",
+      "error1": {
+        "title": "\"Error: API Key inválida o no funciona\"",
+        "description": "Agregaste tu API Key pero la app dice que es inválida o falla al conectar.",
+        "solutions": [
+          "1. Verifica que <strong>copiaste la API Key completa</strong> sin espacios extra",
+          "2. Revisa en tu cuenta del proveedor de IA que la key esté activa",
+          "3. Si no tienes créditos, la API no funcionará (revisa balance)",
+          "4. Genera una nueva API Key si la anterior no funciona"
+        ],
+        "why": "La API Key es tu contraseña para usar la IA. Si tiene errores, está vencida, o no tienes créditos, el proveedor rechaza la conexión."
+      },
+      "error2": {
+        "title": "\"El chat no responde nada\"",
+        "description": "Escribes mensajes pero el Regenmon no contesta, solo carga infinito.",
+        "solutions": [
+          "1. Abre la consola (F12) y revisa errores en rojo",
+          "2. Verifica que la <strong>API Key esté configurada correctamente</strong>",
+          "3. Confirma que tu conexión a internet funcione",
+          "4. Revisa si hay límites de rate (demasiadas peticiones muy rápido)",
+          "5. Espera 30 segundos y vuelve a intentar"
+        ],
+        "why": "Tu app envía el mensaje a la IA en internet, espera respuesta, y la muestra. Si algo falla en ese proceso (API, conexión, código), se queda esperando."
+      },
+      "error3": {
+        "title": "\"El historial de chat se borra al recargar\"",
+        "description": "Conversas con tu Regenmon pero al recargar (F5) toda la conversación desaparece.",
+        "solutions": [
+          "1. Verifica que el código guarde mensajes en <strong>localStorage</strong>",
+          "2. Abre F12 → Application → Local Storage y busca el historial",
+          "3. Pídele a v0 que agregue persistencia del chat",
+          "4. Confirma que cada mensaje se guarde después de enviarlo"
+        ],
+        "why": "Sin localStorage, los mensajes solo existen en memoria temporal. Al recargar, esa memoria se limpia y pierdes todo el historial."
+      },
+      "error4": {
+        "title": "\"El Regenmon responde cosas raras o fuera de contexto\"",
+        "description": "La IA responde pero no tiene la personalidad correcta o dice cosas sin sentido.",
+        "solutions": [
+          "1. Revisa el <strong>prompt del sistema</strong> - debe definir personalidad clara",
+          "2. Incluye información del tipo de Regenmon (Fuego/Agua/Planta)",
+          "3. Agrega stats actuales (felicidad, energía) al prompt",
+          "4. Define límites claros: \"Responde como una mascota, no como asistente\""
+        ],
+        "why": "La IA responde según las instrucciones que recibe. Si el prompt es vago o no tiene contexto, las respuestas serán genéricas o inconsistentes."
+      },
+      "error5": {
+        "title": "\"Error: Créditos insuficientes o límite alcanzado\"",
+        "description": "La app funcionaba pero ahora dice que no hay créditos o alcanzaste el límite.",
+        "solutions": [
+          "1. Revisa tu balance en la consola del proveedor de IA",
+          "2. Optimiza el prompt para usar menos tokens"
+        ],
+        "why": "Cada mensaje a la IA cuesta tokens (créditos). Los proveedores suelen dar créditos gratis para empezar, pero eventualmente se acaban si usas mucho la API."
+      },
+      "needHelp": {
+        "title": "¿Sigues teniendo problemas?",
+        "intro": "Para debugging de IA, incluye esta información:",
+        "steps": [
+          "Screenshot del error exacto (consola F12 incluida)",
+          "Tu API Key (solo los primeros 10 caracteres: sk-ant-api03...)",
+          "El prompt del sistema que estás usando",
+          "Contacta: <a href=\"mailto:brian@frutero.club\" class=\"text-orange-400 underline\">brian@frutero.club</a>"
+        ]
+      }
+    },
+    "session3Troubleshooting": {
+      "title": "Errores Comunes - Sesión 3",
+      "subtitle": "Soluciones para problemas de autenticación, datos y sistemas de recursos.",
+      "error1": {
+        "title": "\"El login no funciona o falla constantemente\"",
+        "description": "Intentas hacer login pero muestra error o no te deja entrar.",
+        "solutions": [
+          "1. Verifica que el <strong>servicio de login esté bien conectado</strong>",
+          "2. Prueba con ventana incógnito para empezar de cero",
+          "3. Pídele a v0 que revise la configuración del login"
+        ],
+        "why": "El sistema de login necesita estar bien configurado para funcionar. Si algo no está conectado correctamente, no te dejará entrar."
+      },
+      "error2": {
+        "title": "\"Las monedas no se guardan o desaparecen\"",
+        "description": "Ganas monedas pero al recargar vuelven a cero o se pierden.",
+        "solutions": [
+          "1. Confirma que uses <strong>base de datos (Supabase)</strong> no solo localStorage",
+          "2. Verifica que cada ganancia/gasto actualice la base de datos",
+          "3. Revisa los logs de Supabase para ver si las queries funcionan",
+          "4. Confirma que el userId esté correctamente vinculado"
+        ],
+        "why": "localStorage es temporal. Para persistencia real necesitas base de datos. Si no guardas en DB o hay errores de query, los datos se pierden."
+      },
+      "needHelp": {
+        "title": "Problemas de base de datos?",
+        "intro": "Para debugging de DB, necesitas:",
+        "steps": [
+          "Screenshot de logs de Supabase (no incluyas keys)",
+          "Descripción de qué debería pasar vs qué pasa realmente",
+          "Tu estructura de tablas (schema)",
+          "Contacta: <a href=\"mailto:brian@frutero.club\" class=\"text-orange-400 underline\">brian@frutero.club</a>"
+        ]
+      }
+    },
+    "session4Troubleshooting": {
+      "title": "Errores Comunes - Sesión 4",
+      "subtitle": "Soluciones para problemas con IA multimodal, evaluación de imágenes y progreso.",
+      "error1": {
+        "title": "\"La IA no puede ver/analizar las imágenes\"",
+        "description": "Subes imágenes pero la IA responde como si no las viera.",
+        "solutions": [
+          "1. Confirma que estás usando <strong>claude-3-opus/sonnet</strong> (no claude-2)",
+          "2. Verifica que la imagen se convierta a base64 correctamente",
+          "3. Revisa que el formato sea image/jpeg, image/png o image/webp",
+          "4. Confirma que el tamaño de imagen no exceda 5MB"
+        ],
+        "why": "Solo Claude 3 (Opus/Sonnet/Haiku) puede ver imágenes. Claude 2 es solo texto. La imagen debe estar en formato correcto y tamaño adecuado."
+      },
+      "error2": {
+        "title": "\"El progreso no se guarda o vuelve a cero\"",
+        "description": "Entrenas tu Regenmon pero al recargar el progreso desaparece.",
+        "solutions": [
+          "1. Asegúrate de <strong>guardar en base de datos</strong> no solo state",
+          "2. Actualiza la DB después de cada entrenamiento exitoso",
+          "3. Verifica que el campo de experiencia/nivel exista en tu tabla",
+          "4. Confirma que las queries de actualización funcionen (logs de Supabase)"
+        ],
+        "why": "El progreso debe estar en DB permanente. Si solo actualizas el estado de React, se pierde al recargar la página."
+      },
+      "error3": {
+        "title": "\"La evolución visual no cambia\"",
+        "description": "Tu Regenmon sube de nivel pero la imagen sigue igual.",
+        "solutions": [
+          "1. Verifica que tengas <strong>diferentes URLs de imagen</strong> por etapa",
+          "2. Confirma que la lógica detecte correctamente el nivel/etapa",
+          "3. Revisa que el componente se re-renderice con la nueva imagen",
+          "4. Usa state/props para controlar qué imagen se muestra"
+        ],
+        "why": "La evolución visual es simplemente mostrar diferentes imágenes según el nivel. Si la lógica no actualiza la URL o el componente no re-renderiza, se queda igual."
+      },
+      "needHelp": {
+        "title": "Problemas con IA multimodal?",
+        "intro": "Para debugging de visión por IA:",
+        "steps": [
+          "Modelo de Claude que estás usando (claude-3-opus-20240229)",
+          "Formato y tamaño de la imagen que subes",
+          "Mensaje de error exacto de la API",
+          "Contacta: <a href=\"mailto:brian@frutero.club\" class=\"text-orange-400 underline\">brian@frutero.club</a>"
+        ]
+      }
+    },
+    "session5Troubleshooting": {
+      "title": "Errores Comunes - Sesión 5",
+      "subtitle": "Soluciones para problemas con características sociales, perfiles públicos e interacciones.",
+      "error1": {
+        "title": "\"Los perfiles públicos no se ven o muestran error 404\"",
+        "description": "Intentas ver un perfil público pero no carga o muestra página no encontrada.",
+        "solutions": [
+          "1. Verifica que la <strong>ruta dinámica</strong> esté configurada (/profile/:userId)",
+          "2. Confirma que las RLS policies permitan lectura pública de perfiles",
+          "3. Revisa que el query traiga datos del usuario correcto",
+          "4. Asegúrate de que exista un campo \"is_public\" o similar en la tabla"
+        ],
+        "why": "Los perfiles públicos necesitan rutas dinámicas y permisos de base de datos adecuados. Si RLS bloquea lectura pública, nadie puede ver los perfiles."
+      },
+      "error2": {
+        "title": "\"Las notificaciones no aparecen\"",
+        "description": "Ocurren interacciones pero no se generan notificaciones.",
+        "solutions": [
+          "1. Confirma que cada interacción <strong>cree un registro en tabla notifications</strong>",
+          "2. Verifica que el userId del destinatario sea correcto",
+          "3. Revisa que el componente de notificaciones consulte la DB",
+          "4. Asegúrate de que haya un sistema de polling o real-time subscriptions"
+        ],
+        "why": "Las notificaciones son registros en DB que se muestran al usuario destino. Si no se crean, no hay nada que mostrar."
+      },
+      "error3": {
+        "title": "\"El feed no muestra otros Regenmons\"",
+        "description": "Hay usuarios pero el feed aparece vacío o solo muestra el tuyo.",
+        "solutions": [
+          "1. Verifica que el query <strong>NO filtre por userId</strong> (debe traer todos)",
+          "2. Confirma que RLS permita lectura pública de Regenmons públicos",
+          "3. Revisa que haya un campo \"is_public: true\" en los registros",
+          "4. Asegúrate de excluir tu propio Regenmon del feed (opcional)"
+        ],
+        "why": "El feed debe traer registros de TODOS los usuarios (excepto el actual). Si filtras por userId o RLS bloquea, solo verás el tuyo."
+      },
+      "needHelp": {
+        "title": "Problemas con características sociales?",
+        "intro": "Para debugging de features sociales:",
+        "steps": [
+          "Screenshot de RLS policies en Supabase",
+          "Queries que estás usando para feed/notificaciones",
+          "Estructura de tablas (usuarios, notificaciones, interacciones)",
+          "Contacta: <a href=\"mailto:brian@frutero.club\" class=\"text-orange-400 underline\">brian@frutero.club</a>"
+        ]
+      }
+    },
+    "session1": {
+      "title": "Sesión 1 — Nace tu Regenmon",
+      "subtitle": "Bienvenida a tu primera creación",
+      "intro": {
+        "p1": "En esta primera sesión vas a dar el paso más importante de todo el bootcamp: crear tu primer producto digital real, aunque nunca hayas programado antes.",
+        "p2": "Aquí no se trata de memorizar código ni de entender conceptos complejos. Se trata de aprender a construir con ayuda de la inteligencia artificial, paso a paso, viendo resultados inmediatos.",
+        "p3": "Al final de esta sesión, tu Regenmon existirá, estará vivo en una app y podrás acceder a él desde cualquier dispositivo."
+      },
+      "whatYouWillLearn": {
+        "title": "¿Qué vas a aprender en esta sesión?",
+        "subtitle": "Durante esta sesión aprenderás las bases que usan todas las aplicaciones modernas, pero explicadas de forma simple y práctica.",
+        "items": [
+          {
+            "title": "1. Programar con ayuda de la IA",
+            "description": "Aprenderás qué significa desarrollar con IA: no escribir código desde cero, sino explicar lo que quieres construir y mejorar el resultado poco a poco.",
+            "subtitle": "Verás cómo:",
+            "list": [
+              "Dar instrucciones claras a la IA",
+              "Revisar lo que genera",
+              "Ajustar hasta que se vea y funcione como esperas"
+            ],
+            "footer": "Este proceso de <span class=\"text-foreground font-semibold\">pedir → revisar → mejorar</span> será una habilidad clave durante todo el bootcamp."
+          },
+          {
+            "title": "2. Qué es un componente y por qué importa",
+            "p1": "Conocerás la idea de <span class=\"text-foreground font-semibold\">componentes</span> (piezas reutilizables de tu interfaz), que son las partes que forman una app.",
+            "p2": "No necesitas teoría compleja: solo entenderás que una app se construye por partes (como bloques) y que cada parte tiene una función clara.",
+            "p3": "Tu Regenmon será uno de esos componentes."
+          },
+          {
+            "title": "3. Guardar información (para que no se pierda)",
+            "description": "Aprenderás cómo una app recuerda cosas, incluso cuando cierras el navegador o recargas la página.",
+            "subtitle": "En esta sesión:",
+            "list": [
+              "El nombre de tu Regenmon",
+              "Su tipo",
+              "Sus estadísticas"
+            ],
+            "footer1": "quedarán guardadas para que no desaparezcan.",
+            "footer2": "Esto te introduce al concepto de <span class=\"text-foreground font-semibold\">estado</span> (información que cambia en tu app) y <span class=\"text-foreground font-semibold\">persistencia</span> (guardar datos permanentemente), algo fundamental en cualquier aplicación real."
+          },
+          {
+            "title": "4. Publicar tu app en internet",
+            "description": "No solo vas a crear algo que funcione en tu computadora.",
+            "subtitle": "En esta sesión aprenderás a:",
+            "list": [
+              "Conectar tu proyecto a una plataforma de <span class=\"text-foreground font-semibold\">deploy</span> (subir tu app a internet)",
+              "Publicar tu app automáticamente en <span class=\"text-foreground font-semibold\">producción</span> (funcionando 24/7 en internet)",
+              "Obtener una URL pública"
+            ],
+            "footer": "Esto significa que tu Regenmon no es un ejercicio, es un producto accesible en internet."
+          }
+        ]
+      },
+      "whatYouWillDo": {
+        "title": "¿Qué vas a hacer durante la sesión?",
+        "subtitle": "A lo largo de la sesión, paso a paso, vas a:",
+        "list": [
+          "Crear el proyecto inicial de tu app con ayuda de IA",
+          "Diseñar la pantalla principal donde vive tu Regenmon",
+          "Crear un flujo donde: el usuario le da nombre, elige su tipo, da vida al Regenmon",
+          "Mostrar visualmente: el nombre, el sprite, sus estadísticas",
+          "Guardar esa información para que no se pierda",
+          "Publicar la app y verificar que funciona en móvil y computadora"
+        ],
+        "footer": "Todo esto lo harás viendo resultados en tiempo real, sin necesidad de conocimientos previos."
+      },
+      "whatYouWillAchieve": {
+        "title": "¿Qué se espera que logres al final?",
+        "subtitle": "Al terminar esta sesión deberás tener:",
+        "list": [
+          "Una app desplegada con una URL pública",
+          "Un Regenmon creado por ti",
+          "Información que se mantiene al recargar la página",
+          "Una base sólida para las siguientes sesiones"
+        ],
+        "important": {
+          "intro": "Pero más importante aún:",
+          "message": "La confianza de que sí puedes crear software, incluso si nunca lo habías hecho antes."
+        }
+      },
+      "whyImportant": {
+        "title": "Por qué esta sesión es importante",
+        "intro": "Esta sesión rompe la barrera más grande de todas:",
+        "quote": "\"Esto no es para mí\"",
+        "outro": "Después de hoy, esa idea deja de existir. A partir de aquí, todo lo que hagamos será mejorar, expandir y conectar lo que ya creaste."
+      },
+      "bridge": {
+        "title": "Preparando el siguiente paso",
+        "intro": "Hasta ahora tu Regenmon es <strong>visual</strong> (tiene cara, stats, botones). En la siguiente sesión le darás un <strong>cerebro</strong> (IA conversacional).",
+        "needsTitle": "¿Qué necesitas antes de Sesión 2?",
+        "needs": [
+          "Una <strong>API Key de Claude</strong> (como una contraseña para usar IA)",
+          "Entender que la IA no está en tu app, está en internet (por eso necesitas la \"llave\")",
+          "Saber que cada vez que tu Regenmon \"habla\", le pide ayuda a Claude"
+        ],
+        "analogy": "<strong>💡 Analogía:</strong> Imagina que tu Regenmon es un muñeco de ventrílocuo. En Sesión 1 construiste el muñeco. En Sesión 2 le darás la voz (Claude es el ventrílocuo)."
+      }
+    },
+    "session2": {
+      "title": "💬 Sesión 2 — Tu Regenmon Habla",
+      "subtitle": "De la existencia a la interacción",
+      "intro": {
+        "p1": "En la sesión anterior le diste vida a tu Regenmon. Ahora tiene nombre, tipo, sprite y estadísticas. Existe. Pero no hace nada todavía.",
+        "p2": "En esta sesión le darás la capacidad más importante de todas: <span class=\"text-foreground font-semibold\">hablar</span>.",
+        "p3": "Aquí aprenderás cómo conectar un modelo de inteligencia artificial a tu app para que el Regenmon responda mensajes, reaccione a lo que le digas y comience a sentirse real.",
+        "p4": "Al final de esta sesión, tendrás un Regenmon que interactúa contigo en tiempo real, respondiendo según su personalidad y recordando lo que le dices."
+      },
+      "whatYouWillLearn": {
+        "title": "¿Qué vas a aprender en esta sesión?",
+        "subtitle": "Esta sesión es donde lo digital se vuelve personal. Aprenderás a conectar IA conversacional a tu app y a estructurar una interacción que se sienta real y coherente.",
+        "items": [
+          {
+            "title": "1. Qué es un modelo de IA conversacional (y cómo usarlo)",
+            "p1": "No necesitas ser ingeniero de IA para usar IA.",
+            "p2": "Aquí entenderás qué es un modelo de lenguaje (como ChatGPT o Claude) y cómo conectarlo a tu app enviando solicitudes y recibiendo respuestas.",
+            "subtitle": "Aprenderás a:",
+            "list": [
+              "Conectar tu app a un modelo de IA externo",
+              "Enviar el mensaje del usuario y recibir la respuesta del modelo",
+              "Mostrar la respuesta en la interfaz de forma clara"
+            ],
+            "footer": "Esto te introduce al concepto de <span class=\"text-foreground font-semibold\">API</span> (puerta que conecta tu app con servicios externos) y <span class=\"text-foreground font-semibold\">servicios externos</span>, algo que está en absolutamente todas las aplicaciones actuales."
+          },
+          {
+            "title": "2. Cómo darle personalidad a tu Regenmon (prompt design básico)",
+            "p1": "No basta con conectar la IA. Debes decirle <span class=\"text-foreground font-semibold\">cómo comportarse</span>.",
+            "p2": "Aquí descubrirás el concepto de <span class=\"text-foreground font-semibold\">system prompt</span> (instrucciones que definen la personalidad de la IA): las instrucciones internas que le das al modelo para que responda de cierta forma.",
+            "subtitle": "Diseñarás:",
+            "list": [
+              "Cómo habla el Regenmon (tono, estilo, personalidad)",
+              "Cómo reacciona según su tipo (Agua, Tierra, Fuego)",
+              "Qué sabe sobre sí mismo (nombre, estadísticas, historia)"
+            ],
+            "footer": "Esta es tu primera experiencia con <span class=\"text-foreground font-semibold\">prompt engineering</span>, uno de los skills más importantes en el desarrollo con IA."
+          },
+          {
+            "title": "3. Cómo mostrar una conversación (interfaz de chat)",
+            "description": "Crear la burbuja de texto no es el reto. El reto es estructurar el flujo de mensajes de forma clara.",
+            "subtitle": "Implementarás:",
+            "list": [
+              "Un input donde el usuario escribe",
+              "Una lista de mensajes (usuario + Regenmon)",
+              "Estados de carga mientras el modelo responde",
+              "Scroll automático al último mensaje"
+            ],
+            "footer": "Esto es tu introducción al diseño de <span class=\"text-foreground font-semibold\">experiencia de usuario (UX)</span> en aplicaciones interactivas."
+          },
+          {
+            "title": "4. Memoria del chat (que el Regenmon recuerde lo que le dijiste)",
+            "p1": "Si cada vez que le hablas olvida todo lo anterior, no hay conversación real.",
+            "p2": "Aquí aprenderás a mantener el historial del chat y enviarlo al modelo, para que las respuestas tengan <span class=\"text-foreground font-semibold\">contexto</span> (lo que la IA recuerda de conversaciones anteriores).",
+            "subtitle": "Implementarás:",
+            "list": [
+              "Almacenar mensajes previos",
+              "Enviar contexto de la conversación al modelo",
+              "Guardar el historial para que no se pierda al recargar"
+            ],
+            "footer": "Esto te introduce a los conceptos de <span class=\"text-foreground font-semibold\">gestión de estado</span> y <span class=\"text-foreground font-semibold\">contexto conversacional</span>."
+          }
+        ]
+      },
+      "whatYouWillDo": {
+        "title": "¿Qué vas a hacer durante la sesión?",
+        "subtitle": "Paso a paso, implementarás:",
+        "list": [
+          "Conectar tu app a un modelo de lenguaje (Claude, OpenAI, Gemini, etc.)",
+          "Crear un system prompt que le dé personalidad al Regenmon",
+          "Diseñar una interfaz de chat con input, burbujas de mensaje y scroll",
+          "Mostrar estados de carga mientras el modelo responde",
+          "Guardar el historial del chat para mantener contexto",
+          "Hacer que el Regenmon responda según su tipo y estadísticas",
+          "Verificar que todo funciona localmente y en producción"
+        ],
+        "footer": "Todo esto lo harás con la misma metodología: pedirle ayuda a la IA, iterar, probar y ajustar."
+      },
+      "whatYouWillAchieve": {
+        "title": "¿Qué se espera que logres al final?",
+        "subtitle": "Al terminar esta sesión deberás tener:",
+        "list": [
+          "Un chat funcional donde puedes escribirle a tu Regenmon",
+          "Respuestas generadas por IA con personalidad coherente",
+          "Historial de conversación que no se pierde al recargar",
+          "Una experiencia de conversación clara y fluida",
+          "La sensación de que tu Regenmon es real"
+        ],
+        "important": {
+          "intro": "Pero más importante aún:",
+          "message": "La comprensión de que integrar IA a una app no es magia, es solo enviar y recibir mensajes de forma estructurada."
+        }
+      },
+      "whyImportant": {
+        "title": "Por qué esta sesión es importante",
+        "intro": "Esta sesión te muestra algo fundamental:",
+        "quote": "\"La IA no es mágica, es una herramienta que puedes controlar\"",
+        "outro": "Después de hoy, sabrás cómo hacer que cualquier app hable, responda y se comporte inteligentemente. Y eso cambia completamente el tipo de productos que puedes construir."
+      },
+      "bridge": {
+        "title": "🎭 Lo que viene: Identidad",
+        "intro": "Tu Regenmon ya habla, pero <strong>no te reconoce</strong>. Cada vez que recargas la página, es como si fueras un extraño.",
+        "subtitle": "En Sesión 3 aprenderás:",
+        "list": [
+          "Cómo hacer que tu Regenmon sepa quién eres (login)",
+          "La diferencia entre TU mascota y la de otros usuarios",
+          "Cómo crear un sistema de monedas y recursos",
+          "Por qué necesitas una \"base de datos\" (memoria permanente)"
+        ],
+        "analogy": "<strong>💡 Analogía:</strong> Ahora tu Regenmon habla con todos, pero no sabe quién es quién. Es como un vendedor que olvida tu nombre cada vez que entras a la tienda. En Sesión 3 le darás memoria."
+      }
+    },
+    "session3": {
+      "title": "🍊 Sesión 3 — Tu Regenmon Tiene Valor",
+      "subtitle": "Cuando tu creación empieza a tener identidad y consecuencias",
+      "intro": {
+        "p1": "Hasta ahora tu Regenmon existe y puede hablar contigo. En esta sesión sucede algo muy importante:",
+        "p2": "Deja de ser solo una experiencia y se convierte en un sistema.",
+        "p3": "Aquí aprenderás cómo una aplicación reconoce a su usuario, guarda identidad y maneja recursos. Este es el punto donde tu app empieza a comportarse como un producto real."
+      },
+      "whatYouWillLearn": {
+        "title": "¿Qué vas a aprender en esta sesión?",
+        "subtitle": "En esta sesión te enfocarás en identidad, economía y consecuencias, conceptos que están presentes en casi todas las aplicaciones modernas.",
+        "items": [
+          {
+            "title": "1. Por qué una app necesita reconocer al usuario",
+            "p1": "Aprenderás qué significa iniciar sesión y por qué es importante.",
+            "p2": "No desde un punto de vista técnico, sino práctico:",
+            "list": ["Para saber quién eres", "Para guardar tu progreso", "Para que tu Regenmon sea realmente tuyo"],
+            "footer": "Entenderás que iniciar sesión no es solo \"entrar\", sino <span className=\"text-foreground font-semibold\">mantener una identidad a lo largo del tiempo</span>."
+          },
+          {
+            "title": "2. Qué es un sistema de recursos",
+            "p1": "Aquí conocerás el concepto de <span className=\"text-foreground font-semibold\">economía dentro de una app</span>.",
+            "subtitle": "Aprenderás que:",
+            "list1": ["Las monedas no son solo números", "Representan valor, límites y decisiones"],
+            "subtitle2": "Tu Regenmon tendrá monedas ($FRUTA) que:",
+            "list2": ["Se ganan", "Se gastan", "No son infinitas"],
+            "footer": "Esto introduce la idea de <span className=\"text-foreground font-semibold\">escasez</span>, clave en el diseño de sistemas."
+          },
+          {
+            "title": "3. Acciones con costo y consecuencias",
+            "p1": "En esta sesión descubrirás que:",
+            "list1": ["No todas las acciones son gratis", "Tomar decisiones implica consecuencias"],
+            "subtitle": "Al alimentar a tu Regenmon:",
+            "list2": ["Gastas monedas", "Mejoras su estado"],
+            "p2": "Aquí entenderás cómo conectar:",
+            "formula": "una acción del usuario → un cambio visible en la app"
+          },
+          {
+            "title": "4. Feedback: saber qué está pasando",
+            "p1": "Aprenderás que una buena app siempre comunica lo que sucede.",
+            "subtitle": "Verás cómo:",
+            "list": ["Mostrar cuando algo está procesándose", "Avisar cuando algo salió bien", "Avisar cuando algo salió mal"],
+            "footer": "Esto hace que el usuario <span className=\"text-foreground font-semibold\">confíe en el sistema</span>."
+          }
+        ]
+      },
+      "whatYouWillDo": {
+        "title": "¿Qué vas a hacer durante la sesión?",
+        "subtitle": "Durante esta sesión vas a:",
+        "list": [
+          "Agregar un sistema de inicio de sesión a tu app",
+          "Mostrar información del usuario",
+          "Crear un contador de monedas",
+          "Permitir ganar monedas por primera vez",
+          "Gastar monedas al alimentar al Regenmon",
+          "Cambiar stats según las acciones",
+          "Mostrar mensajes y notificaciones claras"
+        ],
+        "footer": "Todo esto te ayudará a entender cómo se construyen apps con reglas reales, no solo pantallas bonitas."
+      },
+      "whatYouWillAchieve": {
+        "title": "¿Qué se espera que logres al final?",
+        "subtitle": "Al terminar esta sesión deberás tener:",
+        "list": [
+          "Un usuario identificado",
+          "Un Regenmon ligado a ese usuario",
+          "Un sistema de monedas funcional",
+          "Acciones que cuestan recursos",
+          "Cambios visibles y persistentes"
+        ],
+        "important": {
+          "intro": "Pero lo más importante:",
+          "message": "Entenderás que una app es un conjunto de decisiones, no solo de vistas."
+        }
+      },
+      "whyImportant": {
+        "title": "Por qué esta sesión es importante",
+        "intro": "Esta sesión es el corazón del sistema.",
+        "p1": "Aquí pasas de:",
+        "from": "\"Mi app funciona\"",
+        "middle": "a",
+        "to": "\"Mi app tiene reglas claras\"",
+        "outro": "Y empiezas a pensar como quien diseña productos reales, no solo como quien escribe código."
+      },
+      "bridge": {
+        "title": "📈 Lo que viene: Progreso",
+        "intro": "Tu Regenmon ya sabe quién eres y guarda tu información. Ahora falta que <strong>crezca y evolucione</strong> según cómo lo cuides.",
+        "subtitle": "En Sesión 4 implementarás:",
+        "list": [
+          "Sistema de entrenamiento (subir fotos, ganar experiencia)",
+          "IA que evalúa imágenes (no solo texto)",
+          "Evoluciones (cambios visuales según nivel)",
+          "Recompensas por consistencia"
+        ],
+        "analogy": "<strong>💡 Analogía:</strong> Tu Regenmon ahora tiene identidad y recursos. En Sesión 4 aprenderá a crecer como lo haría un Tamagotchi: subiendo de nivel, cambiando de forma, y respondiendo a tu cuidado consistente."
+      }
+    },
+    "session4": {
+      "title": "🌱 Sesión 4 — Tu Regenmon Evoluciona",
+      "subtitle": "Cuando tus acciones dejan huella y tu creación crece contigo",
+      "intro": {
+        "p1": "En esta sesión ocurre un cambio importante en la historia de tu Regenmon:",
+        "p2": "Ya no solo reacciona a lo que haces, ahora crece gracias a ello.",
+        "p3": "Aquí aprenderás cómo una aplicación puede evaluar acciones reales, dar retroalimentación y mostrar progreso a lo largo del tiempo. Es el punto donde tu app empieza a reflejar hábitos, constancia y evolución."
+      },
+      "whatYouWillLearn": {
+        "title": "¿Qué vas a aprender en esta sesión?",
+        "subtitle": "En esta sesión te enfocarás en evaluación, progreso y evolución, tres conceptos clave en productos modernos que buscan motivar y acompañar al usuario.",
+        "items": [
+          {
+            "title": "1. Cómo una app puede \"ver\"",
+            "p1": "Aprenderás que la inteligencia artificial no solo entiende texto, también puede analizar imágenes.",
+            "p2": "Sin entrar en detalles técnicos, entenderás que:",
+            "list": ["Una imagen se convierte en información", "La IA la analiza", "La app recibe un resultado usable"],
+            "footer": "Esto introduce el concepto de <span className=\"text-foreground font-semibold\">IA multimodal</span>, de forma simple y práctica."
+          },
+          {
+            "title": "2. Evaluar acciones, no solo clicks",
+            "p1": "En esta sesión verás cómo una app puede evaluar lo que haces en la vida real.",
+            "subtitle": "Aprenderás a:",
+            "list": ["Enviar una imagen como evidencia", "Recibir una evaluación automática", "Obtener una puntuación y un mensaje claro"],
+            "footer": "Esto convierte a tu Regenmon en un <span className=\"text-foreground font-semibold\">acompañante de hábitos</span>, no solo en un juego."
+          },
+          {
+            "title": "3. Recompensar el esfuerzo",
+            "p1": "Descubrirás cómo conectar evaluación con recompensa.",
+            "subtitle": "Aprenderás que:",
+            "list": ["Un buen sistema reconoce el esfuerzo", "Las recompensas deben ser proporcionales", "El feedback motiva a seguir"],
+            "footer": "Tu Regenmon recibirá monedas y reaccionará positivamente cuando entrenes."
+          },
+          {
+            "title": "4. Progreso acumulado y evolución",
+            "p1": "Aquí aparece uno de los conceptos más importantes de todo el bootcamp:",
+            "highlight": "El progreso no se borra, se acumula.",
+            "subtitle": "Aprenderás cómo:",
+            "list": ["Sumar puntos con cada entrenamiento", "Guardarlos a largo plazo", "Desbloquear nuevas etapas de evolución"],
+            "footer": "Tu Regenmon cambiará visualmente conforme avances, mostrando que el crecimiento es real."
+          },
+          {
+            "title": "5. Mirar hacia atrás para avanzar",
+            "p1": "En esta sesión también aprenderás a guardar historial.",
+            "subtitle": "Verás cómo una app puede:",
+            "list": ["Recordar entrenamientos pasados", "Mostrar estadísticas simples", "Ayudarte a reflexionar sobre tu progreso"],
+            "footer": "Esto refuerza la idea de <span className=\"text-foreground font-semibold\">constancia y continuidad</span>."
+          }
+        ]
+      },
+      "whatYouWillDo": {
+        "title": "¿Qué vas a hacer durante la sesión?",
+        "subtitle": "Durante esta sesión vas a:",
+        "list": [
+          "Crear una sección para entrenar a tu Regenmon",
+          "Subir imágenes desde tu dispositivo",
+          "Enviar esas imágenes a una IA para evaluación",
+          "Mostrar puntuaciones y mensajes claros",
+          "Otorgar recompensas según resultados",
+          "Acumular puntos de progreso",
+          "Cambiar visualmente la etapa del Regenmon",
+          "Guardar historial de entrenamientos"
+        ],
+        "footer": "Todo esto se construye paso a paso, entendiendo qué está pasando en cada momento."
+      },
+      "whatYouWillAchieve": {
+        "title": "¿Qué se espera que logres al final?",
+        "subtitle": "Al terminar esta sesión deberás tener:",
+        "list": [
+          "Un sistema de evaluación con IA",
+          "Progreso acumulado y persistente",
+          "Un Regenmon que evoluciona visualmente",
+          "Recompensas conectadas a acciones reales",
+          "Un historial que muestra crecimiento"
+        ],
+        "important": {
+          "intro": "Pero lo más importante:",
+          "message": "Tu app ahora refleja hábitos y constancia, no solo interacción."
+        }
+      },
+      "whyImportant": {
+        "title": "Por qué esta sesión es importante",
+        "intro": "Esta sesión cambia la relación con tu producto.",
+        "p1": "Pasas de:",
+        "from": "usar una app",
+        "middle": "a",
+        "to": "crecer junto a ella",
+        "outro": "Aprendes cómo se diseñan sistemas que motivan, acompañan y muestran progreso real, una habilidad muy valiosa en productos digitales modernos."
+      },
+      "bridge": {
+        "title": "🌍 El paso final: Comunidad",
+        "intro": "Tu Regenmon funciona perfectamente... pero está solo. En la última sesión transformarás tu proyecto en una <strong>experiencia social</strong>.",
+        "subtitle": "En Sesión 5 crearás:",
+        "list": [
+          "Perfiles públicos (otros pueden ver tu Regenmon)",
+          "Sistema de visitas e interacciones",
+          "Feed comunitario (descubrir otros Regenmons)",
+          "Notificaciones sociales"
+        ],
+        "analogy": "<strong>💡 Analogía:</strong> Hasta ahora construiste un producto personal increíble. En Sesión 5 abrirás las puertas para que otros entren, visiten, y compartan el espacio. Como convertir tu casa en un lugar al que tus amigos pueden ir."
+      }
+    },
+    "session5": {
+      "title": "🌍 Sesión 5 — Tu Regenmon Encuentra Amigos",
+      "subtitle": "Cuando tu creación deja de estar sola y se vuelve parte de una comunidad",
+      "intro": {
+        "p1": "Hasta ahora tu Regenmon ha nacido, hablado, tenido valor y evolucionado. En esta última sesión ocurre el paso final:",
+        "p2": "Tu Regenmon se conecta con otros.",
+        "p3": "Aquí aprenderás cómo una aplicación deja de ser individual y se convierte en una experiencia compartida, donde existen visitas, interacciones y señales sociales.",
+        "p4": "Esta sesión cierra el bootcamp transformando tu proyecto en un producto social real."
+      },
+      "whatYouWillLearn": {
+        "title": "¿Qué vas a aprender en esta sesión?",
+        "subtitle": "En esta sesión te enfocarás en visibilidad, comunidad e interacción, conceptos fundamentales en productos digitales modernos.",
+        "items": [
+          {
+            "title": "1. Qué significa hacer algo público",
+            "p1": "Aprenderás que no todo en una app es privado.",
+            "subtitle": "Verás cómo:",
+            "list": ["Decidir qué se puede compartir", "Mostrar información sin permitir cambios", "Proteger lo que es personal"],
+            "footer": "Tu Regenmon podrá ser visitado por otras personas, pero <span className=\"text-foreground font-semibold\">sin perder control</span>."
+          },
+          {
+            "title": "2. Visitar y ser visitado",
+            "p1": "Aquí descubrirás cómo funciona una vista pública.",
+            "subtitle": "Aprenderás que:",
+            "list": ["Ver no es lo mismo que editar", "Las apps tienen modos (propio / visitante)", "La experiencia cambia según quién entra"],
+            "footer": "Esto es clave para entender <span className=\"text-foreground font-semibold\">productos con perfiles y páginas públicas</span>."
+          },
+          {
+            "title": "3. Descubrir a otros",
+            "p1": "En esta sesión aprenderás cómo una app permite explorar contenido de otras personas.",
+            "subtitle": "Verás cómo:",
+            "list": ["Mostrar listados de usuarios", "Ordenarlos de forma simple", "Entrar a conocer otros Regenmons"],
+            "footer": "Esto introduce el concepto de <span className=\"text-foreground font-semibold\">feed</span>, sin complejidad innecesaria."
+          },
+          {
+            "title": "4. Interactuar con significado",
+            "p1": "No todas las interacciones son iguales.",
+            "subtitle": "Aprenderás a diseñar interacciones que:",
+            "list": ["Tengan intención", "Generen respuesta", "Afecten el sistema"],
+            "footer": "Saludar, regalar o interactuar con otros Regenmons no será solo visual, <span className=\"text-foreground font-semibold\">tendrá impacto real</span>."
+          },
+          {
+            "title": "5. Recibir señales y feedback social",
+            "p1": "En esta sesión también verás cómo una app avisa cuando algo sucede.",
+            "subtitle": "Aprenderás a:",
+            "list": ["Mostrar notificaciones simples", "Contar visitas", "Reflejar actividad social"],
+            "footer": "Esto ayuda al usuario a <span className=\"text-foreground font-semibold\">sentirse acompañado y reconocido</span>."
+          }
+        ]
+      },
+      "whatYouWillDo": {
+        "title": "¿Qué vas a hacer durante la sesión?",
+        "subtitle": "Durante esta sesión vas a:",
+        "list": [
+          "Hacer público tu Regenmon",
+          "Generar una URL para compartirlo",
+          "Crear una vista de visita",
+          "Mostrar un feed de Regenmons públicos",
+          "Permitir interacciones básicas",
+          "Actualizar contadores sociales",
+          "Mostrar notificaciones claras",
+          "Guardar actividad social"
+        ],
+        "footer": "Todo se construye de forma progresiva, usando lo que ya sabes."
+      },
+      "whatYouWillAchieve": {
+        "title": "¿Qué se espera que logres al final?",
+        "subtitle": "Al terminar esta sesión deberás tener:",
+        "list": [
+          "Un Regenmon visible públicamente",
+          "Una URL compartible",
+          "Interacciones sociales funcionales",
+          "Señales claras de actividad",
+          "Un sistema social básico pero real"
+        ],
+        "important": {
+          "intro": "Pero lo más importante:",
+          "message": "Tu proyecto ya no vive solo en tu navegador. Forma parte de un ecosistema."
+        }
+      },
+      "whyImportant": {
+        "title": "Por qué esta sesión es importante",
+        "intro": "Esta sesión cierra el aprendizaje con una idea clave:",
+        "quote": "\"Las mejores apps conectan personas, no solo funciones.\"",
+        "p1": "Aquí entiendes cómo:",
+        "list": ["Diseñar límites entre lo privado y lo público", "Crear experiencias compartidas", "Pensar en comunidad desde el producto"],
+        "outro": "Y con esto completas el ciclo del bootcamp."
+      },
+      "final": {
+        "title": "🎉 Has llegado al final",
+        "p1": "Si llegaste hasta aquí, no solo terminaste un curso. Construiste algo real, desde cero, y lo compartiste con otros.",
+        "highlight": "Eso es crear. Eso es construir con IA.",
+        "thanks": "Gracias por llegar hasta el final 🚀"
+      }
     }
   }
 }

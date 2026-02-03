@@ -1,20 +1,23 @@
+import { useTranslation } from 'react-i18next';
 import { DocLayout } from '@/components/doc/DocLayout';
 import { DocContent } from '@/components/doc/DocContent';
 import { Link } from 'react-router-dom';
 import { AlertTriangle, Globe, Bell, Users, LifeBuoy } from 'lucide-react';
 
 const Session5Troubleshooting = () => {
+  const { t } = useTranslation();
+
   return (
     <DocLayout>
       <DocContent>
         <div className="flex items-center gap-3 mb-4">
           <AlertTriangle className="w-10 h-10 text-orange-400" />
           <h1 className="gradient-text text-4xl font-bold">
-            Errores Comunes - Sesión 5
+            {t('session5Troubleshooting.title')}
           </h1>
         </div>
         <p className="text-muted-foreground text-lg mb-8">
-          Soluciones para problemas con características sociales, perfiles públicos e interacciones.
+          {t('session5Troubleshooting.subtitle')}
         </p>
 
         {/* Error 1 */}
@@ -23,10 +26,10 @@ const Session5Troubleshooting = () => {
             <Globe className="w-10 h-10 text-red-400 flex-shrink-0" />
             <div>
               <h2 className="text-2xl font-bold text-orange-400 mb-2">
-                "Los perfiles públicos no se ven o muestran error 404"
+                {t('session5Troubleshooting.error1.title')}
               </h2>
               <p className="text-muted-foreground mb-4">
-                Intentas ver un perfil público pero no carga o muestra página no encontrada.
+                {t('session5Troubleshooting.error1.description')}
               </p>
             </div>
           </div>
@@ -34,18 +37,16 @@ const Session5Troubleshooting = () => {
           <div className="bg-orange-400/10 border border-orange-400/30 rounded-lg p-4 mb-4">
             <h3 className="font-bold text-orange-400 mb-2">✅ Soluciones:</h3>
             <ol className="space-y-2 text-foreground">
-              <li>1. Verifica que la <strong>ruta dinámica</strong> esté configurada (/profile/:userId)</li>
-              <li>2. Confirma que las RLS policies permitan lectura pública de perfiles</li>
-              <li>3. Revisa que el query traiga datos del usuario correcto</li>
-              <li>4. Asegúrate de que exista un campo "is_public" o similar en la tabla</li>
+              {t('session5Troubleshooting.error1.solutions', { returnObjects: true }).map((solution: string, index: number) => (
+                <li key={index} dangerouslySetInnerHTML={{ __html: solution }} />
+              ))}
             </ol>
           </div>
 
           <div className="bg-blue-400/10 border border-blue-400/30 rounded-lg p-4">
             <h3 className="font-bold text-blue-400 mb-2">💡 Por qué pasa:</h3>
             <p className="text-foreground text-sm">
-              Los perfiles públicos necesitan rutas dinámicas y permisos de base de datos adecuados.
-              Si RLS bloquea lectura pública, nadie puede ver los perfiles.
+              {t('session5Troubleshooting.error1.why')}
             </p>
           </div>
         </div>
@@ -56,10 +57,10 @@ const Session5Troubleshooting = () => {
             <Bell className="w-10 h-10 text-yellow-400 flex-shrink-0" />
             <div>
               <h2 className="text-2xl font-bold text-orange-400 mb-2">
-                "Las notificaciones no aparecen"
+                {t('session5Troubleshooting.error2.title')}
               </h2>
               <p className="text-muted-foreground mb-4">
-                Ocurren interacciones pero no se generan notificaciones.
+                {t('session5Troubleshooting.error2.description')}
               </p>
             </div>
           </div>
@@ -67,18 +68,16 @@ const Session5Troubleshooting = () => {
           <div className="bg-orange-400/10 border border-orange-400/30 rounded-lg p-4 mb-4">
             <h3 className="font-bold text-orange-400 mb-2">✅ Soluciones:</h3>
             <ol className="space-y-2 text-foreground">
-              <li>1. Confirma que cada interacción <strong>cree un registro en tabla notifications</strong></li>
-              <li>2. Verifica que el userId del destinatario sea correcto</li>
-              <li>3. Revisa que el componente de notificaciones consulte la DB</li>
-              <li>4. Asegúrate de que haya un sistema de polling o real-time subscriptions</li>
+              {t('session5Troubleshooting.error2.solutions', { returnObjects: true }).map((solution: string, index: number) => (
+                <li key={index} dangerouslySetInnerHTML={{ __html: solution }} />
+              ))}
             </ol>
           </div>
 
           <div className="bg-blue-400/10 border border-blue-400/30 rounded-lg p-4">
             <h3 className="font-bold text-blue-400 mb-2">💡 Por qué pasa:</h3>
             <p className="text-foreground text-sm">
-              Las notificaciones son registros en DB que se muestran al usuario destino.
-              Si no se crean, no hay nada que mostrar.
+              {t('session5Troubleshooting.error2.why')}
             </p>
           </div>
         </div>
@@ -89,10 +88,10 @@ const Session5Troubleshooting = () => {
             <Users className="w-10 h-10 text-purple-400 flex-shrink-0" />
             <div>
               <h2 className="text-2xl font-bold text-orange-400 mb-2">
-                "El feed no muestra otros Regenmons"
+                {t('session5Troubleshooting.error3.title')}
               </h2>
               <p className="text-muted-foreground mb-4">
-                Hay usuarios pero el feed aparece vacío o solo muestra el tuyo.
+                {t('session5Troubleshooting.error3.description')}
               </p>
             </div>
           </div>
@@ -100,18 +99,16 @@ const Session5Troubleshooting = () => {
           <div className="bg-orange-400/10 border border-orange-400/30 rounded-lg p-4 mb-4">
             <h3 className="font-bold text-orange-400 mb-2">✅ Soluciones:</h3>
             <ol className="space-y-2 text-foreground">
-              <li>1. Verifica que el query <strong>NO filtre por userId</strong> (debe traer todos)</li>
-              <li>2. Confirma que RLS permita lectura pública de Regenmons públicos</li>
-              <li>3. Revisa que haya un campo "is_public: true" en los registros</li>
-              <li>4. Asegúrate de excluir tu propio Regenmon del feed (opcional)</li>
+              {t('session5Troubleshooting.error3.solutions', { returnObjects: true }).map((solution: string, index: number) => (
+                <li key={index} dangerouslySetInnerHTML={{ __html: solution }} />
+              ))}
             </ol>
           </div>
 
           <div className="bg-blue-400/10 border border-blue-400/30 rounded-lg p-4">
             <h3 className="font-bold text-blue-400 mb-2">💡 Por qué pasa:</h3>
             <p className="text-foreground text-sm">
-              El feed debe traer registros de TODOS los usuarios (excepto el actual).
-              Si filtras por userId o RLS bloquea, solo verás el tuyo.
+              {t('session5Troubleshooting.error3.why')}
             </p>
           </div>
         </div>
@@ -121,29 +118,19 @@ const Session5Troubleshooting = () => {
           <div className="flex items-center gap-3 mb-4">
             <LifeBuoy className="w-8 h-8 text-orange-400" />
             <h2 className="text-2xl font-bold text-orange-400">
-              Problemas con características sociales?
+              {t('session5Troubleshooting.needHelp.title')}
             </h2>
           </div>
           <p className="text-foreground mb-4">
-            Para debugging de features sociales:
+            {t('session5Troubleshooting.needHelp.intro')}
           </p>
           <ol className="space-y-3 text-foreground mb-6">
-            <li className="flex items-start gap-3">
-              <span className="font-bold text-orange-400">1.</span>
-              <span>Screenshot de RLS policies en Supabase</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="font-bold text-orange-400">2.</span>
-              <span>Queries que estás usando para feed/notificaciones</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="font-bold text-orange-400">3.</span>
-              <span>Estructura de tablas (usuarios, notificaciones, interacciones)</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="font-bold text-orange-400">4.</span>
-              <span>Contacta: <a href="mailto:brian@frutero.club" className="text-orange-400 underline">brian@frutero.club</a></span>
-            </li>
+            {t('session5Troubleshooting.needHelp.steps', { returnObjects: true }).map((step: string, index: number) => (
+              <li key={index} className="flex items-start gap-3">
+                <span className="font-bold text-orange-400">{index + 1}.</span>
+                <span dangerouslySetInnerHTML={{ __html: step }} />
+              </li>
+            ))}
           </ol>
         </div>
 

@@ -1,246 +1,191 @@
+import { useTranslation } from 'react-i18next';
 import { DocLayout } from '@/components/doc/DocLayout';
 import { DocContent } from '@/components/doc/DocContent';
 import { Link } from 'react-router-dom';
 import { Egg, Plug } from 'lucide-react';
 
 const Session1 = () => {
+  const { t } = useTranslation();
+
   return (
     <DocLayout>
       <DocContent>
         <h1 className="gradient-text text-4xl font-bold mb-6 flex items-center gap-3">
           <Egg className="w-10 h-10 text-orange-400" />
-          Sesión 1 — Nace tu Regenmon
+          {t('session1.title')}
         </h1>
 
         <p className="text-xl text-orange-400 font-semibold mb-8">
-          Bienvenida a tu primera creación
+          {t('session1.subtitle')}
         </p>
 
         <div className="space-y-6 text-muted-foreground text-lg leading-relaxed mb-12">
           <p>
-            En esta primera sesión vas a dar el paso más importante de todo el bootcamp:
-            crear tu primer producto digital real, aunque nunca hayas programado antes.
+            {t('session1.intro.p1')}
           </p>
 
           <p>
-            Aquí no se trata de memorizar código ni de entender conceptos complejos.
-            Se trata de aprender a construir con ayuda de la inteligencia artificial, paso a paso, viendo resultados inmediatos.
+            {t('session1.intro.p2')}
           </p>
 
           <p className="font-semibold text-foreground">
-            Al final de esta sesión, tu Regenmon existirá, estará vivo en una app y podrás acceder a él desde cualquier dispositivo.
+            {t('session1.intro.p3')}
           </p>
         </div>
 
         {/* ¿Qué vas a aprender? */}
         <h2 className="text-3xl font-bold text-orange-400 mb-6">
-          ¿Qué vas a aprender en esta sesión?
+          {t('session1.whatYouWillLearn.title')}
         </h2>
 
         <p className="text-muted-foreground text-lg mb-8">
-          Durante esta sesión aprenderás las bases que usan todas las aplicaciones modernas, pero explicadas de forma simple y práctica.
+          {t('session1.whatYouWillLearn.subtitle')}
         </p>
 
         <div className="space-y-8 mb-12">
           {/* 1. Programar con IA */}
           <div className="glass-card p-6 border-l-4 border-orange-400">
             <h3 className="text-xl font-bold text-foreground mb-4">
-              1. Programar con ayuda de la IA
+              {t('session1.whatYouWillLearn.items.0.title')}
             </h3>
             <p className="text-muted-foreground mb-4">
-              Aprenderás qué significa desarrollar con IA:
-              no escribir código desde cero, sino explicar lo que quieres construir y mejorar el resultado poco a poco.
+              {t('session1.whatYouWillLearn.items.0.description')}
             </p>
-            <p className="text-muted-foreground font-semibold mb-2">Verás cómo:</p>
+            <p className="text-muted-foreground font-semibold mb-2">{t('session1.whatYouWillLearn.items.0.subtitle')}</p>
             <ul className="space-y-2 text-muted-foreground ml-6">
-              <li className="flex items-start gap-2">
-                <span className="text-orange-400">•</span>
-                <span>Dar instrucciones claras a la IA</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-orange-400">•</span>
-                <span>Revisar lo que genera</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-orange-400">•</span>
-                <span>Ajustar hasta que se vea y funcione como esperas</span>
-              </li>
+              {t('session1.whatYouWillLearn.items.0.list', { returnObjects: true }).map((item: string, index: number) => (
+                <li key={index} className="flex items-start gap-2">
+                  <span className="text-orange-400">•</span>
+                  <span>{item}</span>
+                </li>
+              ))}
             </ul>
-            <p className="text-muted-foreground mt-4">
-              Este proceso de <span className="text-foreground font-semibold">pedir → revisar → mejorar</span> será una habilidad clave durante todo el bootcamp.
-            </p>
+            <p className="text-muted-foreground mt-4" dangerouslySetInnerHTML={{ __html: t('session1.whatYouWillLearn.items.0.footer') }} />
           </div>
 
           {/* 2. Qué es un componente */}
           <div className="glass-card p-6 border-l-4 border-orange-400">
             <h3 className="text-xl font-bold text-foreground mb-4">
-              2. Qué es un componente y por qué importa
+              {t('session1.whatYouWillLearn.items.1.title')}
             </h3>
+            <p className="text-muted-foreground mb-4" dangerouslySetInnerHTML={{ __html: t('session1.whatYouWillLearn.items.1.p1') }} />
             <p className="text-muted-foreground mb-4">
-              Conocerás la idea de <span className="text-foreground font-semibold">componentes</span> (piezas reutilizables de tu interfaz), que son las partes que forman una app.
-            </p>
-            <p className="text-muted-foreground mb-4">
-              No necesitas teoría compleja:
-              solo entenderás que una app se construye por partes (como bloques) y que cada parte tiene una función clara.
+              {t('session1.whatYouWillLearn.items.1.p2')}
             </p>
             <p className="text-muted-foreground">
-              Tu Regenmon será uno de esos componentes.
+              {t('session1.whatYouWillLearn.items.1.p3')}
             </p>
           </div>
 
           {/* 3. Guardar información */}
           <div className="glass-card p-6 border-l-4 border-orange-400">
             <h3 className="text-xl font-bold text-foreground mb-4">
-              3. Guardar información (para que no se pierda)
+              {t('session1.whatYouWillLearn.items.2.title')}
             </h3>
             <p className="text-muted-foreground mb-4">
-              Aprenderás cómo una app recuerda cosas, incluso cuando cierras el navegador o recargas la página.
+              {t('session1.whatYouWillLearn.items.2.description')}
             </p>
-            <p className="text-muted-foreground font-semibold mb-2">En esta sesión:</p>
+            <p className="text-muted-foreground font-semibold mb-2">{t('session1.whatYouWillLearn.items.2.subtitle')}</p>
             <ul className="space-y-2 text-muted-foreground ml-6 mb-4">
-              <li className="flex items-start gap-2">
-                <span className="text-orange-400">•</span>
-                <span>El nombre de tu Regenmon</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-orange-400">•</span>
-                <span>Su tipo</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-orange-400">•</span>
-                <span>Sus estadísticas</span>
-              </li>
+              {t('session1.whatYouWillLearn.items.2.list', { returnObjects: true }).map((item: string, index: number) => (
+                <li key={index} className="flex items-start gap-2">
+                  <span className="text-orange-400">•</span>
+                  <span>{item}</span>
+                </li>
+              ))}
             </ul>
             <p className="text-muted-foreground">
-              quedarán guardadas para que no desaparezcan.
+              {t('session1.whatYouWillLearn.items.2.footer1')}
             </p>
-            <p className="text-muted-foreground mt-4">
-              Esto te introduce al concepto de <span className="text-foreground font-semibold">estado</span> (información que cambia en tu app) y <span className="text-foreground font-semibold">persistencia</span> (guardar datos permanentemente), algo fundamental en cualquier aplicación real.
-            </p>
+            <p className="text-muted-foreground mt-4" dangerouslySetInnerHTML={{ __html: t('session1.whatYouWillLearn.items.2.footer2') }} />
           </div>
 
           {/* 4. Publicar tu app */}
           <div className="glass-card p-6 border-l-4 border-orange-400">
             <h3 className="text-xl font-bold text-foreground mb-4">
-              4. Publicar tu app en internet
+              {t('session1.whatYouWillLearn.items.3.title')}
             </h3>
             <p className="text-muted-foreground mb-4">
-              No solo vas a crear algo que funcione en tu computadora.
+              {t('session1.whatYouWillLearn.items.3.description')}
             </p>
-            <p className="text-muted-foreground font-semibold mb-2">En esta sesión aprenderás a:</p>
+            <p className="text-muted-foreground font-semibold mb-2">{t('session1.whatYouWillLearn.items.3.subtitle')}</p>
             <ul className="space-y-2 text-muted-foreground ml-6 mb-4">
-              <li className="flex items-start gap-2">
-                <span className="text-orange-400">•</span>
-                <span>Conectar tu proyecto a una plataforma de <span className="text-foreground font-semibold">deploy</span> (subir tu app a internet)</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-orange-400">•</span>
-                <span>Publicar tu app automáticamente en <span className="text-foreground font-semibold">producción</span> (funcionando 24/7 en internet)</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-orange-400">•</span>
-                <span>Obtener una URL pública</span>
-              </li>
+              {t('session1.whatYouWillLearn.items.3.list', { returnObjects: true }).map((item: string, index: number) => (
+                <li key={index} className="flex items-start gap-2">
+                  <span className="text-orange-400">•</span>
+                  <span dangerouslySetInnerHTML={{ __html: item }} />
+                </li>
+              ))}
             </ul>
             <p className="text-muted-foreground">
-              Esto significa que tu Regenmon no es un ejercicio, es un producto accesible en internet.
+              {t('session1.whatYouWillLearn.items.3.footer')}
             </p>
           </div>
         </div>
 
         {/* ¿Qué vas a hacer? */}
         <h2 className="text-3xl font-bold text-orange-400 mb-6">
-          ¿Qué vas a hacer durante la sesión?
+          {t('session1.whatYouWillDo.title')}
         </h2>
 
         <p className="text-muted-foreground text-lg mb-4">
-          A lo largo de la sesión, paso a paso, vas a:
+          {t('session1.whatYouWillDo.subtitle')}
         </p>
 
         <ul className="space-y-3 text-muted-foreground ml-6 mb-12">
-          <li className="flex items-start gap-2">
-            <span className="text-orange-400">•</span>
-            <span>Crear el proyecto inicial de tu app con ayuda de IA</span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-orange-400">•</span>
-            <span>Diseñar la pantalla principal donde vive tu Regenmon</span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-orange-400">•</span>
-            <span>Crear un flujo donde: el usuario le da nombre, elige su tipo, da vida al Regenmon</span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-orange-400">•</span>
-            <span>Mostrar visualmente: el nombre, el sprite, sus estadísticas</span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-orange-400">•</span>
-            <span>Guardar esa información para que no se pierda</span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-orange-400">•</span>
-            <span>Publicar la app y verificar que funciona en móvil y computadora</span>
-          </li>
+          {t('session1.whatYouWillDo.list', { returnObjects: true }).map((item: string, index: number) => (
+            <li key={index} className="flex items-start gap-2">
+              <span className="text-orange-400">•</span>
+              <span>{item}</span>
+            </li>
+          ))}
         </ul>
 
         <p className="text-muted-foreground text-lg mb-12">
-          Todo esto lo harás viendo resultados en tiempo real, sin necesidad de conocimientos previos.
+          {t('session1.whatYouWillDo.footer')}
         </p>
 
         {/* ¿Qué se espera que logres? */}
         <h2 className="text-3xl font-bold text-orange-400 mb-6">
-          ¿Qué se espera que logres al final?
+          {t('session1.whatYouWillAchieve.title')}
         </h2>
 
         <p className="text-muted-foreground text-lg mb-4">
-          Al terminar esta sesión deberás tener:
+          {t('session1.whatYouWillAchieve.subtitle')}
         </p>
 
         <ul className="space-y-3 text-muted-foreground ml-6 mb-8">
-          <li className="flex items-start gap-2">
-            <span className="text-orange-400">•</span>
-            <span>Una app desplegada con una URL pública</span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-orange-400">•</span>
-            <span>Un Regenmon creado por ti</span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-orange-400">•</span>
-            <span>Información que se mantiene al recargar la página</span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-orange-400">•</span>
-            <span>Una base sólida para las siguientes sesiones</span>
-          </li>
+          {t('session1.whatYouWillAchieve.list', { returnObjects: true }).map((item: string, index: number) => (
+            <li key={index} className="flex items-start gap-2">
+              <span className="text-orange-400">•</span>
+              <span>{item}</span>
+            </li>
+          ))}
         </ul>
 
         <div className="glass-card p-6 border-l-4 border-orange-400 bg-orange-500/5 mb-12">
           <p className="text-foreground text-lg font-semibold">
-            Pero más importante aún:
+            {t('session1.whatYouWillAchieve.important.intro')}
           </p>
           <p className="text-foreground text-xl mt-2">
-            La confianza de que sí puedes crear software,
-            incluso si nunca lo habías hecho antes.
+            {t('session1.whatYouWillAchieve.important.message')}
           </p>
         </div>
 
         {/* Por qué esta sesión es importante */}
         <h2 className="text-3xl font-bold text-orange-400 mb-6">
-          Por qué esta sesión es importante
+          {t('session1.whyImportant.title')}
         </h2>
 
         <div className="glass-card p-8 border-l-4 border-orange-400 bg-primary/5 mb-12">
           <p className="text-foreground text-lg mb-4">
-            Esta sesión rompe la barrera más grande de todas:
+            {t('session1.whyImportant.intro')}
           </p>
           <p className="text-2xl font-bold text-orange-400 text-center mb-4">
-            "Esto no es para mí"
+            {t('session1.whyImportant.quote')}
           </p>
           <p className="text-foreground text-lg">
-            Después de hoy, esa idea deja de existir.
-            A partir de aquí, todo lo que hagamos será mejorar, expandir y conectar lo que ya creaste.
+            {t('session1.whyImportant.outro')}
           </p>
         </div>
 
@@ -248,38 +193,26 @@ const Session1 = () => {
         <div className="glass-card p-8 mt-12 border-2 border-orange-400/30">
           <h2 className="text-2xl font-bold text-orange-400 mb-4 flex items-center gap-3">
             <Plug className="w-7 h-7" />
-            Preparando el siguiente paso
+            {t('session1.bridge.title')}
           </h2>
-          <p className="text-foreground text-lg mb-4">
-            Hasta ahora tu Regenmon es <strong>visual</strong> (tiene cara, stats, botones).
-            En la siguiente sesión le darás un <strong>cerebro</strong> (IA conversacional).
-          </p>
+          <p className="text-foreground text-lg mb-4" dangerouslySetInnerHTML={{ __html: t('session1.bridge.intro') }} />
 
           <div className="glass-card p-6 mb-4">
             <h3 className="text-xl font-semibold text-orange-400 mb-3">
-              ¿Qué necesitas antes de Sesión 2?
+              {t('session1.bridge.needsTitle')}
             </h3>
             <ul className="space-y-2 text-foreground">
-              <li className="flex items-start gap-3">
-                <span className="text-orange-400 font-bold">1.</span>
-                <span>Una <strong>API Key de Claude</strong> (como una contraseña para usar IA)</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-orange-400 font-bold">2.</span>
-                <span>Entender que la IA no está en tu app, está en internet (por eso necesitas la "llave")</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-orange-400 font-bold">3.</span>
-                <span>Saber que cada vez que tu Regenmon "habla", le pide ayuda a Claude</span>
-              </li>
+              {t('session1.bridge.needs', { returnObjects: true }).map((need: string, index: number) => (
+                <li key={index} className="flex items-start gap-3">
+                  <span className="text-orange-400 font-bold">{index + 1}.</span>
+                  <span dangerouslySetInnerHTML={{ __html: need }} />
+                </li>
+              ))}
             </ul>
           </div>
 
           <div className="bg-orange-400/10 border border-orange-400/30 rounded-lg p-4">
-            <p className="text-foreground text-sm">
-              <strong>💡 Analogía:</strong> Imagina que tu Regenmon es un muñeco de ventrílocuo.
-              En Sesión 1 construiste el muñeco. En Sesión 2 le darás la voz (Claude es el ventrílocuo).
-            </p>
+            <p className="text-foreground text-sm" dangerouslySetInnerHTML={{ __html: t('session1.bridge.analogy') }} />
           </div>
         </div>
 

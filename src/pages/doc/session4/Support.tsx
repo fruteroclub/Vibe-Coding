@@ -425,7 +425,7 @@ const Session4Support = () => {
                 questions={[
             {
               id: 's4-q1',
-              question: '¿Qué significa que Claude sea "multimodal"?',
+              question: '¿Qué significa que la IA sea "multimodal"?',
               options: [
                 'Puede responder en varios idiomas',
                 'Puede procesar texto E imágenes, no solo texto',
@@ -433,7 +433,7 @@ const Session4Support = () => {
                 'Solo funciona con texto'
               ],
               correctAnswer: 1,
-              explanation: 'Multimodal significa que Claude puede procesar múltiples tipos de entrada: texto E imágenes. Puedes enviarle una foto de tu Regenmon dibujado y Claude lo "ve" y describe. Antes solo procesaba texto.'
+              explanation: 'Multimodal significa que la IA puede procesar múltiples tipos de entrada: texto E imágenes. Puedes enviarle una foto de tu Regenmon dibujado y la IA lo "ve" y describe. Por ejemplo, Claude 3 puede analizar imágenes. Antes las IAs solo procesaban texto.'
             },
             {
               id: 's4-q2',

@@ -11,6 +11,7 @@ import Pricing from '@/components/Pricing';
 import FAQ from '@/components/FAQ';
 import FinalCTA from '@/components/FinalCTA';
 import Footer from '@/components/Footer';
+import { CookieBanner } from '@/components/CookieBanner';
 
 const Index = () => {
   return (
@@ -32,6 +33,7 @@ const Index = () => {
         </article>
       </main>
       <Footer />
+      <CookieBanner />
     </div>
   );
 };

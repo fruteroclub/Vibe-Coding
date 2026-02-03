@@ -1,20 +1,23 @@
+import { useTranslation } from 'react-i18next';
 import { DocLayout } from '@/components/doc/DocLayout';
 import { DocContent } from '@/components/doc/DocContent';
 import { Link } from 'react-router-dom';
 import { AlertTriangle, Key, MessageCircle, RefreshCw, Bot, DollarSign, LifeBuoy } from 'lucide-react';
 
 const Session2Troubleshooting = () => {
+  const { t } = useTranslation();
+
   return (
     <DocLayout>
       <DocContent>
         <div className="flex items-center gap-3 mb-4">
           <AlertTriangle className="w-10 h-10 text-orange-400" />
           <h1 className="gradient-text text-4xl font-bold">
-            Errores Comunes - Sesión 2
+            {t('session2Troubleshooting.title')}
           </h1>
         </div>
         <p className="text-muted-foreground text-lg mb-8">
-          Problemas frecuentes al integrar IA conversacional y sus soluciones.
+          {t('session2Troubleshooting.subtitle')}
         </p>
 
         {/* Error 1 */}
@@ -23,10 +26,10 @@ const Session2Troubleshooting = () => {
             <Key className="w-10 h-10 text-red-400 flex-shrink-0" />
             <div>
               <h2 className="text-2xl font-bold text-orange-400 mb-2">
-                "Error: API Key inválida o no funciona"
+                {t('session2Troubleshooting.error1.title')}
               </h2>
               <p className="text-muted-foreground mb-4">
-                Agregaste tu API Key pero la app dice que es inválida o falla al conectar.
+                {t('session2Troubleshooting.error1.description')}
               </p>
             </div>
           </div>
@@ -34,18 +37,16 @@ const Session2Troubleshooting = () => {
           <div className="bg-orange-400/10 border border-orange-400/30 rounded-lg p-4 mb-4">
             <h3 className="font-bold text-orange-400 mb-2">✅ Soluciones:</h3>
             <ol className="space-y-2 text-foreground">
-              <li>1. Verifica que <strong>copiaste la API Key completa</strong> sin espacios extra</li>
-              <li>2. Revisa en tu cuenta del proveedor de IA que la key esté activa</li>
-              <li>3. Si no tienes créditos, la API no funcionará (revisa balance)</li>
-              <li>4. Genera una nueva API Key si la anterior no funciona</li>
+              {t('session2Troubleshooting.error1.solutions', { returnObjects: true }).map((solution: string, index: number) => (
+                <li key={index} dangerouslySetInnerHTML={{ __html: solution }} />
+              ))}
             </ol>
           </div>
 
           <div className="bg-blue-400/10 border border-blue-400/30 rounded-lg p-4">
             <h3 className="font-bold text-blue-400 mb-2">💡 Por qué pasa:</h3>
             <p className="text-foreground text-sm">
-              La API Key es tu contraseña para usar la IA. Si tiene errores, está vencida,
-              o no tienes créditos, el proveedor rechaza la conexión.
+              {t('session2Troubleshooting.error1.why')}
             </p>
           </div>
         </div>
@@ -56,10 +57,10 @@ const Session2Troubleshooting = () => {
             <MessageCircle className="w-10 h-10 text-yellow-400 flex-shrink-0" />
             <div>
               <h2 className="text-2xl font-bold text-orange-400 mb-2">
-                "El chat no responde nada"
+                {t('session2Troubleshooting.error2.title')}
               </h2>
               <p className="text-muted-foreground mb-4">
-                Escribes mensajes pero el Regenmon no contesta, solo carga infinito.
+                {t('session2Troubleshooting.error2.description')}
               </p>
             </div>
           </div>
@@ -67,19 +68,16 @@ const Session2Troubleshooting = () => {
           <div className="bg-orange-400/10 border border-orange-400/30 rounded-lg p-4 mb-4">
             <h3 className="font-bold text-orange-400 mb-2">✅ Soluciones:</h3>
             <ol className="space-y-2 text-foreground">
-              <li>1. Abre la consola (F12) y revisa errores en rojo</li>
-              <li>2. Verifica que la <strong>API Key esté configurada correctamente</strong></li>
-              <li>3. Confirma que tu conexión a internet funcione</li>
-              <li>4. Revisa si hay límites de rate (demasiadas peticiones muy rápido)</li>
-              <li>5. Espera 30 segundos y vuelve a intentar</li>
+              {t('session2Troubleshooting.error2.solutions', { returnObjects: true }).map((solution: string, index: number) => (
+                <li key={index} dangerouslySetInnerHTML={{ __html: solution }} />
+              ))}
             </ol>
           </div>
 
           <div className="bg-blue-400/10 border border-blue-400/30 rounded-lg p-4">
             <h3 className="font-bold text-blue-400 mb-2">💡 Por qué pasa:</h3>
             <p className="text-foreground text-sm">
-              Tu app envía el mensaje a la IA en internet, espera respuesta, y la muestra.
-              Si algo falla en ese proceso (API, conexión, código), se queda esperando.
+              {t('session2Troubleshooting.error2.why')}
             </p>
           </div>
         </div>
@@ -90,10 +88,10 @@ const Session2Troubleshooting = () => {
             <RefreshCw className="w-10 h-10 text-purple-400 flex-shrink-0" />
             <div>
               <h2 className="text-2xl font-bold text-orange-400 mb-2">
-                "El historial de chat se borra al recargar"
+                {t('session2Troubleshooting.error3.title')}
               </h2>
               <p className="text-muted-foreground mb-4">
-                Conversas con tu Regenmon pero al recargar (F5) toda la conversación desaparece.
+                {t('session2Troubleshooting.error3.description')}
               </p>
             </div>
           </div>
@@ -101,18 +99,16 @@ const Session2Troubleshooting = () => {
           <div className="bg-orange-400/10 border border-orange-400/30 rounded-lg p-4 mb-4">
             <h3 className="font-bold text-orange-400 mb-2">✅ Soluciones:</h3>
             <ol className="space-y-2 text-foreground">
-              <li>1. Verifica que el código guarde mensajes en <strong>localStorage</strong></li>
-              <li>2. Abre F12 → Application → Local Storage y busca el historial</li>
-              <li>3. Pídele a v0 que agregue persistencia del chat</li>
-              <li>4. Confirma que cada mensaje se guarde después de enviarlo</li>
+              {t('session2Troubleshooting.error3.solutions', { returnObjects: true }).map((solution: string, index: number) => (
+                <li key={index} dangerouslySetInnerHTML={{ __html: solution }} />
+              ))}
             </ol>
           </div>
 
           <div className="bg-blue-400/10 border border-blue-400/30 rounded-lg p-4">
             <h3 className="font-bold text-blue-400 mb-2">💡 Por qué pasa:</h3>
             <p className="text-foreground text-sm">
-              Sin localStorage, los mensajes solo existen en memoria temporal.
-              Al recargar, esa memoria se limpia y pierdes todo el historial.
+              {t('session2Troubleshooting.error3.why')}
             </p>
           </div>
         </div>
@@ -123,10 +119,10 @@ const Session2Troubleshooting = () => {
             <Bot className="w-10 h-10 text-blue-400 flex-shrink-0" />
             <div>
               <h2 className="text-2xl font-bold text-orange-400 mb-2">
-                "El Regenmon responde cosas raras o fuera de contexto"
+                {t('session2Troubleshooting.error4.title')}
               </h2>
               <p className="text-muted-foreground mb-4">
-                La IA responde pero no tiene la personalidad correcta o dice cosas sin sentido.
+                {t('session2Troubleshooting.error4.description')}
               </p>
             </div>
           </div>
@@ -134,18 +130,16 @@ const Session2Troubleshooting = () => {
           <div className="bg-orange-400/10 border border-orange-400/30 rounded-lg p-4 mb-4">
             <h3 className="font-bold text-orange-400 mb-2">✅ Soluciones:</h3>
             <ol className="space-y-2 text-foreground">
-              <li>1. Revisa el <strong>prompt del sistema</strong> - debe definir personalidad clara</li>
-              <li>2. Incluye información del tipo de Regenmon (Fuego/Agua/Planta)</li>
-              <li>3. Agrega stats actuales (felicidad, energía) al prompt</li>
-              <li>4. Define límites claros: "Responde como una mascota, no como asistente"</li>
+              {t('session2Troubleshooting.error4.solutions', { returnObjects: true }).map((solution: string, index: number) => (
+                <li key={index} dangerouslySetInnerHTML={{ __html: solution }} />
+              ))}
             </ol>
           </div>
 
           <div className="bg-blue-400/10 border border-blue-400/30 rounded-lg p-4">
             <h3 className="font-bold text-blue-400 mb-2">💡 Por qué pasa:</h3>
             <p className="text-foreground text-sm">
-              La IA responde según las instrucciones que recibe. Si el prompt es vago
-              o no tiene contexto, las respuestas serán genéricas o inconsistentes.
+              {t('session2Troubleshooting.error4.why')}
             </p>
           </div>
         </div>
@@ -156,10 +150,10 @@ const Session2Troubleshooting = () => {
             <DollarSign className="w-10 h-10 text-green-400 flex-shrink-0" />
             <div>
               <h2 className="text-2xl font-bold text-orange-400 mb-2">
-                "Error: Créditos insuficientes o límite alcanzado"
+                {t('session2Troubleshooting.error5.title')}
               </h2>
               <p className="text-muted-foreground mb-4">
-                La app funcionaba pero ahora dice que no hay créditos o alcanzaste el límite.
+                {t('session2Troubleshooting.error5.description')}
               </p>
             </div>
           </div>
@@ -167,16 +161,16 @@ const Session2Troubleshooting = () => {
           <div className="bg-orange-400/10 border border-orange-400/30 rounded-lg p-4 mb-4">
             <h3 className="font-bold text-orange-400 mb-2">✅ Soluciones:</h3>
             <ol className="space-y-2 text-foreground">
-              <li>1. Revisa tu balance en la consola del proveedor de IA</li>
-              <li>2. Optimiza el prompt para usar menos tokens</li>
+              {t('session2Troubleshooting.error5.solutions', { returnObjects: true }).map((solution: string, index: number) => (
+                <li key={index} dangerouslySetInnerHTML={{ __html: solution }} />
+              ))}
             </ol>
           </div>
 
           <div className="bg-blue-400/10 border border-blue-400/30 rounded-lg p-4">
             <h3 className="font-bold text-blue-400 mb-2">💡 Por qué pasa:</h3>
             <p className="text-foreground text-sm">
-              Cada mensaje a la IA cuesta tokens (créditos). Los proveedores suelen dar
-              créditos gratis para empezar, pero eventualmente se acaban si usas mucho la API.
+              {t('session2Troubleshooting.error5.why')}
             </p>
           </div>
         </div>
@@ -186,29 +180,19 @@ const Session2Troubleshooting = () => {
           <div className="flex items-center gap-3 mb-4">
             <LifeBuoy className="w-8 h-8 text-orange-400" />
             <h2 className="text-2xl font-bold text-orange-400">
-              ¿Sigues teniendo problemas?
+              {t('session2Troubleshooting.needHelp.title')}
             </h2>
           </div>
           <p className="text-foreground mb-4">
-            Para debugging de IA, incluye esta información:
+            {t('session2Troubleshooting.needHelp.intro')}
           </p>
           <ol className="space-y-3 text-foreground mb-6">
-            <li className="flex items-start gap-3">
-              <span className="font-bold text-orange-400">1.</span>
-              <span>Screenshot del error exacto (consola F12 incluida)</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="font-bold text-orange-400">2.</span>
-              <span>Tu API Key (solo los primeros 10 caracteres: sk-ant-api03...)</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="font-bold text-orange-400">3.</span>
-              <span>El prompt del sistema que estás usando</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="font-bold text-orange-400">4.</span>
-              <span>Contacta: <a href="mailto:brian@frutero.club" className="text-orange-400 underline">brian@frutero.club</a></span>
-            </li>
+            {t('session2Troubleshooting.needHelp.steps', { returnObjects: true }).map((step: string, index: number) => (
+              <li key={index} className="flex items-start gap-3">
+                <span className="font-bold text-orange-400">{index + 1}.</span>
+                <span dangerouslySetInnerHTML={{ __html: step }} />
+              </li>
+            ))}
           </ol>
         </div>
 

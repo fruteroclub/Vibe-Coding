@@ -1,345 +1,254 @@
+import { useTranslation } from 'react-i18next';
 import { DocLayout } from '@/components/doc/DocLayout';
 import { DocContent } from '@/components/doc/DocContent';
 import { Link } from 'react-router-dom';
 
 const Session4 = () => {
+  const { t } = useTranslation();
+
   return (
     <DocLayout>
       <DocContent>
         <h1 className="gradient-text text-4xl font-bold mb-6">
-          🌱 Sesión 4 — Tu Regenmon Evoluciona
+          {t('session4.title')}
         </h1>
 
         <p className="text-xl text-orange-400 font-semibold mb-8">
-          Cuando tus acciones dejan huella y tu creación crece contigo
+          {t('session4.subtitle')}
         </p>
 
         <div className="space-y-6 text-muted-foreground text-lg leading-relaxed mb-12">
           <p>
-            En esta sesión ocurre un cambio importante en la historia de tu Regenmon:
+            {t('session4.intro.p1')}
           </p>
 
           <p className="text-foreground font-semibold text-xl text-center my-6">
-            Ya no solo reacciona a lo que haces, ahora crece gracias a ello.
+            {t('session4.intro.p2')}
           </p>
 
           <p>
-            Aquí aprenderás cómo una aplicación puede evaluar acciones reales, dar retroalimentación y mostrar progreso a lo largo del tiempo.
-            Es el punto donde tu app empieza a reflejar hábitos, constancia y evolución.
+            {t('session4.intro.p3')}
           </p>
         </div>
 
         {/* ¿Qué vas a aprender? */}
         <h2 className="text-3xl font-bold text-orange-400 mb-6">
-          ¿Qué vas a aprender en esta sesión?
+          {t('session4.whatYouWillLearn.title')}
         </h2>
 
         <p className="text-muted-foreground text-lg mb-8">
-          En esta sesión te enfocarás en evaluación, progreso y evolución, tres conceptos clave en productos modernos que buscan motivar y acompañar al usuario.
+          {t('session4.whatYouWillLearn.subtitle')}
         </p>
 
         <div className="space-y-8 mb-12">
           {/* 1. Cómo una app puede "ver" */}
           <div className="glass-card p-6 border-l-4 border-orange-400">
             <h3 className="text-xl font-bold text-foreground mb-4">
-              1. Cómo una app puede "ver"
+              {t('session4.whatYouWillLearn.items.0.title')}
             </h3>
             <p className="text-muted-foreground mb-4">
-              Aprenderás que la inteligencia artificial no solo entiende texto, también puede analizar imágenes.
+              {t('session4.whatYouWillLearn.items.0.p1')}
             </p>
             <p className="text-muted-foreground mb-4">
-              Sin entrar en detalles técnicos, entenderás que:
+              {t('session4.whatYouWillLearn.items.0.p2')}
             </p>
             <ul className="space-y-2 text-muted-foreground ml-6 mb-4">
-              <li className="flex items-start gap-2">
-                <span className="text-orange-400">•</span>
-                <span>Una imagen se convierte en información</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-orange-400">•</span>
-                <span>La IA la analiza</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-orange-400">•</span>
-                <span>La app recibe un resultado usable</span>
-              </li>
+              {t('session4.whatYouWillLearn.items.0.list', { returnObjects: true }).map((item: string, index: number) => (
+                <li key={index} className="flex items-start gap-2">
+                  <span className="text-orange-400">•</span>
+                  <span>{item}</span>
+                </li>
+              ))}
             </ul>
-            <p className="text-muted-foreground">
-              Esto introduce el concepto de <span className="text-foreground font-semibold">IA multimodal</span>, de forma simple y práctica.
-            </p>
+            <p className="text-muted-foreground" dangerouslySetInnerHTML={{ __html: t('session4.whatYouWillLearn.items.0.footer') }} />
           </div>
 
           {/* 2. Evaluar acciones, no solo clicks */}
           <div className="glass-card p-6 border-l-4 border-orange-400">
             <h3 className="text-xl font-bold text-foreground mb-4">
-              2. Evaluar acciones, no solo clicks
+              {t('session4.whatYouWillLearn.items.1.title')}
             </h3>
             <p className="text-muted-foreground mb-4">
-              En esta sesión verás cómo una app puede evaluar lo que haces en la vida real.
+              {t('session4.whatYouWillLearn.items.1.p1')}
             </p>
-            <p className="text-muted-foreground mb-2">Aprenderás a:</p>
+            <p className="text-muted-foreground mb-2">{t('session4.whatYouWillLearn.items.1.subtitle')}</p>
             <ul className="space-y-2 text-muted-foreground ml-6 mb-4">
-              <li className="flex items-start gap-2">
-                <span className="text-orange-400">•</span>
-                <span>Enviar una imagen como evidencia</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-orange-400">•</span>
-                <span>Recibir una evaluación automática</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-orange-400">•</span>
-                <span>Obtener una puntuación y un mensaje claro</span>
-              </li>
+              {t('session4.whatYouWillLearn.items.1.list', { returnObjects: true }).map((item: string, index: number) => (
+                <li key={index} className="flex items-start gap-2">
+                  <span className="text-orange-400">•</span>
+                  <span>{item}</span>
+                </li>
+              ))}
             </ul>
-            <p className="text-muted-foreground">
-              Esto convierte a tu Regenmon en un <span className="text-foreground font-semibold">acompañante de hábitos</span>, no solo en un juego.
-            </p>
+            <p className="text-muted-foreground" dangerouslySetInnerHTML={{ __html: t('session4.whatYouWillLearn.items.1.footer') }} />
           </div>
 
           {/* 3. Recompensar el esfuerzo */}
           <div className="glass-card p-6 border-l-4 border-orange-400">
             <h3 className="text-xl font-bold text-foreground mb-4">
-              3. Recompensar el esfuerzo
+              {t('session4.whatYouWillLearn.items.2.title')}
             </h3>
             <p className="text-muted-foreground mb-4">
-              Descubrirás cómo conectar evaluación con recompensa.
+              {t('session4.whatYouWillLearn.items.2.p1')}
             </p>
-            <p className="text-muted-foreground mb-2">Aprenderás que:</p>
+            <p className="text-muted-foreground mb-2">{t('session4.whatYouWillLearn.items.2.subtitle')}</p>
             <ul className="space-y-2 text-muted-foreground ml-6 mb-4">
-              <li className="flex items-start gap-2">
-                <span className="text-orange-400">•</span>
-                <span>Un buen sistema reconoce el esfuerzo</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-orange-400">•</span>
-                <span>Las recompensas deben ser proporcionales</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-orange-400">•</span>
-                <span>El feedback motiva a seguir</span>
-              </li>
+              {t('session4.whatYouWillLearn.items.2.list', { returnObjects: true }).map((item: string, index: number) => (
+                <li key={index} className="flex items-start gap-2">
+                  <span className="text-orange-400">•</span>
+                  <span>{item}</span>
+                </li>
+              ))}
             </ul>
             <p className="text-muted-foreground">
-              Tu Regenmon recibirá monedas y reaccionará positivamente cuando entrenes.
+              {t('session4.whatYouWillLearn.items.2.footer')}
             </p>
           </div>
 
           {/* 4. Progreso acumulado y evolución */}
           <div className="glass-card p-6 border-l-4 border-orange-400">
             <h3 className="text-xl font-bold text-foreground mb-4">
-              4. Progreso acumulado y evolución
+              {t('session4.whatYouWillLearn.items.3.title')}
             </h3>
             <p className="text-muted-foreground mb-4">
-              Aquí aparece uno de los conceptos más importantes de todo el bootcamp:
+              {t('session4.whatYouWillLearn.items.3.p1')}
             </p>
             <p className="text-foreground font-semibold text-lg text-center mb-4">
-              El progreso no se borra, se acumula.
+              {t('session4.whatYouWillLearn.items.3.highlight')}
             </p>
-            <p className="text-muted-foreground mb-2">Aprenderás cómo:</p>
+            <p className="text-muted-foreground mb-2">{t('session4.whatYouWillLearn.items.3.subtitle')}</p>
             <ul className="space-y-2 text-muted-foreground ml-6 mb-4">
-              <li className="flex items-start gap-2">
-                <span className="text-orange-400">•</span>
-                <span>Sumar puntos con cada entrenamiento</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-orange-400">•</span>
-                <span>Guardarlos a largo plazo</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-orange-400">•</span>
-                <span>Desbloquear nuevas etapas de evolución</span>
-              </li>
+              {t('session4.whatYouWillLearn.items.3.list', { returnObjects: true }).map((item: string, index: number) => (
+                <li key={index} className="flex items-start gap-2">
+                  <span className="text-orange-400">•</span>
+                  <span>{item}</span>
+                </li>
+              ))}
             </ul>
             <p className="text-muted-foreground">
-              Tu Regenmon cambiará visualmente conforme avances, mostrando que el crecimiento es real.
+              {t('session4.whatYouWillLearn.items.3.footer')}
             </p>
           </div>
 
           {/* 5. Mirar hacia atrás para avanzar */}
           <div className="glass-card p-6 border-l-4 border-orange-400">
             <h3 className="text-xl font-bold text-foreground mb-4">
-              5. Mirar hacia atrás para avanzar
+              {t('session4.whatYouWillLearn.items.4.title')}
             </h3>
             <p className="text-muted-foreground mb-4">
-              En esta sesión también aprenderás a guardar historial.
+              {t('session4.whatYouWillLearn.items.4.p1')}
             </p>
-            <p className="text-muted-foreground mb-2">Verás cómo una app puede:</p>
+            <p className="text-muted-foreground mb-2">{t('session4.whatYouWillLearn.items.4.subtitle')}</p>
             <ul className="space-y-2 text-muted-foreground ml-6 mb-4">
-              <li className="flex items-start gap-2">
-                <span className="text-orange-400">•</span>
-                <span>Recordar entrenamientos pasados</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-orange-400">•</span>
-                <span>Mostrar estadísticas simples</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-orange-400">•</span>
-                <span>Ayudarte a reflexionar sobre tu progreso</span>
-              </li>
+              {t('session4.whatYouWillLearn.items.4.list', { returnObjects: true }).map((item: string, index: number) => (
+                <li key={index} className="flex items-start gap-2">
+                  <span className="text-orange-400">•</span>
+                  <span>{item}</span>
+                </li>
+              ))}
             </ul>
-            <p className="text-muted-foreground">
-              Esto refuerza la idea de <span className="text-foreground font-semibold">constancia y continuidad</span>.
-            </p>
+            <p className="text-muted-foreground" dangerouslySetInnerHTML={{ __html: t('session4.whatYouWillLearn.items.4.footer') }} />
           </div>
         </div>
 
         {/* ¿Qué vas a hacer? */}
         <h2 className="text-3xl font-bold text-orange-400 mb-6">
-          ¿Qué vas a hacer durante la sesión?
+          {t('session4.whatYouWillDo.title')}
         </h2>
 
         <p className="text-muted-foreground text-lg mb-4">
-          Durante esta sesión vas a:
+          {t('session4.whatYouWillDo.subtitle')}
         </p>
 
         <ul className="space-y-3 text-muted-foreground ml-6 mb-8">
-          <li className="flex items-start gap-2">
-            <span className="text-orange-400">•</span>
-            <span>Crear una sección para entrenar a tu Regenmon</span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-orange-400">•</span>
-            <span>Subir imágenes desde tu dispositivo</span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-orange-400">•</span>
-            <span>Enviar esas imágenes a una IA para evaluación</span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-orange-400">•</span>
-            <span>Mostrar puntuaciones y mensajes claros</span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-orange-400">•</span>
-            <span>Otorgar recompensas según resultados</span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-orange-400">•</span>
-            <span>Acumular puntos de progreso</span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-orange-400">•</span>
-            <span>Cambiar visualmente la etapa del Regenmon</span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-orange-400">•</span>
-            <span>Guardar historial de entrenamientos</span>
-          </li>
+          {t('session4.whatYouWillDo.list', { returnObjects: true }).map((item: string, index: number) => (
+            <li key={index} className="flex items-start gap-2">
+              <span className="text-orange-400">•</span>
+              <span>{item}</span>
+            </li>
+          ))}
         </ul>
 
         <p className="text-muted-foreground text-lg mb-12">
-          Todo esto se construye paso a paso, entendiendo qué está pasando en cada momento.
+          {t('session4.whatYouWillDo.footer')}
         </p>
 
         {/* ¿Qué se espera que logres? */}
         <h2 className="text-3xl font-bold text-orange-400 mb-6">
-          ¿Qué se espera que logres al final?
+          {t('session4.whatYouWillAchieve.title')}
         </h2>
 
         <p className="text-muted-foreground text-lg mb-4">
-          Al terminar esta sesión deberás tener:
+          {t('session4.whatYouWillAchieve.subtitle')}
         </p>
 
         <ul className="space-y-3 text-muted-foreground ml-6 mb-8">
-          <li className="flex items-start gap-2">
-            <span className="text-orange-400">•</span>
-            <span>Un sistema de evaluación con IA</span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-orange-400">•</span>
-            <span>Progreso acumulado y persistente</span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-orange-400">•</span>
-            <span>Un Regenmon que evoluciona visualmente</span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-orange-400">•</span>
-            <span>Recompensas conectadas a acciones reales</span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-orange-400">•</span>
-            <span>Un historial que muestra crecimiento</span>
-          </li>
+          {t('session4.whatYouWillAchieve.list', { returnObjects: true }).map((item: string, index: number) => (
+            <li key={index} className="flex items-start gap-2">
+              <span className="text-orange-400">•</span>
+              <span>{item}</span>
+            </li>
+          ))}
         </ul>
 
         <div className="glass-card p-6 border-l-4 border-orange-400 bg-orange-500/5 mb-12">
           <p className="text-foreground text-lg font-semibold">
-            Pero lo más importante:
+            {t('session4.whatYouWillAchieve.important.intro')}
           </p>
           <p className="text-foreground text-xl mt-2">
-            Tu app ahora refleja hábitos y constancia, no solo interacción.
+            {t('session4.whatYouWillAchieve.important.message')}
           </p>
         </div>
 
         {/* Por qué esta sesión es importante */}
         <h2 className="text-3xl font-bold text-orange-400 mb-6">
-          Por qué esta sesión es importante
+          {t('session4.whyImportant.title')}
         </h2>
 
         <div className="glass-card p-8 border-l-4 border-orange-400 bg-primary/5 mb-12">
           <p className="text-foreground text-lg mb-4">
-            Esta sesión cambia la relación con tu producto.
+            {t('session4.whyImportant.intro')}
           </p>
           <p className="text-foreground text-lg mb-4">
-            Pasas de:
+            {t('session4.whyImportant.p1')}
           </p>
           <p className="text-2xl font-bold text-orange-400 text-center mb-2">
-            usar una app
+            {t('session4.whyImportant.from')}
           </p>
           <p className="text-foreground text-lg text-center mb-4">
-            a
+            {t('session4.whyImportant.middle')}
           </p>
           <p className="text-2xl font-bold text-orange-400 text-center mb-4">
-            crecer junto a ella
+            {t('session4.whyImportant.to')}
           </p>
           <p className="text-foreground text-lg">
-            Aprendes cómo se diseñan sistemas que motivan, acompañan y muestran progreso real, una habilidad muy valiosa en productos digitales modernos.
+            {t('session4.whyImportant.outro')}
           </p>
         </div>
 
         {/* Puente hacia Sesión 5 */}
         <div className="glass-card p-8 mt-12 border-2 border-orange-400/30">
           <h2 className="text-2xl font-bold text-orange-400 mb-4">
-            🌍 El paso final: Comunidad
+            {t('session4.bridge.title')}
           </h2>
-          <p className="text-foreground text-lg mb-4">
-            Tu Regenmon funciona perfectamente... pero está solo. En la última sesión
-            transformarás tu proyecto en una <strong>experiencia social</strong>.
-          </p>
+          <p className="text-foreground text-lg mb-4" dangerouslySetInnerHTML={{ __html: t('session4.bridge.intro') }} />
 
           <div className="glass-card p-6">
             <h3 className="text-xl font-semibold text-orange-400 mb-3">
-              En Sesión 5 crearás:
+              {t('session4.bridge.subtitle')}
             </h3>
             <ul className="space-y-2 text-foreground">
-              <li className="flex items-start gap-3">
-                <span className="text-orange-400">•</span>
-                <span>Perfiles públicos (otros pueden ver tu Regenmon)</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-orange-400">•</span>
-                <span>Sistema de visitas e interacciones</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-orange-400">•</span>
-                <span>Feed comunitario (descubrir otros Regenmons)</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-orange-400">•</span>
-                <span>Notificaciones sociales</span>
-              </li>
+              {t('session4.bridge.list', { returnObjects: true }).map((item: string, index: number) => (
+                <li key={index} className="flex items-start gap-3">
+                  <span className="text-orange-400">•</span>
+                  <span>{item}</span>
+                </li>
+              ))}
             </ul>
           </div>
 
           <div className="bg-orange-400/10 border border-orange-400/30 rounded-lg p-4 mt-4">
-            <p className="text-foreground text-sm">
-              <strong>💡 Analogía:</strong> Hasta ahora construiste un producto personal increíble.
-              En Sesión 5 abrirás las puertas para que otros entren, visiten, y compartan el espacio.
-              Como convertir tu casa en un lugar al que tus amigos pueden ir.
-            </p>
+            <p className="text-foreground text-sm" dangerouslySetInnerHTML={{ __html: t('session4.bridge.analogy') }} />
           </div>
         </div>
 
