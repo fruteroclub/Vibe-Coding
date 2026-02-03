@@ -11,6 +11,8 @@ import {
   X,
   ChevronRight
 } from 'lucide-react';
+import { ComprehensionCheckpoint } from '@/components/doc/ComprehensionCheckpoint';
+import { AnalogyCard } from '@/components/doc/AnalogyCard';
 
 interface ResourceSection {
   id: string;
@@ -335,7 +337,7 @@ const Session5Support = () => {
         </p>
 
         {/* Resource Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
           {resources.map((resource) => (
             <button
               key={resource.id}
@@ -366,6 +368,80 @@ const Session5Support = () => {
             </button>
           ))}
         </div>
+
+        {/* Analogías Visuales */}
+        <div className="mb-8">
+          <h2 className="text-2xl font-bold text-foreground mb-6">
+            💡 Entendiendo con Analogías
+          </h2>
+
+          <AnalogyCard
+            technical="Perfil público del Regenmon"
+            analogy="Vitrina de tu tienda"
+            explanation="Imagina que tu Regenmon es tu producto favorito que has creado con esfuerzo. Un perfil público es como poner una vitrina con vidrio transparente en la calle: la gente que pasa puede VER tu Regenmon, su nivel, sus logros, pero no pueden tocarlo ni modificarlo. Solo tú tienes la llave de la tienda (tu cuenta). Si no quieres vitrina, puedes dejar tu perfil privado (persianas cerradas) y solo tú lo ves."
+          />
+
+          <AnalogyCard
+            technical="Feed social con actividad de otros usuarios"
+            analogy="Tablón de anuncios del barrio"
+            explanation="El feed social es como el tablón de anuncios de tu colonia donde todos ponen noticias: 'Juan corrió 5km hoy', 'María leyó 2 libros esta semana'. En tu app es igual: 'Carlos subió a nivel 10', 'Ana evolucionó su Regenmon a etapa adulta'. No es invasivo, no es obligatorio mirarlo, pero si lo haces te motiva ver que otros también están avanzando. Es comunidad sin presión."
+          />
+        </div>
+
+        {/* Comprehension Checkpoint */}
+        <ComprehensionCheckpoint
+          title="🎯 Checkpoint: ¿Entiendes features sociales?"
+          questions={[
+            {
+              id: 's5-q1',
+              question: '¿Qué es un "perfil público" en tu app?',
+              options: [
+                'La configuración de privacidad',
+                'Una página que muestra el Regenmon y stats de un usuario a otros',
+                'El login screen',
+                'Un archivo de configuración'
+              ],
+              correctAnswer: 1,
+              explanation: 'Un perfil público es una página que otros usuarios pueden ver con tu Regenmon, nivel, tipo y stats. Es como tu perfil de Instagram pero para tu mascota digital. Otros pueden visitarlo y ver tu progreso.'
+            },
+            {
+              id: 's5-q2',
+              question: '¿Para qué sirve un "feed social" o timeline?',
+              options: [
+                'Para guardar imágenes',
+                'Para mostrar actividad de otros usuarios (logros, evoluciones)',
+                'Solo para administradores',
+                'Para hacer backup de datos'
+              ],
+              correctAnswer: 1,
+              explanation: 'El feed social muestra actualizaciones de otros usuarios: "Juan subió de nivel", "María evolucionó su Regenmon". Es como el feed de Twitter/X pero con logros de mascotas virtuales. Genera comunidad y motivación.'
+            },
+            {
+              id: 's5-q3',
+              question: '¿Qué son las notificaciones en tiempo real?',
+              options: [
+                'Emails que se envían cada hora',
+                'Alertas instantáneas cuando algo pasa (alguien te sigue, comenta)',
+                'Solo funcionan offline',
+                'Son opcionales y no sirven'
+              ],
+              correctAnswer: 1,
+              explanation: 'Las notificaciones en tiempo real avisan al instante cuando algo pasa: "Te dieron un like", "Alguien te siguió". Como las notificaciones de WhatsApp. Usan tecnologías como WebSockets o Supabase Realtime para actualizaciones instantáneas.'
+            },
+            {
+              id: 's5-q4',
+              question: '¿Por qué las features sociales aumentan el engagement?',
+              options: [
+                'Hacen la app más pesada',
+                'Crean competencia, comunidad y motivación para seguir usando la app',
+                'Solo sirven para apps grandes',
+                'No aumentan el engagement'
+              ],
+              correctAnswer: 1,
+              explanation: 'Las features sociales crean engagement porque: 1) Comparas tu Regenmon con otros (competencia), 2) Ves el progreso de la comunidad (motivación), 3) Recibes validación social (likes, seguidores). Es psicología aplicada al producto.'
+            }
+          ]}
+        />
 
         {/* Entregable Section */}
         <div className="my-12 glass-card p-6 border-l-4 border-green-500">

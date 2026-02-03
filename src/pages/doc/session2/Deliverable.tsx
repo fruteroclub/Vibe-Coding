@@ -233,24 +233,6 @@ const Session2Deliverable = () => {
           Entregable 2: "Regenmon Conversacional"
         </h2>
 
-        <div className="mb-8 p-6 border border-border/50 rounded-lg bg-muted/20">
-          <h3 className="text-xl font-bold text-foreground mb-4">
-            📊 Evaluación por Niveles (Estandarizada)
-          </h3>
-          <p className="text-sm text-muted-foreground mb-2">
-            🔑 <strong>NIVEL 1 — CORE:</strong> El Regenmon puede conversar
-          </p>
-          <p className="text-sm text-muted-foreground mb-2">
-            🎯 <strong>NIVEL 2 — COMPLETO:</strong> Buen entendimiento del flujo y experiencia de chat
-          </p>
-          <p className="text-sm text-muted-foreground mb-2">
-            ✨ <strong>NIVEL 3 — EXCELENTE:</strong> Cuidado por experiencia, reglas y coherencia
-          </p>
-          <p className="text-sm text-muted-foreground">
-            🚀 <strong>NIVEL 4 — BONUS:</strong> Memoria conversacional y feedback avanzado
-          </p>
-        </div>
-
         {/* Progress Bar */}
         <div className="mb-8 p-6 border border-border/50 rounded-lg bg-muted/20">
           <div className="flex items-center justify-between mb-2">

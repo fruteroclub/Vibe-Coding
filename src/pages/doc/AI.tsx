@@ -66,15 +66,6 @@ const AI = () => {
           {t('doc.aiPage.subtitle')}
         </p>
 
-        <div className="my-8 glass-card p-6 border-l-4 border-doc-primary">
-          <h3 className="text-lg font-semibold text-doc-primary mb-2">
-            {t('doc.aiPage.programHeader')}
-          </h3>
-          <p className="text-sm text-muted-foreground">
-            {t('doc.aiPage.tooltipHint')}
-          </p>
-        </div>
-
         <div className="space-y-12">
           {sessions.map((session) => (
             <div key={session.number} className="space-y-6">

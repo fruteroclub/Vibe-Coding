@@ -4,10 +4,12 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { ScrollToTop } from "@/components/ScrollToTop";
 import Index from "./pages/Index";
 import Demo from "./pages/Demo";
 import Doc from "./pages/Doc";
 import QuickStart from "./pages/doc/QuickStart";
+import Glossary from "./pages/doc/Glossary";
 import Resources from "./pages/doc/Resources";
 import Layers from "./pages/doc/Layers";
 import AI from "./pages/doc/AI";
@@ -47,12 +49,14 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
         <Suspense fallback={<div className="flex items-center justify-center min-h-screen">Loading...</div>}>
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/demo" element={<Demo />} />
             <Route path="/doc" element={<Doc />} />
             <Route path="/doc/quick-start" element={<QuickStart />} />
+            <Route path="/doc/glossary" element={<Glossary />} />
             <Route path="/doc/resources" element={<Resources />} />
             <Route path="/doc/layers" element={<Layers />} />
             <Route path="/doc/ai" element={<AI />} />

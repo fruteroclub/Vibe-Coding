@@ -70,7 +70,7 @@ const Session2 = () => {
               </li>
             </ul>
             <p className="text-muted-foreground mt-4">
-              Esto te introduce al concepto de <span className="text-foreground font-semibold">API y servicios externos</span>, algo que está en absolutamente todas las aplicaciones actuales.
+              Esto te introduce al concepto de <span className="text-foreground font-semibold">API</span> (puerta que conecta tu app con servicios externos) y <span className="text-foreground font-semibold">servicios externos</span>, algo que está en absolutamente todas las aplicaciones actuales.
             </p>
           </div>
 
@@ -83,7 +83,7 @@ const Session2 = () => {
               No basta con conectar la IA. Debes decirle <span className="text-foreground font-semibold">cómo comportarse</span>.
             </p>
             <p className="text-muted-foreground mb-4">
-              Aquí descubrirás el concepto de <span className="text-foreground font-semibold">system prompt</span>: las instrucciones internas que le das al modelo para que responda de cierta forma.
+              Aquí descubrirás el concepto de <span className="text-foreground font-semibold">system prompt</span> (instrucciones que definen la personalidad de la IA): las instrucciones internas que le das al modelo para que responda de cierta forma.
             </p>
             <p className="text-muted-foreground font-semibold mb-2">Diseñarás:</p>
             <ul className="space-y-2 text-muted-foreground ml-6 mb-4">
@@ -146,7 +146,7 @@ const Session2 = () => {
               Si cada vez que le hablas olvida todo lo anterior, no hay conversación real.
             </p>
             <p className="text-muted-foreground mb-4">
-              Aquí aprenderás a mantener el historial del chat y enviarlo al modelo, para que las respuestas tengan contexto.
+              Aquí aprenderás a mantener el historial del chat y enviarlo al modelo, para que las respuestas tengan <span className="text-foreground font-semibold">contexto</span> (lo que la IA recuerda de conversaciones anteriores).
             </p>
             <p className="text-muted-foreground font-semibold mb-2">Implementarás:</p>
             <ul className="space-y-2 text-muted-foreground ml-6">

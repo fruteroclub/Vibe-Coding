@@ -11,6 +11,8 @@ import {
   X,
   ChevronRight
 } from 'lucide-react';
+import { ComprehensionCheckpoint } from '@/components/doc/ComprehensionCheckpoint';
+import { AnalogyCard } from '@/components/doc/AnalogyCard';
 
 interface ResourceSection {
   id: string;
@@ -334,7 +336,7 @@ const Session2Support = () => {
         </p>
 
         {/* Resource Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
           {resources.map((resource) => (
             <button
               key={resource.id}
@@ -365,6 +367,80 @@ const Session2Support = () => {
             </button>
           ))}
         </div>
+
+        {/* Analogies Section */}
+        <div className="mb-8">
+          <h2 className="text-2xl font-bold text-foreground mb-6">
+            💡 Entendiendo con Analogías
+          </h2>
+
+          <AnalogyCard
+            technical="API Key para Claude"
+            analogy="Llave de tu casa"
+            explanation="Así como solo tú tienes la llave de tu casa y sin ella la puerta está cerrada, la API Key es tu 'llave personal' para usar los servicios de Claude. Sin ella, no puedes conectarte. Anthropic te da $5 gratis para empezar, como un periodo de prueba."
+          />
+
+          <AnalogyCard
+            technical="System Prompt (personalidad de IA)"
+            analogy="Guión de actor"
+            explanation="Imagina que Claude es un actor. El system prompt es el guión que le dice cómo actuar: 'Eres un Regenmon de tipo Fuego, hablas con entusiasmo, siempre estás motivado para entrenar'. El actor (Claude) sigue ese guión en cada respuesta, manteniendo el personaje consistente."
+          />
+        </div>
+
+        {/* Comprehension Checkpoint */}
+        <ComprehensionCheckpoint
+          title="🎯 Checkpoint: ¿Dominas la IA conversacional?"
+          questions={[
+            {
+              id: 's2-q1',
+              question: '¿Qué es la API de Claude y para qué sirve?',
+              options: [
+                'Un sitio web para chatear',
+                'Una puerta que conecta tu app con el cerebro de Claude',
+                'Una base de datos',
+                'Un framework de programación'
+              ],
+              correctAnswer: 1,
+              explanation: 'La API de Claude es como una puerta que conecta tu aplicación con el cerebro de Claude. Tu app envía preguntas, Claude procesa y responde. Es lo que permite que tu Regenmon "piense" y converse.'
+            },
+            {
+              id: 's2-q2',
+              question: '¿Qué es el "prompt del sistema" (system prompt)?',
+              options: [
+                'Un mensaje que el usuario escribe',
+                'Las instrucciones que definen la personalidad y comportamiento de la IA',
+                'Un error del sistema',
+                'El historial de conversación'
+              ],
+              correctAnswer: 1,
+              explanation: 'El prompt del sistema son las instrucciones que definen quién es la IA y cómo debe comportarse. Por ejemplo: "Eres un Regenmon de tipo Fuego, hablas con entusiasmo y te encanta entrenar". Esto hace que cada Regenmon tenga personalidad única.'
+            },
+            {
+              id: 's2-q3',
+              question: '¿Por qué necesitas una API Key de Anthropic?',
+              options: [
+                'Para decorar tu app',
+                'Para autenticar que TÚ estás haciendo la pregunta y cobrar por el uso',
+                'Es opcional, no la necesitas',
+                'Solo para empresas grandes'
+              ],
+              correctAnswer: 1,
+              explanation: 'La API Key autentica que TÚ estás haciendo la pregunta a Claude. Es como tu contraseña de acceso. Anthropic te da $5 gratis para empezar, y después cobra por tokens (palabras procesadas).'
+            },
+            {
+              id: 's2-q4',
+              question: '¿Qué significa "temperatura" en la configuración de Claude?',
+              options: [
+                'La velocidad de respuesta',
+                'El nivel de creatividad vs. precisión en las respuestas',
+                'El costo de cada mensaje',
+                'El idioma de la respuesta'
+              ],
+              correctAnswer: 1,
+              explanation: 'La temperatura controla qué tan creativa (alta) o precisa (baja) es la IA. Temperatura 0.3 = respuestas consistentes y predecibles. Temperatura 0.9 = respuestas más variadas y creativas. Para tu Regenmon, 0.7 es un buen balance.'
+            }
+          ]}
+        />
 
         {/* Entregable Section */}
         <div className="my-12 glass-card p-6 border-l-4 border-green-500">

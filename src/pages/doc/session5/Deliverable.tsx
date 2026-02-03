@@ -244,24 +244,6 @@ const Session5Deliverable = () => {
           Entregable 5: "Regenmon Social"
         </h2>
 
-        <div className="mb-8 p-6 border border-border/50 rounded-lg bg-muted/20">
-          <h3 className="text-xl font-bold text-foreground mb-4">
-            📊 Evaluación por Niveles (Estandarizada)
-          </h3>
-          <p className="text-sm text-muted-foreground mb-2">
-            🔑 <strong>NIVEL 1 — CORE:</strong> El Regenmon puede ser visto y visitado por otras personas
-          </p>
-          <p className="text-sm text-muted-foreground mb-2">
-            🎯 <strong>NIVEL 2 — COMPLETO:</strong> Interacción básica y descubrimiento
-          </p>
-          <p className="text-sm text-muted-foreground mb-2">
-            ✨ <strong>NIVEL 3 — EXCELENTE:</strong> Sistema social funcional y cuidado
-          </p>
-          <p className="text-sm text-muted-foreground">
-            🚀 <strong>NIVEL 4 — BONUS:</strong> Descubrimiento avanzado y experiencia social rica
-          </p>
-        </div>
-
         {/* Progress Bar */}
         <div className="mb-8 p-6 border border-border/50 rounded-lg bg-muted/20">
           <div className="flex items-center justify-between mb-2">

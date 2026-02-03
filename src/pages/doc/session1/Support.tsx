@@ -11,6 +11,8 @@ import {
   X,
   ChevronRight
 } from 'lucide-react';
+import { ComprehensionCheckpoint } from '@/components/doc/ComprehensionCheckpoint';
+import { AnalogyCard } from '@/components/doc/AnalogyCard';
 
 interface ResourceSection {
   id: string;
@@ -277,7 +279,7 @@ const Session1Support = () => {
         </div>
 
         {/* Resource Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
           {resources.map((resource) => (
             <div
               key={resource.id}
@@ -301,6 +303,80 @@ const Session1Support = () => {
             </div>
           ))}
         </div>
+
+        {/* Analogies Section */}
+        <div className="mb-8">
+          <h2 className="text-2xl font-bold text-foreground mb-6">
+            💡 Entendiendo con Analogías
+          </h2>
+
+          <AnalogyCard
+            technical="Componente en React"
+            analogy="Bloques de Lego"
+            explanation="Así como construyes con bloques de Lego donde cada pieza tiene una función (una ventana, una puerta, una rueda), en React cada componente es una pieza reutilizable. Tu botón es un componente, tu tarjeta de Regenmon es un componente. Los combinas para crear la app completa."
+          />
+
+          <AnalogyCard
+            technical="Deploy a producción"
+            analogy="Publicar un video en YouTube"
+            explanation="Trabajaste en tu video (app) en tu computadora editando, mejorando, probando. Hacer deploy es como subirlo a YouTube (internet) para que todos puedan verlo 24/7 desde cualquier dispositivo. Ya no está solo en tu máquina, está en la nube."
+          />
+        </div>
+
+        {/* Comprehension Checkpoint */}
+        <ComprehensionCheckpoint
+          title="🎯 Checkpoint: ¿Entendiste los conceptos clave?"
+          questions={[
+            {
+              id: 's1-q1',
+              question: '¿Qué significa programar con IA en VibeCoding?',
+              options: [
+                'Aprender lenguajes de programación complicados',
+                'Escribir código técnico manualmente',
+                'Explicar lo que quieres construir y que la IA lo convierta en código',
+                'Usar solo ChatGPT para todo'
+              ],
+              correctAnswer: 2,
+              explanation: 'Programar con IA significa pasar de "No sé programar" a "Sé explicar lo que quiero construir". La IA toma tu explicación y la convierte en una aplicación real mientras tú tomas las decisiones importantes.'
+            },
+            {
+              id: 's1-q2',
+              question: '¿Qué es un componente en React?',
+              options: [
+                'Un archivo de configuración',
+                'Una pieza reutilizable de interfaz (como un botón o tarjeta)',
+                'Una base de datos',
+                'Un servidor backend'
+              ],
+              correctAnswer: 1,
+              explanation: 'Un componente es una pieza reutilizable de tu interfaz. Imagina que construyes con bloques Lego: cada bloque es un componente. Un botón es un componente, una tarjeta es un componente, un formulario es un componente.'
+            },
+            {
+              id: 's1-q3',
+              question: '¿Qué hace el "estado" (state) en React?',
+              options: [
+                'Guarda datos permanentemente en una base de datos',
+                'Define el estilo visual de los componentes',
+                'Controla qué información muestra y cómo reacciona la interfaz',
+                'Solo sirve para debugging'
+              ],
+              correctAnswer: 2,
+              explanation: 'El estado controla qué muestra tu app y cómo reacciona. Por ejemplo: la energía de tu Regenmon es estado. Cuando baja, la interfaz se actualiza automáticamente. Cuando le das de comer, el estado cambia y la app refleja el cambio.'
+            },
+            {
+              id: 's1-q4',
+              question: '¿Por qué usamos v0 en lugar de escribir código manualmente?',
+              options: [
+                'Porque escribir código es imposible',
+                'Porque v0 traduce descripciones en lenguaje natural a código funcional',
+                'Porque v0 es gratis para siempre',
+                'Solo para principiantes, los expertos no lo usan'
+              ],
+              correctAnswer: 1,
+              explanation: 'v0 traduce lo que quieres (en lenguaje natural) a código funcional que puedes personalizar. Es como tener un traductor: tú piensas en español, v0 lo traduce a React. Incluso desarrolladores expertos usan v0 para acelerar su trabajo.'
+            }
+          ]}
+        />
 
         {/* Navigation */}
         <div className="mt-16 flex items-center justify-between border-t border-border/50 pt-8">

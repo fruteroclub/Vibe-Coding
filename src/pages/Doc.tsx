@@ -3,7 +3,8 @@ import { useTranslation } from 'react-i18next';
 import { DocLayout } from '@/components/doc/DocLayout';
 import { DocContent } from '@/components/doc/DocContent';
 import { Link } from 'react-router-dom';
-import { Target, Eye, BookOpen, Layers, Rocket, FileText, ChevronRight, Plus, X, GripVertical } from 'lucide-react';
+import { Target, Eye, BookOpen, Layers, Rocket, FileText, ChevronRight, Plus, X, GripVertical, Zap, FileCode, Egg, Lightbulb } from 'lucide-react';
+import { ProgressTimeline } from '@/components/doc/ProgressTimeline';
 
 interface StickyNote {
   id: string;
@@ -194,8 +195,8 @@ const Doc = () => {
           </h2>
           <p className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed mb-4 sm:mb-6">
             Esta es tu guía completa para el bootcamp VibeCoding. Aquí encontrarás todo lo que necesitas
-            para completar las 6 sesiones: desde los conceptos fundamentales hasta los prompts exactos
-            que usarás con v0 y Claude.
+            para completar las <strong>5 sesiones</strong> del bootcamp (más la configuración inicial en Quick Start):
+            desde los conceptos fundamentales hasta los prompts exactos que usarás con v0 y Claude.
           </p>
           <p className="text-sm sm:text-base md:text-lg text-foreground font-medium">
             No es un curso tradicional. Es un sistema de aprendizaje basado en:
@@ -215,6 +216,9 @@ const Doc = () => {
             </li>
           </ul>
         </div>
+
+        {/* Timeline Visual de Progresión */}
+        <ProgressTimeline />
 
         {/* Cómo usar esta documentación */}
         <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground mb-6 sm:mb-8 flex items-center gap-2 sm:gap-3">
@@ -256,7 +260,7 @@ const Doc = () => {
                   </div>
                   <div className="flex-1 min-w-0">
                     <h3 className="text-base sm:text-lg md:text-xl font-bold text-foreground mb-1 sm:mb-2 group-hover:text-orange-400 transition-colors leading-tight">
-                      2. Sesiones (1-6)
+                      2. Sesiones (1-5)
                     </h3>
                     <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-2 sm:mb-3">
                       El corazón del bootcamp. Cada sesión tiene 3 apartados:
@@ -478,30 +482,66 @@ const Doc = () => {
           </div>
         </div>
 
-        {/* Call to Action */}
-        <div className="p-8 bg-gradient-to-r from-orange-500/10 via-purple-500/10 to-blue-500/10 rounded-2xl border border-orange-400/30">
-          <h2 className="text-2xl font-bold text-foreground mb-4">
-            Listo para empezar?
+        {/* Call to Action - Versión Mejorada */}
+        <div className="glass-card p-6 sm:p-8 mt-12 border-2 border-transparent hover:border-orange-400 transition-colors">
+          <h2 className="text-2xl sm:text-3xl font-bold gradient-text mb-6 flex items-center gap-3">
+            <Rocket className="w-7 h-7 sm:w-8 sm:h-8 text-orange-400" />
+            Listo para crear tu primer Regenmon?
           </h2>
-          <p className="text-muted-foreground mb-6 leading-relaxed">
-            Comienza por Quick Start para configurar tu entorno, luego ve directo a Sesión 1.
-            En 2-3 horas tendrás tu primera app desplegada en internet.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Link
-              to="/doc/quick-start"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-lg transition-colors"
-            >
-              Configuración Inicial
-              <ChevronRight size={20} />
-            </Link>
-            <Link
-              to="/doc/session-1"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-orange-400/50 hover:border-orange-400 hover:bg-orange-500/10 text-foreground font-semibold rounded-lg transition-all"
-            >
-              Ir a Sesión 1
-              <ChevronRight size={20} />
-            </Link>
+
+          <div className="grid md:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
+            {/* Paso 1: Quick Start */}
+            <div className="glass-card p-4 sm:p-6 border border-transparent hover:border-orange-400 transition-colors">
+              <h3 className="text-lg sm:text-xl font-bold text-orange-400 mb-3 flex items-center gap-2">
+                <FileCode className="w-5 h-5 sm:w-6 sm:h-6" />
+                Paso 1: Quick Start (20 min)
+              </h3>
+              <p className="text-foreground text-sm sm:text-base mb-4">
+                Configura tu entorno una sola vez. Crea cuentas en v0 y Vercel, conecta todo.
+              </p>
+              <Link
+                to="/doc/quick-start"
+                className="inline-flex items-center gap-2 bg-orange-400 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold hover:bg-orange-500 transition-colors text-sm sm:text-base"
+              >
+                <span>Empezar Setup</span>
+                <ChevronRight size={18} />
+              </Link>
+            </div>
+
+            {/* Paso 2: Sesión 1 */}
+            <div className="glass-card p-4 sm:p-6 border border-transparent hover:border-pink-400 transition-colors">
+              <h3 className="text-lg sm:text-xl font-bold text-pink-400 mb-3 flex items-center gap-2">
+                <Egg className="w-5 h-5 sm:w-6 sm:h-6" />
+                Paso 2: Sesión 1 (2-3 horas)
+              </h3>
+              <p className="text-foreground text-sm sm:text-base mb-4">
+                Construye tu primer Regenmon y publícalo en internet. Esta noche ya tendrás tu app funcionando.
+              </p>
+              <Link
+                to="/doc/session-1"
+                className="inline-flex items-center gap-2 bg-pink-400 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold hover:bg-pink-500 transition-colors text-sm sm:text-base"
+              >
+                <span>Ir a Sesión 1</span>
+                <ChevronRight size={18} />
+              </Link>
+            </div>
+          </div>
+
+          {/* Recomendación con Quote */}
+          <div className="bg-white/5 border border-white/10 rounded-lg p-4 sm:p-6">
+            <p className="text-foreground mb-3 sm:mb-4 font-semibold text-sm sm:text-base flex items-center gap-2">
+              <Lightbulb className="w-5 h-5 text-orange-400" />
+              Recomendación:
+            </p>
+            <p className="text-muted-foreground mb-3 sm:mb-4 text-sm sm:text-base leading-relaxed">
+              Si tienes 3-4 horas disponibles HOY, haz Quick Start + Sesión 1 seguidas.
+              Vas a terminar con tu primera app en internet y ese momentum es CLAVE para
+              mantener la motivación.
+            </p>
+            <p className="text-xs sm:text-sm text-muted-foreground italic border-l-2 border-orange-400 pl-3 sm:pl-4">
+              "La mayoría de la gente que completa Sesión 1 el primer día termina todo el bootcamp.
+              Los que lo dejan para mañana... a veces nunca empiezan." - Brian, creador de VibeCoding
+            </p>
           </div>
         </div>
       </DocContent>

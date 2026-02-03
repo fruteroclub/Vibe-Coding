@@ -232,24 +232,6 @@ const Session1Deliverable = () => {
           Entregable 1: "Regenmon Estático Desplegado"
         </h2>
 
-        <div className="mb-8 p-6 border border-border/50 rounded-lg bg-muted/20">
-          <h3 className="text-xl font-bold text-foreground mb-4">
-            📊 Evaluación por Niveles (Estandarizada)
-          </h3>
-          <p className="text-sm text-muted-foreground mb-2">
-            🔑 <strong>NIVEL 1 — CORE:</strong> Mínimo aceptable para aprobar
-          </p>
-          <p className="text-sm text-muted-foreground mb-2">
-            🎯 <strong>NIVEL 2 — COMPLETO:</strong> Nivel esperado y recomendado
-          </p>
-          <p className="text-sm text-muted-foreground mb-2">
-            ✨ <strong>NIVEL 3 — EXCELENTE:</strong> Alta calidad con cuidado por UX
-          </p>
-          <p className="text-sm text-muted-foreground">
-            🚀 <strong>NIVEL 4 — BONUS:</strong> No obligatorio, solo suma
-          </p>
-        </div>
-
         {/* Progress Bar */}
         <div className="mb-8 p-6 border border-border/50 rounded-lg bg-muted/20">
           <div className="flex items-center justify-between mb-2">

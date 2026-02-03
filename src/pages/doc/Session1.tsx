@@ -1,13 +1,15 @@
 import { DocLayout } from '@/components/doc/DocLayout';
 import { DocContent } from '@/components/doc/DocContent';
 import { Link } from 'react-router-dom';
+import { Egg, Plug } from 'lucide-react';
 
 const Session1 = () => {
   return (
     <DocLayout>
       <DocContent>
-        <h1 className="gradient-text text-4xl font-bold mb-6">
-          🥚 Sesión 1 — Nace tu Regenmon
+        <h1 className="gradient-text text-4xl font-bold mb-6 flex items-center gap-3">
+          <Egg className="w-10 h-10 text-orange-400" />
+          Sesión 1 — Nace tu Regenmon
         </h1>
 
         <p className="text-xl text-orange-400 font-semibold mb-8">
@@ -75,7 +77,7 @@ const Session1 = () => {
               2. Qué es un componente y por qué importa
             </h3>
             <p className="text-muted-foreground mb-4">
-              Conocerás la idea de <span className="text-foreground font-semibold">componentes</span>, que son las piezas que forman una app.
+              Conocerás la idea de <span className="text-foreground font-semibold">componentes</span> (piezas reutilizables de tu interfaz), que son las partes que forman una app.
             </p>
             <p className="text-muted-foreground mb-4">
               No necesitas teoría compleja:
@@ -113,7 +115,7 @@ const Session1 = () => {
               quedarán guardadas para que no desaparezcan.
             </p>
             <p className="text-muted-foreground mt-4">
-              Esto te introduce al concepto de <span className="text-foreground font-semibold">estado y persistencia</span>, algo fundamental en cualquier aplicación real.
+              Esto te introduce al concepto de <span className="text-foreground font-semibold">estado</span> (información que cambia en tu app) y <span className="text-foreground font-semibold">persistencia</span> (guardar datos permanentemente), algo fundamental en cualquier aplicación real.
             </p>
           </div>
 
@@ -129,11 +131,11 @@ const Session1 = () => {
             <ul className="space-y-2 text-muted-foreground ml-6 mb-4">
               <li className="flex items-start gap-2">
                 <span className="text-orange-400">•</span>
-                <span>Conectar tu proyecto a una plataforma de despliegue</span>
+                <span>Conectar tu proyecto a una plataforma de <span className="text-foreground font-semibold">deploy</span> (subir tu app a internet)</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-orange-400">•</span>
-                <span>Publicar tu app automáticamente</span>
+                <span>Publicar tu app automáticamente en <span className="text-foreground font-semibold">producción</span> (funcionando 24/7 en internet)</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-orange-400">•</span>
@@ -244,8 +246,9 @@ const Session1 = () => {
 
         {/* Puente hacia Sesión 2 */}
         <div className="glass-card p-8 mt-12 border-2 border-orange-400/30">
-          <h2 className="text-2xl font-bold text-orange-400 mb-4">
-            🔌 Preparando el siguiente paso
+          <h2 className="text-2xl font-bold text-orange-400 mb-4 flex items-center gap-3">
+            <Plug className="w-7 h-7" />
+            Preparando el siguiente paso
           </h2>
           <p className="text-foreground text-lg mb-4">
             Hasta ahora tu Regenmon es <strong>visual</strong> (tiene cara, stats, botones).

@@ -3,7 +3,7 @@ import { DocLayout } from '@/components/doc/DocLayout';
 import { DocContent } from '@/components/doc/DocContent';
 import { PromptBlock } from '@/components/doc/PromptBlock';
 import { Link } from 'react-router-dom';
-import { ExternalLink, Clock, CheckCircle2 } from 'lucide-react';
+import { ExternalLink, Clock, CheckCircle2, Egg, Brain, User, TrendingUp, Users, Terminal } from 'lucide-react';
 
 const QuickStart = () => {
   const { t } = useTranslation();
@@ -16,6 +16,8 @@ const QuickStart = () => {
       description: t('doc.quickStartPage.sessions.session1.description'),
       whatYouBuild: t('doc.quickStartPage.sessions.session1.whatYouBuild', { returnObjects: true }) as string[],
       prompt: t('doc.quickStartPage.promptsSection.session1Prompt'),
+      icon: <Egg size={32} />,
+      color: 'orange',
     },
     {
       number: 2,
@@ -24,6 +26,8 @@ const QuickStart = () => {
       description: t('doc.quickStartPage.sessions.session2.description'),
       whatYouBuild: t('doc.quickStartPage.sessions.session2.whatYouBuild', { returnObjects: true }) as string[],
       prompt: t('doc.quickStartPage.promptsSection.session2Prompt'),
+      icon: <Brain size={32} />,
+      color: 'purple',
     },
     {
       number: 3,
@@ -32,6 +36,8 @@ const QuickStart = () => {
       description: t('doc.quickStartPage.sessions.session3.description'),
       whatYouBuild: t('doc.quickStartPage.sessions.session3.whatYouBuild', { returnObjects: true }) as string[],
       prompt: t('doc.quickStartPage.promptsSection.session3Prompt'),
+      icon: <User size={32} />,
+      color: 'blue',
     },
     {
       number: 4,
@@ -40,6 +46,8 @@ const QuickStart = () => {
       description: t('doc.quickStartPage.sessions.session4.description'),
       whatYouBuild: t('doc.quickStartPage.sessions.session4.whatYouBuild', { returnObjects: true }) as string[],
       prompt: t('doc.quickStartPage.promptsSection.session4Prompt'),
+      icon: <TrendingUp size={32} />,
+      color: 'green',
     },
     {
       number: 5,
@@ -48,8 +56,21 @@ const QuickStart = () => {
       description: t('doc.quickStartPage.sessions.session5.description'),
       whatYouBuild: t('doc.quickStartPage.sessions.session5.whatYouBuild', { returnObjects: true }) as string[],
       prompt: t('doc.quickStartPage.promptsSection.session5Prompt'),
+      icon: <Users size={32} />,
+      color: 'pink',
     },
   ];
+
+  const getColorClasses = (color: string) => {
+    const colors: Record<string, { border: string; bg: string; text: string }> = {
+      orange: { border: 'border-orange-500', bg: 'bg-orange-500/10', text: 'text-orange-400' },
+      purple: { border: 'border-purple-500', bg: 'bg-purple-500/10', text: 'text-purple-400' },
+      blue: { border: 'border-blue-500', bg: 'bg-blue-500/10', text: 'text-blue-400' },
+      green: { border: 'border-green-500', bg: 'bg-green-500/10', text: 'text-green-400' },
+      pink: { border: 'border-pink-500', bg: 'bg-pink-500/10', text: 'text-pink-400' },
+    };
+    return colors[color];
+  };
 
   return (
     <DocLayout>
@@ -117,7 +138,7 @@ const QuickStart = () => {
               {t('doc.quickStartPage.setup.step2.title')}
             </h3>
             <p className="text-muted-foreground mb-2">
-              {t('doc.quickStartPage.setup.step2.description')}
+              Inicia sesión con GitHub o con tu cuenta de Google.
             </p>
             <p className="text-sm text-muted-foreground/70 italic">
               {t('doc.quickStartPage.setup.step2.note')}
@@ -130,7 +151,7 @@ const QuickStart = () => {
               {t('doc.quickStartPage.setup.step3.title')}
             </h3>
             <p className="text-muted-foreground mb-3">
-              {t('doc.quickStartPage.setup.step3.description')}
+              Ve al área de "What do you want to create?" y sigue las instrucciones para configurar tu proyecto.
             </p>
             <a
               href="https://vercel.com"
@@ -152,83 +173,68 @@ const QuickStart = () => {
           {t('doc.quickStartPage.sessions.description')}
         </p>
 
-        {sessions.map((session) => (
-          <div key={session.number} className="mb-16 pb-8 border-b border-border/30 last:border-0">
-            {/* Header de Sesión */}
-            <div className="mb-6">
-              <div className="flex items-center justify-between mb-3">
-                <h3 className="text-2xl font-bold text-green-400">
-                  {session.title}
-                </h3>
-                <div className="flex items-center gap-2 text-muted-foreground/60 text-sm">
-                  <Clock size={14} />
-                  <span>{session.duration}</span>
+        {sessions.map((session) => {
+          const colorClasses = getColorClasses(session.color);
+          return (
+            <div key={session.number} className={`glass-card p-8 border-l-4 ${colorClasses.border} mb-12`}>
+              {/* Header con icono */}
+              <div className="flex items-start gap-4 mb-6">
+                <div className={`${colorClasses.text}`}>
+                  {session.icon}
+                </div>
+                <div className="flex-1">
+                  <div className="flex items-center justify-between mb-2">
+                    <h3 className={`text-2xl font-bold ${colorClasses.text}`}>
+                      {session.title}
+                    </h3>
+                    <div className="flex items-center gap-2 text-muted-foreground/60 text-sm">
+                      <Clock size={14} />
+                      <span>{session.duration}</span>
+                    </div>
+                  </div>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {session.description}
+                  </p>
                 </div>
               </div>
-              <p className="text-muted-foreground mb-4 ml-1">
-                {session.description}
-              </p>
 
               {/* Lo que construirás */}
-              <div className="mt-5 ml-4">
-                <p className="text-sm text-muted-foreground/70 mb-2">
+              <div className={`${colorClasses.bg} p-5 rounded-lg border ${colorClasses.border} mb-6`}>
+                <h4 className="font-semibold text-foreground mb-3 flex items-center gap-2">
+                  <CheckCircle2 size={18} className={colorClasses.text} />
                   Lo que construirás:
-                </p>
+                </h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                   {session.whatYouBuild.map((item, i) => (
                     <div key={i} className="flex items-start gap-2">
-                      <span className="text-green-400/80 text-sm mt-0.5">→</span>
-                      <span className="text-sm text-foreground/80">{item}</span>
+                      <span className={`${colorClasses.text} text-sm mt-0.5`}>→</span>
+                      <span className="text-sm text-foreground/90">{item}</span>
                     </div>
                   ))}
                 </div>
               </div>
-            </div>
 
-            {/* Sub-apartados */}
-            <div className="space-y-8">
+              {/* Entregable */}
+              <div className={`${colorClasses.bg} p-5 rounded-lg border ${colorClasses.border} mb-6`}>
+                <p className="text-muted-foreground text-sm leading-relaxed italic">
+                  {t(`doc.quickStartPage.sessions.session${session.number}.deliverable`)}
+                </p>
+              </div>
+
               {/* Prompt */}
               <div>
-                <h4 className="text-xl font-semibold text-orange-400 mb-4">
-                  📝 {t('doc.quickStartPage.subsections.prompt')}
+                <h4 className="text-lg font-semibold text-foreground mb-4 flex items-center gap-2">
+                  <Terminal size={18} className={colorClasses.text} />
+                  {t('doc.quickStartPage.subsections.prompt')}
                 </h4>
                 <PromptBlock
                   prompt={session.prompt}
                   title={`Prompt para ${session.title}`}
                 />
               </div>
-
-              {/* Entregable */}
-              <div>
-                <h4 className="text-xl font-semibold text-orange-400 mb-4">
-                  🎯 {t('doc.quickStartPage.subsections.deliverable')}
-                </h4>
-                <div className="p-6 border border-border/50 rounded-lg bg-muted/20">
-                  <p className="text-muted-foreground">
-                    {t(`doc.quickStartPage.sessions.session${session.number}.deliverable`)}
-                  </p>
-                </div>
-              </div>
-
-              {/* Material de Apoyo */}
-              <div>
-                <h4 className="text-xl font-semibold text-orange-400 mb-4">
-                  📚 {t('doc.quickStartPage.subsections.supportMaterial')}
-                </h4>
-                <div className="p-6 border border-border/50 rounded-lg bg-muted/20">
-                  <ul className="space-y-2">
-                    {(t(`doc.quickStartPage.sessions.session${session.number}.supportMaterial`, { returnObjects: true }) as string[]).map((material, i) => (
-                      <li key={i} className="flex items-start gap-3">
-                        <span className="text-orange-400 mt-1">•</span>
-                        <span className="text-muted-foreground">{material}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
 
         {/* Navegación */}
         <div className="mt-20 flex items-center justify-between border-t border-border/50 pt-8">

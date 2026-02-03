@@ -11,6 +11,8 @@ import {
   X,
   ChevronRight
 } from 'lucide-react';
+import { ComprehensionCheckpoint } from '@/components/doc/ComprehensionCheckpoint';
+import { AnalogyCard } from '@/components/doc/AnalogyCard';
 
 interface ResourceSection {
   id: string;
@@ -357,7 +359,7 @@ const Session4Support = () => {
         </p>
 
         {/* Resource Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
           {resources.map((resource) => (
             <button
               key={resource.id}
@@ -388,6 +390,80 @@ const Session4Support = () => {
             </button>
           ))}
         </div>
+
+        {/* Analogías Visuales */}
+        <div className="mb-8">
+          <h2 className="text-2xl font-bold text-foreground mb-6">
+            💡 Entendiendo con Analogías
+          </h2>
+
+          <AnalogyCard
+            technical="IA Multimodal (texto + imágenes)"
+            analogy="Médico que no solo escucha, también examina"
+            explanation="Imagina ir al doctor y solo poder describirle tu síntoma con palabras ('me duele aquí'). Ahora imagina que además puede VER la zona, examinarla. La IA multimodal es eso: antes solo podías escribirle texto ('entrené hoy'), ahora puedes MOSTRARLE la evidencia con una imagen. La IA 've' la foto de tu ejercicio/dibujo/comida y te da feedback más preciso, porque tiene más contexto."
+          />
+
+          <AnalogyCard
+            technical="Sistema de progresión con XP y niveles"
+            analogy="Cinturones en karate"
+            explanation="En karate empiezas con cinturón blanco, entrenas, pasas examen, subes a amarillo, naranja, verde... hasta negro. No saltas de blanco a negro en un día. El sistema de XP funciona igual: cada entrenamiento suma puntos (experiencia), al acumular X puntos subes de nivel, tu Regenmon evoluciona visualmente (huevo → bebé → adulto). Cada nivel es un logro visible que premia tu constancia, no solo un día perfecto."
+          />
+        </div>
+
+        {/* Comprehension Checkpoint */}
+        <ComprehensionCheckpoint
+          title="🎯 Checkpoint: ¿Entiendes visión por IA y progresión?"
+          questions={[
+            {
+              id: 's4-q1',
+              question: '¿Qué significa que Claude sea "multimodal"?',
+              options: [
+                'Puede responder en varios idiomas',
+                'Puede procesar texto E imágenes, no solo texto',
+                'Es más rápido que otras IAs',
+                'Solo funciona con texto'
+              ],
+              correctAnswer: 1,
+              explanation: 'Multimodal significa que Claude puede procesar múltiples tipos de entrada: texto E imágenes. Puedes enviarle una foto de tu Regenmon dibujado y Claude lo "ve" y describe. Antes solo procesaba texto.'
+            },
+            {
+              id: 's4-q2',
+              question: '¿Para qué sirve un sistema de progresión/experiencia en tu app?',
+              options: [
+                'Solo para decoración',
+                'Para que el usuario sienta avance, logros y motivación continua',
+                'Es obligatorio en todas las apps',
+                'Para hacer la app más lenta'
+              ],
+              correctAnswer: 1,
+              explanation: 'El sistema de progresión crea engagement: entrenar → ganar XP → subir nivel → evolucionar. Es gamificación: el usuario siente que avanza, logra objetivos, y quiere seguir usando la app. Como en un videojuego.'
+            },
+            {
+              id: 's4-q3',
+              question: '¿Cómo funciona la "evolución visual" del Regenmon?',
+              options: [
+                'La IA genera imágenes nuevas automáticamente',
+                'Cambias la imagen mostrada según el nivel alcanzado',
+                'Se descarga de internet',
+                'No es posible implementarlo'
+              ],
+              correctAnswer: 1,
+              explanation: 'La evolución visual es simple: tienes 3 imágenes diferentes (huevo, bebé, adulto). Según el nivel, muestras una u otra. Nivel 1-5 → huevo.png, Nivel 6-10 → bebe.png, Nivel 11+ → adulto.png. Pura lógica condicional.'
+            },
+            {
+              id: 's4-q4',
+              question: '¿Qué hace la IA cuando le envías una imagen del Regenmon?',
+              options: [
+                'La guarda en la base de datos',
+                'La analiza y describe qué ve (color, estado, emoción)',
+                'La borra automáticamente',
+                'Solo funciona con texto'
+              ],
+              correctAnswer: 1,
+              explanation: 'La IA multimodal "ve" la imagen y la describe: "Veo un Regenmon rojo que parece cansado y triste". Esto permite feedback dinámico: subes foto → IA analiza estado → responde según lo que ve. Es visión por computadora con lenguaje natural.'
+            }
+          ]}
+        />
 
         {/* Entregable Section */}
         <div className="my-12 glass-card p-6 border-l-4 border-green-500">

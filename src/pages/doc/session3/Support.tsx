@@ -11,6 +11,8 @@ import {
   X,
   ChevronRight
 } from 'lucide-react';
+import { ComprehensionCheckpoint } from '@/components/doc/ComprehensionCheckpoint';
+import { AnalogyCard } from '@/components/doc/AnalogyCard';
 
 interface ResourceSection {
   id: string;
@@ -322,7 +324,7 @@ const Session3Support = () => {
         </p>
 
         {/* Resource Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
           {resources.map((resource) => (
             <button
               key={resource.id}
@@ -353,6 +355,80 @@ const Session3Support = () => {
             </button>
           ))}
         </div>
+
+        {/* Analogías Visuales */}
+        <div className="mb-8">
+          <h2 className="text-2xl font-bold text-foreground mb-6">
+            💡 Entendiendo con Analogías
+          </h2>
+
+          <AnalogyCard
+            technical="Base de datos (Supabase) vs localStorage"
+            analogy="Almacén profesional vs tu closet"
+            explanation="localStorage es como guardar cosas en tu closet: rápido, práctico, pero solo tú (desde ese navegador) puedes verlo. Si cambias de computadora, tu closet no te sigue. Supabase es como un almacén profesional en la nube: guardas ahí tus cosas importantes (monedas, progreso, perfil) y las puedes acceder desde cualquier dispositivo, en cualquier momento. Además, el almacén tiene seguridad (RLS) para que nadie más toque tus cosas."
+          />
+
+          <AnalogyCard
+            technical="Token de autenticación"
+            analogy="Pase VIP temporal de un concierto"
+            explanation="Cuando haces login, recibes un 'token' que es como un pase VIP temporal. Cada vez que pides algo a la base de datos ('Quiero ver mis monedas'), muestras tu pase VIP. El sistema verifica: '¿Este pase es válido? ¿No ha expirado? ¿Es realmente tuyo?' Si todo está bien, te deja pasar. Si el pase expira o es falso, te pide hacer login de nuevo (renovar tu pase)."
+          />
+        </div>
+
+        {/* Comprehension Checkpoint */}
+        <ComprehensionCheckpoint
+          title="🎯 Checkpoint: ¿Entiendes autenticación y datos?"
+          questions={[
+            {
+              id: 's3-q1',
+              question: '¿Qué es Supabase y para qué sirve?',
+              options: [
+                'Un framework de frontend',
+                'Una base de datos que guarda información permanente de usuarios',
+                'Un servicio de autenticación únicamente',
+                'Una herramienta de diseño'
+              ],
+              correctAnswer: 1,
+              explanation: 'Supabase es una base de datos PostgreSQL en la nube que guarda información permanente. Es como un Excel gigante que vive en internet: guardas las monedas de tu Regenmon, su energía, experiencia, y todo persiste aunque cierres la app.'
+            },
+            {
+              id: 's3-q2',
+              question: '¿Por qué necesitas autenticación (login)?',
+              options: [
+                'Solo para verse profesional',
+                'Para que cada usuario tenga su propio Regenmon y datos separados',
+                'Es opcional, puedes saltarlo',
+                'Solo para apps grandes'
+              ],
+              correctAnswer: 1,
+              explanation: 'Sin login, todos verían el mismo Regenmon. Con login, cada persona tiene su propio Regenmon, sus propias monedas, su progreso. Es como tener cuentas separadas en Netflix: cada quien ve su contenido.'
+            },
+            {
+              id: 's3-q3',
+              question: '¿Qué hace Row Level Security (RLS) en Supabase?',
+              options: [
+                'Hace la base de datos más rápida',
+                'Asegura que cada usuario solo vea y modifique SUS propios datos',
+                'Encripta las contraseñas',
+                'Hace backups automáticos'
+              ],
+              correctAnswer: 1,
+              explanation: 'RLS asegura que el Usuario A solo vea su Regenmon, y el Usuario B solo vea el suyo. Es como tener casilleros con llave: cada quien solo puede abrir el suyo. Sin RLS, alguien podría ver o modificar datos de otros.'
+            },
+            {
+              id: 's3-q4',
+              question: '¿Qué es un "sistema de recursos" como monedas virtuales?',
+              options: [
+                'Dinero real que se puede retirar',
+                'Una variable que controla qué puede hacer el usuario (gastar, ganar, comprar)',
+                'Solo decoración visual',
+                'Un error de programación'
+              ],
+              correctAnswer: 1,
+              explanation: 'Las monedas virtuales son un sistema de recursos: ganas puntos entrenando, los gastas en comida. La lógica valida: "¿Tienes suficientes monedas? Sí → Permite compra. No → Muestra error". Es gamificación aplicada.'
+            }
+          ]}
+        />
 
         {/* Entregable Section */}
         <div className="my-12 glass-card p-6 border-l-4 border-green-500">
