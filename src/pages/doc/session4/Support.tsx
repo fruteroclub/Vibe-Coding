@@ -9,7 +9,11 @@ import {
   TrendingUp,
   Images,
   X,
-  ChevronRight
+  ChevronRight,
+  Lightbulb,
+  RefreshCw,
+  ChevronDown,
+  ChevronUp
 } from 'lucide-react';
 import { ComprehensionCheckpoint } from '@/components/doc/ComprehensionCheckpoint';
 import { AnalogyCard } from '@/components/doc/AnalogyCard';
@@ -28,6 +32,7 @@ interface ResourceSection {
 
 const Session4Support = () => {
   const [selectedResource, setSelectedResource] = useState<ResourceSection | null>(null);
+  const [showCheckpoint, setShowCheckpoint] = useState(false);
 
   const resources: ResourceSection[] = [
     {
@@ -391,29 +396,33 @@ const Session4Support = () => {
           ))}
         </div>
 
-        {/* Analogías Visuales */}
-        <div className="mb-8">
-          <h2 className="text-2xl font-bold text-foreground mb-6">
-            💡 Entendiendo con Analogías
-          </h2>
+        {/* Comprehension Checkpoint - Colapsable */}
+        <div className="mb-12">
+          <button
+            type="button"
+            onClick={() => setShowCheckpoint(!showCheckpoint)}
+            className="w-full glass-card p-6 border-l-4 border-purple-500 hover:border-purple-400 transition-colors group"
+          >
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <RefreshCw className="w-6 h-6 text-purple-400" />
+                <h2 className="text-xl font-bold text-purple-400">
+                  Checkpoint: ¿Entiendes visión por IA y progresión?
+                </h2>
+              </div>
+              {showCheckpoint ? (
+                <ChevronUp className="w-5 h-5 text-muted-foreground group-hover:text-purple-400 transition-colors" />
+              ) : (
+                <ChevronDown className="w-5 h-5 text-muted-foreground group-hover:text-purple-400 transition-colors" />
+              )}
+            </div>
+          </button>
 
-          <AnalogyCard
-            technical="IA Multimodal (texto + imágenes)"
-            analogy="Médico que no solo escucha, también examina"
-            explanation="Imagina ir al doctor y solo poder describirle tu síntoma con palabras ('me duele aquí'). Ahora imagina que además puede VER la zona, examinarla. La IA multimodal es eso: antes solo podías escribirle texto ('entrené hoy'), ahora puedes MOSTRARLE la evidencia con una imagen. La IA 've' la foto de tu ejercicio/dibujo/comida y te da feedback más preciso, porque tiene más contexto."
-          />
-
-          <AnalogyCard
-            technical="Sistema de progresión con XP y niveles"
-            analogy="Cinturones en karate"
-            explanation="En karate empiezas con cinturón blanco, entrenas, pasas examen, subes a amarillo, naranja, verde... hasta negro. No saltas de blanco a negro en un día. El sistema de XP funciona igual: cada entrenamiento suma puntos (experiencia), al acumular X puntos subes de nivel, tu Regenmon evoluciona visualmente (huevo → bebé → adulto). Cada nivel es un logro visible que premia tu constancia, no solo un día perfecto."
-          />
-        </div>
-
-        {/* Comprehension Checkpoint */}
-        <ComprehensionCheckpoint
-          title="🎯 Checkpoint: ¿Entiendes visión por IA y progresión?"
-          questions={[
+          {showCheckpoint && (
+            <div className="mt-4">
+              <ComprehensionCheckpoint
+                title=""
+                questions={[
             {
               id: 's4-q1',
               question: '¿Qué significa que Claude sea "multimodal"?',
@@ -464,39 +473,30 @@ const Session4Support = () => {
             }
           ]}
         />
+            </div>
+          )}
+        </div>
 
-        {/* Entregable Section */}
-        <div className="my-12 glass-card p-6 border-l-4 border-green-500">
-          <h2 className="text-2xl font-bold text-green-400 mb-4">
-            ✅ Entregable de la Sesión 4
+        {/* Analogías Visuales - Grid 2 columnas */}
+        <div className="mb-12">
+          <h2 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-3">
+            <Lightbulb className="w-7 h-7 text-orange-400" />
+            Entendiendo con Analogías
           </h2>
-          <p className="text-muted-foreground mb-4">
-            Al finalizar esta sesión, el alumno tiene:
-          </p>
-          <div className="space-y-2 ml-4">
-            <div className="flex items-start gap-3">
-              <span className="text-green-400 mt-1">✓</span>
-              <span className="text-foreground">Evaluación con imágenes</span>
-            </div>
-            <div className="flex items-start gap-3">
-              <span className="text-green-400 mt-1">✓</span>
-              <span className="text-foreground">Feedback automático y entendible</span>
-            </div>
-            <div className="flex items-start gap-3">
-              <span className="text-green-400 mt-1">✓</span>
-              <span className="text-foreground">Sistema de evolución visible</span>
-            </div>
-            <div className="flex items-start gap-3">
-              <span className="text-green-400 mt-1">✓</span>
-              <span className="text-foreground">Historial claro de progreso</span>
-            </div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            <AnalogyCard
+              technical="IA Multimodal (texto + imágenes)"
+              analogy="Médico que no solo escucha, también examina"
+              explanation="Imagina ir al doctor y solo poder describirle tu síntoma con palabras ('me duele aquí'). Ahora imagina que además puede VER la zona, examinarla. La IA multimodal es eso: antes solo podías escribirle texto ('entrené hoy'), ahora puedes MOSTRARLE la evidencia con una imagen. La IA 've' la foto de tu ejercicio/dibujo/comida y te da feedback más preciso, porque tiene más contexto."
+            />
+
+            <AnalogyCard
+              technical="Sistema de progresión con XP y niveles"
+              analogy="Cinturones en karate"
+              explanation="En karate empiezas con cinturón blanco, entrenas, pasas examen, subes a amarillo, naranja, verde... hasta negro. No saltas de blanco a negro en un día. El sistema de XP funciona igual: cada entrenamiento suma puntos (experiencia), al acumular X puntos subes de nivel, tu Regenmon evoluciona visualmente (huevo → bebé → adulto). Cada nivel es un logro visible que premia tu constancia, no solo un día perfecto."
+            />
           </div>
-          <p className="text-foreground font-medium mt-6">
-            El Regenmon ya no solo reacciona:
-          </p>
-          <p className="text-muted-foreground italic">
-            Evoluciona como reflejo de tus acciones.
-          </p>
         </div>
 
         {/* Navegación */}

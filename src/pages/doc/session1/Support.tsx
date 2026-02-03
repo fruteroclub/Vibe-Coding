@@ -9,7 +9,11 @@ import {
   Component,
   Rocket,
   X,
-  ChevronRight
+  ChevronRight,
+  Lightbulb,
+  RefreshCw,
+  ChevronDown,
+  ChevronUp
 } from 'lucide-react';
 import { ComprehensionCheckpoint } from '@/components/doc/ComprehensionCheckpoint';
 import { AnalogyCard } from '@/components/doc/AnalogyCard';
@@ -28,6 +32,7 @@ interface ResourceSection {
 
 const Session1Support = () => {
   const [selectedResource, setSelectedResource] = useState<ResourceSection | null>(null);
+  const [showCheckpoint, setShowCheckpoint] = useState(false);
 
   const resources: ResourceSection[] = [
     {
@@ -304,29 +309,33 @@ const Session1Support = () => {
           ))}
         </div>
 
-        {/* Analogies Section */}
-        <div className="mb-8">
-          <h2 className="text-2xl font-bold text-foreground mb-6">
-            💡 Entendiendo con Analogías
-          </h2>
+        {/* Comprehension Checkpoint - Colapsable */}
+        <div className="mb-12">
+          <button
+            type="button"
+            onClick={() => setShowCheckpoint(!showCheckpoint)}
+            className="w-full glass-card p-6 border-l-4 border-purple-500 hover:border-purple-400 transition-colors group"
+          >
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <RefreshCw className="w-6 h-6 text-purple-400" />
+                <h2 className="text-xl font-bold text-purple-400">
+                  Checkpoint: ¿Entendiste los conceptos clave?
+                </h2>
+              </div>
+              {showCheckpoint ? (
+                <ChevronUp className="w-5 h-5 text-muted-foreground group-hover:text-purple-400 transition-colors" />
+              ) : (
+                <ChevronDown className="w-5 h-5 text-muted-foreground group-hover:text-purple-400 transition-colors" />
+              )}
+            </div>
+          </button>
 
-          <AnalogyCard
-            technical="Componente en React"
-            analogy="Bloques de Lego"
-            explanation="Así como construyes con bloques de Lego donde cada pieza tiene una función (una ventana, una puerta, una rueda), en React cada componente es una pieza reutilizable. Tu botón es un componente, tu tarjeta de Regenmon es un componente. Los combinas para crear la app completa."
-          />
-
-          <AnalogyCard
-            technical="Deploy a producción"
-            analogy="Publicar un video en YouTube"
-            explanation="Trabajaste en tu video (app) en tu computadora editando, mejorando, probando. Hacer deploy es como subirlo a YouTube (internet) para que todos puedan verlo 24/7 desde cualquier dispositivo. Ya no está solo en tu máquina, está en la nube."
-          />
-        </div>
-
-        {/* Comprehension Checkpoint */}
-        <ComprehensionCheckpoint
-          title="🎯 Checkpoint: ¿Entendiste los conceptos clave?"
-          questions={[
+          {showCheckpoint && (
+            <div className="mt-4">
+              <ComprehensionCheckpoint
+                title=""
+                questions={[
             {
               id: 's1-q1',
               question: '¿Qué significa programar con IA en VibeCoding?',
@@ -377,6 +386,31 @@ const Session1Support = () => {
             }
           ]}
         />
+            </div>
+          )}
+        </div>
+
+        {/* Analogies Section - Grid 2 columnas */}
+        <div className="mb-12">
+          <h2 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-3">
+            <Lightbulb className="w-7 h-7 text-orange-400" />
+            Entendiendo con Analogías
+          </h2>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            <AnalogyCard
+              technical="Componente en React"
+              analogy="Bloques de Lego"
+              explanation="Así como construyes con bloques de Lego donde cada pieza tiene una función (una ventana, una puerta, una rueda), en React cada componente es una pieza reutilizable. Tu botón es un componente, tu tarjeta de Regenmon es un componente. Los combinas para crear la app completa."
+            />
+
+            <AnalogyCard
+              technical="Deploy a producción"
+              analogy="Publicar un video en YouTube"
+              explanation="Trabajaste en tu video (app) en tu computadora editando, mejorando, probando. Hacer deploy es como subirlo a YouTube (internet) para que todos puedan verlo 24/7 desde cualquier dispositivo. Ya no está solo en tu máquina, está en la nube."
+            />
+          </div>
+        </div>
 
         {/* Navigation */}
         <div className="mt-16 flex items-center justify-between border-t border-border/50 pt-8">

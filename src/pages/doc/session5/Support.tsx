@@ -9,7 +9,11 @@ import {
   Heart,
   Bell,
   X,
-  ChevronRight
+  ChevronRight,
+  Lightbulb,
+  RefreshCw,
+  ChevronDown,
+  ChevronUp
 } from 'lucide-react';
 import { ComprehensionCheckpoint } from '@/components/doc/ComprehensionCheckpoint';
 import { AnalogyCard } from '@/components/doc/AnalogyCard';
@@ -28,6 +32,7 @@ interface ResourceSection {
 
 const Session5Support = () => {
   const [selectedResource, setSelectedResource] = useState<ResourceSection | null>(null);
+  const [showCheckpoint, setShowCheckpoint] = useState(false);
 
   const resources: ResourceSection[] = [
     {
@@ -369,29 +374,33 @@ const Session5Support = () => {
           ))}
         </div>
 
-        {/* Analogías Visuales */}
-        <div className="mb-8">
-          <h2 className="text-2xl font-bold text-foreground mb-6">
-            💡 Entendiendo con Analogías
-          </h2>
+        {/* Comprehension Checkpoint - Colapsable */}
+        <div className="mb-12">
+          <button
+            type="button"
+            onClick={() => setShowCheckpoint(!showCheckpoint)}
+            className="w-full glass-card p-6 border-l-4 border-purple-500 hover:border-purple-400 transition-colors group"
+          >
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <RefreshCw className="w-6 h-6 text-purple-400" />
+                <h2 className="text-xl font-bold text-purple-400">
+                  Checkpoint: ¿Entiendes features sociales?
+                </h2>
+              </div>
+              {showCheckpoint ? (
+                <ChevronUp className="w-5 h-5 text-muted-foreground group-hover:text-purple-400 transition-colors" />
+              ) : (
+                <ChevronDown className="w-5 h-5 text-muted-foreground group-hover:text-purple-400 transition-colors" />
+              )}
+            </div>
+          </button>
 
-          <AnalogyCard
-            technical="Perfil público del Regenmon"
-            analogy="Vitrina de tu tienda"
-            explanation="Imagina que tu Regenmon es tu producto favorito que has creado con esfuerzo. Un perfil público es como poner una vitrina con vidrio transparente en la calle: la gente que pasa puede VER tu Regenmon, su nivel, sus logros, pero no pueden tocarlo ni modificarlo. Solo tú tienes la llave de la tienda (tu cuenta). Si no quieres vitrina, puedes dejar tu perfil privado (persianas cerradas) y solo tú lo ves."
-          />
-
-          <AnalogyCard
-            technical="Feed social con actividad de otros usuarios"
-            analogy="Tablón de anuncios del barrio"
-            explanation="El feed social es como el tablón de anuncios de tu colonia donde todos ponen noticias: 'Juan corrió 5km hoy', 'María leyó 2 libros esta semana'. En tu app es igual: 'Carlos subió a nivel 10', 'Ana evolucionó su Regenmon a etapa adulta'. No es invasivo, no es obligatorio mirarlo, pero si lo haces te motiva ver que otros también están avanzando. Es comunidad sin presión."
-          />
-        </div>
-
-        {/* Comprehension Checkpoint */}
-        <ComprehensionCheckpoint
-          title="🎯 Checkpoint: ¿Entiendes features sociales?"
-          questions={[
+          {showCheckpoint && (
+            <div className="mt-4">
+              <ComprehensionCheckpoint
+                title=""
+                questions={[
             {
               id: 's5-q1',
               question: '¿Qué es un "perfil público" en tu app?',
@@ -442,39 +451,30 @@ const Session5Support = () => {
             }
           ]}
         />
+            </div>
+          )}
+        </div>
 
-        {/* Entregable Section */}
-        <div className="my-12 glass-card p-6 border-l-4 border-green-500">
-          <h2 className="text-2xl font-bold text-green-400 mb-4">
-            ✅ Entregable de la Sesión 5
+        {/* Analogías Visuales - Grid 2 columnas */}
+        <div className="mb-12">
+          <h2 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-3">
+            <Lightbulb className="w-7 h-7 text-orange-400" />
+            Entendiendo con Analogías
           </h2>
-          <p className="text-muted-foreground mb-4">
-            Al finalizar esta sesión, el alumno tiene:
-          </p>
-          <div className="space-y-2 ml-4">
-            <div className="flex items-start gap-3">
-              <span className="text-green-400 mt-1">✓</span>
-              <span className="text-foreground">Regenmon público</span>
-            </div>
-            <div className="flex items-start gap-3">
-              <span className="text-green-400 mt-1">✓</span>
-              <span className="text-foreground">Feed de descubrimiento</span>
-            </div>
-            <div className="flex items-start gap-3">
-              <span className="text-green-400 mt-1">✓</span>
-              <span className="text-foreground">Interacciones sociales</span>
-            </div>
-            <div className="flex items-start gap-3">
-              <span className="text-green-400 mt-1">✓</span>
-              <span className="text-foreground">Sistema de notificaciones</span>
-            </div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            <AnalogyCard
+              technical="Perfil público del Regenmon"
+              analogy="Vitrina de tu tienda"
+              explanation="Imagina que tu Regenmon es tu producto favorito que has creado con esfuerzo. Un perfil público es como poner una vitrina con vidrio transparente en la calle: la gente que pasa puede VER tu Regenmon, su nivel, sus logros, pero no pueden tocarlo ni modificarlo. Solo tú tienes la llave de la tienda (tu cuenta). Si no quieres vitrina, puedes dejar tu perfil privado (persianas cerradas) y solo tú lo ves."
+            />
+
+            <AnalogyCard
+              technical="Feed social con actividad de otros usuarios"
+              analogy="Tablón de anuncios del barrio"
+              explanation="El feed social es como el tablón de anuncios de tu colonia donde todos ponen noticias: 'Juan corrió 5km hoy', 'María leyó 2 libros esta semana'. En tu app es igual: 'Carlos subió a nivel 10', 'Ana evolucionó su Regenmon a etapa adulta'. No es invasivo, no es obligatorio mirarlo, pero si lo haces te motiva ver que otros también están avanzando. Es comunidad sin presión."
+            />
           </div>
-          <p className="text-foreground font-medium mt-6">
-            El Regenmon deja de ser solo una experiencia personal:
-          </p>
-          <p className="text-muted-foreground italic">
-            Se convierte en parte de una comunidad viva.
-          </p>
         </div>
 
         {/* Navegación */}

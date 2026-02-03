@@ -1,3 +1,5 @@
+import { Lightbulb } from 'lucide-react';
+
 interface AnalogyCardProps {
   technical: string;
   analogy: string;
@@ -6,9 +8,9 @@ interface AnalogyCardProps {
 
 export const AnalogyCard = ({ technical, analogy, explanation }: AnalogyCardProps) => {
   return (
-    <div className="glass-card p-6 bg-gradient-to-r from-blue-400/10 to-purple-400/10 border-2 border-blue-400/30 mb-6">
+    <div className="glass-card p-6 border-2 border-blue-400/30 mb-6">
       <div className="flex items-center gap-3 mb-4">
-        <span className="text-3xl">🔄</span>
+        <Lightbulb className="w-8 h-8 text-blue-400" />
         <h3 className="text-xl font-bold text-blue-400">Analogía</h3>
       </div>
 
