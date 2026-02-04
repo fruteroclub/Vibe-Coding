@@ -10,134 +10,134 @@ const Session2 = () => {
     <DocLayout>
       <DocContent>
         <h1 className="gradient-text text-4xl font-bold mb-6">
-          {t('session2.title')}
+          {t('doc.session2.title')}
         </h1>
 
         <p className="text-xl text-orange-400 font-semibold mb-8">
-          {t('session2.subtitle')}
+          {t('doc.session2.subtitle')}
         </p>
 
         <div className="space-y-6 text-muted-foreground text-lg leading-relaxed mb-12">
           <p>
-            {t('session2.intro.p1')}
+            {t('doc.session2.intro.p1')}
           </p>
 
-          <p dangerouslySetInnerHTML={{ __html: t('session2.intro.p2') }} />
+          <p dangerouslySetInnerHTML={{ __html: t('doc.session2.intro.p2') }} />
 
           <p>
-            {t('session2.intro.p3')}
+            {t('doc.session2.intro.p3')}
           </p>
 
           <p className="font-semibold text-foreground">
-            {t('session2.intro.p4')}
+            {t('doc.session2.intro.p4')}
           </p>
         </div>
 
         {/* ¿Qué vas a aprender? */}
         <h2 className="text-3xl font-bold text-orange-400 mb-6">
-          {t('session2.whatYouWillLearn.title')}
+          {t('doc.session2.whatYouWillLearn.title')}
         </h2>
 
         <p className="text-muted-foreground text-lg mb-8">
-          {t('session2.whatYouWillLearn.subtitle')}
+          {t('doc.session2.whatYouWillLearn.subtitle')}
         </p>
 
         <div className="space-y-8 mb-12">
           {/* 1. Qué es un modelo de IA */}
           <div className="glass-card p-6 border-l-4 border-orange-400">
             <h3 className="text-xl font-bold text-foreground mb-4">
-              {t('session2.whatYouWillLearn.items.0.title')}
+              {t('doc.session2.whatYouWillLearn.items.0.title')}
             </h3>
             <p className="text-muted-foreground mb-4">
-              {t('session2.whatYouWillLearn.items.0.p1')}
+              {t('doc.session2.whatYouWillLearn.items.0.p1')}
             </p>
             <p className="text-muted-foreground mb-4">
-              {t('session2.whatYouWillLearn.items.0.p2')}
+              {t('doc.session2.whatYouWillLearn.items.0.p2')}
             </p>
-            <p className="text-muted-foreground font-semibold mb-2">{t('session2.whatYouWillLearn.items.0.subtitle')}</p>
+            <p className="text-muted-foreground font-semibold mb-2">{t('doc.session2.whatYouWillLearn.items.0.subtitle')}</p>
             <ul className="space-y-2 text-muted-foreground ml-6">
-              {t('session2.whatYouWillLearn.items.0.list', { returnObjects: true }).map((item: string, index: number) => (
+              {t('doc.session2.whatYouWillLearn.items.0.list', { returnObjects: true }).map((item: string, index: number) => (
                 <li key={index} className="flex items-start gap-2">
                   <span className="text-orange-400">•</span>
                   <span>{item}</span>
                 </li>
               ))}
             </ul>
-            <p className="text-muted-foreground mt-4" dangerouslySetInnerHTML={{ __html: t('session2.whatYouWillLearn.items.0.footer') }} />
+            <p className="text-muted-foreground mt-4" dangerouslySetInnerHTML={{ __html: t('doc.session2.whatYouWillLearn.items.0.footer') }} />
           </div>
 
           {/* 2. Cómo darle personalidad */}
           <div className="glass-card p-6 border-l-4 border-orange-400">
             <h3 className="text-xl font-bold text-foreground mb-4">
-              {t('session2.whatYouWillLearn.items.1.title')}
+              {t('doc.session2.whatYouWillLearn.items.1.title')}
             </h3>
-            <p className="text-muted-foreground mb-4" dangerouslySetInnerHTML={{ __html: t('session2.whatYouWillLearn.items.1.p1') }} />
-            <p className="text-muted-foreground mb-4" dangerouslySetInnerHTML={{ __html: t('session2.whatYouWillLearn.items.1.p2') }} />
-            <p className="text-muted-foreground font-semibold mb-2">{t('session2.whatYouWillLearn.items.1.subtitle')}</p>
+            <p className="text-muted-foreground mb-4" dangerouslySetInnerHTML={{ __html: t('doc.session2.whatYouWillLearn.items.1.p1') }} />
+            <p className="text-muted-foreground mb-4" dangerouslySetInnerHTML={{ __html: t('doc.session2.whatYouWillLearn.items.1.p2') }} />
+            <p className="text-muted-foreground font-semibold mb-2">{t('doc.session2.whatYouWillLearn.items.1.subtitle')}</p>
             <ul className="space-y-2 text-muted-foreground ml-6 mb-4">
-              {t('session2.whatYouWillLearn.items.1.list', { returnObjects: true }).map((item: string, index: number) => (
+              {t('doc.session2.whatYouWillLearn.items.1.list', { returnObjects: true }).map((item: string, index: number) => (
                 <li key={index} className="flex items-start gap-2">
                   <span className="text-orange-400">•</span>
                   <span>{item}</span>
                 </li>
               ))}
             </ul>
-            <p className="text-muted-foreground" dangerouslySetInnerHTML={{ __html: t('session2.whatYouWillLearn.items.1.footer') }} />
+            <p className="text-muted-foreground" dangerouslySetInnerHTML={{ __html: t('doc.session2.whatYouWillLearn.items.1.footer') }} />
           </div>
 
           {/* 3. Cómo mostrar una conversación */}
           <div className="glass-card p-6 border-l-4 border-orange-400">
             <h3 className="text-xl font-bold text-foreground mb-4">
-              {t('session2.whatYouWillLearn.items.2.title')}
+              {t('doc.session2.whatYouWillLearn.items.2.title')}
             </h3>
             <p className="text-muted-foreground mb-4">
-              {t('session2.whatYouWillLearn.items.2.description')}
+              {t('doc.session2.whatYouWillLearn.items.2.description')}
             </p>
-            <p className="text-muted-foreground font-semibold mb-2">{t('session2.whatYouWillLearn.items.2.subtitle')}</p>
+            <p className="text-muted-foreground font-semibold mb-2">{t('doc.session2.whatYouWillLearn.items.2.subtitle')}</p>
             <ul className="space-y-2 text-muted-foreground ml-6 mb-4">
-              {t('session2.whatYouWillLearn.items.2.list', { returnObjects: true }).map((item: string, index: number) => (
+              {t('doc.session2.whatYouWillLearn.items.2.list', { returnObjects: true }).map((item: string, index: number) => (
                 <li key={index} className="flex items-start gap-2">
                   <span className="text-orange-400">•</span>
                   <span>{item}</span>
                 </li>
               ))}
             </ul>
-            <p className="text-muted-foreground" dangerouslySetInnerHTML={{ __html: t('session2.whatYouWillLearn.items.2.footer') }} />
+            <p className="text-muted-foreground" dangerouslySetInnerHTML={{ __html: t('doc.session2.whatYouWillLearn.items.2.footer') }} />
           </div>
 
           {/* 4. Memoria del chat */}
           <div className="glass-card p-6 border-l-4 border-orange-400">
             <h3 className="text-xl font-bold text-foreground mb-4">
-              {t('session2.whatYouWillLearn.items.3.title')}
+              {t('doc.session2.whatYouWillLearn.items.3.title')}
             </h3>
             <p className="text-muted-foreground mb-4">
-              {t('session2.whatYouWillLearn.items.3.p1')}
+              {t('doc.session2.whatYouWillLearn.items.3.p1')}
             </p>
-            <p className="text-muted-foreground mb-4" dangerouslySetInnerHTML={{ __html: t('session2.whatYouWillLearn.items.3.p2') }} />
-            <p className="text-muted-foreground font-semibold mb-2">{t('session2.whatYouWillLearn.items.3.subtitle')}</p>
+            <p className="text-muted-foreground mb-4" dangerouslySetInnerHTML={{ __html: t('doc.session2.whatYouWillLearn.items.3.p2') }} />
+            <p className="text-muted-foreground font-semibold mb-2">{t('doc.session2.whatYouWillLearn.items.3.subtitle')}</p>
             <ul className="space-y-2 text-muted-foreground ml-6">
-              {t('session2.whatYouWillLearn.items.3.list', { returnObjects: true }).map((item: string, index: number) => (
+              {t('doc.session2.whatYouWillLearn.items.3.list', { returnObjects: true }).map((item: string, index: number) => (
                 <li key={index} className="flex items-start gap-2">
                   <span className="text-orange-400">•</span>
                   <span>{item}</span>
                 </li>
               ))}
             </ul>
-            <p className="text-muted-foreground mt-4" dangerouslySetInnerHTML={{ __html: t('session2.whatYouWillLearn.items.3.footer') }} />
+            <p className="text-muted-foreground mt-4" dangerouslySetInnerHTML={{ __html: t('doc.session2.whatYouWillLearn.items.3.footer') }} />
           </div>
         </div>
 
         {/* ¿Qué vas a hacer? */}
         <h2 className="text-3xl font-bold text-orange-400 mb-6">
-          {t('session2.whatYouWillDo.title')}
+          {t('doc.session2.whatYouWillDo.title')}
         </h2>
 
         <p className="text-muted-foreground text-lg mb-4">
-          {t('session2.whatYouWillDo.subtitle')}
+          {t('doc.session2.whatYouWillDo.subtitle')}
         </p>
 
         <ul className="space-y-3 text-muted-foreground ml-6 mb-12">
-          {t('session2.whatYouWillDo.list', { returnObjects: true }).map((item: string, index: number) => (
+          {t('doc.session2.whatYouWillDo.list', { returnObjects: true }).map((item: string, index: number) => (
             <li key={index} className="flex items-start gap-2">
               <span className="text-orange-400">•</span>
               <span>{item}</span>
@@ -146,20 +146,20 @@ const Session2 = () => {
         </ul>
 
         <p className="text-muted-foreground text-lg mb-12">
-          {t('session2.whatYouWillDo.footer')}
+          {t('doc.session2.whatYouWillDo.footer')}
         </p>
 
         {/* ¿Qué se espera que logres? */}
         <h2 className="text-3xl font-bold text-orange-400 mb-6">
-          {t('session2.whatYouWillAchieve.title')}
+          {t('doc.session2.whatYouWillAchieve.title')}
         </h2>
 
         <p className="text-muted-foreground text-lg mb-4">
-          {t('session2.whatYouWillAchieve.subtitle')}
+          {t('doc.session2.whatYouWillAchieve.subtitle')}
         </p>
 
         <ul className="space-y-3 text-muted-foreground ml-6 mb-8">
-          {t('session2.whatYouWillAchieve.list', { returnObjects: true }).map((item: string, index: number) => (
+          {t('doc.session2.whatYouWillAchieve.list', { returnObjects: true }).map((item: string, index: number) => (
             <li key={index} className="flex items-start gap-2">
               <span className="text-orange-400">•</span>
               <span>{item}</span>
@@ -169,43 +169,43 @@ const Session2 = () => {
 
         <div className="glass-card p-6 border-l-4 border-orange-400 bg-orange-500/5 mb-12">
           <p className="text-foreground text-lg font-semibold">
-            {t('session2.whatYouWillAchieve.important.intro')}
+            {t('doc.session2.whatYouWillAchieve.important.intro')}
           </p>
           <p className="text-foreground text-xl mt-2">
-            {t('session2.whatYouWillAchieve.important.message')}
+            {t('doc.session2.whatYouWillAchieve.important.message')}
           </p>
         </div>
 
         {/* Por qué esta sesión es importante */}
         <h2 className="text-3xl font-bold text-orange-400 mb-6">
-          {t('session2.whyImportant.title')}
+          {t('doc.session2.whyImportant.title')}
         </h2>
 
         <div className="glass-card p-8 border-l-4 border-orange-400 bg-primary/5 mb-12">
           <p className="text-foreground text-lg mb-4">
-            {t('session2.whyImportant.intro')}
+            {t('doc.session2.whyImportant.intro')}
           </p>
           <p className="text-2xl font-bold text-orange-400 text-center mb-4">
-            {t('session2.whyImportant.quote')}
+            {t('doc.session2.whyImportant.quote')}
           </p>
           <p className="text-foreground text-lg">
-            {t('session2.whyImportant.outro')}
+            {t('doc.session2.whyImportant.outro')}
           </p>
         </div>
 
         {/* Puente hacia Sesión 3 */}
         <div className="glass-card p-8 mt-12 border-2 border-orange-400/30">
           <h2 className="text-2xl font-bold text-orange-400 mb-4">
-            {t('session2.bridge.title')}
+            {t('doc.session2.bridge.title')}
           </h2>
-          <p className="text-foreground text-lg mb-4" dangerouslySetInnerHTML={{ __html: t('session2.bridge.intro') }} />
+          <p className="text-foreground text-lg mb-4" dangerouslySetInnerHTML={{ __html: t('doc.session2.bridge.intro') }} />
 
           <div className="glass-card p-6">
             <h3 className="text-xl font-semibold text-orange-400 mb-3">
-              {t('session2.bridge.subtitle')}
+              {t('doc.session2.bridge.subtitle')}
             </h3>
             <ul className="space-y-2 text-foreground">
-              {t('session2.bridge.list', { returnObjects: true }).map((item: string, index: number) => (
+              {t('doc.session2.bridge.list', { returnObjects: true }).map((item: string, index: number) => (
                 <li key={index} className="flex items-start gap-3">
                   <span className="text-orange-400">•</span>
                   <span>{item}</span>
@@ -215,7 +215,7 @@ const Session2 = () => {
           </div>
 
           <div className="bg-orange-400/10 border border-orange-400/30 rounded-lg p-4 mt-4">
-            <p className="text-foreground text-sm" dangerouslySetInnerHTML={{ __html: t('session2.bridge.analogy') }} />
+            <p className="text-foreground text-sm" dangerouslySetInnerHTML={{ __html: t('doc.session2.bridge.analogy') }} />
           </div>
         </div>
 

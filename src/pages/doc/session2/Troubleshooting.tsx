@@ -13,11 +13,11 @@ const Session2Troubleshooting = () => {
         <div className="flex items-center gap-3 mb-4">
           <AlertTriangle className="w-10 h-10 text-orange-400" />
           <h1 className="gradient-text text-4xl font-bold">
-            {t('session2Troubleshooting.title')}
+            {t('doc.session2Troubleshooting.title')}
           </h1>
         </div>
         <p className="text-muted-foreground text-lg mb-8">
-          {t('session2Troubleshooting.subtitle')}
+          {t('doc.session2Troubleshooting.subtitle')}
         </p>
 
         {/* Error 1 */}
@@ -26,10 +26,10 @@ const Session2Troubleshooting = () => {
             <Key className="w-10 h-10 text-red-400 flex-shrink-0" />
             <div>
               <h2 className="text-2xl font-bold text-orange-400 mb-2">
-                {t('session2Troubleshooting.error1.title')}
+                {t('doc.session2Troubleshooting.error1.title')}
               </h2>
               <p className="text-muted-foreground mb-4">
-                {t('session2Troubleshooting.error1.description')}
+                {t('doc.session2Troubleshooting.error1.description')}
               </p>
             </div>
           </div>
@@ -37,7 +37,7 @@ const Session2Troubleshooting = () => {
           <div className="bg-orange-400/10 border border-orange-400/30 rounded-lg p-4 mb-4">
             <h3 className="font-bold text-orange-400 mb-2">✅ Soluciones:</h3>
             <ol className="space-y-2 text-foreground">
-              {t('session2Troubleshooting.error1.solutions', { returnObjects: true }).map((solution: string, index: number) => (
+              {t('doc.session2Troubleshooting.error1.solutions', { returnObjects: true }).map((solution: string, index: number) => (
                 <li key={index} dangerouslySetInnerHTML={{ __html: solution }} />
               ))}
             </ol>
@@ -46,7 +46,7 @@ const Session2Troubleshooting = () => {
           <div className="bg-blue-400/10 border border-blue-400/30 rounded-lg p-4">
             <h3 className="font-bold text-blue-400 mb-2">💡 Por qué pasa:</h3>
             <p className="text-foreground text-sm">
-              {t('session2Troubleshooting.error1.why')}
+              {t('doc.session2Troubleshooting.error1.why')}
             </p>
           </div>
         </div>
@@ -57,10 +57,10 @@ const Session2Troubleshooting = () => {
             <MessageCircle className="w-10 h-10 text-yellow-400 flex-shrink-0" />
             <div>
               <h2 className="text-2xl font-bold text-orange-400 mb-2">
-                {t('session2Troubleshooting.error2.title')}
+                {t('doc.session2Troubleshooting.error2.title')}
               </h2>
               <p className="text-muted-foreground mb-4">
-                {t('session2Troubleshooting.error2.description')}
+                {t('doc.session2Troubleshooting.error2.description')}
               </p>
             </div>
           </div>
@@ -68,7 +68,7 @@ const Session2Troubleshooting = () => {
           <div className="bg-orange-400/10 border border-orange-400/30 rounded-lg p-4 mb-4">
             <h3 className="font-bold text-orange-400 mb-2">✅ Soluciones:</h3>
             <ol className="space-y-2 text-foreground">
-              {t('session2Troubleshooting.error2.solutions', { returnObjects: true }).map((solution: string, index: number) => (
+              {t('doc.session2Troubleshooting.error2.solutions', { returnObjects: true }).map((solution: string, index: number) => (
                 <li key={index} dangerouslySetInnerHTML={{ __html: solution }} />
               ))}
             </ol>
@@ -77,7 +77,7 @@ const Session2Troubleshooting = () => {
           <div className="bg-blue-400/10 border border-blue-400/30 rounded-lg p-4">
             <h3 className="font-bold text-blue-400 mb-2">💡 Por qué pasa:</h3>
             <p className="text-foreground text-sm">
-              {t('session2Troubleshooting.error2.why')}
+              {t('doc.session2Troubleshooting.error2.why')}
             </p>
           </div>
         </div>
@@ -88,10 +88,10 @@ const Session2Troubleshooting = () => {
             <RefreshCw className="w-10 h-10 text-purple-400 flex-shrink-0" />
             <div>
               <h2 className="text-2xl font-bold text-orange-400 mb-2">
-                {t('session2Troubleshooting.error3.title')}
+                {t('doc.session2Troubleshooting.error3.title')}
               </h2>
               <p className="text-muted-foreground mb-4">
-                {t('session2Troubleshooting.error3.description')}
+                {t('doc.session2Troubleshooting.error3.description')}
               </p>
             </div>
           </div>
@@ -99,7 +99,7 @@ const Session2Troubleshooting = () => {
           <div className="bg-orange-400/10 border border-orange-400/30 rounded-lg p-4 mb-4">
             <h3 className="font-bold text-orange-400 mb-2">✅ Soluciones:</h3>
             <ol className="space-y-2 text-foreground">
-              {t('session2Troubleshooting.error3.solutions', { returnObjects: true }).map((solution: string, index: number) => (
+              {t('doc.session2Troubleshooting.error3.solutions', { returnObjects: true }).map((solution: string, index: number) => (
                 <li key={index} dangerouslySetInnerHTML={{ __html: solution }} />
               ))}
             </ol>
@@ -108,7 +108,7 @@ const Session2Troubleshooting = () => {
           <div className="bg-blue-400/10 border border-blue-400/30 rounded-lg p-4">
             <h3 className="font-bold text-blue-400 mb-2">💡 Por qué pasa:</h3>
             <p className="text-foreground text-sm">
-              {t('session2Troubleshooting.error3.why')}
+              {t('doc.session2Troubleshooting.error3.why')}
             </p>
           </div>
         </div>
@@ -119,10 +119,10 @@ const Session2Troubleshooting = () => {
             <Bot className="w-10 h-10 text-blue-400 flex-shrink-0" />
             <div>
               <h2 className="text-2xl font-bold text-orange-400 mb-2">
-                {t('session2Troubleshooting.error4.title')}
+                {t('doc.session2Troubleshooting.error4.title')}
               </h2>
               <p className="text-muted-foreground mb-4">
-                {t('session2Troubleshooting.error4.description')}
+                {t('doc.session2Troubleshooting.error4.description')}
               </p>
             </div>
           </div>
@@ -130,7 +130,7 @@ const Session2Troubleshooting = () => {
           <div className="bg-orange-400/10 border border-orange-400/30 rounded-lg p-4 mb-4">
             <h3 className="font-bold text-orange-400 mb-2">✅ Soluciones:</h3>
             <ol className="space-y-2 text-foreground">
-              {t('session2Troubleshooting.error4.solutions', { returnObjects: true }).map((solution: string, index: number) => (
+              {t('doc.session2Troubleshooting.error4.solutions', { returnObjects: true }).map((solution: string, index: number) => (
                 <li key={index} dangerouslySetInnerHTML={{ __html: solution }} />
               ))}
             </ol>
@@ -139,7 +139,7 @@ const Session2Troubleshooting = () => {
           <div className="bg-blue-400/10 border border-blue-400/30 rounded-lg p-4">
             <h3 className="font-bold text-blue-400 mb-2">💡 Por qué pasa:</h3>
             <p className="text-foreground text-sm">
-              {t('session2Troubleshooting.error4.why')}
+              {t('doc.session2Troubleshooting.error4.why')}
             </p>
           </div>
         </div>
@@ -150,10 +150,10 @@ const Session2Troubleshooting = () => {
             <DollarSign className="w-10 h-10 text-green-400 flex-shrink-0" />
             <div>
               <h2 className="text-2xl font-bold text-orange-400 mb-2">
-                {t('session2Troubleshooting.error5.title')}
+                {t('doc.session2Troubleshooting.error5.title')}
               </h2>
               <p className="text-muted-foreground mb-4">
-                {t('session2Troubleshooting.error5.description')}
+                {t('doc.session2Troubleshooting.error5.description')}
               </p>
             </div>
           </div>
@@ -161,7 +161,7 @@ const Session2Troubleshooting = () => {
           <div className="bg-orange-400/10 border border-orange-400/30 rounded-lg p-4 mb-4">
             <h3 className="font-bold text-orange-400 mb-2">✅ Soluciones:</h3>
             <ol className="space-y-2 text-foreground">
-              {t('session2Troubleshooting.error5.solutions', { returnObjects: true }).map((solution: string, index: number) => (
+              {t('doc.session2Troubleshooting.error5.solutions', { returnObjects: true }).map((solution: string, index: number) => (
                 <li key={index} dangerouslySetInnerHTML={{ __html: solution }} />
               ))}
             </ol>
@@ -170,7 +170,7 @@ const Session2Troubleshooting = () => {
           <div className="bg-blue-400/10 border border-blue-400/30 rounded-lg p-4">
             <h3 className="font-bold text-blue-400 mb-2">💡 Por qué pasa:</h3>
             <p className="text-foreground text-sm">
-              {t('session2Troubleshooting.error5.why')}
+              {t('doc.session2Troubleshooting.error5.why')}
             </p>
           </div>
         </div>
@@ -180,14 +180,14 @@ const Session2Troubleshooting = () => {
           <div className="flex items-center gap-3 mb-4">
             <LifeBuoy className="w-8 h-8 text-orange-400" />
             <h2 className="text-2xl font-bold text-orange-400">
-              {t('session2Troubleshooting.needHelp.title')}
+              {t('doc.session2Troubleshooting.needHelp.title')}
             </h2>
           </div>
           <p className="text-foreground mb-4">
-            {t('session2Troubleshooting.needHelp.intro')}
+            {t('doc.session2Troubleshooting.needHelp.intro')}
           </p>
           <ol className="space-y-3 text-foreground mb-6">
-            {t('session2Troubleshooting.needHelp.steps', { returnObjects: true }).map((step: string, index: number) => (
+            {t('doc.session2Troubleshooting.needHelp.steps', { returnObjects: true }).map((step: string, index: number) => (
               <li key={index} className="flex items-start gap-3">
                 <span className="font-bold text-orange-400">{index + 1}.</span>
                 <span dangerouslySetInnerHTML={{ __html: step }} />

@@ -59,47 +59,59 @@ const getCategoryStyles = (category: string) => {
 };
 
 const Glossary = () => {
-  const { t } = useTranslation();
+  const { t, ready } = useTranslation();
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
 
-  // Build terms array from translations
-  const glossaryTerms: GlossaryTerm[] = [
-    { ...t('glossary.terms.deploy', { returnObjects: true }), category: 'development' as const },
-    { ...t('glossary.terms.production', { returnObjects: true }), category: 'development' as const },
-    { ...t('glossary.terms.localhost', { returnObjects: true }), category: 'development' as const },
-    { ...t('glossary.terms.url', { returnObjects: true }), category: 'development' as const },
-    { ...t('glossary.terms.framework', { returnObjects: true }), category: 'development' as const },
-    { ...t('glossary.terms.bug', { returnObjects: true }), category: 'development' as const },
-    { ...t('glossary.terms.localStorage', { returnObjects: true }), category: 'data' as const },
-    { ...t('glossary.terms.database', { returnObjects: true }), category: 'data' as const },
-    { ...t('glossary.terms.api', { returnObjects: true }), category: 'data' as const },
-    { ...t('glossary.terms.apiKey', { returnObjects: true }), category: 'data' as const },
-    { ...t('glossary.terms.endpoint', { returnObjects: true }), category: 'data' as const },
-    { ...t('glossary.terms.json', { returnObjects: true }), category: 'data' as const },
-    { ...t('glossary.terms.prompt', { returnObjects: true }), category: 'ai' as const },
-    { ...t('glossary.terms.context', { returnObjects: true }), category: 'ai' as const },
-    { ...t('glossary.terms.multimodal', { returnObjects: true }), category: 'ai' as const },
-    { ...t('glossary.terms.temperature', { returnObjects: true }), category: 'ai' as const },
-    { ...t('glossary.terms.token', { returnObjects: true }), category: 'ai' as const },
-    { ...t('glossary.terms.systemPrompt', { returnObjects: true }), category: 'ai' as const },
-    { ...t('glossary.terms.ui', { returnObjects: true }), category: 'ui' as const },
-    { ...t('glossary.terms.component', { returnObjects: true }), category: 'ui' as const },
-    { ...t('glossary.terms.state', { returnObjects: true }), category: 'ui' as const },
-    { ...t('glossary.terms.props', { returnObjects: true }), category: 'ui' as const },
-    { ...t('glossary.terms.responsive', { returnObjects: true }), category: 'ui' as const },
-    { ...t('glossary.terms.auth', { returnObjects: true }), category: 'auth' as const },
-    { ...t('glossary.terms.session', { returnObjects: true }), category: 'auth' as const },
-    { ...t('glossary.terms.authToken', { returnObjects: true }), category: 'auth' as const },
-    { ...t('glossary.terms.permissions', { returnObjects: true }), category: 'auth' as const },
-  ];
+  // Build terms array from translations - only when translations are ready
+  const glossaryTerms: GlossaryTerm[] = ready ? [
+    { ...(t('doc.glossary.terms.deploy', { returnObjects: true }) as { term: string; definition: string }), category: 'development' as const },
+    { ...(t('doc.glossary.terms.production', { returnObjects: true }) as { term: string; definition: string }), category: 'development' as const },
+    { ...(t('doc.glossary.terms.localhost', { returnObjects: true }) as { term: string; definition: string }), category: 'development' as const },
+    { ...(t('doc.glossary.terms.url', { returnObjects: true }) as { term: string; definition: string }), category: 'development' as const },
+    { ...(t('doc.glossary.terms.framework', { returnObjects: true }) as { term: string; definition: string }), category: 'development' as const },
+    { ...(t('doc.glossary.terms.bug', { returnObjects: true }) as { term: string; definition: string }), category: 'development' as const },
+    { ...(t('doc.glossary.terms.localStorage', { returnObjects: true }) as { term: string; definition: string }), category: 'data' as const },
+    { ...(t('doc.glossary.terms.database', { returnObjects: true }) as { term: string; definition: string }), category: 'data' as const },
+    { ...(t('doc.glossary.terms.api', { returnObjects: true }) as { term: string; definition: string }), category: 'data' as const },
+    { ...(t('doc.glossary.terms.apiKey', { returnObjects: true }) as { term: string; definition: string }), category: 'data' as const },
+    { ...(t('doc.glossary.terms.endpoint', { returnObjects: true }) as { term: string; definition: string }), category: 'data' as const },
+    { ...(t('doc.glossary.terms.json', { returnObjects: true }) as { term: string; definition: string }), category: 'data' as const },
+    { ...(t('doc.glossary.terms.prompt', { returnObjects: true }) as { term: string; definition: string }), category: 'ai' as const },
+    { ...(t('doc.glossary.terms.context', { returnObjects: true }) as { term: string; definition: string }), category: 'ai' as const },
+    { ...(t('doc.glossary.terms.multimodal', { returnObjects: true }) as { term: string; definition: string }), category: 'ai' as const },
+    { ...(t('doc.glossary.terms.temperature', { returnObjects: true }) as { term: string; definition: string }), category: 'ai' as const },
+    { ...(t('doc.glossary.terms.token', { returnObjects: true }) as { term: string; definition: string }), category: 'ai' as const },
+    { ...(t('doc.glossary.terms.systemPrompt', { returnObjects: true }) as { term: string; definition: string }), category: 'ai' as const },
+    { ...(t('doc.glossary.terms.ui', { returnObjects: true }) as { term: string; definition: string }), category: 'ui' as const },
+    { ...(t('doc.glossary.terms.component', { returnObjects: true }) as { term: string; definition: string }), category: 'ui' as const },
+    { ...(t('doc.glossary.terms.state', { returnObjects: true }) as { term: string; definition: string }), category: 'ui' as const },
+    { ...(t('doc.glossary.terms.props', { returnObjects: true }) as { term: string; definition: string }), category: 'ui' as const },
+    { ...(t('doc.glossary.terms.responsive', { returnObjects: true }) as { term: string; definition: string }), category: 'ui' as const },
+    { ...(t('doc.glossary.terms.auth', { returnObjects: true }) as { term: string; definition: string }), category: 'auth' as const },
+    { ...(t('doc.glossary.terms.session', { returnObjects: true }) as { term: string; definition: string }), category: 'auth' as const },
+    { ...(t('doc.glossary.terms.authToken', { returnObjects: true }) as { term: string; definition: string }), category: 'auth' as const },
+    { ...(t('doc.glossary.terms.permissions', { returnObjects: true }) as { term: string; definition: string }), category: 'auth' as const },
+  ] : [];
+
+  if (!ready) {
+    return (
+      <DocLayout>
+        <DocContent>
+          <div className="flex items-center justify-center min-h-screen">
+            <p className="text-muted-foreground">Loading...</p>
+          </div>
+        </DocContent>
+      </DocLayout>
+    );
+  }
 
   const categoryNames = {
-    development: t('glossary.categories.development'),
-    data: t('glossary.categories.data'),
-    ai: t('glossary.categories.ai'),
-    ui: t('glossary.categories.ui'),
-    auth: t('glossary.categories.auth')
+    development: t('doc.glossary.categories.development'),
+    data: t('doc.glossary.categories.data'),
+    ai: t('doc.glossary.categories.ai'),
+    ui: t('doc.glossary.categories.ui'),
+    auth: t('doc.glossary.categories.auth')
   };
 
   const filteredTerms = glossaryTerms.filter(term => {
@@ -119,11 +131,11 @@ const Glossary = () => {
           <div className="flex items-center gap-3 mb-4">
             <Book className="w-8 h-8 sm:w-10 sm:h-10 text-orange-400" />
             <h1 className="text-3xl sm:text-4xl font-bold gradient-text">
-              {t('glossary.title')}
+              {t('doc.glossary.title')}
             </h1>
           </div>
           <p className="text-muted-foreground text-base sm:text-lg">
-            {t('glossary.subtitle')}
+            {t('doc.glossary.subtitle')}
           </p>
         </div>
 
@@ -133,7 +145,7 @@ const Glossary = () => {
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
             <input
               type="text"
-              placeholder={t('glossary.searchPlaceholder')}
+              placeholder={t('doc.glossary.searchPlaceholder')}
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className="w-full pl-10 pr-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400/50 text-foreground"
@@ -151,7 +163,7 @@ const Glossary = () => {
                 : 'bg-muted text-muted-foreground hover:bg-muted/80'
             }`}
           >
-            {t('glossary.allLabel')} ({glossaryTerms.length})
+            {t('doc.glossary.allLabel')} ({glossaryTerms.length})
           </button>
           {Object.entries(categoryNames).map(([key, label]) => {
             const count = glossaryTerms.filter(t => t.category === key).length;
@@ -177,7 +189,7 @@ const Glossary = () => {
           {filteredTerms.length === 0 ? (
             <div className="text-center py-12">
               <p className="text-muted-foreground text-lg">
-                {t('glossary.noResults')}
+                {t('doc.glossary.noResults')}
               </p>
             </div>
           ) : (
