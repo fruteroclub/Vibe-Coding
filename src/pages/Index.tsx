@@ -1,48 +1,39 @@
-import { lazy, Suspense } from 'react';
+import ParticlesBackground from '@/components/ParticlesBackground';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
+import ForWho from '@/components/ForWho';
+import Problem from '@/components/Problem';
+import Layers from '@/components/Layers';
+import Journey from '@/components/Journey';
+import Includes from '@/components/Includes';
+import IsForYou from '@/components/IsForYou';
+import Pricing from '@/components/Pricing';
+import FAQ from '@/components/FAQ';
+import FinalCTA from '@/components/FinalCTA';
 import Footer from '@/components/Footer';
-
-// Lazy load non-critical components below the fold
-const ParticlesBackground = lazy(() => import('@/components/ParticlesBackground'));
-const ForWho = lazy(() => import('@/components/ForWho'));
-const Problem = lazy(() => import('@/components/Problem'));
-const Layers = lazy(() => import('@/components/Layers'));
-const Journey = lazy(() => import('@/components/Journey'));
-const Includes = lazy(() => import('@/components/Includes'));
-const IsForYou = lazy(() => import('@/components/IsForYou'));
-const Pricing = lazy(() => import('@/components/Pricing'));
-const FAQ = lazy(() => import('@/components/FAQ'));
-const FinalCTA = lazy(() => import('@/components/FinalCTA'));
-const CookieBanner = lazy(() => import('@/components/CookieBanner'));
+import { CookieBanner } from '@/components/CookieBanner';
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden" itemScope itemType="https://schema.org/WebPage">
-      <Suspense fallback={null}>
-        <ParticlesBackground />
-      </Suspense>
+      <ParticlesBackground />
       <Navbar />
       <main className="relative z-10" role="main">
         <article itemScope itemType="https://schema.org/Course">
           <Hero />
-          <Suspense fallback={<div className="h-screen" />}>
-            <ForWho />
-            <Problem />
-            <Layers />
-            <Journey />
-            <Includes />
-            <IsForYou />
-            <Pricing />
-            <FAQ />
-            <FinalCTA />
-          </Suspense>
+          <ForWho />
+          <Problem />
+          <Layers />
+          <Journey />
+          <Includes />
+          <IsForYou />
+          <Pricing />
+          <FAQ />
+          <FinalCTA />
         </article>
       </main>
       <Footer />
-      <Suspense fallback={null}>
-        <CookieBanner />
-      </Suspense>
+      <CookieBanner />
     </div>
   );
 };
