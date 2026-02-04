@@ -98,6 +98,7 @@ const Layers = () => {
             src="https://res.cloudinary.com/ddejtxqjq/image/upload/v1769573438/unnamed_kyvflt.jpg"
             alt="Las 5 Capas de Toda Aplicación"
             className="max-w-full h-auto rounded-lg border border-border/50 shadow-lg"
+            loading="lazy"
           />
         </div>
 

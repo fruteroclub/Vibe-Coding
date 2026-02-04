@@ -35,6 +35,7 @@ const Resources = () => {
       name: 'Vercel',
       description: t('doc.resourcesPage.platforms.vercel.description'),
       logo: 'https://assets.vercel.com/image/upload/front/favicon/vercel/180x180.png',
+      logoLoading: 'lazy' as const,
       link: 'https://vercel.com',
     },
     {

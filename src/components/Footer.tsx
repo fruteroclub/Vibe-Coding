@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-4">
             {/* Logo Kukulcan */}
-            <img src="/kukulcan-logo-color.svg" alt="Kukulcan" className="h-10 w-auto object-contain" />
+            <img src="/kukulcan-logo-color.svg" alt="Kukulcan" className="h-10 w-auto object-contain" loading="lazy" />
 
             <p className="text-muted-foreground text-sm">
               {t('footer.copyright')}
