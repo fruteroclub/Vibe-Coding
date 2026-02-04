@@ -29,7 +29,7 @@ const ParticlesBackground = () => {
     window.addEventListener('resize', resizeCanvas);
 
     const particles: Particle[] = [];
-    const particleCount = 80;
+    const particleCount = 40; // Reducido de 80 a 40 para mejor performance
     const colors = [
       'rgba(245, 158, 11, ',  // Orange
       'rgba(236, 72, 153, ',  // Pink
@@ -77,11 +77,11 @@ const ParticlesBackground = () => {
           const dy = particle.y - otherParticle.y;
           const distance = Math.sqrt(dx * dx + dy * dy);
 
-          if (distance < 150) {
+          if (distance < 120) { // Reducido de 150 a 120 para menos conexiones y mejor performance
             ctx.beginPath();
             ctx.moveTo(particle.x, particle.y);
             ctx.lineTo(otherParticle.x, otherParticle.y);
-            ctx.strokeStyle = `rgba(245, 158, 11, ${0.1 * (1 - distance / 150)})`;
+            ctx.strokeStyle = `rgba(245, 158, 11, ${0.1 * (1 - distance / 120)})`;
             ctx.lineWidth = 0.5;
             ctx.stroke();
           }

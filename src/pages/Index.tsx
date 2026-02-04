@@ -1,39 +1,48 @@
-import ParticlesBackground from '@/components/ParticlesBackground';
+import { lazy, Suspense } from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
-import ForWho from '@/components/ForWho';
-import Problem from '@/components/Problem';
-import Layers from '@/components/Layers';
-import Journey from '@/components/Journey';
-import Includes from '@/components/Includes';
-import IsForYou from '@/components/IsForYou';
-import Pricing from '@/components/Pricing';
-import FAQ from '@/components/FAQ';
-import FinalCTA from '@/components/FinalCTA';
 import Footer from '@/components/Footer';
-import { CookieBanner } from '@/components/CookieBanner';
+
+// Lazy load non-critical components below the fold
+const ParticlesBackground = lazy(() => import('@/components/ParticlesBackground'));
+const ForWho = lazy(() => import('@/components/ForWho'));
+const Problem = lazy(() => import('@/components/Problem'));
+const Layers = lazy(() => import('@/components/Layers'));
+const Journey = lazy(() => import('@/components/Journey'));
+const Includes = lazy(() => import('@/components/Includes'));
+const IsForYou = lazy(() => import('@/components/IsForYou'));
+const Pricing = lazy(() => import('@/components/Pricing'));
+const FAQ = lazy(() => import('@/components/FAQ'));
+const FinalCTA = lazy(() => import('@/components/FinalCTA'));
+const CookieBanner = lazy(() => import('@/components/CookieBanner'));
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden" itemScope itemType="https://schema.org/WebPage">
-      <ParticlesBackground />
+      <Suspense fallback={null}>
+        <ParticlesBackground />
+      </Suspense>
       <Navbar />
       <main className="relative z-10" role="main">
         <article itemScope itemType="https://schema.org/Course">
           <Hero />
-          <ForWho />
-          <Problem />
-          <Layers />
-          <Journey />
-          <Includes />
-          <IsForYou />
-          <Pricing />
-          <FAQ />
-          <FinalCTA />
+          <Suspense fallback={<div className="h-screen" />}>
+            <ForWho />
+            <Problem />
+            <Layers />
+            <Journey />
+            <Includes />
+            <IsForYou />
+            <Pricing />
+            <FAQ />
+            <FinalCTA />
+          </Suspense>
         </article>
       </main>
       <Footer />
-      <CookieBanner />
+      <Suspense fallback={null}>
+        <CookieBanner />
+      </Suspense>
     </div>
   );
 };
