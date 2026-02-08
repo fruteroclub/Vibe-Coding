@@ -801,7 +801,7 @@
       "promptsSection": {
         "title": "💬 Prompts para v0",
         "description": "Copia estos prompts y pégalos en v0 para generar el código de cada sesión:",
-        "session1Prompt": "",
+        "session1Prompt": "Quiero crear una app web de mascota virtual tipo Tamagotchi llamada \"Regenmon\".\n\nEstilo Visual\nEstética pixel art / retro 8-bit (tipo Nintendo, Game Boy)\nUsa la librería NES.css para los componentes\nFuente \"Press Start 2P\" de Google Fonts\nDiseño responsive (celular, tablet, computadora)\n\nPantalla 1: Crear tu Regenmon\nAparece cuando es la primera vez que entras (no hay datos guardados).\n\nNecesito:\nTítulo \"Crea tu Regenmon\"\nCampo para escribir el nombre (entre 2 y 15 letras)\n3 opciones para elegir tipo:\n🌱 Semilla (verde)\n💧 Gota (azul)\n✨ Chispa (amarillo)\nBotón \"¡Eclosionar!\" que solo se activa cuando:\nEl nombre es válido\nSeleccionaste un tipo",
         "session2Prompt": "",
         "session3Prompt": "",
         "session4Prompt": "",
