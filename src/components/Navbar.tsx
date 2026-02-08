@@ -29,10 +29,15 @@ const Navbar = () => {
               {t('navbar.links.sesiones')}
             </Link>
 
-            {/* Demo - Activo */}
-            <Link to="/demo" className="text-muted-foreground hover:text-foreground transition-colors">
-              {t('navbar.links.demo')}
-            </Link>
+            {/* Demo - Externo */}
+            <a
+              href="https://regenmon-final.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-primary transition-colors"
+            >
+              {t('navbar.links.demo')} ↗
+            </a>
 
             <a href="/#programa" className="text-muted-foreground hover:text-foreground transition-colors">
               {t('navbar.links.programa')}
@@ -97,14 +102,16 @@ const Navbar = () => {
               {t('navbar.links.sesiones')}
             </Link>
 
-            {/* Demo - Activo */}
-            <Link
-              to="/demo"
-              className="text-muted-foreground hover:text-foreground transition-colors"
+            {/* Demo - Externo */}
+            <a
+              href="https://regenmon-final.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-primary transition-colors"
               onClick={() => setIsOpen(false)}
             >
-              {t('navbar.links.demo')}
-            </Link>
+              {t('navbar.links.demo')} ↗
+            </a>
 
             <a
               href="/#programa"
