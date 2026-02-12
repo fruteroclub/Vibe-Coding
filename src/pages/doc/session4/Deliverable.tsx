@@ -275,7 +275,7 @@ const Session4Deliverable = () => {
 
         {/* Submit Button */}
         <a
-          href="https://poktapok-iaegp4wrg-fruteroclub.vercel.app/bootcamp/vibecoding"
+          href="https://www.frutero.club/bootcamp/vibecoding"
           target="_blank"
           rel="noopener noreferrer"
           className="block w-full py-4 px-6 bg-gradient-to-r from-orange-500 to-orange-400 hover:from-orange-600 hover:to-orange-500 text-white font-bold text-center rounded-xl transition-all duration-300 transform hover:scale-[1.02] shadow-lg hover:shadow-xl mb-12"
