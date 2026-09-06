@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# ⛔ mínimo obligatorio · C:\dev\REGLAS.md regla 4
+node_modules/
+.env
+.env.*
